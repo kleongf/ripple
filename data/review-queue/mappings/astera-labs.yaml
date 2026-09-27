@@ -1,0 +1,38 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/astera-labs
+label: company/astera-labs
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 852525000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: us-gaap:ProductMember
+  label: Product
+  share: 1.0
+  assignments: []
+  new_product: PCIe/CXL connectivity chips and modules
+  note: Revenue primarily comes from retimers, PCIe fabric switches and memory connectivity
+    chips, which lack a direct taxonomy match.
+- member: us-gaap:TechnologyServiceMember
+  label: Technology Service
+  share: 0.0
+  assignments: []
+  new_product: null
+  note: Technology services are excluded from product demand mapping.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6574
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 192
+  reasoning_output_tokens: 93
+created: 2026-09-27

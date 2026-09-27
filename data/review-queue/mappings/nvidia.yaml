@@ -1,0 +1,71 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/nvidia
+label: Nvidia
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+fiscal_start: 2025-01-27
+fiscal_end: 2026-01-25
+currency: USD
+total: 215938000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: nvda:ComputeMember
+  label: Compute
+  share: 0.751887
+  assignments:
+  - product: product/ai-accelerators
+    fraction: 0.9
+  - product: product/ai-servers
+    fraction: 0.08
+  new_product: null
+  note: Estimated mix of data-center accelerators and complete AI systems, leaving
+    software and other revenue unassigned.
+- member: nvda:NetworkingMember
+  label: Networking
+  share: 0.145301
+  assignments:
+  - product: product/datacenter-switches
+    fraction: 0.7
+  new_product: null
+  note: Estimated switch share includes Ethernet, InfiniBand and NVLink switches;
+    adapters, DPUs and other connectivity remain unassigned.
+- member: nvda:GamingMember
+  label: Gaming
+  share: 0.07429
+  assignments: []
+  new_product: null
+  note: Gaming GPUs and related offerings fall outside the data-center product taxonomy.
+- member: nvda:ProfessionalVisualizationMember
+  label: Professional Visualization
+  share: 0.014777
+  assignments: []
+  new_product: null
+  note: Workstation graphics and visualization offerings are outside the listed taxonomy.
+- member: nvda:AutomotiveMember
+  label: Automotive
+  share: 0.010878
+  assignments: []
+  new_product: null
+  note: Automotive computing platforms are not data-center accelerators or other listed
+    products.
+- member: nvda:OEMAndOtherMember
+  label: OEM and Other
+  share: 0.002867
+  assignments: []
+  new_product: null
+  note: OEM graphics and miscellaneous offerings lack a confident match to the listed
+    products.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6603
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 482
+  reasoning_output_tokens: 197
+created: 2026-09-27

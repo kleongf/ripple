@@ -1,0 +1,13 @@
+# Generated from company/dell by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/dell
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5561
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-02-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1571996/000157199626000008/dell-20260130.htm
+    note: '10-K FY2026 XBRL: United States 55.6% of USD 113.5bn revenue (country:US)'
+    accessed: 2026-09-27

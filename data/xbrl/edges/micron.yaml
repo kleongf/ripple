@@ -1,0 +1,50 @@
+# Generated from the 10-K XBRL revenue lines of company/micron by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/micron
+  rel: PRODUCES
+  dst: product/dram
+  weight: 0.6117
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-08-30
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: DRAM Products 76.5% x0.80 of USD 37.4bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/micron
+  rel: PRODUCES
+  dst: product/hbm
+  weight: 0.1529
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: DRAM Products 76.5% x0.20 of USD 37.4bn revenue'
+    accessed: *id002
+- src: company/micron
+  rel: PRODUCES
+  dst: product/consumer-nand
+  weight: 0.1365
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: NAND Products 22.7% x0.60 of USD 37.4bn revenue'
+    accessed: *id002
+- src: company/micron
+  rel: PRODUCES
+  dst: product/enterprise-ssds
+  weight: 0.091
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: NAND Products 22.7% x0.40 of USD 37.4bn revenue'
+    accessed: *id002

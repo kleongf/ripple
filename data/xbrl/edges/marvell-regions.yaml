@@ -1,0 +1,37 @@
+# Generated from company/marvell by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/marvell
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.3624
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-02-02
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1835632/000183563226000011/mrvl-20260131.htm
+    note: '10-K FY2026 XBRL: China 36.2% of USD 8.2bn revenue (country:CN)'
+    accessed: &id002 2026-09-27
+- src: company/marvell
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.2022
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1835632/000183563226000011/mrvl-20260131.htm
+    note: '10-K FY2026 XBRL: Taiwan 20.2% of USD 8.2bn revenue (country:TW)'
+    accessed: *id002
+- src: company/marvell
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.1433
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1835632/000183563226000011/mrvl-20260131.htm
+    note: '10-K FY2026 XBRL: United States 14.3% of USD 8.2bn revenue (country:US)'
+    accessed: *id002

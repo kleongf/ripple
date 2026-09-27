@@ -1,0 +1,39 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/arm
+label: company/arm
+form: 20-F
+filing_url: https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm
+fiscal_start: 2025-04-01
+fiscal_end: 2026-03-31
+currency: USD
+total: 4920000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: us-gaap:RoyaltyMember
+  label: Royalty
+  share: 0.531098
+  assignments: []
+  new_product: Processor architecture and semiconductor IP
+  note: "Royalties monetize Arm IP used in customers\u2019 chips, not sales of CPUs\
+    \ or other listed products."
+- member: arm:LicenseAndOtherRevenueMember
+  label: License And Other Revenue
+  share: 0.468902
+  assignments: []
+  new_product: Processor architecture and semiconductor IP
+  note: This line primarily licenses processor IP absent from the taxonomy; related
+    services remain unassigned.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6575
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 141
+  reasoning_output_tokens: 35
+created: 2026-09-27

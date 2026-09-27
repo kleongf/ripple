@@ -1,0 +1,27 @@
+# Generated from company/onto-innovation by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/onto-innovation
+  rel: SUPPLIES
+  dst: company/tsmc
+  weight: 0.2
+  weight_source: filing
+  polarity: 1
+  confidence: 0.3
+  valid_from: &id001 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Taiwan Semiconductor Manufacturing Company Limited was
+      20.0% of revenue; also reached through products, so stored below threshold'
+    accessed: &id002 2026-09-27
+- src: company/onto-innovation
+  rel: SUPPLIES
+  dst: company/sk-hynix
+  weight: 0.14
+  weight_source: filing
+  polarity: 1
+  confidence: 0.3
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: SK Hynix Inc was 14.0% of revenue; also reached through
+      products, so stored below threshold'
+    accessed: *id002

@@ -1,0 +1,88 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/asml
+label: ASML Holding
+form: 20-F
+filing_url: https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: EUR
+total: 32667300000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: asml:NXEMember
+  label: NXE
+  share: 0.319763
+  assignments:
+  - product: product/euv-lithography
+    fraction: 1.0
+  new_product: null
+  note: NXE systems are conventional numerical-aperture EUV lithography tools.
+- member: asml:ArfImmersionMember
+  label: Arf immersion
+  share: 0.315649
+  assignments:
+  - product: product/duv-lithography
+    fraction: 1.0
+  new_product: null
+  note: ArF immersion scanners are DUV lithography systems.
+- member: asml:ServiceAndFieldOptionsMember
+  label: Service And Field Options
+  share: 0.250801
+  assignments: []
+  new_product: null
+  note: Services and field upgrades support the installed base and are left unassigned.
+- member: asml:EXEMember
+  label: EXE
+  share: 0.035415
+  assignments:
+  - product: product/euv-lithography
+    fraction: 1.0
+  new_product: null
+  note: EXE systems are high-numerical-aperture EUV lithography tools.
+- member: asml:KrfMember
+  label: Krf
+  share: 0.030651
+  assignments:
+  - product: product/duv-lithography
+    fraction: 1.0
+  new_product: null
+  note: KrF systems use deep-ultraviolet light for lithography.
+- member: asml:MetrologyAndInspectionMember
+  label: Metrology And Inspection
+  share: 0.025242
+  assignments:
+  - product: product/inspection-metrology
+    fraction: 1.0
+  new_product: null
+  note: These systems measure and inspect semiconductor manufacturing processes.
+- member: asml:ArfDryMember
+  label: Arf Dry
+  share: 0.013071
+  assignments:
+  - product: product/duv-lithography
+    fraction: 1.0
+  new_product: null
+  note: ArF dry scanners are DUV lithography systems.
+- member: asml:IlineMember
+  label: I-Line
+  share: 0.009407
+  assignments:
+  - product: product/duv-lithography
+    fraction: 1.0
+  new_product: null
+  note: I-line tools belong to ASML's DUV product portfolio, although their wavelength
+    is near-ultraviolet.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6664
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 568
+  reasoning_output_tokens: 164
+created: 2026-09-27

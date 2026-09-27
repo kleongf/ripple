@@ -1,0 +1,49 @@
+# Generated from company/amazon by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/amazon
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.683
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm
+    note: '10-K FY2025 XBRL: United States 68.3% of USD 716.9bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/amazon
+  rel: EXPOSED_TO
+  dst: region/de
+  weight: 0.064
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm
+    note: '10-K FY2025 XBRL: Germany 6.4% of USD 716.9bn revenue (country:DE)'
+    accessed: *id002
+- src: company/amazon
+  rel: EXPOSED_TO
+  dst: region/gb
+  weight: 0.0603
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm
+    note: '10-K FY2025 XBRL: United Kingdom 6.0% of USD 716.9bn revenue (country:GB)'
+    accessed: *id002
+- src: company/amazon
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0428
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm
+    note: '10-K FY2025 XBRL: Japan 4.3% of USD 716.9bn revenue (country:JP)'
+    accessed: *id002

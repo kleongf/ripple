@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/intel by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/intel
+  rel: PRODUCES
+  dst: product/server-cpus
+  weight: 0.2561
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: Datacenter and AI 32.0% x0.80 of USD 52.9bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/intel
+  rel: PRODUCES
+  dst: product/ai-accelerators
+  weight: 0.0032
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: Datacenter and AI 32.0% x0.01 of USD 52.9bn revenue'
+    accessed: *id002

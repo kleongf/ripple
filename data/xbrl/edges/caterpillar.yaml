@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/caterpillar by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/caterpillar
+  rel: PRODUCES
+  dst: product/backup-generators
+  weight: 0.1136
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm
+    note: '10-K FY2025 XBRL: Machinery, Power & Energy 94.7% x0.12 of USD 67.6bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/caterpillar
+  rel: PRODUCES
+  dst: product/gas-turbines
+  weight: 0.0379
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm
+    note: '10-K FY2025 XBRL: Machinery, Power & Energy 94.7% x0.04 of USD 67.6bn revenue'
+    accessed: *id002

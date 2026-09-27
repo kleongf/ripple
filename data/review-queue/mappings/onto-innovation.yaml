@@ -1,0 +1,46 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/onto-innovation
+label: company/onto-innovation
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+fiscal_start: 2024-12-29
+fiscal_end: 2026-01-03
+currency: USD
+total: 1005263000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: onto:SystemsAndSoftwareRevenueMember
+  label: Systems And Software Revenue
+  share: 0.843396
+  assignments:
+  - product: product/inspection-metrology
+    fraction: 0.9
+  new_product: null
+  note: Estimated 90% inspection, metrology and process-control software; packaging
+    lithography remains unassigned.
+- member: onto:PartsRevenueMember
+  label: Parts Revenue
+  share: 0.083759
+  assignments: []
+  new_product: null
+  note: Spare parts support the installed base rather than new equipment demand.
+- member: onto:ServiceRevenueMember
+  label: Service Revenue
+  share: 0.072845
+  assignments: []
+  new_product: null
+  note: Services support the installed base and are left unassigned.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6593
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 194
+  reasoning_output_tokens: 56
+created: 2026-09-27

@@ -1,0 +1,46 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/oracle
+label: company/oracle
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+fiscal_start: 2025-06-01
+fiscal_end: 2026-05-31
+currency: USD
+total: 67357000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: orcl:CloudAndSoftwareBusinessMember
+  label: Cloud And Software Business
+  share: 0.868952
+  assignments: []
+  new_product: null
+  note: Cloud services buy datacenter capacity rather than sell it; the taxonomy's
+    datacenter-capacity is build-out (Claude Code review, consistent with AWS and
+    Azure).
+- member: orcl:ServicesBusinessMember
+  label: Services Business
+  share: 0.085262
+  assignments: []
+  new_product: null
+  note: Consulting and other services are excluded from product demand.
+- member: orcl:HardwareBusinessMember
+  label: Hardware Business
+  share: 0.045786
+  assignments: []
+  new_product: Enterprise servers and storage systems
+  note: Enterprise hardware lacks a matching taxonomy category, while hardware support
+    remains unassigned.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6624
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 249
+  reasoning_output_tokens: 105
+created: 2026-09-27

@@ -1,0 +1,42 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/caterpillar
+label: Caterpillar
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 67589000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: cat:MachineryPowerEnergyMember
+  label: Machinery, Power & Energy
+  share: 0.946604
+  assignments:
+  - product: product/backup-generators
+    fraction: 0.12
+  - product: product/gas-turbines
+    fraction: 0.04
+  new_product: null
+  note: Estimated shares cover generator sets and Solar gas turbines, excluding services,
+    spare parts and unrelated machinery.
+- member: cat:FinancialProductsMember
+  label: Financial Products
+  share: 0.053396
+  assignments: []
+  new_product: null
+  note: Financing and insurance revenue falls outside the product taxonomy.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6544
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 218
+  reasoning_output_tokens: 99
+created: 2026-09-27

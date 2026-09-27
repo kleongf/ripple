@@ -1,0 +1,94 @@
+# Generated from XBRL by `ripple xbrl-edges` (M14). Do not edit.
+- id: region/allothergeographiesmember
+  type: region
+  label: AllOtherGeographiesMember
+- id: region/americas
+  type: region
+  label: Americas
+- id: region/asia
+  type: region
+  label: Asia
+- id: region/asia-pacific
+  type: region
+  label: Asia Pacific
+- id: region/asia-pacific-and-japan
+  type: region
+  label: Asia Pacific and Japan
+- id: region/ca
+  type: region
+  label: Canada
+- id: region/ch
+  type: region
+  label: Switzerland
+- id: region/china-including-hong-kong
+  type: region
+  label: China (including Hong Kong)
+- id: region/cn
+  type: region
+  label: China
+- id: region/de
+  type: region
+  label: Germany
+- id: region/emea
+  type: region
+  label: Emea
+- id: region/europe
+  type: region
+  label: Europe
+- id: region/europe-and-israel
+  type: region
+  label: Europe and Israel
+- id: region/europe-middle-east-and-africa
+  type: region
+  label: Europe Middle East and Africa
+- id: region/gb
+  type: region
+  label: United Kingdom
+- id: region/hk
+  type: region
+  label: Hong Kong
+- id: region/in
+  type: region
+  label: India
+- id: region/jp
+  type: region
+  label: Japan
+- id: region/kr
+  type: region
+  label: Korea, Republic Of
+- id: region/latin-america
+  type: region
+  label: Latin America
+- id: region/latin-america-and-canada
+  type: region
+  label: Latin America and Canada
+- id: region/middle-east-and-africa
+  type: region
+  label: Middle East and Africa
+- id: region/mx
+  type: region
+  label: Mexico
+- id: region/nl
+  type: region
+  label: Netherlands
+- id: region/north-america
+  type: region
+  label: North America
+- id: region/sg
+  type: region
+  label: Singapore
+- id: region/south-east-asia
+  type: region
+  label: South East Asia
+- id: region/southeast-asia
+  type: region
+  label: Southeast Asia
+- id: region/th
+  type: region
+  label: Thailand
+- id: region/tw
+  type: region
+  label: Taiwan
+- id: region/us
+  type: region
+  label: United States

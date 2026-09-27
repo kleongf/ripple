@@ -1,0 +1,50 @@
+{
+ "directory": {
+  "item": [
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "0000319201-26-000027-xbrl.zip",
+    "type": "compressed.gif",
+    "size": "714388"
+   },
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "exhibit21106302026.htm",
+    "type": "text.gif",
+    "size": "45743"
+   },
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "klac-20260630.htm",
+    "type": "text.gif",
+    "size": "2917388"
+   },
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "klac-20260630.xsd",
+    "type": "text.gif",
+    "size": "106744"
+   },
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "klac-20260630_htm.xml",
+    "type": "text.gif",
+    "size": "3053303"
+   },
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "klac-20260630_lab.xml",
+    "type": "text.gif",
+    "size": "1250505"
+   },
+   {
+    "last-modified": "2026-08-06 16:35:27",
+    "name": "R1.htm",
+    "type": "text.gif",
+    "size": "64940"
+   }
+  ],
+  "name": "/Archives/edgar/data/319201/000031920126000027",
+  "parent-dir": "/Archives/edgar/data/319201"
+ }
+}

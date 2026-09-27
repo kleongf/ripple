@@ -1,0 +1,85 @@
+# Generated from company/onto-innovation by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.3171
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Tw 31.7% of USD 1.0bn revenue (country:TW)'
+    accessed: &id002 2026-09-27
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/kr
+  weight: 0.278
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Kr 27.8% of USD 1.0bn revenue (country:KR)'
+    accessed: *id002
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.1204
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Us 12.0% of USD 1.0bn revenue (country:US)'
+    accessed: *id002
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0949
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Jp 9.5% of USD 1.0bn revenue (country:JP)'
+    accessed: *id002
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.0703
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Cn 7.0% of USD 1.0bn revenue (country:CN)'
+    accessed: *id002
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/southeast-asia
+  weight: 0.064
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Southeast Asia 6.4% of USD 1.0bn revenue (onto:SoutheastAsiaMember)'
+    accessed: *id002
+- src: company/onto-innovation
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.0553
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Europe 5.5% of USD 1.0bn revenue (srt:EuropeMember)'
+    accessed: *id002

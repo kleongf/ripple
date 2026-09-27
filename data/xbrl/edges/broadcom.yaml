@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/broadcom by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/broadcom
+  rel: PRODUCES
+  dst: product/custom-ai-asics
+  weight: 0.2106
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-11-04
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm
+    note: '10-K FY2025 XBRL: Product 70.2% x0.30 of USD 63.9bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/broadcom
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.0842
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm
+    note: '10-K FY2025 XBRL: Product 70.2% x0.12 of USD 63.9bn revenue'
+    accessed: *id002

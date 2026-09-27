@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/amd by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/amd
+  rel: PRODUCES
+  dst: product/server-cpus
+  weight: 0.2881
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+    note: '10-K FY2025 XBRL: Datacenter 48.0% x0.60 of USD 34.6bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/amd
+  rel: PRODUCES
+  dst: product/ai-accelerators
+  weight: 0.1825
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+    note: '10-K FY2025 XBRL: Datacenter 48.0% x0.38 of USD 34.6bn revenue'
+    accessed: *id002

@@ -1,0 +1,43 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/tsmc
+label: TSMC
+form: 20-F
+filing_url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: TWD
+total: 3809054300000.0
+kind: product
+axis: ifrs-full:ProductsAndServicesAxis
+complete: true
+lines:
+- member: tsm:WaferMember
+  label: Wafer
+  share: 0.859151
+  assignments:
+  - product: product/leading-edge-logic
+    fraction: 0.74
+  new_product: null
+  note: 7nm and below were 74% of 2025 wafer revenue per the 20-F text (item 5, span
+    247585-247694, dis-380986d46d); mature nodes remain unassigned.
+- member: tsm:OtherProductsMember
+  label: Other Products
+  share: 0.140849
+  assignments:
+  - product: product/advanced-packaging
+    fraction: 0.4
+  new_product: null
+  note: An estimated 40% reflects CoWoS advanced packaging; other packaging, testing
+    and mask revenue remains unassigned.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6535
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 315
+  reasoning_output_tokens: 178
+created: 2026-09-27

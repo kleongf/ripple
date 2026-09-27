@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/sandisk by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/sandisk
+  rel: PRODUCES
+  dst: product/consumer-nand
+  weight: 0.7455
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-06-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: '10-K FY2026 XBRL: Edge 60.1% + Consumer 14.5% of USD 20.2bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/sandisk
+  rel: PRODUCES
+  dst: product/enterprise-ssds
+  weight: 0.2545
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: '10-K FY2026 XBRL: Datacenter 25.4% of USD 20.2bn revenue'
+    accessed: *id002

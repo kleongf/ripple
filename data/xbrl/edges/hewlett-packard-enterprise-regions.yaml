@@ -1,0 +1,37 @@
+# Generated from company/hewlett-packard-enterprise by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/hewlett-packard-enterprise
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.3908
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-11-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1645590/000164559025000130/hpe-20251031.htm
+    note: '10-K FY2025 XBRL: United States 39.1% of USD 34.3bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/hewlett-packard-enterprise
+  rel: EXPOSED_TO
+  dst: region/emea
+  weight: 0.3356
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1645590/000164559025000130/hpe-20251031.htm
+    note: '10-K FY2025 XBRL: Emea 33.6% of USD 34.3bn revenue (us-gaap:EMEAMember)'
+    accessed: *id002
+- src: company/hewlett-packard-enterprise
+  rel: EXPOSED_TO
+  dst: region/asia-pacific-and-japan
+  weight: 0.2023
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1645590/000164559025000130/hpe-20251031.htm
+    note: '10-K FY2025 XBRL: Asia Pacific and Japan 20.2% of USD 34.3bn revenue (hpe:AsiaPacificandJapanMember)'
+    accessed: *id002

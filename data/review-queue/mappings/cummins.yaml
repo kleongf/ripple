@@ -1,0 +1,135 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/cummins
+label: Cummins
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 33670000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: false
+lines:
+- member: cmi:OnhighwayMember
+  label: On-highway
+  share: 0.208524
+  assignments: []
+  new_product: null
+  note: On-highway vehicle engines are outside the taxonomy.
+- member: cmi:DBUPowerGenerationDomain
+  label: DBU - Power Generation
+  share: 0.146362
+  assignments:
+  - product: product/backup-generators
+    fraction: 0.9
+  new_product: null
+  note: Estimated genset share is 90%, leaving ancillary power equipment unassigned.
+- member: cmi:PartsMember
+  label: Parts
+  share: 0.120968
+  assignments: []
+  new_product: null
+  note: Spare parts are excluded because they serve the installed base.
+- member: cmi:DrivetrainAndBrakingSystemsMember
+  label: Drivetrain and braking systems
+  share: 0.118295
+  assignments: []
+  new_product: null
+  note: Vehicle drivetrain and braking systems are outside the taxonomy.
+- member: cmi:EmissionsolutionsMember
+  label: Emission solutions
+  share: 0.09011
+  assignments: []
+  new_product: null
+  note: Exhaust aftertreatment systems are outside the taxonomy.
+- member: cmi:MediumdutytruckandbusMember
+  label: Medium-duty truck and bus
+  share: 0.075646
+  assignments: []
+  new_product: null
+  note: Truck and bus engines are outside the taxonomy.
+- member: cmi:HeavydutytruckMember
+  label: Heavy-duty truck
+  share: 0.075557
+  assignments: []
+  new_product: null
+  note: Heavy-duty truck engines are outside the taxonomy.
+- member: cmi:PSBUPowerGenerationMember
+  label: PSBU - Power Generation
+  share: 0.066201
+  assignments:
+  - product: product/backup-generators
+    fraction: 0.9
+  new_product: null
+  note: Estimated genset share is 90%, leaving other power-generation equipment unassigned.
+- member: cmi:LightdutyautomotiveMember
+  label: Light-duty automotive
+  share: 0.057321
+  assignments: []
+  new_product: null
+  note: Light-duty automotive engines are outside the taxonomy.
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.053401
+  assignments: []
+  new_product: null
+  note: Service revenue is excluded because it follows the installed base.
+- member: cmi:EngineProductLineMember
+  label: Engine Product Line
+  share: 0.047134
+  assignments: []
+  new_product: null
+  note: Standalone engine sales do not establish a meaningful share of complete generator
+    sets.
+- member: cmi:IndustrialMember
+  label: Industrial
+  share: 0.036769
+  assignments: []
+  new_product: null
+  note: Industrial engines for applications such as mining and marine are outside
+    the taxonomy.
+- member: cmi:EngineComponentsAndSoftwareMember
+  label: Engine Components and Software
+  share: 0.035729
+  assignments: []
+  new_product: null
+  note: Engine components and associated software are outside the taxonomy.
+- member: cmi:OffhighwayMember
+  label: Off-highway
+  share: 0.032165
+  assignments: []
+  new_product: null
+  note: Off-highway equipment engines are outside the taxonomy.
+- member: cmi:GeneratortechnologiesMember
+  label: Generator technologies
+  share: 0.019216
+  assignments: []
+  new_product: Generator alternators
+  note: Alternators are components of data-center backup gensets, not complete generators.
+- member: cmi:EatonAutomatedTransmissionTechnologiesMember
+  label: Eaton Automated Transmission Technologies
+  share: 0.012563
+  assignments: []
+  new_product: null
+  note: Automated vehicle transmissions are outside the taxonomy.
+- member: cmi:AtmusFiltrationMember
+  label: Atmus - Filtration
+  share: 0.0
+  assignments: []
+  new_product: null
+  note: Filtration products are outside the taxonomy, and this line reports no revenue.
+status: rejected
+reviewer: claude-code
+reject_reason: 'Product lines overlap (partial breakdown): DBU and PSBU power-generation
+  lines likely count the same gensets twice. Keep the seed edge (0.11 from the segment
+  split).'
+model: gpt-6-astra
+usage:
+  input_tokens: 7000
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 733
+  reasoning_output_tokens: 95
+created: 2026-09-27

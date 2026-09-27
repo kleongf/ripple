@@ -1,0 +1,13 @@
+# Generated from company/johnson-controls by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/johnson-controls
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5638
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2024-10-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/833444/000083344425000097/jci-20250930.htm
+    note: '10-K FY2025 XBRL: United States 56.4% of USD 23.6bn revenue (country:US)'
+    accessed: 2026-09-27

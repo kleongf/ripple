@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/cisco by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/cisco
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.1095
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-07-27
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm
+    note: '10-K FY2026 XBRL: Networking 54.7% x0.20 of USD 63.3bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/cisco
+  rel: PRODUCES
+  dst: product/optical-transceivers
+  weight: 0.0274
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm
+    note: '10-K FY2026 XBRL: Networking 54.7% x0.05 of USD 63.3bn revenue'
+    accessed: *id002

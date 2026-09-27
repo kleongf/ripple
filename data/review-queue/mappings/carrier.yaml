@@ -1,0 +1,41 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/carrier
+label: Carrier Global
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1783180/000178318026000008/carr-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 21747000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: us-gaap:ProductMember
+  label: Product
+  share: 0.881639
+  assignments:
+  - product: product/datacenter-chillers
+    fraction: 0.052
+  new_product: null
+  note: 'Estimated 3% for datacenter chillers; most product revenue is other HVAC
+    and transport refrigeration equipment. Edited: CEO says data centers were about
+    $1B of 2025 revenue (0.046 of sales), so 0.052 of product revenue.'
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.118361
+  assignments: []
+  new_product: null
+  note: Service and support revenue is excluded because it follows the installed base.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6526
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 196
+  reasoning_output_tokens: 88
+created: 2026-09-27

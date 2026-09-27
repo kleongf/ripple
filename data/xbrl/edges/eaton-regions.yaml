@@ -1,0 +1,61 @@
+# Generated from company/eaton by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/eaton
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.6238
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    note: '10-K FY2025 XBRL: United States 62.4% of USD 27.4bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/eaton
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.185
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    note: '10-K FY2025 XBRL: Europe 18.5% of USD 27.4bn revenue (srt:EuropeMember)'
+    accessed: *id002
+- src: company/eaton
+  rel: EXPOSED_TO
+  dst: region/asia-pacific
+  weight: 0.0985
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    note: '10-K FY2025 XBRL: Asia Pacific 9.9% of USD 27.4bn revenue (srt:AsiaPacificMember)'
+    accessed: *id002
+- src: company/eaton
+  rel: EXPOSED_TO
+  dst: region/latin-america
+  weight: 0.0532
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    note: '10-K FY2025 XBRL: Latin America 5.3% of USD 27.4bn revenue (srt:LatinAmericaMember)'
+    accessed: *id002
+- src: company/eaton
+  rel: EXPOSED_TO
+  dst: region/ca
+  weight: 0.0395
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    note: '10-K FY2025 XBRL: Canada 3.9% of USD 27.4bn revenue (country:CA)'
+    accessed: *id002

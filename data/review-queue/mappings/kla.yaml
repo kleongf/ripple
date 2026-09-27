@@ -1,0 +1,75 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/kla
+label: KLA
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+fiscal_start: 2025-07-01
+fiscal_end: 2026-06-30
+currency: USD
+total: 13579476000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: klac:WaferInspectionMember
+  label: Wafer Inspection
+  share: 0.488297
+  assignments:
+  - product: product/inspection-metrology
+    fraction: 1.0
+  new_product: null
+  note: Wafer defect inspection systems map directly to inspection and metrology.
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.230196
+  assignments: []
+  new_product: null
+  note: Service and installed-base support are excluded from new-product demand.
+- member: klac:PatterningMember
+  label: Patterning
+  share: 0.199327
+  assignments:
+  - product: product/inspection-metrology
+    fraction: 1.0
+  new_product: null
+  note: Patterning covers metrology and reticle inspection, not lithography exposure
+    systems.
+- member: klac:SpecialtySemiconductorProcessMember
+  label: Specialty Semiconductor Process
+  share: 0.037006
+  assignments:
+  - product: product/etch-equipment
+    fraction: 0.6
+  - product: product/deposition-equipment
+    fraction: 0.3
+  new_product: null
+  note: Estimated etch and deposition shares leave thermal processing and other equipment
+    unassigned.
+- member: klac:PCBAndComponentInspectionMember
+  label: PCB And Component Inspection
+  share: 0.033898
+  assignments:
+  - product: product/inspection-metrology
+    fraction: 0.5
+  new_product: null
+  note: An estimated half covers inspection and testing, leaving direct imaging and
+    other manufacturing tools unassigned.
+- member: klac:OtherRevenueMember
+  label: Other Revenue
+  share: 0.011276
+  assignments: []
+  new_product: null
+  note: The unspecified residual provides insufficient evidence for a confident product
+    assignment.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6635
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 415
+  reasoning_output_tokens: 110
+created: 2026-09-27

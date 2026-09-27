@@ -1,0 +1,62 @@
+# Generated from company/tsmc by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/tsmc
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.7442
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: United States 74.4% of TWD 3,809.1bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/tsmc
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.086
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: China 8.6% of TWD 3,809.1bn revenue (country:CN)'
+    accessed: *id002
+- src: company/tsmc
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.0786
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: Taiwan 7.9% of TWD 3,809.1bn revenue (country:TW)'
+    accessed: *id002
+- src: company/tsmc
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0395
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: Japan 3.9% of TWD 3,809.1bn revenue (country:JP)'
+    accessed: *id002
+- src: company/tsmc
+  rel: EXPOSED_TO
+  dst: region/europe-middle-east-and-africa
+  weight: 0.0332
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: Europe Middle East and Africa 3.3% of TWD 3,809.1bn revenue
+      (tsm:EuropeMiddleEastAndAfricaMember)'
+    accessed: *id002

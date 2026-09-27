@@ -1,0 +1,4 @@
+# Source directories loaded together by 'ripple load' (docs/phase-1.md, D40).
+seed: data/seed
+xbrl: data/xbrl
+llm: data/llm

@@ -1,0 +1,38 @@
+# Generated from company/nvidia by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/nvidia
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.6929
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-27
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+    note: '10-K FY2026 XBRL: United States 69.3% of USD 215.9bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/nvidia
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.1961
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+    note: '10-K FY2026 XBRL: Taiwan 19.6% of USD 215.9bn revenue (country:TW)'
+    accessed: *id002
+- src: company/nvidia
+  rel: EXPOSED_TO
+  dst: region/china-including-hong-kong
+  weight: 0.0911
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+    note: '10-K FY2026 XBRL: China Including Hong Kong 9.1% of USD 215.9bn revenue
+      (nvda:ChinaIncludingHongKongMember)'
+    accessed: *id002

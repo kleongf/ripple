@@ -1,0 +1,49 @@
+# Generated from company/credo-technology by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/credo-technology
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5753
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-05-04
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: '10-K FY2026 XBRL: United States 57.5% of USD 1.3bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/credo-technology
+  rel: EXPOSED_TO
+  dst: region/hk
+  weight: 0.2833
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: '10-K FY2026 XBRL: Hong Kong 28.3% of USD 1.3bn revenue (country:HK)'
+    accessed: *id002
+- src: company/credo-technology
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.0606
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: '10-K FY2026 XBRL: China 6.1% of USD 1.3bn revenue (country:CN)'
+    accessed: *id002
+- src: company/credo-technology
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.017
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: '10-K FY2026 XBRL: Taiwan 1.7% of USD 1.3bn revenue (country:TW)'
+    accessed: *id002

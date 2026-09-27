@@ -1,0 +1,62 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/belden
+label: company/belden
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 2715194000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: bdc:AutomationSolutionsMember
+  label: Automation Solutions
+  share: 0.55089
+  assignments:
+  - product: product/copper-interconnect
+    fraction: 0.15
+  - product: product/fiber-cable
+    fraction: 0.05
+  new_product: null
+  note: Estimated Ethernet copper and fiber connectivity shares; industrial controls,
+    general-purpose cables and industrial switches remain unassigned.
+- member: bdc:BroadbandSolutionsMember
+  label: Broadband Solutions
+  share: 0.233316
+  assignments:
+  - product: product/fiber-cable
+    fraction: 0.3
+  new_product: null
+  note: Estimated fiber cable and optical connectivity share; coaxial products and
+    other broadband equipment remain unassigned.
+- member: bdc:SmartBuildingsSolutionsMember
+  label: Smart Buildings Solutions
+  share: 0.215794
+  assignments:
+  - product: product/copper-interconnect
+    fraction: 0.45
+  - product: product/fiber-cable
+    fraction: 0.25
+  new_product: null
+  note: Estimated structured copper and fiber connectivity shares; other building
+    cabling and services remain unassigned.
+- member: bdc:AffiliatedRevenueMember
+  label: Affiliated Revenue
+  share: 0.000443
+  assignments: []
+  new_product: null
+  note: No reported revenue or identifiable product mix to assign.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6638
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 399
+  reasoning_output_tokens: 154
+created: 2026-09-27

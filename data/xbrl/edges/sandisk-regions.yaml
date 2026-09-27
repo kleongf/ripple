@@ -1,0 +1,49 @@
+# Generated from company/sandisk by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/sandisk
+  rel: EXPOSED_TO
+  dst: region/hk
+  weight: 0.2532
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-06-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: '10-K FY2026 XBRL: Hong Kong 25.3% of USD 20.2bn revenue (country:HK)'
+    accessed: &id002 2026-09-27
+- src: company/sandisk
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.2224
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: '10-K FY2026 XBRL: China 22.2% of USD 20.2bn revenue (country:CN)'
+    accessed: *id002
+- src: company/sandisk
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.1834
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: '10-K FY2026 XBRL: United States 18.3% of USD 20.2bn revenue (country:US)'
+    accessed: *id002
+- src: company/sandisk
+  rel: EXPOSED_TO
+  dst: region/emea
+  weight: 0.0855
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: '10-K FY2026 XBRL: Emea 8.6% of USD 20.2bn revenue (us-gaap:EMEAMember)'
+    accessed: *id002

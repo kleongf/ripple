@@ -1,0 +1,49 @@
+# Generated from company/te-connectivity by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/te-connectivity
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.2671
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-09-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1385157/000110465925109150/tel-20250926x10k.htm
+    note: '10-K FY2025 XBRL: China 26.7% of USD 17.3bn revenue (country:CN)'
+    accessed: &id002 2026-09-27
+- src: company/te-connectivity
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.2554
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1385157/000110465925109150/tel-20250926x10k.htm
+    note: '10-K FY2025 XBRL: United States 25.5% of USD 17.3bn revenue (country:US)'
+    accessed: *id002
+- src: company/te-connectivity
+  rel: EXPOSED_TO
+  dst: region/ch
+  weight: 0.2236
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1385157/000110465925109150/tel-20250926x10k.htm
+    note: '10-K FY2025 XBRL: Switzerland 22.4% of USD 17.3bn revenue (country:CH)'
+    accessed: *id002
+- src: company/te-connectivity
+  rel: EXPOSED_TO
+  dst: region/de
+  weight: 0.0112
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1385157/000110465925109150/tel-20250926x10k.htm
+    note: '10-K FY2025 XBRL: Germany 1.1% of USD 17.3bn revenue (country:DE)'
+    accessed: *id002

@@ -1,0 +1,37 @@
+# Generated from company/arista by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/arista
+  rel: EXPOSED_TO
+  dst: region/americas
+  weight: 0.7908
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1596532/000159653226000013/anet-20251231.htm
+    note: '10-K FY2025 XBRL: Americas 79.1% of USD 9.0bn revenue (srt:AmericasMember)'
+    accessed: &id002 2026-09-27
+- src: company/arista
+  rel: EXPOSED_TO
+  dst: region/emea
+  weight: 0.1188
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1596532/000159653226000013/anet-20251231.htm
+    note: '10-K FY2025 XBRL: Emea 11.9% of USD 9.0bn revenue (us-gaap:EMEAMember)'
+    accessed: *id002
+- src: company/arista
+  rel: EXPOSED_TO
+  dst: region/asia-pacific
+  weight: 0.0903
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1596532/000159653226000013/anet-20251231.htm
+    note: '10-K FY2025 XBRL: Asia Pacific 9.0% of USD 9.0bn revenue (srt:AsiaPacificMember)'
+    accessed: *id002

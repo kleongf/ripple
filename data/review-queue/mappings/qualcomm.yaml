@@ -1,0 +1,32 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/qualcomm
+label: company/qualcomm
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/804328/000080432825000085/qcom-20250928.htm
+fiscal_start: 2024-09-30
+fiscal_end: 2025-09-28
+currency: USD
+total: 44284000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: false
+lines:
+- member: qcom:QctMember
+  label: QCT
+  share: 0.866385
+  assignments: []
+  new_product: null
+  note: QCT primarily sells handset, automotive and IoT chips outside this taxonomy,
+    rather than leading-edge wafers or meaningful volumes of data center processors.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6540
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 65
+  reasoning_output_tokens: 0
+created: 2026-09-27

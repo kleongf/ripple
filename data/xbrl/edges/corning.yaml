@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/corning by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/corning
+  rel: PRODUCES
+  dst: product/fiber-cable
+  weight: 0.3814
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/24741/000002474126000124/glw-20251231.htm
+    note: '10-K FY2025 XBRL: Optical Communications 40.1% x0.95 of USD 15.6bn revenue'
+    accessed: 2026-09-27

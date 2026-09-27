@@ -1,0 +1,39 @@
+# Generated from the 20-F XBRL revenue lines of company/asml by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/asml
+  rel: PRODUCES
+  dst: product/duv-lithography
+  weight: 0.3688
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm
+    note: '20-F FY2025 XBRL: Arf immersion 31.6% + Krf 3.1% + Arf Dry 1.3% + I-Line
+      0.9% of EUR 32.7bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/asml
+  rel: PRODUCES
+  dst: product/euv-lithography
+  weight: 0.3552
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm
+    note: '20-F FY2025 XBRL: NXE 32.0% + EXE 3.5% of EUR 32.7bn revenue'
+    accessed: *id002
+- src: company/asml
+  rel: PRODUCES
+  dst: product/inspection-metrology
+  weight: 0.0252
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm
+    note: '20-F FY2025 XBRL: Metrology And Inspection 2.5% of EUR 32.7bn revenue'
+    accessed: *id002

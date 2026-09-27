@@ -1,0 +1,42 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/ge-vernova
+label: GE Vernova
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 38068000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: us-gaap:ProductMember
+  label: Product
+  share: 0.549911
+  assignments:
+  - product: product/gas-turbines
+    fraction: 0.25
+  - product: product/grid-equipment
+    fraction: 0.35
+  new_product: null
+  note: Estimated shares cover gas power and grid equipment; wind turbines and other
+    equipment remain unassigned.
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.449144
+  assignments: []
+  new_product: null
+  note: Services, maintenance and support follow the installed base and remain unassigned.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6490
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 265
+  reasoning_output_tokens: 145
+created: 2026-09-27

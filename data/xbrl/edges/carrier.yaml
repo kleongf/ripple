@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/carrier by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/carrier
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.0458
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1783180/000178318026000008/carr-20251231.htm
+    note: '10-K FY2025 XBRL: Product 88.2% x0.05 of USD 21.7bn revenue'
+    accessed: 2026-09-27

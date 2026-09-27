@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/trane by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/trane
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.0656
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1466258/000162828026005731/tt-20251231.htm
+    note: '10-K FY2025 XBRL: Product 65.6% x0.10 of USD 21.3bn revenue'
+    accessed: 2026-09-27

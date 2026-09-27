@@ -1,0 +1,72 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/corning
+label: Corning
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/24741/000002474126000124/glw-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 15629000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: glw:OpticalCommunicationsMember
+  label: Optical Communications
+  share: 0.401433
+  assignments:
+  - product: product/fiber-cable
+    fraction: 0.95
+  new_product: null
+  note: Estimated 95% is optical fiber, cable and connectivity, leaving ancillary
+    products unassigned.
+- member: glw:DisplayProductsMember
+  label: Display Products
+  share: 0.189711
+  assignments: []
+  new_product: null
+  note: Display glass substrates fall outside the taxonomy.
+- member: glw:SpecialtyMaterialsProductsMember
+  label: Specialty Materials Products
+  share: 0.14038
+  assignments: []
+  new_product: null
+  note: Specialty glass and optical materials are not the finished products covered
+    by the taxonomy.
+- member: glw:AutomotiveProductsMember
+  label: Automotive Products
+  share: 0.113699
+  assignments: []
+  new_product: null
+  note: Automotive glass and emissions-control substrates fall outside the taxonomy.
+- member: glw:LifeScienceProductsMember
+  label: Life Science Products
+  share: 0.06136
+  assignments: []
+  new_product: null
+  note: Laboratory consumables and life-science products fall outside the taxonomy.
+- member: glw:PolycrystallineSiliconProductsMember
+  label: Polycrystalline Silicon Products
+  share: 0.061104
+  assignments: []
+  new_product: null
+  note: Polysilicon feedstock is not silicon wafers and primarily serves solar applications.
+- member: us-gaap:ProductAndServiceOtherMember
+  label: Product and Service, Other
+  share: 0.032312
+  assignments: []
+  new_product: null
+  note: The unspecified other products and services do not support a confident taxonomy
+    assignment.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6651
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 380
+  reasoning_output_tokens: 89
+created: 2026-09-27

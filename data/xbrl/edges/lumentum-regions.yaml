@@ -1,0 +1,85 @@
+# Generated from company/lumentum by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.2083
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-06-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: United States 20.8% of USD 3.0bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/th
+  weight: 0.2079
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: Thailand 20.8% of USD 3.0bn revenue (country:TH)'
+    accessed: *id002
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/hk
+  weight: 0.1723
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: Hong Kong 17.2% of USD 3.0bn revenue (country:HK)'
+    accessed: *id002
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/mx
+  weight: 0.1472
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: Mexico 14.7% of USD 3.0bn revenue (country:MX)'
+    accessed: *id002
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.0945
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: China 9.4% of USD 3.0bn revenue (country:CN)'
+    accessed: *id002
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/emea
+  weight: 0.0587
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: Emea 5.9% of USD 3.0bn revenue (us-gaap:EMEAMember)'
+    accessed: *id002
+- src: company/lumentum
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0347
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026057358/lite-20260627.htm
+    note: '10-K FY2026 XBRL: Japan 3.5% of USD 3.0bn revenue (country:JP)'
+    accessed: *id002

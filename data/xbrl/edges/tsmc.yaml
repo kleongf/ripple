@@ -1,0 +1,26 @@
+# Generated from the 20-F XBRL revenue lines of company/tsmc by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/tsmc
+  rel: PRODUCES
+  dst: product/leading-edge-logic
+  weight: 0.6358
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: Wafer 85.9% x0.74 of TWD 3,809.1bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/tsmc
+  rel: PRODUCES
+  dst: product/advanced-packaging
+  weight: 0.0563
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm
+    note: '20-F FY2025 XBRL: Other Products 14.1% x0.40 of TWD 3,809.1bn revenue'
+    accessed: *id002

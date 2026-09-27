@@ -1,0 +1,42 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/dell
+label: Dell Technologies
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1571996/000157199626000008/dell-20260130.htm
+fiscal_start: 2025-02-01
+fiscal_end: 2026-01-30
+currency: USD
+total: 113538000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: us-gaap:ProductMember
+  label: Product
+  share: 0.796253
+  assignments:
+  - product: product/ai-servers
+    fraction: 0.28
+  - product: product/datacenter-switches
+    fraction: 0.01
+  new_product: null
+  note: Estimated shares cover AI servers and datacenter switches; PCs, conventional
+    servers and storage systems remain unassigned.
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.203747
+  assignments: []
+  new_product: null
+  note: Services and support are excluded because they follow the installed base.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6498
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 268
+  reasoning_output_tokens: 147
+created: 2026-09-27

@@ -1,0 +1,48 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/amd
+label: AMD
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+fiscal_start: 2024-12-29
+fiscal_end: 2025-12-27
+currency: USD
+total: 34639000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: amd:DatacenterMember
+  label: Datacenter
+  share: 0.480239
+  assignments:
+  - product: product/server-cpus
+    fraction: 0.6
+  - product: product/ai-accelerators
+    fraction: 0.38
+  new_product: null
+  note: Estimated EPYC CPU and Instinct accelerator mix, leaving networking and other
+    products unassigned.
+- member: amd:ClientAndGamingMember
+  label: Client and Gaming
+  share: 0.420047
+  assignments: []
+  new_product: null
+  note: PC processors, gaming GPUs and console chips fall outside this taxonomy.
+- member: amd:EmbeddedMember
+  label: Embedded
+  share: 0.099714
+  assignments: []
+  new_product: null
+  note: Embedded processors, FPGAs and adaptive SoCs fall outside the listed products.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6509
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 230
+  reasoning_output_tokens: 77
+created: 2026-09-27

@@ -1,0 +1,73 @@
+# Generated from company/micron by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/micron
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.6451
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-08-30
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: United States 64.5% of USD 37.4bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/micron
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.1517
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: Taiwan 15.2% of USD 37.4bn revenue (country:TW)'
+    accessed: *id002
+- src: company/micron
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.0706
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: China 7.1% of USD 37.4bn revenue (country:CN)'
+    accessed: *id002
+- src: company/micron
+  rel: EXPOSED_TO
+  dst: region/hk
+  weight: 0.0304
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: Hong Kong 3.0% of USD 37.4bn revenue (country:HK)'
+    accessed: *id002
+- src: company/micron
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0239
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: Japan 2.4% of USD 37.4bn revenue (country:JP)'
+    accessed: *id002
+- src: company/micron
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.0167
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: '10-K FY2025 XBRL: Europe 1.7% of USD 37.4bn revenue (srt:EuropeMember)'
+    accessed: *id002

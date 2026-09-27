@@ -1,0 +1,37 @@
+# Generated from company/carrier by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/carrier
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5121
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1783180/000178318026000008/carr-20251231.htm
+    note: '10-K FY2025 XBRL: United States 51.2% of USD 21.7bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/carrier
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.2801
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1783180/000178318026000008/carr-20251231.htm
+    note: '10-K FY2025 XBRL: Europe 28.0% of USD 21.7bn revenue (srt:EuropeMember)'
+    accessed: *id002
+- src: company/carrier
+  rel: EXPOSED_TO
+  dst: region/asia-pacific
+  weight: 0.1766
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1783180/000178318026000008/carr-20251231.htm
+    note: '10-K FY2025 XBRL: Asia Pacific 17.7% of USD 21.7bn revenue (srt:AsiaPacificMember)'
+    accessed: *id002

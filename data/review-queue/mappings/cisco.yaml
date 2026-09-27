@@ -1,0 +1,61 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/cisco
+label: company/cisco
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm
+fiscal_start: 2025-07-27
+fiscal_end: 2026-07-25
+currency: USD
+total: 63325000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: csco:NetworkingMember
+  label: Networking
+  share: 0.547462
+  assignments:
+  - product: product/datacenter-switches
+    fraction: 0.2
+  - product: product/optical-transceivers
+    fraction: 0.05
+  new_product: null
+  note: Estimated shares cover datacenter switches and pluggable optics, leaving campus
+    networking, routing and other products unassigned.
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.237347
+  assignments: []
+  new_product: null
+  note: Support and professional services are excluded from new product demand.
+- member: csco:SecurityMember
+  label: Security
+  share: 0.129996
+  assignments: []
+  new_product: null
+  note: Security software and appliances fall outside the taxonomy.
+- member: csco:CollaborationMember
+  label: Collaboration
+  share: 0.067904
+  assignments: []
+  new_product: null
+  note: Conferencing, communications software and collaboration devices fall outside
+    the taxonomy.
+- member: csco:ObservabilityMember
+  label: Observability
+  share: 0.017292
+  assignments: []
+  new_product: null
+  note: Application and infrastructure monitoring software falls outside the taxonomy.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6664
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 306
+  reasoning_output_tokens: 89
+created: 2026-09-27

@@ -1,0 +1,1562 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:xbrl xmlns:ns0="http://www.xbrl.org/2003/instance" xmlns:us-gaap="http://fasb.org/us-gaap/2026" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xml:lang="en-US"><ns0:context id="c-1">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-6">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ProductMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-7">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ProductMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-8">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ProductMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-9">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ServiceMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-10">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ServiceMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-11">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ServiceMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-12">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-13">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-120">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeAxis">us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementEquityComponentsAxis">us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-121">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeAxis">us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementEquityComponentsAxis">us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-122">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeAxis">us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementEquityComponentsAxis">us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-355">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:SemiconductorProcessControlMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-356">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-357">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-358">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-359">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:SemiconductorProcessControlMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-360">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-361">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-362">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-363">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:SemiconductorProcessControlMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-364">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-365">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:StatementBusinessSegmentsAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-366">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">us-gaap:OperatingSegmentsMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-367">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">klac:CorporateAndReconcilingItemsMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-368">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">klac:CorporateAndReconcilingItemsMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-369">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ConsolidationItemsAxis">klac:CorporateAndReconcilingItemsMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-370">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:CN</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-371">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:CN</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-372">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:CN</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-373">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:CN</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-374">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:CN</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-375">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:CN</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-376">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:TW</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-377">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:TW</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-378">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:TW</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-379">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:TW</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-380">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:TW</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-381">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:TW</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-382">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:KR</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-383">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:KR</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-384">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:KR</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-385">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:KR</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-386">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:KR</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-387">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:KR</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-388">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">srt:NorthAmericaMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-389">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">srt:NorthAmericaMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-390">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">srt:NorthAmericaMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-391">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">srt:NorthAmericaMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-392">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">srt:NorthAmericaMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-393">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">srt:NorthAmericaMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-394">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:JP</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-395">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:JP</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-396">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:JP</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-397">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:JP</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-398">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:JP</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-399">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">country:JP</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-400">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:EuropeAndIsraelMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-401">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:EuropeAndIsraelMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-402">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:EuropeAndIsraelMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-403">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:EuropeAndIsraelMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-404">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:EuropeAndIsraelMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-405">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:EuropeAndIsraelMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-406">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:RestOfAsiaMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-407">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:RestOfAsiaMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-408">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:RestOfAsiaMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-409">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:RestOfAsiaMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-410">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:RestOfAsiaMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-411">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:StatementGeographicalAxis">klac:RestOfAsiaMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-412">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-413">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-414">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:GeographicConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-415">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:WaferInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-416">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:WaferInspectionMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-417">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:WaferInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-418">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:WaferInspectionMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-419">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:WaferInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-420">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:WaferInspectionMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-421">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PatterningMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-422">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PatterningMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-423">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PatterningMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-424">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PatterningMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-425">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PatterningMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-426">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PatterningMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-427">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-428">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-429">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-430">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-431">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-432">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:SpecialtySemiconductorProcessMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-433">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-434">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-435">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-436">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-437">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-438">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:PCBAndComponentInspectionMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-439">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ServiceMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-440">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ServiceMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-441">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">us-gaap:ServiceMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-442">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:OtherRevenueMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-443">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:OtherRevenueMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-444">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:OtherRevenueMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-445">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:OtherRevenueMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-446">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:OtherRevenueMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-447">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:ProductOrServiceAxis">klac:OtherRevenueMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-448">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-449">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-450">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:ProductConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-451">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:MajorCustomersAxis">klac:LargestCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:CustomerConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2025-07-01</ns0:startDate>
+            <ns0:endDate>2026-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-452">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:MajorCustomersAxis">klac:LargestCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:CustomerConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2024-07-01</ns0:startDate>
+            <ns0:endDate>2025-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:context id="c-453">
+        <ns0:entity>
+            <ns0:identifier scheme="http://www.sec.gov/CIK">0000319201</ns0:identifier>
+            <ns0:segment>
+                <xbrldi:explicitMember dimension="srt:MajorCustomersAxis">klac:LargestCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByBenchmarkAxis">us-gaap:RevenueFromContractWithCustomerMember</xbrldi:explicitMember>
+                <xbrldi:explicitMember dimension="us-gaap:ConcentrationRiskByTypeAxis">us-gaap:CustomerConcentrationRiskMember</xbrldi:explicitMember>
+            </ns0:segment>
+        </ns0:entity>
+        <ns0:period>
+            <ns0:startDate>2023-07-01</ns0:startDate>
+            <ns0:endDate>2024-06-30</ns0:endDate>
+        </ns0:period>
+    </ns0:context>
+    <ns0:unit id="usd">
+        <ns0:measure>iso4217:USD</ns0:measure>
+    </ns0:unit>
+    <ns0:unit id="number">
+        <ns0:measure>pure</ns0:measure>
+    </ns0:unit>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-6" decimals="-3" id="f-126" unitRef="usd">10453537000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-7" decimals="-3" id="f-127" unitRef="usd">9472854000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-8" decimals="-3" id="f-128" unitRef="usd">7482679000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-9" decimals="-3" id="f-129" unitRef="usd">3125939000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-10" decimals="-3" id="f-130" unitRef="usd">2683308000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-11" decimals="-3" id="f-131" unitRef="usd">2329568000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-1" decimals="-3" id="f-132" unitRef="usd">13579476000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-12" decimals="-3" id="f-133" unitRef="usd">12156162000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-13" decimals="-3" id="f-134" unitRef="usd">9812247000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-120" decimals="-3" id="f-743" unitRef="usd">6826000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-121" decimals="-3" id="f-744" unitRef="usd">7466000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-122" decimals="-3" id="f-745" unitRef="usd">18374000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-13" decimals="-3" id="f-1548" unitRef="usd">9812247000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-12" decimals="-3" id="f-1568" unitRef="usd">12156162000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-1" decimals="-3" id="f-1588" unitRef="usd">13579476000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-355" decimals="-3" id="f-1700" unitRef="usd">8733556000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-356" decimals="-3" id="f-1701" unitRef="usd">528701000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-357" decimals="-3" id="f-1702" unitRef="usd">552491000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-358" decimals="-3" id="f-1703" unitRef="usd">9814748000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-359" decimals="-3" id="f-1720" unitRef="usd">10947359000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-360" decimals="-3" id="f-1721" unitRef="usd">587107000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-361" decimals="-3" id="f-1722" unitRef="usd">621721000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-362" decimals="-3" id="f-1723" unitRef="usd">12156187000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-363" decimals="-3" id="f-1740" unitRef="usd">12244733000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-364" decimals="-3" id="f-1741" unitRef="usd">584064000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-365" decimals="-3" id="f-1742" unitRef="usd">750415000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-366" decimals="-3" id="f-1743" unitRef="usd">13579212000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-366" decimals="-3" id="f-1761" unitRef="usd">13579212000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-362" decimals="-3" id="f-1762" unitRef="usd">12156187000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-358" decimals="-3" id="f-1763" unitRef="usd">9814748000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-367" decimals="-3" id="f-1764" unitRef="usd">264000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-368" decimals="-3" id="f-1765" unitRef="usd">-25000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-369" decimals="-3" id="f-1766" unitRef="usd">-2501000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-1" decimals="-3" id="f-1767" unitRef="usd">13579476000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-12" decimals="-3" id="f-1768" unitRef="usd">12156162000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-13" decimals="-3" id="f-1769" unitRef="usd">9812247000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-370" decimals="-3" id="f-1787" unitRef="usd">4048358000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-371" decimals="3" id="f-1788" unitRef="number">0.298</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-372" decimals="-3" id="f-1789" unitRef="usd">4042567000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-373" decimals="3" id="f-1790" unitRef="number">0.333</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-374" decimals="-3" id="f-1791" unitRef="usd">4196727000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-375" decimals="3" id="f-1792" unitRef="number">0.428</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-376" decimals="-3" id="f-1793" unitRef="usd">3643742000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-377" decimals="3" id="f-1794" unitRef="number">0.268</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-378" decimals="-3" id="f-1795" unitRef="usd">3205392000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-379" decimals="3" id="f-1796" unitRef="number">0.264</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-380" decimals="-3" id="f-1797" unitRef="usd">1738065000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-381" decimals="3" id="f-1798" unitRef="number">0.177</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-382" decimals="-3" id="f-1799" unitRef="usd">1833836000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-383" decimals="3" id="f-1800" unitRef="number">0.135</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-384" decimals="-3" id="f-1801" unitRef="usd">1452826000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-385" decimals="3" id="f-1802" unitRef="number">0.119</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-386" decimals="-3" id="f-1803" unitRef="usd">906924000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-387" decimals="3" id="f-1804" unitRef="number">0.092</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-388" decimals="-3" id="f-1805" unitRef="usd">1757337000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-389" decimals="3" id="f-1806" unitRef="number">0.130</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-390" decimals="-3" id="f-1807" unitRef="usd">1362311000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-391" decimals="3" id="f-1808" unitRef="number">0.112</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-392" decimals="-3" id="f-1809" unitRef="usd">1070791000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-393" decimals="3" id="f-1810" unitRef="number">0.109</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-394" decimals="-3" id="f-1811" unitRef="usd">915111000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-395" decimals="3" id="f-1812" unitRef="number">0.067</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-396" decimals="-3" id="f-1813" unitRef="usd">1133002000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-397" decimals="3" id="f-1814" unitRef="number">0.093</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-398" decimals="-3" id="f-1815" unitRef="usd">963203000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-399" decimals="3" id="f-1816" unitRef="number">0.098</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-400" decimals="-3" id="f-1817" unitRef="usd">726693000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-401" decimals="3" id="f-1818" unitRef="number">0.054</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-402" decimals="-3" id="f-1819" unitRef="usd">574197000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-403" decimals="3" id="f-1820" unitRef="number">0.047</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-404" decimals="-3" id="f-1821" unitRef="usd">540263000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-405" decimals="3" id="f-1822" unitRef="number">0.056</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-406" decimals="-3" id="f-1823" unitRef="usd">654399000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-407" decimals="3" id="f-1824" unitRef="number">0.048</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-408" decimals="-3" id="f-1825" unitRef="usd">385867000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-409" decimals="3" id="f-1826" unitRef="number">0.032</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-410" decimals="-3" id="f-1827" unitRef="usd">396274000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-411" decimals="3" id="f-1828" unitRef="number">0.040</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-1" decimals="-3" id="f-1829" unitRef="usd">13579476000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-412" decimals="3" id="f-1830" unitRef="number">1.000</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-12" decimals="-3" id="f-1831" unitRef="usd">12156162000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-413" decimals="3" id="f-1832" unitRef="number">1.000</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-13" decimals="-3" id="f-1833" unitRef="usd">9812247000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-414" decimals="3" id="f-1834" unitRef="number">1.000</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-415" decimals="-3" id="f-1836" unitRef="usd">6630813000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-416" decimals="2" id="f-1837" unitRef="number">0.49</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-417" decimals="-3" id="f-1838" unitRef="usd">6198815000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-418" decimals="2" id="f-1839" unitRef="number">0.51</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-419" decimals="-3" id="f-1840" unitRef="usd">4333296000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-420" decimals="2" id="f-1841" unitRef="number">0.44</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-421" decimals="-3" id="f-1842" unitRef="usd">2706763000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-422" decimals="2" id="f-1843" unitRef="number">0.20</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-423" decimals="-3" id="f-1844" unitRef="usd">2196347000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-424" decimals="2" id="f-1845" unitRef="number">0.18</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-425" decimals="-3" id="f-1846" unitRef="usd">2054442000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-426" decimals="2" id="f-1847" unitRef="number">0.21</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-427" decimals="-3" id="f-1848" unitRef="usd">502519000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-428" decimals="2" id="f-1849" unitRef="number">0.04</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-429" decimals="-3" id="f-1850" unitRef="usd">517201000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-430" decimals="2" id="f-1851" unitRef="number">0.04</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-431" decimals="-3" id="f-1852" unitRef="usd">470565000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-432" decimals="2" id="f-1853" unitRef="number">0.05</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-433" decimals="-3" id="f-1854" unitRef="usd">460320000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-434" decimals="2" id="f-1855" unitRef="number">0.03</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-435" decimals="-3" id="f-1856" unitRef="usd">355891000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-436" decimals="2" id="f-1857" unitRef="number">0.03</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-437" decimals="-3" id="f-1858" unitRef="usd">291161000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-438" decimals="2" id="f-1859" unitRef="number">0.03</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-9" decimals="-3" id="f-1860" unitRef="usd">3125939000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-439" decimals="2" id="f-1861" unitRef="number">0.23</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-10" decimals="-3" id="f-1862" unitRef="usd">2683308000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-440" decimals="2" id="f-1863" unitRef="number">0.22</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-11" decimals="-3" id="f-1864" unitRef="usd">2329568000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-441" decimals="2" id="f-1865" unitRef="number">0.24</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-442" decimals="-3" id="f-1866" unitRef="usd">153122000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-443" decimals="2" id="f-1867" unitRef="number">0.01</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-444" decimals="-3" id="f-1868" unitRef="usd">204600000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-445" decimals="2" id="f-1869" unitRef="number">0.02</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-446" decimals="-3" id="f-1870" unitRef="usd">333215000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-447" decimals="2" id="f-1871" unitRef="number">0.03</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-1" decimals="-3" id="f-1872" unitRef="usd">13579476000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-448" decimals="2" id="f-1873" unitRef="number">1</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-12" decimals="-3" id="f-1874" unitRef="usd">12156162000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-449" decimals="2" id="f-1875" unitRef="number">1</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax contextRef="c-13" decimals="-3" id="f-1876" unitRef="usd">9812247000</us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-450" decimals="2" id="f-1877" unitRef="number">1</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-451" decimals="2" id="f-1878" unitRef="number">0.19</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-452" decimals="2" id="f-1879" unitRef="number">0.19</us-gaap:ConcentrationRiskPercentage1>
+    <us-gaap:ConcentrationRiskPercentage1 contextRef="c-453" decimals="2" id="f-1880" unitRef="number">0.13</us-gaap:ConcentrationRiskPercentage1>
+    </ns0:xbrl>

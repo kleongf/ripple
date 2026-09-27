@@ -1,0 +1,64 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/alibaba
+label: company/alibaba
+form: 20-F
+filing_url: https://www.sec.gov/Archives/edgar/data/1577552/000119312526231755/baba-20260331.htm
+fiscal_start: 2025-04-01
+fiscal_end: 2026-03-31
+currency: CNY
+total: 1023670000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: baba:CustomerManagementServicesMember
+  label: Customer Management Services
+  share: 0.449282
+  assignments: []
+  new_product: null
+  note: Merchant advertising and customer management services are outside the taxonomy.
+- member: baba:SalesOfGoodsMember
+  label: Sales Of Goods
+  share: 0.222481
+  assignments: []
+  new_product: null
+  note: General merchandise sales provide no basis for identifying a meaningful taxonomy
+    product share.
+- member: baba:LogisticsServicesMember
+  label: Logistics Services
+  share: 0.13663
+  assignments: []
+  new_product: null
+  note: Logistics services are excluded from product assignments.
+- member: baba:CloudServicesMember
+  label: Cloud Services
+  share: 0.109485
+  assignments: []
+  new_product: null
+  note: Cloud services are not sales of datacenter construction or underlying hardware
+    and remain unassigned.
+- member: baba:MembershipFeesAndValueAddedServicesMember
+  label: Membership Fees And Value Added Services
+  share: 0.046536
+  assignments: []
+  new_product: null
+  note: Membership fees and value-added services are excluded from product assignments.
+- member: us-gaap:ProductAndServiceOtherMember
+  label: Product And Service Other
+  share: 0.035585
+  assignments: []
+  new_product: null
+  note: This unspecified residual line provides no basis for a confident taxonomy
+    assignment.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6737
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 243
+  reasoning_output_tokens: 14
+created: 2026-09-27

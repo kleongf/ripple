@@ -1,0 +1,61 @@
+# Generated from company/arm by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/arm
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.3579
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-04-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm
+    note: '20-F FY2026 XBRL: United States 35.8% of USD 4.9bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/arm
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.1776
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm
+    note: '20-F FY2026 XBRL: China 17.8% of USD 4.9bn revenue (country:CN)'
+    accessed: *id002
+- src: company/arm
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.1677
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm
+    note: '20-F FY2026 XBRL: Japan 16.8% of USD 4.9bn revenue (country:JP)'
+    accessed: *id002
+- src: company/arm
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.1413
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm
+    note: '20-F FY2026 XBRL: Taiwan 14.1% of USD 4.9bn revenue (country:TW)'
+    accessed: *id002
+- src: company/arm
+  rel: EXPOSED_TO
+  dst: region/kr
+  weight: 0.0797
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm
+    note: '20-F FY2026 XBRL: Korea, Republic Of 8.0% of USD 4.9bn revenue (country:KR)'
+    accessed: *id002

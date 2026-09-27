@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/lam-research by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/lam-research
+  rel: PRODUCES
+  dst: product/etch-equipment
+  weight: 0.3844
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-06-30
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm
+    note: '10-K FY2026 XBRL: System 64.1% x0.60 of USD 23.2bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/lam-research
+  rel: PRODUCES
+  dst: product/deposition-equipment
+  weight: 0.2242
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm
+    note: '10-K FY2026 XBRL: System 64.1% x0.35 of USD 23.2bn revenue'
+    accessed: *id002

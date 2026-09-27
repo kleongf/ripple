@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/extreme-networks by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/extreme-networks
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.0631
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1078271/000119312526352872/extr-20260630.htm
+    note: '10-K FY2026 XBRL: Product 63.1% x0.10 of USD 1.3bn revenue'
+    accessed: 2026-09-27

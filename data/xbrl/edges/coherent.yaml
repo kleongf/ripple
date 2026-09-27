@@ -1,0 +1,28 @@
+# Generated from the 10-K XBRL revenue lines of company/coherent by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/coherent
+  rel: PRODUCES
+  dst: product/optical-transceivers
+  weight: 0.5928
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    note: '10-K FY2026 XBRL: Datacenter And Communications Segment 74.1% x0.80 of
+      USD 7.1bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/coherent
+  rel: PRODUCES
+  dst: product/lasers
+  weight: 0.0741
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    note: '10-K FY2026 XBRL: Datacenter And Communications Segment 74.1% x0.10 of
+      USD 7.1bn revenue'
+    accessed: *id002

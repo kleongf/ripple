@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--XBRL Document Created with the Workiva Platform-->
+<!--Copyright 2026 Workiva-->
+<!--r:f8e9bef7-f64b-4983-ba63-9317315cc1e0,g:9587f048-991f-4d3f-a815-e626105f5cc1-->
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/negatedPeriodStartLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd#negatedPeriodStartLabel"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/netLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/net-2009-12-16.xsd#netLabel"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/negatedNetLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd#negatedNetLabel"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/negatedTerseLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd#negatedTerseLabel"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/negatedPeriodEndLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd#negatedPeriodEndLabel"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/negatedLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd#negatedLabel"/>
+  <link:roleRef roleURI="http://www.xbrl.org/2009/role/negatedTotalLabel" xlink:type="simple" xlink:href="http://www.xbrl.org/lrr/role/negated-2009-12-16.xsd#negatedTotalLabel"/>
+  <link:labelLink xlink:role="http://www.xbrl.org/2003/role/link" xlink:type="extended">
+    <link:label id="lab_asml_ArfImmersionMember_8a0cb611-592c-431d-948a-239a703e8c96_terseLabel_en-US" xlink:label="lab_asml_ArfImmersionMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">ArF immersion</link:label>
+    <link:label id="lab_asml_ArfImmersionMember_label_en-US" xlink:label="lab_asml_ArfImmersionMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Arf immersion [Member]</link:label>
+    <link:label id="lab_asml_ArfImmersionMember_documentation_en-US" xlink:label="lab_asml_ArfImmersionMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Arfi [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_ArfImmersionMember" xlink:href="asml-20251231.xsd#asml_ArfImmersionMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_ArfImmersionMember" xlink:to="lab_asml_ArfImmersionMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_us-gaap_ProductMember_fd3e2727-aac4-408a-ae70-a36ee1dcc803_verboseLabel_en-US" xlink:label="lab_us-gaap_ProductMember" xlink:role="http://www.xbrl.org/2003/role/verboseLabel" xlink:type="resource" xml:lang="en-US">Net system sales</link:label>
+    <link:label id="lab_us-gaap_ProductMember_label_en-US" xlink:label="lab_us-gaap_ProductMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Product [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_us-gaap_ProductMember" xlink:href="https://xbrl.fasb.org/us-gaap/2025/elts/us-gaap-2025.xsd#us-gaap_ProductMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_us-gaap_ProductMember" xlink:to="lab_us-gaap_ProductMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_AccountsAndFinancingReceivableBenchmarkMember_87c31195-ab9e-4919-bcab-bbe01a5496e8_terseLabel_en-US" xlink:label="lab_asml_AccountsAndFinancingReceivableBenchmarkMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Accounts and financing receivable benchmark</link:label>
+    <link:label id="lab_asml_AccountsAndFinancingReceivableBenchmarkMember_label_en-US" xlink:label="lab_asml_AccountsAndFinancingReceivableBenchmarkMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Accounts and Financing Receivable Benchmark [Member]</link:label>
+    <link:label id="lab_asml_AccountsAndFinancingReceivableBenchmarkMember_documentation_en-US" xlink:label="lab_asml_AccountsAndFinancingReceivableBenchmarkMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Accounts and Financing Receivable Benchmark</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_AccountsAndFinancingReceivableBenchmarkMember" xlink:href="asml-20251231.xsd#asml_AccountsAndFinancingReceivableBenchmarkMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_AccountsAndFinancingReceivableBenchmarkMember" xlink:to="lab_asml_AccountsAndFinancingReceivableBenchmarkMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_KrfMember_628caf17-4dc4-492f-bf30-d4edfacaca7f_terseLabel_en-US" xlink:label="lab_asml_KrfMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">KrF</link:label>
+    <link:label id="lab_asml_KrfMember_label_en-US" xlink:label="lab_asml_KrfMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Krf [Member]</link:label>
+    <link:label id="lab_asml_KrfMember_documentation_en-US" xlink:label="lab_asml_KrfMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Krf [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_KrfMember" xlink:href="asml-20251231.xsd#asml_KrfMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_KrfMember" xlink:to="lab_asml_KrfMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_CN_61a50717-4a31-4006-9bb8-be026583ad2b_terseLabel_en-US" xlink:label="lab_country_CN" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">China</link:label>
+    <link:label id="lab_country_CN_label_en-US" xlink:label="lab_country_CN" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">CHINA</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_CN" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_CN"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_CN" xlink:to="lab_country_CN" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_NXEMember_47b2861f-9220-43f3-ac76-6701a66fbb32_terseLabel_en-US" xlink:label="lab_asml_NXEMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">NXE</link:label>
+    <link:label id="lab_asml_NXEMember_label_en-US" xlink:label="lab_asml_NXEMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">NXE [Member]</link:label>
+    <link:label id="lab_asml_NXEMember_documentation_en-US" xlink:label="lab_asml_NXEMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">NXE</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_NXEMember" xlink:href="asml-20251231.xsd#asml_NXEMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_NXEMember" xlink:to="lab_asml_NXEMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_KR_d906efe1-8184-4901-93b3-01572a9f90c7_terseLabel_en-US" xlink:label="lab_country_KR" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">South Korea</link:label>
+    <link:label id="lab_country_KR_label_en-US" xlink:label="lab_country_KR" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">KOREA, REPUBLIC OF</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_KR" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_KR"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_KR" xlink:to="lab_country_KR" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_JP_2c31cc14-76dc-41b4-afe0-44711513aac6_terseLabel_en-US" xlink:label="lab_country_JP" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Japan</link:label>
+    <link:label id="lab_country_JP_label_en-US" xlink:label="lab_country_JP" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">JAPAN</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_JP" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_JP"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_JP" xlink:to="lab_country_JP" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_FourCustomersMember_43603256-5cae-442b-bc55-d74eefe12703_terseLabel_en-US" xlink:label="lab_asml_FourCustomersMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Four customers</link:label>
+    <link:label id="lab_asml_FourCustomersMember_label_en-US" xlink:label="lab_asml_FourCustomersMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Four Customers [Member]</link:label>
+    <link:label id="lab_asml_FourCustomersMember_documentation_en-US" xlink:label="lab_asml_FourCustomersMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Four Customers</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_FourCustomersMember" xlink:href="asml-20251231.xsd#asml_FourCustomersMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_FourCustomersMember" xlink:to="lab_asml_FourCustomersMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_NL_96bb5e05-d25d-4a3f-a683-e15c6683704b_terseLabel_en-US" xlink:label="lab_country_NL" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Netherlands</link:label>
+    <link:label id="lab_country_NL_label_en-US" xlink:label="lab_country_NL" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">NETHERLANDS</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_NL" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_NL"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_NL" xlink:to="lab_country_NL" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_TW_5efffbe4-9630-49d2-82c7-0e0e0cc22f7f_terseLabel_en-US" xlink:label="lab_country_TW" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Taiwan</link:label>
+    <link:label id="lab_country_TW_label_en-US" xlink:label="lab_country_TW" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">TAIWAN</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_TW" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_TW"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_TW" xlink:to="lab_country_TW" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_MetrologyAndInspectionMember_d315db52-4d90-4c31-9f8f-8499000c4c90_terseLabel_en-US" xlink:label="lab_asml_MetrologyAndInspectionMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Metrology &amp; Inspection</link:label>
+    <link:label id="lab_asml_MetrologyAndInspectionMember_label_en-US" xlink:label="lab_asml_MetrologyAndInspectionMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Metrology And Inspection [Member]</link:label>
+    <link:label id="lab_asml_MetrologyAndInspectionMember_documentation_en-US" xlink:label="lab_asml_MetrologyAndInspectionMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Metrology and inspection [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_MetrologyAndInspectionMember" xlink:href="asml-20251231.xsd#asml_MetrologyAndInspectionMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_MetrologyAndInspectionMember" xlink:to="lab_asml_MetrologyAndInspectionMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_SG_519ad63c-8266-4a6b-82eb-7c1b8089a087_terseLabel_en-US" xlink:label="lab_country_SG" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Singapore</link:label>
+    <link:label id="lab_country_SG_label_en-US" xlink:label="lab_country_SG" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">SINGAPORE</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_SG" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_SG"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_SG" xlink:to="lab_country_SG" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_ArfDryMember_6d544718-f04c-400f-8707-d3420e3dcaeb_terseLabel_en-US" xlink:label="lab_asml_ArfDryMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">ArF dry</link:label>
+    <link:label id="lab_asml_ArfDryMember_label_en-US" xlink:label="lab_asml_ArfDryMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Arf Dry [Member]</link:label>
+    <link:label id="lab_asml_ArfDryMember_documentation_en-US" xlink:label="lab_asml_ArfDryMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Arf Dry [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_ArfDryMember" xlink:href="asml-20251231.xsd#asml_ArfDryMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_ArfDryMember" xlink:to="lab_asml_ArfDryMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_country_US_9976001a-3a63-4999-8387-eceeeb6a9059_terseLabel_en-US" xlink:label="lab_country_US" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">United States</link:label>
+    <link:label id="lab_country_US_a882f2f7-e44f-40ae-910a-f7f2ffb98b2e_verboseLabel_en-US" xlink:label="lab_country_US" xlink:role="http://www.xbrl.org/2003/role/verboseLabel" xlink:type="resource" xml:lang="en-US">US</link:label>
+    <link:label id="lab_country_US_label_en-US" xlink:label="lab_country_US" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">UNITED STATES</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_country_US" xlink:href="https://xbrl.sec.gov/country/2025/country-2025.xsd#country_US"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_country_US" xlink:to="lab_country_US" xlink:type="arc" order="1"/>
+    <link:label id="lab_us-gaap_CustomerConcentrationRiskMember_473215d3-d17c-44df-b2c6-964d33b04862_terseLabel_en-US" xlink:label="lab_us-gaap_CustomerConcentrationRiskMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Customer concentration risk</link:label>
+    <link:label id="lab_us-gaap_CustomerConcentrationRiskMember_label_en-US" xlink:label="lab_us-gaap_CustomerConcentrationRiskMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Customer Concentration Risk [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_us-gaap_CustomerConcentrationRiskMember" xlink:href="https://xbrl.fasb.org/us-gaap/2025/elts/us-gaap-2025.xsd#us-gaap_CustomerConcentrationRiskMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_us-gaap_CustomerConcentrationRiskMember" xlink:to="lab_us-gaap_CustomerConcentrationRiskMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_ThreeLargestCustomersMember_a288cff2-0a53-4310-9cfd-9baf5ce278b9_terseLabel_en-US" xlink:label="lab_asml_ThreeLargestCustomersMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Three largest customers</link:label>
+    <link:label id="lab_asml_ThreeLargestCustomersMember_label_en-US" xlink:label="lab_asml_ThreeLargestCustomersMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Three Largest Customers [Member]</link:label>
+    <link:label id="lab_asml_ThreeLargestCustomersMember_documentation_en-US" xlink:label="lab_asml_ThreeLargestCustomersMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Three Largest Customers</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_ThreeLargestCustomersMember" xlink:href="asml-20251231.xsd#asml_ThreeLargestCustomersMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_ThreeLargestCustomersMember" xlink:to="lab_asml_ThreeLargestCustomersMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_EXEMember_79ecfd1f-7070-43cb-ab4d-f976b8daf89c_terseLabel_en-US" xlink:label="lab_asml_EXEMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">EXE</link:label>
+    <link:label id="lab_asml_EXEMember_label_en-US" xlink:label="lab_asml_EXEMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">EXE [Member]</link:label>
+    <link:label id="lab_asml_EXEMember_documentation_en-US" xlink:label="lab_asml_EXEMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">EXE</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_EXEMember" xlink:href="asml-20251231.xsd#asml_EXEMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_EXEMember" xlink:to="lab_asml_EXEMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_IlineMember_8c6dcd34-d2e7-4ac7-be63-705bcbbf826b_terseLabel_en-US" xlink:label="lab_asml_IlineMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">I-line</link:label>
+    <link:label id="lab_asml_IlineMember_label_en-US" xlink:label="lab_asml_IlineMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">I-Line [Member]</link:label>
+    <link:label id="lab_asml_IlineMember_documentation_en-US" xlink:label="lab_asml_IlineMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">I-line [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_IlineMember" xlink:href="asml-20251231.xsd#asml_IlineMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_IlineMember" xlink:to="lab_asml_IlineMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_MemoryMember_227fc4b0-787e-4711-b249-1f3d8784a86d_terseLabel_en-US" xlink:label="lab_asml_MemoryMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Memory</link:label>
+    <link:label id="lab_asml_MemoryMember_label_en-US" xlink:label="lab_asml_MemoryMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Memory [Member]</link:label>
+    <link:label id="lab_asml_MemoryMember_documentation_en-US" xlink:label="lab_asml_MemoryMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Memory [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_MemoryMember" xlink:href="asml-20251231.xsd#asml_MemoryMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_MemoryMember" xlink:to="lab_asml_MemoryMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_LogicMember_c6a153e4-b2f7-4ec4-9ab5-fe931064825a_terseLabel_en-US" xlink:label="lab_asml_LogicMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Logic</link:label>
+    <link:label id="lab_asml_LogicMember_label_en-US" xlink:label="lab_asml_LogicMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Logic [Member]</link:label>
+    <link:label id="lab_asml_LogicMember_documentation_en-US" xlink:label="lab_asml_LogicMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Logic [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_LogicMember" xlink:href="asml-20251231.xsd#asml_LogicMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_LogicMember" xlink:to="lab_asml_LogicMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_NewSystemsMember_157dbd3e-2024-45d7-bdd3-266703456efb_terseLabel_en-US" xlink:label="lab_asml_NewSystemsMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">New systems</link:label>
+    <link:label id="lab_asml_NewSystemsMember_label_en-US" xlink:label="lab_asml_NewSystemsMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">New Systems [Member]</link:label>
+    <link:label id="lab_asml_NewSystemsMember_documentation_en-US" xlink:label="lab_asml_NewSystemsMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">New systems.</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_NewSystemsMember" xlink:href="asml-20251231.xsd#asml_NewSystemsMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_NewSystemsMember" xlink:to="lab_asml_NewSystemsMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_UsedSystemsMember_7e0c6027-4e91-4eed-9c4d-6cb4d1682fb7_terseLabel_en-US" xlink:label="lab_asml_UsedSystemsMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Used systems</link:label>
+    <link:label id="lab_asml_UsedSystemsMember_label_en-US" xlink:label="lab_asml_UsedSystemsMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Used Systems [Member]</link:label>
+    <link:label id="lab_asml_UsedSystemsMember_documentation_en-US" xlink:label="lab_asml_UsedSystemsMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Used systems.</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_UsedSystemsMember" xlink:href="asml-20251231.xsd#asml_UsedSystemsMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_UsedSystemsMember" xlink:to="lab_asml_UsedSystemsMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_us-gaap_SalesRevenueNetMember_3b78fa9d-ee1d-404d-a81b-aa3a9e4d27e6_terseLabel_en-US" xlink:label="lab_us-gaap_SalesRevenueNetMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Revenue benchmark</link:label>
+    <link:label id="lab_us-gaap_SalesRevenueNetMember_label_en-US" xlink:label="lab_us-gaap_SalesRevenueNetMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Revenue Benchmark [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_us-gaap_SalesRevenueNetMember" xlink:href="https://xbrl.fasb.org/us-gaap/2025/elts/us-gaap-2025.xsd#us-gaap_SalesRevenueNetMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_us-gaap_SalesRevenueNetMember" xlink:to="lab_us-gaap_SalesRevenueNetMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_ServiceAndFieldOptionsMember_1bf624f0-7c66-434c-8fb5-b6b9e2147aa9_terseLabel_en-US" xlink:label="lab_asml_ServiceAndFieldOptionsMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Net service and field option sales</link:label>
+    <link:label id="lab_asml_ServiceAndFieldOptionsMember_label_en-US" xlink:label="lab_asml_ServiceAndFieldOptionsMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Service And Field Options [Member]</link:label>
+    <link:label id="lab_asml_ServiceAndFieldOptionsMember_documentation_en-US" xlink:label="lab_asml_ServiceAndFieldOptionsMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Service And Field Options [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_ServiceAndFieldOptionsMember" xlink:href="asml-20251231.xsd#asml_ServiceAndFieldOptionsMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_ServiceAndFieldOptionsMember" xlink:to="lab_asml_ServiceAndFieldOptionsMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_TwoCustomersMember_dc28bafc-b94f-4e61-834f-49461f601389_terseLabel_en-US" xlink:label="lab_asml_TwoCustomersMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Two customers</link:label>
+    <link:label id="lab_asml_TwoCustomersMember_label_en-US" xlink:label="lab_asml_TwoCustomersMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Two Customers [Member]</link:label>
+    <link:label id="lab_asml_TwoCustomersMember_documentation_en-US" xlink:label="lab_asml_TwoCustomersMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Two Customers</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_TwoCustomersMember" xlink:href="asml-20251231.xsd#asml_TwoCustomersMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_TwoCustomersMember" xlink:to="lab_asml_TwoCustomersMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_RestOfAsiaMember_a7fde265-52c3-4679-9820-7242b0b2f345_terseLabel_en-US" xlink:label="lab_asml_RestOfAsiaMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">Rest of Asia</link:label>
+    <link:label id="lab_asml_RestOfAsiaMember_label_en-US" xlink:label="lab_asml_RestOfAsiaMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Rest Of Asia [Member]</link:label>
+    <link:label id="lab_asml_RestOfAsiaMember_documentation_en-US" xlink:label="lab_asml_RestOfAsiaMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Rest of Asia [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_RestOfAsiaMember" xlink:href="asml-20251231.xsd#asml_RestOfAsiaMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_RestOfAsiaMember" xlink:to="lab_asml_RestOfAsiaMember" xlink:type="arc" order="1"/>
+    <link:label id="lab_asml_RestOfEuropeAndMiddleEastMember_739c6113-4269-477b-914a-37e9caf18e9c_terseLabel_en-US" xlink:label="lab_asml_RestOfEuropeAndMiddleEastMember" xlink:role="http://www.xbrl.org/2003/role/terseLabel" xlink:type="resource" xml:lang="en-US">EMEA</link:label>
+    <link:label id="lab_asml_RestOfEuropeAndMiddleEastMember_label_en-US" xlink:label="lab_asml_RestOfEuropeAndMiddleEastMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Rest Of Europe And Middle East [Member]</link:label>
+    <link:label id="lab_asml_RestOfEuropeAndMiddleEastMember_documentation_en-US" xlink:label="lab_asml_RestOfEuropeAndMiddleEastMember" xlink:role="http://www.xbrl.org/2003/role/documentation" xlink:type="resource" xml:lang="en-US">Rest of Europe and Middle East [Member]</link:label>
+    <link:loc xlink:type="locator" xlink:label="loc_asml_RestOfEuropeAndMiddleEastMember" xlink:href="asml-20251231.xsd#asml_RestOfEuropeAndMiddleEastMember"/>
+    <link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_asml_RestOfEuropeAndMiddleEastMember" xlink:to="lab_asml_RestOfEuropeAndMiddleEastMember" xlink:type="arc" order="1"/>
+</link:labelLink>
+</link:linkbase>

@@ -1,0 +1,70 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/amazon
+label: company/amazon
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 716924000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: amzn:OnlineStoresMember
+  label: Online Stores
+  share: 0.375614
+  assignments: []
+  new_product: null
+  note: Broad retail sales do not establish a meaningful revenue share for any taxonomy
+    product.
+- member: amzn:ThirdPartySellerServicesMember
+  label: Third-Party Seller Services
+  share: 0.24014
+  assignments: []
+  new_product: null
+  note: Marketplace fees and fulfillment services are not taxonomy product sales.
+- member: amzn:AmazonWebServicesMember
+  label: Amazon Web Services
+  share: 0.179552
+  assignments: []
+  new_product: null
+  note: AWS sells cloud services rather than the chips, servers or datacenter construction
+    it purchases.
+- member: us-gaap:AdvertisingMember
+  label: Advertising
+  share: 0.095735
+  assignments: []
+  new_product: null
+  note: Advertising services fall outside the product taxonomy.
+- member: amzn:SubscriptionServicesMember
+  label: Subscription Services
+  share: 0.069211
+  assignments: []
+  new_product: null
+  note: Membership and digital content subscriptions fall outside the product taxonomy.
+- member: amzn:PhysicalStoresMember
+  label: Physical Stores
+  share: 0.031469
+  assignments: []
+  new_product: null
+  note: Physical retail sales do not establish a meaningful revenue share for any
+    taxonomy product.
+- member: amzn:OtherServicesMember
+  label: Other Services
+  share: 0.008278
+  assignments: []
+  new_product: null
+  note: Other services provide no clear basis for assigning taxonomy product revenue.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6722
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 292
+  reasoning_output_tokens: 36
+created: 2026-09-27

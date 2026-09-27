@@ -1,0 +1,64 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/hewlett-packard-enterprise
+label: company/hewlett-packard-enterprise
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1645590/000164559025000130/hpe-20251031.htm
+fiscal_start: 2024-11-01
+fiscal_end: 2025-10-31
+currency: USD
+total: 34296000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: false
+lines:
+- member: hpe:ServerSegmentMember
+  label: Server Segment
+  share: 0.517407
+  assignments:
+  - product: product/ai-servers
+    fraction: 0.23
+  new_product: General-purpose servers
+  note: Estimated AI-server share is 23%; general-purpose servers and related services
+    remain unassigned.
+- member: hpe:NetworkingMember
+  label: Networking
+  share: 0.199732
+  assignments:
+  - product: product/datacenter-switches
+    fraction: 0.2
+  new_product: null
+  note: Estimated datacenter-switch share is 20%, excluding campus networking, routing,
+    software and support.
+- member: hpe:HybridCloudSegmentMember
+  label: Hybrid Cloud Segment
+  share: 0.167775
+  assignments: []
+  new_product: Enterprise storage systems
+  note: Storage systems are outside the taxonomy, while cloud software and services
+    remain unassigned.
+- member: hpe:FinancialServicesMember
+  label: Financial Services
+  share: 0.102169
+  assignments: []
+  new_product: null
+  note: Financing, leasing and asset-management revenue does not represent new product
+    demand.
+- member: us-gaap:CorporateAndOtherMember
+  label: Corporate Segment and Other Operating Segment
+  share: 0.022627
+  assignments: []
+  new_product: null
+  note: No meaningful taxonomy product share is identifiable in these miscellaneous
+    operations.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6658
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 384
+  reasoning_output_tokens: 146
+created: 2026-09-27

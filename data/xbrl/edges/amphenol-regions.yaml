@@ -1,0 +1,25 @@
+# Generated from company/amphenol by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/amphenol
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.3459
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820313/000110465926013549/aph-20251231x10k.htm
+    note: '10-K FY2025 XBRL: United States 34.6% of USD 23.1bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/amphenol
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.159
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820313/000110465926013549/aph-20251231x10k.htm
+    note: '10-K FY2025 XBRL: China 15.9% of USD 23.1bn revenue (country:CN)'
+    accessed: *id002

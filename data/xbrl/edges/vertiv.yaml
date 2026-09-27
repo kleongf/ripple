@@ -1,0 +1,62 @@
+# Generated from the 10-K XBRL revenue lines of company/vertiv by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/ups
+  weight: 0.3209
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.40 of USD 10.2bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/air-cooling
+  weight: 0.1765
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.22 of USD 10.2bn revenue'
+    accessed: *id002
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/liquid-cooling
+  weight: 0.0642
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.08 of USD 10.2bn revenue'
+    accessed: *id002
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/switchgear
+  weight: 0.0642
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.08 of USD 10.2bn revenue'
+    accessed: *id002
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.0321
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.04 of USD 10.2bn revenue'
+    accessed: *id002

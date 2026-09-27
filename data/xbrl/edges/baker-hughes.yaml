@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/baker-hughes by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/baker-hughes
+  rel: PRODUCES
+  dst: product/gas-turbines
+  weight: 0.0985
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1701605/000170160526000007/bkr-20251231.htm
+    note: '10-K FY2025 XBRL: Product 65.7% x0.15 of USD 27.7bn revenue'
+    accessed: 2026-09-27

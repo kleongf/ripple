@@ -1,0 +1,37 @@
+# Generated from company/amkor-technology by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/amkor-technology
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.6555
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+    note: '10-K FY2025 XBRL: United States 65.6% of USD 6.7bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/amkor-technology
+  rel: EXPOSED_TO
+  dst: region/emea
+  weight: 0.1271
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+    note: '10-K FY2025 XBRL: Emea 12.7% of USD 6.7bn revenue (us-gaap:EMEAMember)'
+    accessed: *id002
+- src: company/amkor-technology
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.108
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+    note: '10-K FY2025 XBRL: Japan 10.8% of USD 6.7bn revenue (country:JP)'
+    accessed: *id002

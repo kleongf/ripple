@@ -1,0 +1,15 @@
+# Generated from the 10-K XBRL revenue lines of company/generac by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/generac
+  rel: PRODUCES
+  dst: product/backup-generators
+  weight: 0.2077
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1474735/000143774926004568/gnrc20251231_10k.htm
+    note: '10-K FY2025 XBRL: Commercial and Industrial Power Products 34.6% x0.60
+      of USD 4.2bn revenue'
+    accessed: 2026-09-27

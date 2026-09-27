@@ -1,0 +1,37 @@
+# Generated from company/super-micro by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/super-micro
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.7089
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1375365/000137536526000022/smci-20260630.htm
+    note: '10-K FY2026 XBRL: United States 70.9% of USD 39.1bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/super-micro
+  rel: EXPOSED_TO
+  dst: region/asia
+  weight: 0.1552
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1375365/000137536526000022/smci-20260630.htm
+    note: '10-K FY2026 XBRL: Asia 15.5% of USD 39.1bn revenue (srt:AsiaMember)'
+    accessed: *id002
+- src: company/super-micro
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.0685
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1375365/000137536526000022/smci-20260630.htm
+    note: '10-K FY2026 XBRL: Europe 6.8% of USD 39.1bn revenue (srt:EuropeMember)'
+    accessed: *id002

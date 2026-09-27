@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/dell by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/dell
+  rel: PRODUCES
+  dst: product/ai-servers
+  weight: 0.223
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-02-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1571996/000157199626000008/dell-20260130.htm
+    note: '10-K FY2026 XBRL: Product 79.6% x0.28 of USD 113.5bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/dell
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.008
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1571996/000157199626000008/dell-20260130.htm
+    note: '10-K FY2026 XBRL: Product 79.6% x0.01 of USD 113.5bn revenue'
+    accessed: *id002

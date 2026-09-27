@@ -1,0 +1,73 @@
+# Generated from company/kla by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/kla
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.2981
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: China 29.8% of USD 13.6bn revenue (country:CN)'
+    accessed: &id002 2026-09-27
+- src: company/kla
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.2683
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Taiwan 26.8% of USD 13.6bn revenue (country:TW)'
+    accessed: *id002
+- src: company/kla
+  rel: EXPOSED_TO
+  dst: region/kr
+  weight: 0.135
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Korea, Republic Of 13.5% of USD 13.6bn revenue (country:KR)'
+    accessed: *id002
+- src: company/kla
+  rel: EXPOSED_TO
+  dst: region/north-america
+  weight: 0.1294
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: North America 12.9% of USD 13.6bn revenue (srt:NorthAmericaMember)'
+    accessed: *id002
+- src: company/kla
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0674
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Japan 6.7% of USD 13.6bn revenue (country:JP)'
+    accessed: *id002
+- src: company/kla
+  rel: EXPOSED_TO
+  dst: region/europe-and-israel
+  weight: 0.0535
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Europe and Israel 5.4% of USD 13.6bn revenue (klac:EuropeAndIsraelMember)'
+    accessed: *id002

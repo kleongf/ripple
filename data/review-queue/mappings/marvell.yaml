@@ -1,0 +1,43 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/marvell
+label: Marvell Technology
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1835632/000183563226000011/mrvl-20260131.htm
+fiscal_start: 2025-02-02
+fiscal_end: 2026-01-31
+currency: USD
+total: 8194600000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: mrvl:DataCenterMember
+  label: Data Center
+  share: 0.744429
+  assignments:
+  - product: product/custom-ai-asics
+    fraction: 0.35
+  - product: product/optical-dsps
+    fraction: 0.35
+  new_product: null
+  note: Estimated shares cover custom AI silicon and optical DSPs, leaving other networking
+    and storage chips unassigned.
+- member: mrvl:CommunicationsAndOtherMember
+  label: Communications And Other
+  share: 0.255571
+  assignments: []
+  new_product: null
+  note: Communications, enterprise networking, consumer and automotive chips lack
+    a clear match to the listed products.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6575
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 310
+  reasoning_output_tokens: 179
+created: 2026-09-27

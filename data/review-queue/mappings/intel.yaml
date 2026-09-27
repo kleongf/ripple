@@ -1,0 +1,49 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/intel
+label: Intel
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+fiscal_start: 2024-12-29
+fiscal_end: 2025-12-27
+currency: USD
+total: 52853000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: intc:ClientComputingGroupMember
+  label: Client Computing Group
+  share: 0.609767
+  assignments: []
+  new_product: null
+  note: Client processors, graphics and connectivity products are outside the taxonomy.
+- member: intc:DatacenterAndAIMember
+  label: Datacenter and AI
+  share: 0.320114
+  assignments:
+  - product: product/server-cpus
+    fraction: 0.8
+  - product: product/ai-accelerators
+    fraction: 0.01
+  new_product: null
+  note: Estimated shares cover Xeon server CPUs and Gaudi accelerators, leaving networking
+    and other products unassigned.
+- member: us-gaap:AllOtherSegmentsMember
+  label: Other Operating Segment
+  share: 0.067413
+  assignments: []
+  new_product: null
+  note: Automotive, programmable logic and other businesses do not clearly map to
+    the listed products.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6535
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 309
+  reasoning_output_tokens: 143
+created: 2026-09-27

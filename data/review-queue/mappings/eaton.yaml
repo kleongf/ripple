@@ -1,0 +1,71 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/eaton
+label: Eaton
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 27448000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: etn:ElectricalAmericasSegmentMember
+  label: Electrical Americas Segment
+  share: 0.483678
+  assignments:
+  - product: product/switchgear
+    fraction: 0.3
+  - product: product/grid-equipment
+    fraction: 0.2
+  - product: product/ups
+    fraction: 0.1
+  new_product: null
+  note: Estimated shares cover switchgear, utility transformers and distribution equipment,
+    and UPS; other products and services remain unassigned.
+- member: etn:ElectricalGlobalSegmentMember
+  label: Electrical Global Segment
+  share: 0.248288
+  assignments:
+  - product: product/switchgear
+    fraction: 0.25
+  - product: product/ups
+    fraction: 0.2
+  - product: product/grid-equipment
+    fraction: 0.05
+  new_product: null
+  note: Estimated shares cover switchgear, UPS and utility equipment, excluding other
+    electrical products and services.
+- member: etn:AerospaceSegmentMember
+  label: Aerospace Segment
+  share: 0.154802
+  assignments: []
+  new_product: null
+  note: Aircraft fuel, hydraulic, electrical and motion-control systems fall outside
+    the taxonomy.
+- member: etn:VehicleSegmentMember
+  label: Vehicle Segment
+  share: 0.091263
+  assignments: []
+  new_product: null
+  note: Vehicle drivetrain and engine components fall outside the taxonomy.
+- member: etn:EMobilitySegmentMember
+  label: eMobility Segment
+  share: 0.022005
+  assignments: []
+  new_product: null
+  note: Electric-vehicle power electronics and electrical components fall outside
+    the taxonomy.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6585
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 441
+  reasoning_output_tokens: 156
+created: 2026-09-27

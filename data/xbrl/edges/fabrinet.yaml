@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/fabrinet by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/fabrinet
+  rel: PRODUCES
+  dst: product/optical-transceivers
+  weight: 0.7
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-06-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm
+    note: '10-K FY2026 XBRL: Reportable Segment 100.0% x0.70 of USD 4.6bn revenue'
+    accessed: 2026-09-27

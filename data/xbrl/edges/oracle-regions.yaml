@@ -1,0 +1,37 @@
+# Generated from company/oracle by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/oracle
+  rel: EXPOSED_TO
+  dst: region/americas
+  weight: 0.6603
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-06-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+    note: '10-K FY2026 XBRL: Americas 66.0% of USD 67.4bn revenue (srt:AmericasMember)'
+    accessed: &id002 2026-09-27
+- src: company/oracle
+  rel: EXPOSED_TO
+  dst: region/emea
+  weight: 0.2271
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+    note: '10-K FY2026 XBRL: Emea 22.7% of USD 67.4bn revenue (us-gaap:EMEAMember)'
+    accessed: *id002
+- src: company/oracle
+  rel: EXPOSED_TO
+  dst: region/asia-pacific
+  weight: 0.1126
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+    note: '10-K FY2026 XBRL: Asia Pacific 11.3% of USD 67.4bn revenue (srt:AsiaPacificMember)'
+    accessed: *id002

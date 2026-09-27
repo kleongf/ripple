@@ -1,0 +1,14 @@
+# Generated from company/fabrinet by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/fabrinet
+  rel: SUPPLIES
+  dst: company/nvidia
+  weight: 0.163
+  weight_source: filing
+  polarity: 1
+  confidence: 0.3
+  valid_from: 2025-06-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1408710/000140871026000028/fn-20260626.htm
+    note: '10-K FY2026 XBRL: Nvidia Corporation was 16.3% of revenue; also reached
+      through products, so stored below threshold'
+    accessed: 2026-09-27

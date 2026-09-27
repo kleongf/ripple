@@ -1,0 +1,49 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/vertiv
+label: Vertiv
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 10229900000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: vrt:ProductExcludingSparesMember
+  label: Product Excluding Spares
+  share: 0.802256
+  assignments:
+  - product: product/ups
+    fraction: 0.4
+  - product: product/air-cooling
+    fraction: 0.22
+  - product: product/liquid-cooling
+    fraction: 0.08
+  - product: product/switchgear
+    fraction: 0.08
+  - product: product/datacenter-chillers
+    fraction: 0.04
+  new_product: null
+  note: Estimated product mix, not a disclosed split; racks, power distribution and
+    other untaxed products remain unassigned.
+- member: vrt:ServicesAndSparesMember
+  label: Services And Spares
+  share: 0.197744
+  assignments: []
+  new_product: null
+  note: Services and spare parts support the installed base rather than new equipment
+    demand.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6524
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 279
+  reasoning_output_tokens: 113
+created: 2026-09-27

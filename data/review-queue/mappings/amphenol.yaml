@@ -1,0 +1,50 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/amphenol
+label: Amphenol
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/820313/000110465926013549/aph-20251231x10k.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: USD
+total: 23094700000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: aph:CommunicationsSolutionsSegmentMember
+  label: Communications Solutions
+  share: 0.522025
+  assignments:
+  - product: product/copper-interconnect
+    fraction: 0.5
+  - product: product/fiber-cable
+    fraction: 0.15
+  new_product: null
+  note: Estimated shares cover high-speed copper and optical connectivity; other connectors,
+    antennas and communications products remain unassigned.
+- member: aph:HarshEnvironmentSolutionsSegmentMember
+  label: Harsh Environment Solutions
+  share: 0.254677
+  assignments: []
+  new_product: null
+  note: Rugged connectors and interconnect assemblies primarily serve markets outside
+    the listed product categories.
+- member: aph:InterconnectAndSensorSystemsMember
+  label: Interconnect and Sensor Systems
+  share: 0.223298
+  assignments: []
+  new_product: null
+  note: General-purpose connectors and sensors lack a sufficiently clear revenue allocation
+    to the listed products.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6531
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 306
+  reasoning_output_tokens: 138
+created: 2026-09-27

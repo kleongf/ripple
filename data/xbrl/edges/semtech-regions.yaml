@@ -1,0 +1,37 @@
+# Generated from company/semtech by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/semtech
+  rel: EXPOSED_TO
+  dst: region/asia-pacific
+  weight: 0.6644
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-27
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/88941/000008894126000005/smtc-20260125.htm
+    note: '10-K FY2026 XBRL: Asia Pacific 66.4% of USD 1.0bn revenue (srt:AsiaPacificMember)'
+    accessed: &id002 2026-09-27
+- src: company/semtech
+  rel: EXPOSED_TO
+  dst: region/north-america
+  weight: 0.2208
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/88941/000008894126000005/smtc-20260125.htm
+    note: '10-K FY2026 XBRL: North America 22.1% of USD 1.0bn revenue (srt:NorthAmericaMember)'
+    accessed: *id002
+- src: company/semtech
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.1148
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/88941/000008894126000005/smtc-20260125.htm
+    note: '10-K FY2026 XBRL: Europe 11.5% of USD 1.0bn revenue (srt:EuropeMember)'
+    accessed: *id002

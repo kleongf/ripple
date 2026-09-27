@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/credo-technology by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/credo-technology
+  rel: PRODUCES
+  dst: product/copper-interconnect
+  weight: 0.85
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-05-04
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: '10-K FY2026 XBRL: Reportable Segment 100.0% x0.85 of USD 1.3bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/credo-technology
+  rel: PRODUCES
+  dst: product/optical-dsps
+  weight: 0.08
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: '10-K FY2026 XBRL: Reportable Segment 100.0% x0.08 of USD 1.3bn revenue'
+    accessed: *id002

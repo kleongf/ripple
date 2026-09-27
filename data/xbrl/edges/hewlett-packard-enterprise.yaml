@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/hewlett-packard-enterprise by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/hewlett-packard-enterprise
+  rel: PRODUCES
+  dst: product/ai-servers
+  weight: 0.119
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-11-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1645590/000164559025000130/hpe-20251031.htm
+    note: '10-K FY2025 XBRL: Server Segment 51.7% x0.23 of USD 34.3bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/hewlett-packard-enterprise
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.0399
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1645590/000164559025000130/hpe-20251031.htm
+    note: '10-K FY2025 XBRL: Networking 20.0% x0.20 of USD 34.3bn revenue'
+    accessed: *id002

@@ -1,0 +1,49 @@
+# Generated from company/belden by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/belden
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5817
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+    note: '10-K FY2025 XBRL: United States 58.2% of USD 2.7bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/belden
+  rel: EXPOSED_TO
+  dst: region/ca
+  weight: 0.0696
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+    note: '10-K FY2025 XBRL: Canada 7.0% of USD 2.7bn revenue (country:CA)'
+    accessed: *id002
+- src: company/belden
+  rel: EXPOSED_TO
+  dst: region/de
+  weight: 0.0513
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+    note: '10-K FY2025 XBRL: Germany 5.1% of USD 2.7bn revenue (country:DE)'
+    accessed: *id002
+- src: company/belden
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.0366
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+    note: '10-K FY2025 XBRL: China 3.7% of USD 2.7bn revenue (country:CN)'
+    accessed: *id002

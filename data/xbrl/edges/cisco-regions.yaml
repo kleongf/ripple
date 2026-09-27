@@ -1,0 +1,13 @@
+# Generated from company/cisco by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/cisco
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5432
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-07-27
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm
+    note: '10-K FY2026 XBRL: United States 54.3% of USD 63.3bn revenue (country:US)'
+    accessed: 2026-09-27

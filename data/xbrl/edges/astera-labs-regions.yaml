@@ -1,0 +1,49 @@
+# Generated from company/astera-labs by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/astera-labs
+  rel: EXPOSED_TO
+  dst: region/sg
+  weight: 0.3249
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+    note: '10-K FY2025 XBRL: Singapore 32.5% of USD 0.9bn revenue (country:SG)'
+    accessed: &id002 2026-09-27
+- src: company/astera-labs
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.3006
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+    note: '10-K FY2025 XBRL: China 30.1% of USD 0.9bn revenue (country:CN)'
+    accessed: *id002
+- src: company/astera-labs
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.2903
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+    note: '10-K FY2025 XBRL: Taiwan 29.0% of USD 0.9bn revenue (country:TW)'
+    accessed: *id002
+- src: company/astera-labs
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.0322
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+    note: '10-K FY2025 XBRL: United States 3.2% of USD 0.9bn revenue (country:US)'
+    accessed: *id002

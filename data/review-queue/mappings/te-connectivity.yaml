@@ -1,0 +1,41 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/te-connectivity
+label: company/te-connectivity
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1385157/000110465925109150/tel-20250926x10k.htm
+fiscal_start: 2024-09-28
+fiscal_end: 2025-09-26
+currency: USD
+total: 17262000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: tel:TransportationSolutionsMember
+  label: Transportation Solutions
+  share: 0.543854
+  assignments: []
+  new_product: null
+  note: Automotive and commercial-transport connectors and sensors fall outside the
+    taxonomy.
+- member: tel:IndustrialSolutionsMember
+  label: Industrial Solutions
+  share: 0.456146
+  assignments:
+  - product: product/copper-interconnect
+    fraction: 0.25
+  new_product: null
+  note: Estimated high-speed copper cables and backplane connectors account for one-quarter
+    of segment sales; other connectivity and sensor products remain unassigned.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6562
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 227
+  reasoning_output_tokens: 115
+created: 2026-09-27

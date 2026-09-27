@@ -1,0 +1,61 @@
+# Generated from company/vertiv by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/vertiv
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5878
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: United States 58.8% of USD 10.2bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/vertiv
+  rel: EXPOSED_TO
+  dst: region/asia
+  weight: 0.1975
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Asia 19.7% of USD 10.2bn revenue (srt:AsiaMember)'
+    accessed: *id002
+- src: company/vertiv
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.1441
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Europe 14.4% of USD 10.2bn revenue (srt:EuropeMember)'
+    accessed: *id002
+- src: company/vertiv
+  rel: EXPOSED_TO
+  dst: region/latin-america-and-canada
+  weight: 0.0427
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Latin America and Canada 4.3% of USD 10.2bn revenue (vrt:LatinAmericaAndCanadaMember)'
+    accessed: *id002
+- src: company/vertiv
+  rel: EXPOSED_TO
+  dst: region/middle-east-and-africa
+  weight: 0.0278
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+    note: '10-K FY2025 XBRL: Middle East And Africa 2.8% of USD 10.2bn revenue (vrt:MiddleEastAndAfricaMember)'
+    accessed: *id002

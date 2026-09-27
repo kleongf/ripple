@@ -1,0 +1,49 @@
+# Generated from company/coherent by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/coherent
+  rel: EXPOSED_TO
+  dst: region/north-america
+  weight: 0.651
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    note: '10-K FY2026 XBRL: North America 65.1% of USD 7.1bn revenue (srt:NorthAmericaMember)'
+    accessed: &id002 2026-09-27
+- src: company/coherent
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.1144
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    note: '10-K FY2026 XBRL: Europe 11.4% of USD 7.1bn revenue (srt:EuropeMember)'
+    accessed: *id002
+- src: company/coherent
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.1143
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    note: '10-K FY2026 XBRL: China 11.4% of USD 7.1bn revenue (country:CN)'
+    accessed: *id002
+- src: company/coherent
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0548
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820318/000082031826000020/iivi-20260630.htm
+    note: '10-K FY2026 XBRL: Japan 5.5% of USD 7.1bn revenue (country:JP)'
+    accessed: *id002

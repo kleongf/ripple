@@ -1,0 +1,50 @@
+# Generated from company/intel by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/intel
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.2981
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: United States 29.8% of USD 52.9bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/intel
+  rel: EXPOSED_TO
+  dst: region/china-including-hong-kong
+  weight: 0.2402
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: China (Including Hong Kong) 24.0% of USD 52.9bn revenue
+      (intc:ChinaIncludingHongKongMember)'
+    accessed: *id002
+- src: company/intel
+  rel: EXPOSED_TO
+  dst: region/sg
+  weight: 0.1804
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: Singapore 18.0% of USD 52.9bn revenue (country:SG)'
+    accessed: *id002
+- src: company/intel
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.1452
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: Taiwan 14.5% of USD 52.9bn revenue (country:TW)'
+    accessed: *id002

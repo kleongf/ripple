@@ -1,0 +1,46 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/microsoft
+label: company/microsoft
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
+fiscal_start: 2025-07-01
+fiscal_end: 2026-06-30
+currency: USD
+total: 331839000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: true
+lines:
+- member: msft:ProductivityAndBusinessProcessesMember
+  label: Productivity And Business Processes
+  share: 0.421879
+  assignments: []
+  new_product: null
+  note: Productivity software, business applications and LinkedIn revenue fall outside
+    the taxonomy.
+- member: msft:IntelligentCloudMember
+  label: Intelligent Cloud
+  share: 0.415234
+  assignments: []
+  new_product: null
+  note: Cloud services and server software are not sales of datacenter construction
+    capacity or hardware.
+- member: msft:MorePersonalComputingMember
+  label: More Personal Computing
+  share: 0.162886
+  assignments: []
+  new_product: null
+  note: Windows, devices, gaming and advertising do not represent sales of the listed
+    products.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6689
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 221
+  reasoning_output_tokens: 89
+created: 2026-09-27

@@ -1,0 +1,49 @@
+# Generated from company/amd by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/amd
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.328
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+    note: '10-K FY2025 XBRL: United States 32.8% of USD 34.6bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/amd
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.2238
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+    note: '10-K FY2025 XBRL: China 22.4% of USD 34.6bn revenue (country:CN)'
+    accessed: *id002
+- src: company/amd
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.1497
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+    note: '10-K FY2025 XBRL: Taiwan 15.0% of USD 34.6bn revenue (country:TW)'
+    accessed: *id002
+- src: company/amd
+  rel: EXPOSED_TO
+  dst: region/sg
+  weight: 0.1237
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm
+    note: '10-K FY2025 XBRL: Singapore 12.4% of USD 34.6bn revenue (country:SG)'
+    accessed: *id002

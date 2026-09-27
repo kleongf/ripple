@@ -1,0 +1,85 @@
+# Generated from company/applied-materials by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.3007
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2024-10-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: China 30.1% of USD 28.4bn revenue (country:CN)'
+    accessed: &id002 2026-09-27
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/tw
+  weight: 0.2417
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: Taiwan 24.2% of USD 28.4bn revenue (country:TW)'
+    accessed: *id002
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/kr
+  weight: 0.1977
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: Korea, Republic Of 19.8% of USD 28.4bn revenue (country:KR)'
+    accessed: *id002
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.108
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: United States 10.8% of USD 28.4bn revenue (country:US)'
+    accessed: *id002
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/jp
+  weight: 0.0801
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: Japan 8.0% of USD 28.4bn revenue (country:JP)'
+    accessed: *id002
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/southeast-asia
+  weight: 0.0379
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: Southeast Asia 3.8% of USD 28.4bn revenue (amat:SoutheastAsiaMember)'
+    accessed: *id002
+- src: company/applied-materials
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.0339
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+    note: '10-K FY2025 XBRL: Europe 3.4% of USD 28.4bn revenue (srt:EuropeMember)'
+    accessed: *id002

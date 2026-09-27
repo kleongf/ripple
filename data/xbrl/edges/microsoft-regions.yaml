@@ -1,0 +1,13 @@
+# Generated from company/microsoft by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/microsoft
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5147
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm
+    note: '10-K FY2026 XBRL: Us 51.5% of USD 331.8bn revenue (country:US)'
+    accessed: 2026-09-27

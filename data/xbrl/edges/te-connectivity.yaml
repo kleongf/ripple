@@ -1,0 +1,14 @@
+# Generated from the 10-K XBRL revenue lines of company/te-connectivity by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/te-connectivity
+  rel: PRODUCES
+  dst: product/copper-interconnect
+  weight: 0.114
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-09-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1385157/000110465925109150/tel-20250926x10k.htm
+    note: '10-K FY2025 XBRL: Industrial Solutions 45.6% x0.25 of USD 17.3bn revenue'
+    accessed: 2026-09-27

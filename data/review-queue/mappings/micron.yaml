@@ -1,0 +1,54 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/micron
+label: Micron Technology
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+fiscal_start: 2024-08-30
+fiscal_end: 2025-08-28
+currency: USD
+total: 37378000000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: true
+lines:
+- member: mu:DRAMProductsMember
+  label: DRAM Products
+  share: 0.764567
+  assignments:
+  - product: product/dram
+    fraction: 0.8
+  - product: product/hbm
+    fraction: 0.2
+  new_product: null
+  note: DRAM includes conventional memory and HBM, with HBM estimated at 20% of this
+    line.
+- member: mu:NANDProductsMember
+  label: NAND Products
+  share: 0.227487
+  assignments:
+  - product: product/consumer-nand
+    fraction: 0.6
+  - product: product/enterprise-ssds
+    fraction: 0.4
+  new_product: null
+  note: NAND spans non-enterprise flash and enterprise SSDs; the 60/40 revenue split
+    is estimated.
+- member: mu:OtherProductSalesMember
+  label: Other Product Sales
+  share: 0.007946
+  assignments: []
+  new_product: null
+  note: Other sales primarily include NOR flash and miscellaneous products outside
+    the taxonomy.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6627
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 407
+  reasoning_output_tokens: 217
+created: 2026-09-27

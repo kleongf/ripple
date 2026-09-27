@@ -1,0 +1,49 @@
+# Generated from company/ge-vernova by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/ge-vernova
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.4555
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
+    note: '10-K FY2025 XBRL: United States 45.6% of USD 38.1bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/ge-vernova
+  rel: EXPOSED_TO
+  dst: region/europe
+  weight: 0.1995
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
+    note: '10-K FY2025 XBRL: Europe 19.9% of USD 38.1bn revenue (srt:EuropeMember)'
+    accessed: *id002
+- src: company/ge-vernova
+  rel: EXPOSED_TO
+  dst: region/middle-east-and-africa
+  weight: 0.1416
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
+    note: '10-K FY2025 XBRL: Middle East and Africa 14.2% of USD 38.1bn revenue (gev:MiddleEastAndAfricaMember)'
+    accessed: *id002
+- src: company/ge-vernova
+  rel: EXPOSED_TO
+  dst: region/asia
+  weight: 0.1216
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
+    note: '10-K FY2025 XBRL: Asia 12.2% of USD 38.1bn revenue (srt:AsiaMember)'
+    accessed: *id002

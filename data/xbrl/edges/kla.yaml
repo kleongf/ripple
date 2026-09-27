@@ -1,0 +1,41 @@
+# Generated from the 10-K XBRL revenue lines of company/kla by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/kla
+  rel: PRODUCES
+  dst: product/inspection-metrology
+  weight: 0.7046
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-07-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Wafer Inspection 48.8% + Patterning 19.9% + PCB And Component
+      Inspection 3.4% x0.50 of USD 13.6bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/kla
+  rel: PRODUCES
+  dst: product/etch-equipment
+  weight: 0.0222
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Specialty Semiconductor Process 3.7% x0.60 of USD 13.6bn
+      revenue'
+    accessed: *id002
+- src: company/kla
+  rel: PRODUCES
+  dst: product/deposition-equipment
+  weight: 0.0111
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: '10-K FY2026 XBRL: Specialty Semiconductor Process 3.7% x0.30 of USD 13.6bn
+      revenue'
+    accessed: *id002

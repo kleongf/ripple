@@ -1,0 +1,14 @@
+# Generated from company/intel by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/intel
+  rel: SUPPLIES
+  dst: company/dell
+  weight: 0.19
+  weight_source: filing
+  polarity: 1
+  confidence: 0.3
+  valid_from: 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm
+    note: '10-K FY2025 XBRL: Dell Inc. was 19.0% of revenue; also reached through
+      products, so stored below threshold'
+    accessed: 2026-09-27

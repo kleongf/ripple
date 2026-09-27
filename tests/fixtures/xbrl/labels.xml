@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink">
+<link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+<link:loc xlink:type="locator" xlink:label="loc_ex_WaferInspectionMember" xlink:href="ex-20260630.xsd#ex_WaferInspectionMember"/>
+<link:label xlink:label="lab_ex_WaferInspectionMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Wafer Inspection [Member]</link:label>
+<link:label xlink:label="lab_ex_WaferInspectionMember" xlink:role="http://www.xbrl.org/2003/role/verboseLabel" xlink:type="resource" xml:lang="en-US">Wafer Inspection (verbose)</link:label>
+<link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_ex_WaferInspectionMember" xlink:to="lab_ex_WaferInspectionMember" xlink:type="arc"/>
+<link:loc xlink:type="locator" xlink:label="loc_ex_PatterningMember" xlink:href="ex-20260630.xsd#ex_PatterningMember"/>
+<link:label xlink:label="lab_ex_PatterningMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Patterning [Member]</link:label>
+<link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_ex_PatterningMember" xlink:to="lab_ex_PatterningMember" xlink:type="arc"/>
+<link:loc xlink:type="locator" xlink:label="loc_ex_ProcessControlMember" xlink:href="ex-20260630.xsd#ex_ProcessControlMember"/>
+<link:label xlink:label="lab_ex_ProcessControlMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Semiconductor Process Control [Member]</link:label>
+<link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_ex_ProcessControlMember" xlink:to="lab_ex_ProcessControlMember" xlink:type="arc"/>
+<link:loc xlink:type="locator" xlink:label="loc_ex_CustomerAMember" xlink:href="ex-20260630.xsd#ex_CustomerAMember"/>
+<link:label xlink:label="lab_ex_CustomerAMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Customer A [Member]</link:label>
+<link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_ex_CustomerAMember" xlink:to="lab_ex_CustomerAMember" xlink:type="arc"/>
+<link:loc xlink:type="locator" xlink:label="loc_ex_MicrosoftMember" xlink:href="ex-20260630.xsd#ex_MicrosoftMember"/>
+<link:label xlink:label="lab_ex_MicrosoftMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Microsoft [Member]</link:label>
+<link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_ex_MicrosoftMember" xlink:to="lab_ex_MicrosoftMember" xlink:type="arc"/>
+<link:loc xlink:type="locator" xlink:label="loc_us-gaap_ServiceMember" xlink:href="https://xbrl.fasb.org/us-gaap/2026/elts/us-gaap-2026.xsd#us-gaap_ServiceMember"/>
+<link:label xlink:label="lab_us-gaap_ServiceMember" xlink:role="http://www.xbrl.org/2003/role/label" xlink:type="resource" xml:lang="en-US">Service [Member]</link:label>
+<link:labelArc xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="loc_us-gaap_ServiceMember" xlink:to="lab_us-gaap_ServiceMember" xlink:type="arc"/>
+</link:labelLink>
+</link:linkbase>

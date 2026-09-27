@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/johnson-controls by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/johnson-controls
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.1025
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-10-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/833444/000083344425000097/jci-20250930.htm
+    note: '10-K FY2025 XBRL: Products and Systems 68.3% x0.15 of USD 23.6bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/johnson-controls
+  rel: PRODUCES
+  dst: product/air-cooling
+  weight: 0.0137
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/833444/000083344425000097/jci-20250930.htm
+    note: '10-K FY2025 XBRL: Products and Systems 68.3% x0.02 of USD 23.6bn revenue'
+    accessed: *id002

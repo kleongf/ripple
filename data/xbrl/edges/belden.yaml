@@ -1,0 +1,28 @@
+# Generated from the 10-K XBRL revenue lines of company/belden by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/belden
+  rel: PRODUCES
+  dst: product/copper-interconnect
+  weight: 0.1797
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+    note: '10-K FY2025 XBRL: Automation Solutions 55.1% x0.15 + Smart Buildings Solutions
+      21.6% x0.45 of USD 2.7bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/belden
+  rel: PRODUCES
+  dst: product/fiber-cable
+  weight: 0.1515
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/913142/000091314226000009/bdc-20251231.htm
+    note: '10-K FY2025 XBRL: Automation Solutions 55.1% x0.05 + Broadband Solutions
+      23.3% x0.30 + Smart Buildings Solutions 21.6% x0.25 of USD 2.7bn revenue'
+    accessed: *id002

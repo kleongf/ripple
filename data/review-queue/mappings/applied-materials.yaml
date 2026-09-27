@@ -1,0 +1,44 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/applied-materials
+label: Applied Materials
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+fiscal_start: 2024-10-28
+fiscal_end: 2025-10-26
+currency: USD
+total: 28368000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: false
+lines:
+- member: amat:SemiconductorSystemsSegmentMember
+  label: Semiconductor Systems Segment
+  share: 0.73315
+  assignments:
+  - product: product/deposition-equipment
+    fraction: 0.55
+  - product: product/etch-equipment
+    fraction: 0.2
+  - product: product/inspection-metrology
+    fraction: 0.08
+  new_product: null
+  note: Estimated equipment mix; the remainder covers unlisted products such as CMP,
+    ion implantation and thermal processing systems.
+- member: amat:AppliedGlobalServicesSegmentMember
+  label: Applied Global Services Segment
+  share: 0.225078
+  assignments: []
+  new_product: null
+  note: Services, spare parts and installed-base support are left unassigned.
+status: accepted
+reviewer: claude-code
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6499
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 208
+  reasoning_output_tokens: 70
+created: 2026-09-27

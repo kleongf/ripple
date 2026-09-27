@@ -1,0 +1,37 @@
+# Generated from company/cummins by `ripple xbrl-edges` (M14). Do not edit.
+- src: company/cummins
+  rel: EXPOSED_TO
+  dst: region/us
+  weight: 0.5635
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+    note: '10-K FY2025 XBRL: United States 56.4% of USD 33.7bn revenue (country:US)'
+    accessed: &id002 2026-09-27
+- src: company/cummins
+  rel: EXPOSED_TO
+  dst: region/cn
+  weight: 0.098
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+    note: '10-K FY2025 XBRL: China 9.8% of USD 33.7bn revenue (country:CN)'
+    accessed: *id002
+- src: company/cummins
+  rel: EXPOSED_TO
+  dst: region/in
+  weight: 0.0511
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+    note: '10-K FY2025 XBRL: India 5.1% of USD 33.7bn revenue (country:IN)'
+    accessed: *id002

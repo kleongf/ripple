@@ -1,0 +1,39 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/baidu
+label: company/baidu
+form: 20-F
+filing_url: https://www.sec.gov/Archives/edgar/data/1329099/000119312526109289/d38065d20f.htm
+fiscal_start: 2025-01-01
+fiscal_end: 2025-12-31
+currency: CNY
+total: 129079000000.0
+kind: segment
+axis: us-gaap:StatementBusinessSegmentsAxis
+complete: false
+lines:
+- member: bidu:BaiduCoreBusinessMember
+  label: Baidu Core Business
+  share: 0.793971
+  assignments: []
+  new_product: null
+  note: Search advertising and cloud services dominate, with no identifiable meaningful
+    revenue share from taxonomy products.
+- member: bidu:iQIYIMember
+  label: i QIYI
+  share: 0.211421
+  assignments: []
+  new_product: null
+  note: Streaming subscriptions, advertising and content distribution fall outside
+    the taxonomy.
+status: accepted
+reviewer: judge
+reject_reason: null
+model: gpt-6-astra
+usage:
+  input_tokens: 6572
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 88
+  reasoning_output_tokens: 0
+created: 2026-09-27

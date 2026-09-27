@@ -1,0 +1,15 @@
+# Generated from the 10-K XBRL revenue lines of company/onto-innovation by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/onto-innovation
+  rel: PRODUCES
+  dst: product/inspection-metrology
+  weight: 0.7591
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-12-29
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: '10-K FY2026 XBRL: Systems And Software Revenue 84.3% x0.90 of USD 1.0bn
+      revenue'
+    accessed: 2026-09-27

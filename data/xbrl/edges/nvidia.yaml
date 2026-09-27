@@ -1,0 +1,38 @@
+# Generated from the 10-K XBRL revenue lines of company/nvidia by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/nvidia
+  rel: PRODUCES
+  dst: product/ai-accelerators
+  weight: 0.6767
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-01-27
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+    note: '10-K FY2026 XBRL: Compute 75.2% x0.90 of USD 215.9bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/nvidia
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.1017
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+    note: '10-K FY2026 XBRL: Networking 14.5% x0.70 of USD 215.9bn revenue'
+    accessed: *id002
+- src: company/nvidia
+  rel: PRODUCES
+  dst: product/ai-servers
+  weight: 0.0602
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm
+    note: '10-K FY2026 XBRL: Compute 75.2% x0.08 of USD 215.9bn revenue'
+    accessed: *id002

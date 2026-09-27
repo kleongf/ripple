@@ -1,0 +1,96 @@
+# LLM judge verdicts (docs/phase-1.md, D46, D73). No filing text is stored.
+judged: 18
+correct: 0
+rate: 0.0
+entities_correct: 8
+verdicts:
+  company/baker-hughes#us-gaap:ProductMember:
+    correct: false
+    entities_correct: false
+    reason: Gas turbines and the claimed revenue percentages are not supported by
+      the excerpt.
+  company/belden#bdc:AutomationSolutionsMember:
+    correct: false
+    entities_correct: false
+    reason: The copper and fiber product assignments and their revenue percentages
+      are not supported for Automation Solutions.
+  company/belden#bdc:BroadbandSolutionsMember:
+    correct: false
+    entities_correct: false
+    reason: The excerpt does not identify Broadband Solutions fiber cables, so the
+      product assignment and percentages are not supported.
+  company/belden#bdc:SmartBuildingsSolutionsMember:
+    correct: false
+    entities_correct: false
+    reason: Fiber technology is mentioned, but copper interconnects and the claimed
+      revenue percentages are not supported.
+  company/cisco#csco:NetworkingMember:
+    correct: false
+    entities_correct: false
+    reason: Networking is identified, but datacenter switches, optical transceivers
+      and the claimed percentages are not supported.
+  company/credo-technology#crdo:ReportableSegmentMember:
+    correct: false
+    entities_correct: true
+    reason: Credo's copper interconnects and optical DSPs are identified, but the
+      claimed revenue allocation is not supported.
+  company/extreme-networks#us-gaap:ProductMember:
+    correct: false
+    entities_correct: false
+    reason: Networking equipment is described, but datacenter switches and the claimed
+      percentages are not supported.
+  company/fabrinet#fn:ReportableSegmentMember:
+    correct: false
+    entities_correct: true
+    reason: Fabrinet manufactures optical transceivers for OEMs, but the claimed 70%
+      revenue allocation is not supported.
+  company/generac#gnrc:CommercialAndIndustrialPowerProductsMember:
+    correct: false
+    entities_correct: true
+    reason: Commercial and industrial standby generators are identified, but the claimed
+      revenue percentages are not supported.
+  company/generac#gnrc:ResidentialPowerProductsMember:
+    correct: false
+    entities_correct: true
+    reason: Residential standby generators are identified, but the claimed revenue
+      percentages are not supported.
+  company/hewlett-packard-enterprise#hpe:NetworkingMember:
+    correct: false
+    entities_correct: false
+    reason: Datacenter networking is discussed, but switches specifically and the
+      claimed revenue percentages are not supported.
+  company/hewlett-packard-enterprise#hpe:ServerSegmentMember:
+    correct: false
+    entities_correct: false
+    reason: HPE's AI strategy is described, but AI servers and the claimed revenue
+      percentages are not supported.
+  company/onto-innovation#onto:SystemsAndSoftwareRevenueMember:
+    correct: false
+    entities_correct: true
+    reason: Onto's inspection and metrology tools are identified, but the claimed
+      revenue percentages are not supported.
+  company/oracle#orcl:CloudAndSoftwareBusinessMember:
+    correct: false
+    entities_correct: true
+    reason: Oracle's cloud infrastructure services match the product category, but
+      the claimed revenue percentages are not supported.
+  company/sandisk#sndk:ConsumerMember:
+    correct: false
+    entities_correct: true
+    reason: Sandisk's consumer flash products are identified, but the claimed revenue
+      percentages are not supported.
+  company/sandisk#sndk:DatacenterMember:
+    correct: false
+    entities_correct: true
+    reason: Sandisk's SSDs and datacenter customers are described, but an exclusively
+      enterprise-SSD allocation and the revenue share are not supported.
+  company/sandisk#sndk:EdgeMember:
+    correct: false
+    entities_correct: false
+    reason: Edge includes industrial and automotive applications, so an exclusively
+      consumer-NAND classification and the claimed percentages are not supported.
+  company/te-connectivity#tel:IndustrialSolutionsMember:
+    correct: false
+    entities_correct: false
+    reason: Connectivity solutions are described broadly, but copper interconnects
+      and the claimed revenue percentages are not supported.

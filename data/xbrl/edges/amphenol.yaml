@@ -1,0 +1,26 @@
+# Generated from the 10-K XBRL revenue lines of company/amphenol by `ripple review accept` (claude-code).
+# Do not edit: edit the queue file instead.
+- src: company/amphenol
+  rel: PRODUCES
+  dst: product/copper-interconnect
+  weight: 0.261
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820313/000110465926013549/aph-20251231x10k.htm
+    note: '10-K FY2025 XBRL: Communications Solutions 52.2% x0.50 of USD 23.1bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/amphenol
+  rel: PRODUCES
+  dst: product/fiber-cable
+  weight: 0.0783
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/820313/000110465926013549/aph-20251231x10k.htm
+    note: '10-K FY2025 XBRL: Communications Solutions 52.2% x0.15 of USD 23.1bn revenue'
+    accessed: *id002

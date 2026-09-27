@@ -1,0 +1,39 @@
+# Revenue-line mapping proposed by Codex (docs/phase-1.md, M13). Edit assignments by
+# hand if needed, then `ripple review accept`.
+node: company/super-micro
+label: Super Micro Computer
+form: 10-K
+filing_url: https://www.sec.gov/Archives/edgar/data/1375365/000137536526000022/smci-20260630.htm
+fiscal_start: 2025-07-01
+fiscal_end: 2026-06-30
+currency: USD
+total: 39063072000.0
+kind: product
+axis: srt:ProductOrServiceAxis
+complete: false
+lines:
+- member: smci:ServiceAndSoftwareMember
+  label: Service And Software
+  share: 0.01378
+  assignments: []
+  new_product: null
+  note: Service and software revenue is left unassigned because it does not represent
+    new hardware demand in the taxonomy.
+- member: us-gaap:ServiceMember
+  label: Service
+  share: 0.01076
+  assignments: []
+  new_product: null
+  note: Service revenue follows the installed base and is left unassigned.
+status: rejected
+reviewer: claude-code
+reject_reason: The chosen product breakdown holds only service lines; the server line
+  was not tagged on its own. Keep the seed edge.
+model: gpt-6-astra
+usage:
+  input_tokens: 6496
+  cached_input_tokens: 0
+  cache_write_input_tokens: 0
+  output_tokens: 90
+  reasoning_output_tokens: 0
+created: 2026-09-27
