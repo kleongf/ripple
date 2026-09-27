@@ -1,0 +1,126 @@
+# LLM judge verdicts (docs/phase-1.md, D46, D73). No filing text is stored.
+judged: 24
+correct: 19
+rate: 0.792
+entities_correct: 23
+verdicts:
+  Alibaba Group:
+    correct: true
+    entities_correct: true
+    reason: Nvidia lists Alibaba among competitors, and Alibaba describes cloud computing
+      services backed by data centers.
+  Alphabet Inc.:
+    correct: true
+    entities_correct: true
+    reason: Nvidia identifies Alphabet as a competitor, and Alphabet describes its
+      own custom TPUs and data center infrastructure.
+  Amazon:
+    correct: true
+    entities_correct: true
+    reason: Intel identifies Amazon as a competitor, and Amazon describes building
+      and operating infrastructure for AWS.
+  Amkor Technology, Inc.:
+    correct: false
+    entities_correct: true
+    reason: Broadcom identifies Amkor as an assembly supplier, but specifically 2.5D
+      packaging is not supported by the general advanced-packaging description.
+  Arm:
+    correct: false
+    entities_correct: true
+    reason: Arm's CPU products are supported, but server compatibility alone does
+      not establish the claimed supplier relationship, which is not supported.
+  Astera Labs, Inc.:
+    correct: true
+    entities_correct: true
+    reason: Marvell lists Astera as a competitor, and Astera describes high-speed
+      electrical interconnect retimers and cable modules.
+  Baidu, Inc.:
+    correct: true
+    entities_correct: true
+    reason: Nvidia identifies Baidu as a competitor, and Baidu describes providing
+      AI cloud infrastructure for training and inference.
+  Baker Hughes Co.:
+    correct: true
+    entities_correct: true
+    reason: Caterpillar names Baker Hughes as a competitor, and Baker Hughes explicitly
+      lists gas turbines in its portfolio.
+  Belden:
+    correct: true
+    entities_correct: true
+    reason: Amphenol lists Belden as a competitor, and Belden describes fiber cable
+      and connectivity products.
+  Cisco:
+    correct: true
+    entities_correct: true
+    reason: Arista identifies Cisco as a competitor, and Cisco describes switches
+      for data center infrastructure.
+  Credo Technology Group Holding Ltd:
+    correct: true
+    entities_correct: true
+    reason: Marvell names Credo as a competitor, and Credo explicitly offers high-speed
+      copper cables and optical DSPs.
+  Extreme Networks:
+    correct: false
+    entities_correct: false
+    reason: The competitor relationship is supported, but the quoted switches are
+      access-edge products, so datacenter switches are not supported.
+  Fabrinet:
+    correct: true
+    entities_correct: true
+    reason: Nvidia identifies Fabrinet as a contract manufacturer, and Fabrinet explicitly
+      manufactures optical transceivers.
+  Generac Holdings Inc.:
+    correct: true
+    entities_correct: true
+    reason: Caterpillar lists Generac as a competitor, and Generac manufactures standby
+      generators for backup power.
+  Hewlett Packard Enterprise:
+    correct: true
+    entities_correct: true
+    reason: Arista names HPE as a competitor, and HPE describes AI servers and direct
+      liquid cooling.
+  MACOM Technology Solutions Holdings, Inc.:
+    correct: true
+    entities_correct: true
+    reason: Marvell lists MACOM as a competitor, and MACOM describes laser components
+      for optical transceivers.
+  Microsoft:
+    correct: true
+    entities_correct: true
+    reason: AMD describes customer-specific chips powering Microsoft's consoles, and
+      Microsoft operates datacenters and server capacity.
+  NextEra Energy, Inc.:
+    correct: false
+    entities_correct: true
+    reason: Nuclear generation is supported, but naming NextEra itself as a partner
+      is not supported by the reference to its subsidiary operating Wyman.
+  Onto Innovation, Inc.:
+    correct: true
+    entities_correct: true
+    reason: KLA explicitly lists Onto as a competitor, and Onto manufactures inspection
+      and metrology tools.
+  Oracle:
+    correct: true
+    entities_correct: true
+    reason: Intel includes Oracle among indemnified CPU customers, and Oracle describes
+      building and operating data centers.
+  Qualcomm Incorporated:
+    correct: true
+    entities_correct: true
+    reason: AMD lists Qualcomm as a competitor, and Qualcomm describes dedicated hardware
+      for accelerating AI workloads.
+  Sandisk Corporation:
+    correct: true
+    entities_correct: true
+    reason: Micron names Sandisk as a competitor, and Sandisk describes flash storage
+      for consumer devices and enterprise applications.
+  Semtech Corporation:
+    correct: true
+    entities_correct: true
+    reason: The context identifies Semtech as a competitor and supports its manufacture
+      of high-speed copper data communications products.
+  TE Connectivity:
+    correct: false
+    entities_correct: true
+    reason: The competitor relationship is explicit, but high-speed copper interconnect
+      or optical fiber and cable products are not supported by the excerpts.

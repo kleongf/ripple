@@ -1,0 +1,220 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/vertiv
+form: 10-K
+requires: []
+disclosed:
+- id: dis-8b154653bf
+  description: Americas geographic segment revenue share
+  share: 0.62
+  period: '2025'
+  basis: segment
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  section: '1'
+  start: 60291
+  end: 60406
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ae3e129495
+  description: Asia Pacific geographic segment revenue share
+  share: 0.2
+  period: '2025'
+  basis: segment
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  section: '1'
+  start: 60408
+  end: 60499
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7f436127f9
+  description: Europe, Middle East and Africa geographic segment revenue share
+  share: 0.18
+  period: '2025'
+  basis: segment
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  section: '1'
+  start: 60408
+  end: 60499
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1b997e0c8b
+  description: Americas geographic segment revenue share
+  share: 0.56
+  period: '2024'
+  basis: segment
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  section: '1'
+  start: 60519
+  end: 60622
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bbef45be5f
+  description: Asia Pacific geographic segment revenue share
+  share: 0.22
+  period: '2024'
+  basis: segment
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  section: '1'
+  start: 60624
+  end: 60700
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bbef45be5f
+  description: Europe, Middle East and Africa geographic segment revenue share
+  share: 0.22
+  period: '2024'
+  basis: segment
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  section: '1'
+  start: 60624
+  end: 60700
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-5f09b0a20f
+  product: product/air-cooling
+  section: '1'
+  start: 59135
+  end: 59316
+- id: pro-b88e0c5f9a
+  product: product/liquid-cooling
+  section: '1'
+  start: 59135
+  end: 59316
+- id: pro-247d956bf0
+  product: product/switchgear
+  section: '1'
+  start: 59135
+  end: 59250
+- id: pro-02e736fad6
+  product: product/ups
+  section: '1'
+  start: 59318
+  end: 59418
+- id: pro-741d5a4f78
+  product: product/switchgear
+  section: '7'
+  start: 210561
+  end: 210687
+- id: pro-db7e73b699
+  product: product/air-cooling
+  section: '7'
+  start: 211228
+  end: 211355
+- id: pro-0293007638
+  product: product/liquid-cooling
+  section: '7'
+  start: 213435
+  end: 213607
+supplies: []
+new_products:
+- id: new-1b6c57105d
+  label: Power distribution busbars
+  reason: Facility and rack power conductors are distinct from high-speed data interconnects
+    and are not covered by the taxonomy.
+  section: '1'
+  start: 59221
+  end: 59316
+- id: new-12f69f1422
+  label: Equipment racks
+  reason: Physical enclosures support data center equipment but are distinct from
+    complete AI servers.
+  section: '1'
+  start: 59318
+  end: 59396
+- id: new-cb36e08778
+  label: Rack power distribution equipment
+  reason: Rack-level electrical distribution is a separate product category from UPS
+    and switchgear.
+  section: '1'
+  start: 59355
+  end: 59418
+- id: new-72b69faeb5
+  label: Energy storage systems
+  reason: Electrical storage supports critical infrastructure and is not separately
+    represented in the taxonomy.
+  section: '1'
+  start: 59420
+  end: 59539
+- id: new-269f600656
+  label: Modular critical infrastructure systems
+  reason: Packaged infrastructure integrates supporting systems rather than selling
+    data center capacity itself.
+  section: '1'
+  start: 59318
+  end: 59346
+- id: new-d6d32d1c2c
+  label: IT infrastructure management software
+  reason: Software for controlling and monitoring data center equipment is absent
+    from the hardware-focused taxonomy.
+  section: '1'
+  start: 59491
+  end: 59525
+- id: new-ae60cac402
+  label: AC and DC power management systems
+  reason: The taxonomy does not fully cover the broader power-management equipment
+    portfolio beyond UPS and switchgear.
+  section: '1'
+  start: 59135
+  end: 59199
+- id: new-931eaf2e03
+  label: Energy storage systems
+  reason: Energy storage supports data center power infrastructure but is not separately
+    represented in the taxonomy.
+  section: 1A
+  start: 115946
+  end: 116071
+- id: new-cd92153b46
+  label: Power busbars and busways
+  reason: These distribute electrical power within data centers rather than carrying
+    high-speed data.
+  section: '7'
+  start: 217316
+  end: 217487
+- id: new-a7e0d63891
+  label: Data center racks and cabinets
+  reason: Physical enclosures for computing equipment are distinct from complete AI
+    servers.
+  section: '7'
+  start: 212306
+  end: 212384
+- id: new-aa9e9e061f
+  label: Prefabricated integrated infrastructure systems
+  reason: Factory-integrated power and thermal infrastructure is a distinct offering
+    not represented by individual equipment categories.
+  section: '7'
+  start: 211590
+  end: 211712
+dropped:
+  supplies: 1
+  requires: 2

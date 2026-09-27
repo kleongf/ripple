@@ -1,0 +1,188 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/extreme-networks
+form: 10-K
+requires: []
+disclosed:
+- id: dis-93491e72e5
+  description: Revenue from customers outside the United States
+  share: 0.55
+  period: fiscal 2026
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '1'
+  start: 75524
+  end: 75638
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6742295571
+  description: Revenue from customers outside the United States
+  share: 0.52
+  period: fiscal 2025
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '1'
+  start: 75602
+  end: 75694
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7aa899da8e
+  description: Revenue from customers outside the United States
+  share: 0.48
+  period: fiscal 2024
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '1'
+  start: 75602
+  end: 75694
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e3b770a030
+  description: Networking equipment revenue as a share of total revenue.
+  share: 0.631
+  period: Fiscal year ended June 30, 2026
+  basis: product
+  products: []
+  section: '7'
+  start: 214613
+  end: 214667
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-db1dfe4499
+  description: Networking equipment revenue as a share of total revenue.
+  share: 0.618
+  period: Fiscal year ended June 30, 2025
+  basis: product
+  products: []
+  section: '7'
+  start: 214613
+  end: 214667
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-683675f403
+  description: Networking equipment revenue as a share of total revenue.
+  share: 0.626
+  period: Fiscal year ended June 30, 2024
+  basis: product
+  products: []
+  section: '7'
+  start: 214613
+  end: 214667
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6e9ce1057e
+  description: Subscriptions and support services as a share of total revenue.
+  share: 0.369
+  period: Fiscal year ended June 30, 2026
+  basis: product
+  products: []
+  section: '7'
+  start: 214751
+  end: 214805
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1ea5e6ca9e
+  description: Subscriptions and support services as a share of total revenue.
+  share: 0.382
+  period: Fiscal year ended June 30, 2025
+  basis: product
+  products: []
+  section: '7'
+  start: 214751
+  end: 214805
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8a800e0308
+  description: Subscriptions and support services as a share of total revenue.
+  share: 0.374
+  period: Fiscal year ended June 30, 2024
+  basis: product
+  products: []
+  section: '7'
+  start: 214751
+  end: 214805
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-c2bb783382
+  product: product/datacenter-switches
+  section: '1'
+  start: 61657
+  end: 61860
+- id: pro-f48073e380
+  product: product/datacenter-switches
+  section: 1A
+  start: 100922
+  end: 101022
+supplies:
+- id: sup-c1e7ec33da
+  supplier: company/broadcom
+  customer: company/extreme-networks
+  product: null
+  section: '1'
+  start: 83359
+  end: 83517
+new_products:
+- id: new-568dad6d53
+  label: Data center routers
+  reason: Routing equipment connects enterprise and cloud data center networks and
+    is distinct from the listed switches.
+  section: '1'
+  start: 61657
+  end: 61860
+- id: new-f033c856d8
+  label: Network management and automation software
+  reason: Software for operating and automating data center networks is not covered
+    by the hardware taxonomy.
+  section: '1'
+  start: 62570
+  end: 62703
+- id: new-a133319260
+  label: Merchant networking silicon
+  reason: Networking chips are components of network equipment, distinct from AI ASICs
+    and leading-edge logic wafers.
+  section: '1'
+  start: 81917
+  end: 82075
+- id: new-1b55eb31e4
+  label: Networking equipment power supplies
+  reason: Device-level redundant power supplies support data center equipment availability
+    and are distinct from facility UPS systems.
+  section: '1'
+  start: 62282
+  end: 62391
+- id: new-9093cdc872
+  label: Network management software
+  reason: Software for operating and monitoring network infrastructure complements
+    data-center networking hardware but lacks a taxonomy entry.
+  section: 1A
+  start: 120222
+  end: 120331
+- id: new-bbf2514ff5
+  label: Network routers
+  reason: Routing equipment supports connectivity between data-center networks and
+    is distinct from switches.
+  section: 1A
+  start: 100922
+  end: 101022
+- id: new-a2c5f7e416
+  label: Cloud network management software
+  reason: Network management and automation software supports networking infrastructure
+    but is not represented in the hardware-focused taxonomy.
+  section: '7'
+  start: 216094
+  end: 216251
+dropped:
+  supplies: 20

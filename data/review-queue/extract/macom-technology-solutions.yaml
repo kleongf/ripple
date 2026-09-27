@@ -1,0 +1,329 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/macom-technology-solutions
+form: 10-K
+requires:
+- id: req-69e69c0c1b
+  product: product/optical-transceivers
+  input: product/lasers
+  bucket: dominant
+  reason: Optical transceivers are the primary application for optical communication
+    laser chips.
+  section: '1'
+  start: 49077
+  end: 49179
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-8ac794fbdb
+  description: Revenue through distributors
+  share: 0.323
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 53844
+  end: 53972
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9d67195cec
+  description: Revenue through distributors
+  share: 0.293
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 53844
+  end: 53972
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e339c6eb33
+  description: Revenue through distributors
+  share: 0.24
+  period: FY2023
+  basis: customer
+  products: []
+  section: '1'
+  start: 53844
+  end: 53972
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0e5fc8e6a5
+  description: Revenue attributable to the first unnamed reseller
+  share: 0.124
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 54995
+  end: 55104
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4cfdb184df
+  description: Revenue attributable to the first unnamed reseller
+  share: 0.113
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 54995
+  end: 55104
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-71ce9dc380
+  description: Revenue attributable to the second unnamed reseller
+  share: 0.112
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 55150
+  end: 55222
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2bf7469fa4
+  description: Combined revenue attributable to the 25 largest direct customers
+  share: 0.456
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 55392
+  end: 55511
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-860ca0ab6a
+  description: Combined revenue attributable to the 25 largest direct customers
+  share: 0.47
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 55392
+  end: 55511
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8eb6306ec2
+  description: Combined revenue attributable to the 25 largest direct customers
+  share: 0.515
+  period: FY2023
+  basis: customer
+  products: []
+  section: '1'
+  start: 55392
+  end: 55511
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c990328d30
+  description: Revenue from the ten largest direct and distribution customers
+  share: 0.567
+  period: Fiscal year ended October 3, 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 91751
+  end: 91856
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0062fe6288
+  description: Revenue from customers outside the United States
+  share: 0.563
+  period: Fiscal year ended October 3, 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 107879
+  end: 108000
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b977777de7
+  description: Revenue from customers in China
+  share: 0.284
+  period: Fiscal year 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 108175
+  end: 108324
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c348a7ef16
+  description: Revenue from customers in the Asia Pacific region
+  share: 0.115
+  period: Fiscal year 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 108175
+  end: 108324
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a6b1891117
+  description: Revenue from distributor sales
+  share: 0.323
+  period: Fiscal year ended October 3, 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 126739
+  end: 126852
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-21a5ce7055
+  description: Industrial and defense end-market revenue
+  share: 0.434
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 202915
+  end: 202949
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f8d332dfef
+  description: Industrial and defense end-market revenue
+  share: 0.482
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 202915
+  end: 202949
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-543518de62
+  description: Data center end-market revenue
+  share: 0.303
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 202950
+  end: 202975
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-240fc91abd
+  description: Data center end-market revenue
+  share: 0.271
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 202950
+  end: 202975
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-257691ef91
+  description: Telecommunications end-market revenue
+  share: 0.263
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 202976
+  end: 202997
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9f6c67b8dd
+  description: Telecommunications end-market revenue
+  share: 0.247
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 202976
+  end: 202997
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-939a12001e
+  product: product/lasers
+  section: '1'
+  start: 48982
+  end: 49102
+- id: pro-52277d8a54
+  product: product/lasers
+  section: 1A
+  start: 139263
+  end: 139415
+supplies: []
+new_products:
+- id: new-010c3578bb
+  label: Transimpedance amplifiers
+  reason: Optical receiver amplifier chips support high-speed data center links and
+    are not covered by the taxonomy.
+  section: '1'
+  start: 48982
+  end: 49102
+- id: new-5f06f93349
+  label: Optical modulator drivers
+  reason: These analog transmitter components support data center optical links and
+    are distinct from optical DSPs.
+  section: '1'
+  start: 48982
+  end: 49102
+- id: new-7b49faa494
+  label: Photodetectors
+  reason: Light-detection components used in data center optical receivers lack a
+    taxonomy entry.
+  section: '1'
+  start: 49077
+  end: 49179
+- id: new-c384dbf757
+  label: Laser drivers
+  reason: Laser drive electronics are separate from laser chips and support optical
+    connectivity.
+  section: '1'
+  start: 50249
+  end: 50405
+- id: new-86cd0f4bb1
+  label: Clock and data recovery ICs
+  reason: Signal timing recovery components support high-speed optical links but are
+    not necessarily optical DSPs.
+  section: '1'
+  start: 50249
+  end: 50349
+- id: new-c2c9f2f4d1
+  label: Optical post amplifiers
+  reason: Optical receiver signal-conditioning chips are relevant to data center connectivity
+    and absent from the taxonomy.
+  section: '1'
+  start: 50249
+  end: 50349
+- id: new-178818141a
+  label: High-speed connectivity analog ICs
+  reason: Analog chips support data center connectivity but are not represented by
+    the optical DSP category.
+  section: '7'
+  start: 188621
+  end: 188727
+- id: new-a6062ae007
+  label: High-speed photonic semiconductor components
+  reason: These components support data center interconnects; the text does not identify
+    them specifically as laser chips or complete optical transceivers.
+  section: '7'
+  start: 188621
+  end: 188727
+dropped:
+  supplies: 1

@@ -1,0 +1,324 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/cisco
+form: 10-K
+requires:
+- id: req-9dc06137b7
+  product: product/datacenter-switches
+  input: product/optical-transceivers
+  bucket: major
+  reason: Data center switches are a substantial source of optical transceiver demand,
+    alongside routing and telecommunications applications.
+  section: '1'
+  start: 63706
+  end: 63793
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-8751ec1925
+  description: AI infrastructure sales to hyperscalers accounted for approximately
+    6% of total revenue.
+  share: 0.06
+  period: Fiscal 2026
+  basis: end market
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 204089
+  end: 204205
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-726884ce9c
+  description: AI infrastructure sales to hyperscalers accounted for less than 2%
+    of total revenue; the share shown is an upper bound.
+  share: 0.02
+  period: Fiscal 2025
+  basis: end market
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 204157
+  end: 204248
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-97756c573f
+  description: Product sales as a share of total revenue.
+  share: 0.763
+  period: Fiscal 2026
+  basis: product
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 226189
+  end: 226279
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-47badfc611
+  description: Product sales as a share of total revenue.
+  share: 0.734
+  period: Fiscal 2025
+  basis: product
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 226189
+  end: 226279
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fba79f2e5d
+  description: Product sales as a share of total revenue.
+  share: 0.73
+  period: Fiscal 2024
+  basis: product
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 226189
+  end: 226279
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-78e20765fc
+  description: Services as a share of total revenue.
+  share: 0.237
+  period: Fiscal 2026
+  basis: product
+  products: []
+  section: '7'
+  start: 226280
+  end: 226361
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dc427dea9a
+  description: Services as a share of total revenue.
+  share: 0.266
+  period: Fiscal 2025
+  basis: product
+  products: []
+  section: '7'
+  start: 226280
+  end: 226361
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c2babbd6e5
+  description: Services as a share of total revenue.
+  share: 0.27
+  period: Fiscal 2024
+  basis: product
+  products: []
+  section: '7'
+  start: 226280
+  end: 226361
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9de1680bc8
+  description: Americas geographic segment share of total revenue.
+  share: 0.597
+  period: Fiscal 2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 226835
+  end: 226926
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5b84b5ceb8
+  description: Americas geographic segment share of total revenue.
+  share: 0.594
+  period: Fiscal 2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 226835
+  end: 226926
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5b84b5ceb8
+  description: Americas geographic segment share of total revenue.
+  share: 0.594
+  period: Fiscal 2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 226835
+  end: 226926
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c9da81fb4e
+  description: EMEA geographic segment share of total revenue.
+  share: 0.262
+  period: Fiscal 2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 226927
+  end: 227006
+  status: pending
+  reviewer: null
+  judge: null
+- id: dis-c9da81fb4e
+  description: EMEA geographic segment share of total revenue.
+  share: 0.262
+  period: Fiscal 2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 226927
+  end: 227006
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c9da81fb4e
+  description: EMEA geographic segment share of total revenue.
+  share: 0.262
+  period: Fiscal 2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 226927
+  end: 227006
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-65d972bea3
+  description: APJC geographic segment share of total revenue.
+  share: 0.141
+  period: Fiscal 2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 227007
+  end: 227080
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a28ad14a2a
+  description: APJC geographic segment share of total revenue.
+  share: 0.144
+  period: Fiscal 2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 227007
+  end: 227080
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2c9d69d177
+  description: APJC geographic segment share of total revenue.
+  share: 0.143
+  period: Fiscal 2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 227007
+  end: 227080
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-b16a97d01a
+  product: product/datacenter-switches
+  section: '1'
+  start: 61206
+  end: 61292
+- id: pro-1c657950e3
+  product: product/optical-transceivers
+  section: '1'
+  start: 63706
+  end: 63793
+- id: pro-45e4cc08b8
+  product: product/optical-transceivers
+  section: '7'
+  start: 230727
+  end: 230817
+supplies: []
+new_products:
+- id: new-beb29e7509
+  label: Networking silicon
+  reason: Switching and routing chips support AI network infrastructure but are distinct
+    from AI compute accelerators and foundry wafers.
+  section: '1'
+  start: 62091
+  end: 62232
+- id: new-d5c82e6ad1
+  label: Data processing units
+  reason: Network processing offload chips used in AI data center switches are absent
+    from the taxonomy.
+  section: '1'
+  start: 63351
+  end: 63482
+- id: new-6cdb3fc4a5
+  label: Network routers
+  reason: Routers provide connectivity for hyperscaler and AI infrastructure and are
+    not covered by the switch category.
+  section: '1'
+  start: 64400
+  end: 64515
+- id: new-ad430f7206
+  label: Distributed network security software
+  reason: Infrastructure security software protects distributed data center workloads
+    and is not represented in the taxonomy.
+  section: '1'
+  start: 66603
+  end: 66793
+- id: new-0347259249
+  label: Observability and network assurance software
+  reason: Monitoring software supports AI infrastructure reliability and operational
+    visibility but lacks a taxonomy category.
+  section: '1'
+  start: 68160
+  end: 68327
+- id: new-8b75d88ab6
+  label: Networking silicon
+  reason: Cisco Silicon One is networking silicon for AI infrastructure, distinct
+    from the listed AI compute ASICs and finished switches.
+  section: 1A
+  start: 140760
+  end: 140875
+- id: new-92a5c08778
+  label: Software-defined networking software
+  reason: Software for programmable data center networks is not represented in the
+    hardware-focused taxonomy.
+  section: 1A
+  start: 127111
+  end: 127206
+- id: new-5a6d4b8b03
+  label: Networking silicon
+  reason: Cisco Silicon One is a networking chip family used in AI infrastructure,
+    distinct from the taxonomy's compute accelerators and finished switches.
+  section: '7'
+  start: 255130
+  end: 255232
+- id: new-78848a2da2
+  label: Network routers
+  reason: Routing equipment supports data center connectivity but is not covered by
+    the switch category.
+  section: '7'
+  start: 230868
+  end: 230971
+- id: new-edb3317076
+  label: General-purpose servers
+  reason: The section identifies server sales without specifying AI-optimized systems;
+    general-purpose servers are absent from the taxonomy.
+  section: '7'
+  start: 230505
+  end: 230627
+dropped:
+  produces: 1

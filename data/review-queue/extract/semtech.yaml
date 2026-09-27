@@ -1,0 +1,432 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/semtech
+form: 10-K
+requires: []
+disclosed:
+- id: dis-22f417efa3
+  description: Infrastructure end-market revenue share
+  share: 0.3
+  period: FY2026
+  basis: end market
+  products: []
+  section: '1'
+  start: 85732
+  end: 85761
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6a29b410eb
+  description: Infrastructure end-market revenue share
+  share: 0.27
+  period: FY2025
+  basis: end market
+  products: []
+  section: '1'
+  start: 85732
+  end: 85761
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1b5d4306b9
+  description: Infrastructure end-market revenue share
+  share: 0.19
+  period: FY2024
+  basis: end market
+  products: []
+  section: '1'
+  start: 85732
+  end: 85761
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ad88723eb1
+  description: Premium consumer end-market revenue share
+  share: 0.15
+  period: FY2026
+  basis: end market
+  products: []
+  section: '1'
+  start: 85762
+  end: 85794
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9583bf8ed5
+  description: Premium consumer end-market revenue share
+  share: 0.16
+  period: FY2025
+  basis: end market
+  products: []
+  section: '1'
+  start: 85762
+  end: 85794
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bf38b7239c
+  description: Premium consumer end-market revenue share
+  share: 0.14
+  period: FY2024
+  basis: end market
+  products: []
+  section: '1'
+  start: 85762
+  end: 85794
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e618bbbed7
+  description: Industrial end-market revenue share
+  share: 0.55
+  period: FY2026
+  basis: end market
+  products: []
+  section: '1'
+  start: 85795
+  end: 85820
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7afdb77d89
+  description: Industrial end-market revenue share
+  share: 0.57
+  period: FY2025
+  basis: end market
+  products: []
+  section: '1'
+  start: 85795
+  end: 85820
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9e5e68b82a
+  description: Industrial end-market revenue share
+  share: 0.67
+  period: FY2024
+  basis: end market
+  products: []
+  section: '1'
+  start: 85795
+  end: 85820
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ee05015a20
+  description: Revenue attributable to anonymized Customer A
+  share: 0.11
+  period: FY2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 88136
+  end: 88156
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-31bcd53947
+  description: Revenue attributable to anonymized Customer A
+  share: 0.1
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 88136
+  end: 88156
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-385da2f87b
+  description: Revenue attributable to anonymized Customer B
+  share: 0.14
+  period: FY2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 88157
+  end: 88179
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e5a8e1792b
+  description: Revenue attributable to anonymized Customer B
+  share: 0.13
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 88157
+  end: 88179
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ac9ea6cf08
+  description: Revenue attributable to anonymized Customer B
+  share: 0.1
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 88157
+  end: 88179
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-afc027bc1f
+  description: Revenue sold through independent distributors
+  share: 0.74
+  period: FY2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 86242
+  end: 86366
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8c93d6e853
+  description: Revenue sold through independent distributors
+  share: 0.72
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 86242
+  end: 86366
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0b14d710a8
+  description: Revenue sold through independent distributors
+  share: 0.66
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 86242
+  end: 86366
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-80c5372add
+  description: Revenue from customers outside the United States
+  share: 0.82
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 161303
+  end: 161405
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ae3a28de35
+  description: Revenue from customers in China, including Hong Kong
+  share: 0.47
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 161406
+  end: 161511
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-11979aa2b0
+  description: Revenue through authorized distributors
+  share: 0.74
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 172859
+  end: 172953
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9f4427fda6
+  description: Infrastructure end-market revenue share
+  share: 0.3
+  period: FY2026
+  basis: end market
+  products:
+  - product/copper-interconnect
+  section: '7'
+  start: 274674
+  end: 274723
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4b2498495e
+  description: Infrastructure end-market revenue share
+  share: 0.27
+  period: FY2025
+  basis: end market
+  products:
+  - product/copper-interconnect
+  section: '7'
+  start: 274674
+  end: 274723
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2f83b125ff
+  description: High-end consumer end-market revenue share
+  share: 0.15
+  period: FY2026
+  basis: end market
+  products: []
+  section: '7'
+  start: 274724
+  end: 274771
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9da31cfe39
+  description: High-end consumer end-market revenue share
+  share: 0.16
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 274724
+  end: 274771
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d0814bef85
+  description: Industrial end-market revenue share
+  share: 0.55
+  period: FY2026
+  basis: end market
+  products: []
+  section: '7'
+  start: 274772
+  end: 274813
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e230557ad5
+  description: Industrial end-market revenue share
+  share: 0.57
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 274772
+  end: 274813
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-42aae15f35
+  description: Signal Integrity segment revenue share
+  share: 0.31
+  period: FY2026
+  basis: segment
+  products:
+  - product/copper-interconnect
+  section: '7'
+  start: 276136
+  end: 276187
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-20874b72b1
+  description: Signal Integrity segment revenue share
+  share: 0.29
+  period: FY2025
+  basis: segment
+  products:
+  - product/copper-interconnect
+  section: '7'
+  start: 276136
+  end: 276187
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9095a0d42e
+  description: Analog Mixed Signal and Wireless segment revenue share
+  share: 0.36
+  period: FY2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 276188
+  end: 276251
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f9e676b224
+  description: Analog Mixed Signal and Wireless segment revenue share
+  share: 0.35
+  period: FY2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 276188
+  end: 276251
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-629759b17a
+  description: IoT Systems and Connectivity segment revenue share
+  share: 0.33
+  period: FY2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 276252
+  end: 276310
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8997fd17c6
+  description: IoT Systems and Connectivity segment revenue share
+  share: 0.36
+  period: FY2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 276252
+  end: 276310
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-a726a7ddb6
+  product: product/copper-interconnect
+  section: '7'
+  start: 259807
+  end: 259941
+supplies: []
+new_products:
+- id: new-a3c2b17ec3
+  label: Optical and copper data-communications ICs
+  reason: Data-center connectivity chips are relevant to AI networking but are not
+    necessarily optical DSPs, complete transceivers, or copper cables and connectors.
+  section: '1'
+  start: 80632
+  end: 80788
+- id: new-955a121115
+  label: Transient-voltage protection ICs
+  reason: These components protect high-speed networking interfaces; the taxonomy
+    lacks signal-protection semiconductors.
+  section: '1'
+  start: 81632
+  end: 81767
+- id: new-7e5c8cefc4
+  label: Optical connectivity semiconductors
+  reason: The company supplies optical connectivity solutions for hyperscale networking,
+    but the section does not identify them specifically as DSPs, lasers or complete
+    transceivers.
+  section: '7'
+  start: 259807
+  end: 259941
+- id: new-be7b525583
+  label: Transient-voltage suppression protection devices
+  reason: Infrastructure protection components address electrical threats and are
+    not represented in the taxonomy.
+  section: '7'
+  start: 275328
+  end: 275402
+dropped: {}

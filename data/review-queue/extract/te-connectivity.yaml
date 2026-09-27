@@ -1,0 +1,134 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/te-connectivity
+form: 10-K
+requires: []
+disclosed:
+- id: dis-afb5965e3a
+  description: Transportation Solutions share of total net sales
+  share: 0.54
+  period: FY2025
+  basis: segment
+  products: []
+  section: '1'
+  start: 52987
+  end: 53030
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5f9a334618
+  description: Transportation Solutions share of total net sales
+  share: 0.6
+  period: FY2024
+  basis: segment
+  products: []
+  section: '1'
+  start: 52987
+  end: 53030
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5f9a334618
+  description: Transportation Solutions share of total net sales
+  share: 0.6
+  period: FY2023
+  basis: segment
+  products: []
+  section: '1'
+  start: 52987
+  end: 53030
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4daf38d0d2
+  description: Sales to automotive customers
+  share: 0.41
+  period: fiscal 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 97069
+  end: 97167
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e301b5ee0a
+  description: Sales to digital data networks customers
+  share: 0.13
+  period: fiscal 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 98155
+  end: 98267
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-18c4932240
+  description: Sales to automation and connected living customers
+  share: 0.12
+  period: fiscal 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 98269
+  end: 98371
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a38615dabc
+  description: Sales to aerospace, defense, and marine customers
+  share: 0.09
+  period: fiscal 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 98377
+  end: 98478
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2b8ba7afcd
+  description: Transportation Solutions portion of consolidated net sales
+  share: 0.54
+  period: fiscal 2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 166231
+  end: 166285
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e78d137d25
+  description: Transportation Solutions portion of consolidated net sales
+  share: 0.6
+  period: fiscal 2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 166231
+  end: 166285
+  status: accepted
+  reviewer: judge
+  judge: true
+produces: []
+supplies: []
+new_products:
+- id: new-ef2aa2dea2
+  label: Electrical terminals and connector systems
+  reason: Power and signal connectors support data-center equipment but are not necessarily
+    high-speed copper interconnects covered by the taxonomy.
+  section: '1'
+  start: 55065
+  end: 55181
+- id: new-119bacc72f
+  label: Power and signal connectivity and sensors
+  reason: The taxonomy lacks general power and signal connectivity and sensing solutions
+    used in AI data centers.
+  section: '7'
+  start: 158766
+  end: 158977
+dropped:
+  disclosed: 5
+  produces: 1

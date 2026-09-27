@@ -1,0 +1,284 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/amd
+form: 10-K
+requires:
+- id: req-e0590d43e0
+  product: product/ai-servers
+  input: product/ai-accelerators
+  bucket: dominant
+  reason: AI servers are the principal deployment platform for data center AI accelerators;
+    the demand bucket is an estimate.
+  section: '1'
+  start: 47706
+  end: 47828
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-b2e0bf3499
+  product: product/ai-servers
+  input: product/server-cpus
+  bucket: minor
+  reason: AI servers use server CPUs but represent a subset of their broader cloud
+    and enterprise applications; the demand bucket is an estimate.
+  section: '1'
+  start: 47706
+  end: 47828
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-19aa191994
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require reliable electricity but account for a minority of
+    total electricity demand.
+  section: 1A
+  start: 168315
+  end: 168380
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-2d7854b938
+  product: product/ai-servers
+  input: product/ai-accelerators
+  bucket: dominant
+  reason: AI server systems are the principal destination for data center AI GPUs.
+  section: '7'
+  start: 243826
+  end: 243946
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-03a9235071
+  product: product/ai-servers
+  input: product/server-cpus
+  bucket: minor
+  reason: AI servers use host CPUs but represent a smaller portion of CPU demand than
+    general-purpose servers.
+  section: '7'
+  start: 243826
+  end: 243946
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-812ab6f0a6
+  description: Sales outside the United States as a share of company net revenue.
+  share: 0.67
+  period: Year ended December 27, 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 220460
+  end: 220556
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d118388530
+  description: Revenue from international sales
+  share: 0.67
+  period: '2025'
+  basis: end market
+  products: []
+  section: '7'
+  start: 264195
+  end: 264279
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3da2bb2ff3
+  description: Revenue from international sales
+  share: 0.66
+  period: '2024'
+  basis: end market
+  products: []
+  section: '7'
+  start: 264195
+  end: 264279
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-cf1c676103
+  product: product/server-cpus
+  section: '1'
+  start: 51525
+  end: 51605
+- id: pro-7d52ef0b23
+  product: product/ai-accelerators
+  section: '1'
+  start: 51944
+  end: 52045
+- id: pro-2cf2f18937
+  product: product/ai-accelerators
+  section: 1A
+  start: 116199
+  end: 116362
+- id: pro-4a334ca879
+  product: product/ai-accelerators
+  section: '7'
+  start: 243008
+  end: 243152
+- id: pro-792be5e0dd
+  product: product/server-cpus
+  section: '7'
+  start: 243331
+  end: 243399
+- id: pro-ed1032e2ee
+  product: product/ai-servers
+  section: '7'
+  start: 243813
+  end: 243946
+supplies:
+- id: sup-29d8359cd3
+  supplier: company/tsmc
+  customer: company/amd
+  product: null
+  section: '1'
+  start: 81179
+  end: 81320
+- id: sup-823985d8c3
+  supplier: company/samsung-electronics
+  customer: company/amd
+  product: null
+  section: '1'
+  start: 81460
+  end: 81625
+- id: sup-5f30cb4553
+  supplier: company/amd
+  customer: company/microsoft
+  product: null
+  section: '1'
+  start: 59269
+  end: 59320
+- id: sup-9fc0d3070b
+  supplier: company/tsmc
+  customer: company/amd
+  product: product/leading-edge-logic
+  section: 1A
+  start: 127694
+  end: 127857
+- id: sup-af335e651b
+  supplier: company/tsmc
+  customer: company/amd
+  product: null
+  section: 1A
+  start: 128005
+  end: 128178
+- id: sup-fd45b188ce
+  supplier: company/samsung-electronics
+  customer: company/amd
+  product: null
+  section: 1A
+  start: 128005
+  end: 128178
+new_products:
+- id: new-a134e3f3b3
+  label: Data processing units
+  reason: Infrastructure-offload processors used in data centers are distinct from
+    the listed compute accelerators and switches.
+  section: '1'
+  start: 52934
+  end: 53062
+- id: new-e4dc42dab7
+  label: AI network interface cards
+  reason: GPU-cluster network adapters are not covered by the switch or interconnect
+    categories.
+  section: '1'
+  start: 53220
+  end: 53353
+- id: new-fa11830cf4
+  label: FPGAs and adaptive SoCs
+  reason: Reconfigurable data center processors form a distinct category from fixed-function
+    custom AI ASICs.
+  section: '1'
+  start: 52558
+  end: 52647
+- id: new-f10e4641d7
+  label: AI computing software platforms
+  reason: Software enabling accelerator training and inference is part of the AI infrastructure
+    stack but absent from the taxonomy.
+  section: '1'
+  start: 49153
+  end: 49326
+- id: new-c35748cbfd
+  label: Co-packaged optics
+  reason: Integrated optical connectivity for AI systems is not explicitly covered
+    by the existing optical component categories.
+  section: '1'
+  start: 48616
+  end: 48683
+- id: new-5c5f4e6bb9
+  label: AI rack-scale reference designs
+  reason: Rack architecture and integration designs are distinct from manufactured
+    AI servers.
+  section: '1'
+  start: 44654
+  end: 44749
+- id: new-07a4e9fc32
+  label: FPGAs and adaptive SoCs
+  reason: Programmable computing devices can support AI acceleration and are not separately
+    represented in the taxonomy.
+  section: 1A
+  start: 113351
+  end: 113469
+- id: new-65e62e0b1d
+  label: Printed circuit boards
+  reason: Boards provide physical and electrical integration for computing hardware
+    and are absent from the taxonomy.
+  section: 1A
+  start: 134694
+  end: 134811
+- id: new-10347a3497
+  label: Interposers
+  reason: These package components connect semiconductor dies and are distinct from
+    the listed packaging service category.
+  section: 1A
+  start: 134694
+  end: 134811
+- id: new-bf5086017e
+  label: Semiconductor assembly and test services
+  reason: Back-end manufacturing services are necessary for finished chips but are
+    not equivalent to advanced 2.5D packaging.
+  section: 1A
+  start: 128179
+  end: 128274
+- id: new-4e55fe2da8
+  label: AI software development tools
+  reason: Software tooling enables deployment of AI hardware and is missing from the
+    hardware-focused taxonomy.
+  section: 1A
+  start: 115915
+  end: 116045
+- id: new-4dbb5b3af8
+  label: Datacenter water supply
+  reason: Water is an explicitly identified operating input for data centers that
+    the taxonomy does not cover.
+  section: 1A
+  start: 168315
+  end: 168380
+- id: new-e3a42d5106
+  label: AI network interface cards
+  reason: GPU-cluster network adapters are distinct from the switches and interconnect
+    products in the taxonomy.
+  section: '7'
+  start: 243600
+  end: 243716
+- id: new-e001a5b47f
+  label: AI computing software
+  reason: GPU software supporting AI training and inference is not represented in
+    the hardware taxonomy.
+  section: '7'
+  start: 245436
+  end: 245577
+- id: new-451b98e246
+  label: Co-packaged optics
+  reason: Integrated optical connectivity for AI systems is distinct from pluggable
+    optical transceivers.
+  section: '7'
+  start: 244903
+  end: 245005
+dropped:
+  supplies: 12
+  requires: 1

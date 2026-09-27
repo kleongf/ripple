@@ -1,0 +1,238 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/applied-materials
+form: 10-K
+requires: []
+disclosed:
+- id: dis-f4e714df88
+  description: Revenue attributable to the larger of two unnamed major customers.
+  share: 0.19
+  period: fiscal 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 51530
+  end: 51638
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-53ab13c86d
+  description: Revenue attributable to the smaller of two unnamed major customers.
+  share: 0.15
+  period: fiscal 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 51530
+  end: 51638
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b5d5fca16e
+  description: Net revenue from customers outside the United States.
+  share: 0.89
+  period: fiscal 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 75650
+  end: 75757
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b74f26075e
+  description: Semiconductor Systems share of total revenue.
+  share: 0.73
+  period: FY2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 159566
+  end: 159617
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b74f26075e
+  description: Semiconductor Systems share of total revenue.
+  share: 0.73
+  period: FY2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 159566
+  end: 159617
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fca0c69c06
+  description: Applied Global Services share of total revenue.
+  share: 0.23
+  period: FY2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 159618
+  end: 159665
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fca0c69c06
+  description: Applied Global Services share of total revenue.
+  share: 0.23
+  period: FY2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 159618
+  end: 159665
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-119c6facf9
+  description: Corporate and Other share of total revenue.
+  share: 0.04
+  period: FY2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 159666
+  end: 159708
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-119c6facf9
+  description: Corporate and Other share of total revenue.
+  share: 0.04
+  period: FY2024
+  basis: segment
+  products: []
+  section: '7'
+  start: 159666
+  end: 159708
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9746d35f77
+  description: Foundry, logic and other markets' share of Semiconductor Systems revenue,
+    not consolidated revenue.
+  share: 0.67
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 159848
+  end: 159882
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8b0e874d19
+  description: Foundry, logic and other markets' share of Semiconductor Systems revenue,
+    not consolidated revenue.
+  share: 0.68
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 159848
+  end: 159882
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d2c86a84bd
+  description: DRAM market share of Semiconductor Systems revenue, not consolidated
+    revenue.
+  share: 0.26
+  period: FY2025
+  basis: end market
+  products:
+  - product/dram
+  section: '7'
+  start: 159883
+  end: 159928
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-235541a09f
+  description: DRAM market share of Semiconductor Systems revenue, not consolidated
+    revenue.
+  share: 0.28
+  period: FY2024
+  basis: end market
+  products:
+  - product/dram
+  section: '7'
+  start: 159883
+  end: 159928
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5931d020a4
+  description: NAND market share of Semiconductor Systems revenue, not consolidated
+    revenue; enterprise and consumer uses are not separated.
+  share: 0.07
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 159929
+  end: 159956
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d7f6819cca
+  description: NAND market share of Semiconductor Systems revenue, not consolidated
+    revenue; enterprise and consumer uses are not separated.
+  share: 0.04
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 159929
+  end: 159956
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-ff402ee6e8
+  product: product/inspection-metrology
+  section: '1'
+  start: 44689
+  end: 44871
+supplies: []
+new_products:
+- id: new-2189e4a8ed
+  label: Advanced packaging equipment
+  reason: Tools for integrating multiple dies support advanced chip manufacturing;
+    the taxonomy covers packaging itself rather than packaging equipment.
+  section: '1'
+  start: 44902
+  end: 45060
+- id: new-9ae67b8e70
+  label: Semiconductor factory automation software
+  reason: Software for operating semiconductor fabrication plants supports chip production
+    but has no corresponding taxonomy entry.
+  section: '1'
+  start: 45752
+  end: 45866
+- id: new-4fdf107164
+  label: Rare earth minerals
+  reason: Inputs used in semiconductor manufacturing equipment that are not covered
+    by the taxonomy.
+  section: 1A
+  start: 85838
+  end: 85974
+- id: new-5786955e47
+  label: Semiconductor factory automation software
+  reason: Software used to optimize chip fabrication supports the upstream AI hardware
+    supply chain but is absent from the taxonomy.
+  section: '7'
+  start: 155382
+  end: 155495
+- id: new-34c2e4c698
+  label: Semiconductor manufacturing equipment spare parts
+  reason: Replacement parts sustain chipmaking equipment used upstream of AI hardware
+    production and are not represented in the taxonomy.
+  section: '7'
+  start: 155382
+  end: 155495
+dropped: {}

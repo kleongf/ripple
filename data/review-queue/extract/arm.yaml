@@ -1,0 +1,425 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/arm
+form: 20-F
+requires:
+- id: req-e811549d41
+  product: product/ai-accelerators
+  input: product/server-cpus
+  bucket: minor
+  reason: GPU hosts represent a subset of server CPU demand, which also serves general-purpose
+    workloads; the share is not disclosed.
+  section: '4'
+  start: 351869
+  end: 351959
+  status: rejected
+  reviewer: claude-code
+  judge: true
+disclosed:
+- id: dis-b3bc84771d
+  description: Combined revenue share of the five largest customers, including Arm
+    China and SoftBank Group.
+  share: 0.57
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: 3D
+  start: 99972
+  end: 100114
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1654543fdc
+  description: Combined revenue share of the five largest customers, including Arm
+    China and SoftBank Group.
+  share: 0.56
+  period: Fiscal year ended March 31, 2025
+  basis: customer
+  products: []
+  section: 3D
+  start: 99972
+  end: 100114
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-11204f9616
+  description: Combined revenue share of the five largest customers, including Arm
+    China and SoftBank Group.
+  share: 0.54
+  period: Fiscal year ended March 31, 2024
+  basis: customer
+  products: []
+  section: 3D
+  start: 99972
+  end: 100114
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6924255ca8
+  description: Revenue attributable to Arm China.
+  share: 0.16
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: 3D
+  start: 100191
+  end: 100344
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-328ff98e3c
+  description: Revenue attributable to Arm China.
+  share: 0.17
+  period: Fiscal year ended March 31, 2025
+  basis: customer
+  products: []
+  section: 3D
+  start: 100191
+  end: 100344
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-83fcd73ff7
+  description: Revenue attributable to Arm China.
+  share: 0.21
+  period: Fiscal year ended March 31, 2024
+  basis: customer
+  products: []
+  section: 3D
+  start: 100191
+  end: 100344
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e1d02db35b
+  description: Mobile application processors' share of royalty revenue, not total
+    company revenue.
+  share: 0.43
+  period: Fiscal year ended March 31, 2026
+  basis: end market
+  products: []
+  section: 3D
+  start: 103180
+  end: 103326
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f532e98de6
+  description: Revenue generated from the PRC market, including direct business and
+    Arm China.
+  share: 0.18
+  period: Fiscal year ended March 31, 2026
+  basis: end market
+  products: []
+  section: 3D
+  start: 116651
+  end: 116752
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-81f75c871d
+  description: Revenue generated from the PRC market, including direct business and
+    Arm China.
+  share: 0.19
+  period: Fiscal year ended March 31, 2025
+  basis: end market
+  products: []
+  section: 3D
+  start: 116651
+  end: 116752
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-edeccaf2fc
+  description: Revenue generated from the PRC market, including direct business and
+    Arm China.
+  share: 0.22
+  period: Fiscal year ended March 31, 2024
+  basis: end market
+  products: []
+  section: 3D
+  start: 116651
+  end: 116752
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-979bf239ba
+  description: Revenue attributable to Qualcomm.
+  share: 0.09
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: 3D
+  start: 178082
+  end: 178219
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-07cfad9fee
+  description: Mobile application processors accounted for approximately 43% of royalty
+    revenue, not total company revenue.
+  share: 0.43
+  period: Fiscal year ended March 31, 2026
+  basis: end market
+  products: []
+  section: '4'
+  start: 340704
+  end: 340829
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-35f41e1919
+  description: Revenue attributable to the Arm China relationship.
+  share: 0.16
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: '4'
+  start: 364432
+  end: 364581
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-418ac9f98e
+  description: Revenue attributable to the Arm China relationship.
+  share: 0.17
+  period: Fiscal year ended March 31, 2025
+  basis: customer
+  products: []
+  section: '4'
+  start: 364432
+  end: 364581
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c47915c59b
+  description: Revenue attributable to the Arm China relationship.
+  share: 0.21
+  period: Fiscal year ended March 31, 2024
+  basis: customer
+  products: []
+  section: '4'
+  start: 364432
+  end: 364581
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e74a76a996
+  description: Revenue from external customers
+  share: 0.7
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: '5'
+  start: 396687
+  end: 396757
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-35e56dd166
+  description: Revenue from external customers
+  share: 0.79
+  period: Fiscal year ended March 31, 2025
+  basis: customer
+  products: []
+  section: '5'
+  start: 396687
+  end: 396757
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0ce619869a
+  description: Revenue from external customers
+  share: 0.78
+  period: Fiscal year ended March 31, 2024
+  basis: customer
+  products: []
+  section: '5'
+  start: 396687
+  end: 396757
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ba0756ca00
+  description: Revenue from related-party customers
+  share: 0.3
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: '5'
+  start: 396758
+  end: 396815
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a6df82d6ef
+  description: Revenue from related-party customers
+  share: 0.21
+  period: Fiscal year ended March 31, 2025
+  basis: customer
+  products: []
+  section: '5'
+  start: 396758
+  end: 396815
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d08d766752
+  description: Revenue from related-party customers
+  share: 0.22
+  period: Fiscal year ended March 31, 2024
+  basis: customer
+  products: []
+  section: '5'
+  start: 396758
+  end: 396815
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-76f462261b
+  description: Revenue from customers located outside the United States
+  share: 0.64
+  period: Fiscal year ended March 31, 2026
+  basis: customer
+  products: []
+  section: '5'
+  start: 400494
+  end: 400631
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dbdbd999f4
+  description: Revenue from customers located outside the United States
+  share: 0.57
+  period: Fiscal year ended March 31, 2025
+  basis: customer
+  products: []
+  section: '5'
+  start: 400494
+  end: 400631
+  status: accepted
+  reviewer: judge
+  judge: true
+produces: []
+supplies:
+- id: sup-d640ac8a09
+  supplier: company/arm
+  customer: company/qualcomm
+  product: null
+  section: 3D
+  start: 175807
+  end: 175901
+- id: sup-dbab4d8455
+  supplier: company/arm
+  customer: company/qualcomm
+  product: null
+  section: '5'
+  start: 372295
+  end: 372389
+new_products:
+- id: new-b7d2684bb0
+  label: Processor architecture and core IP
+  reason: Licensable processor designs underpin data-center chips but are distinct
+    from finished server CPUs.
+  section: 3D
+  start: 98634
+  end: 98727
+- id: new-b49c0bc054
+  label: Compute subsystem IP
+  reason: Integrated infrastructure compute designs are not represented by the listed
+    finished-chip categories.
+  section: 3D
+  start: 71535
+  end: 71613
+- id: new-43b4ed83cb
+  label: Compute chiplets
+  reason: Modular compute dies are distinct from packaging services and complete processors.
+  section: 3D
+  start: 71939
+  end: 72057
+- id: new-03698c8882
+  label: Electronic design automation software
+  reason: Chip-design software supports development of data-center processors and
+    is absent from the taxonomy.
+  section: 3D
+  start: 59457
+  end: 59600
+- id: new-b6be7e2a51
+  label: CPU design IP
+  reason: Licensable processor designs enable custom data-center chips and are distinct
+    from finished server CPUs.
+  section: '4'
+  start: 320913
+  end: 321055
+- id: new-17f10b1e7f
+  label: Compute subsystem designs
+  reason: Integrated, verified subsystem designs support infrastructure chip development
+    but lack a taxonomy category.
+  section: '4'
+  start: 336839
+  end: 336917
+- id: new-59e438f155
+  label: On-chip system and interconnect IP
+  reason: Chip-level integration IP is distinct from the taxonomy's physical copper
+    and optical interconnect products.
+  section: '4'
+  start: 329997
+  end: 330103
+- id: new-49f436f6ff
+  label: GPU and NPU accelerator IP
+  reason: Licensable acceleration designs support AI computing but are distinct from
+    finished merchant data-center accelerators.
+  section: '4'
+  start: 352072
+  end: 352170
+- id: new-0dbfebde2b
+  label: Processor development tools and software
+  reason: Software tooling supports development and deployment of Arm-based compute
+    products, including cloud infrastructure.
+  section: '4'
+  start: 335840
+  end: 335919
+- id: new-99180712d1
+  label: Processor design and architecture IP
+  reason: Licensable CPU designs and instruction-set rights enable chip development
+    but are distinct from finished server CPUs.
+  section: '5'
+  start: 378491
+  end: 378626
+- id: new-c7139dd109
+  label: GPU and NPU accelerator IP
+  reason: Graphics and neural-processing IP can support AI compute but is not necessarily
+    a finished data-center accelerator.
+  section: '5'
+  start: 376554
+  end: 376660
+- id: new-cc35784019
+  label: On-chip interconnect IP
+  reason: Internal chip communication designs differ from the taxonomy's external
+    copper and optical interconnect products.
+  section: '5'
+  start: 376554
+  end: 376660
+- id: new-b73ed9e592
+  label: Integrated compute subsystem IP
+  reason: Preassembled compute IP subsystems support custom chip development and have
+    no corresponding taxonomy category.
+  section: '5'
+  start: 418406
+  end: 418500
+- id: new-41629fe3a6
+  label: Compute chiplets
+  reason: Modular compute dies are distinct from packaging services and complete processors.
+  section: '5'
+  start: 429765
+  end: 429866
+- id: new-a6d060b386
+  label: Processor software development tools
+  reason: Tools for building and debugging processor software support the compute
+    ecosystem but are absent from the taxonomy.
+  section: '5'
+  start: 386238
+  end: 386324
+dropped:
+  produces: 3
+  supplies: 5

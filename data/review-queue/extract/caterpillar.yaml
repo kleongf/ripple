@@ -1,0 +1,56 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/caterpillar
+form: 10-K
+requires:
+- id: req-3e2483945e
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require electricity, but represent a minority of total electricity
+    demand across end markets.
+  section: '7'
+  start: 245137
+  end: 245265
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed: []
+produces:
+- id: pro-13ad67d823
+  product: product/backup-generators
+  section: '1'
+  start: 138909
+  end: 138952
+- id: pro-933d0bec0a
+  product: product/gas-turbines
+  section: '1'
+  start: 128531
+  end: 128630
+- id: pro-6b970a88a2
+  product: product/backup-generators
+  section: '7'
+  start: 275619
+  end: 275776
+- id: pro-56ca24d44f
+  product: product/gas-turbines
+  section: '7'
+  start: 275619
+  end: 275731
+supplies: []
+new_products:
+- id: new-f14d6e2d47
+  label: Reciprocating engines
+  reason: Engines are components of power-generation systems supporting data centers,
+    distinct from complete generator sets.
+  section: '1'
+  start: 136410
+  end: 136525
+- id: new-2fbb0afa19
+  label: Reciprocating engines for power generation
+  reason: These engines power data center generation systems; standalone engines are
+    not represented in the taxonomy.
+  section: '7'
+  start: 264977
+  end: 265079
+dropped: {}

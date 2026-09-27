@@ -1,0 +1,202 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/coherent
+form: 10-K
+requires:
+- id: req-0cedfe5bf5
+  product: product/optical-transceivers
+  input: product/lasers
+  bucket: major
+  reason: Transceivers are a substantial application for laser chips, which also serve
+    sensing, industrial, and other markets.
+  section: '1'
+  start: 71815
+  end: 71948
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-5b7b1b1dff
+  product: product/optical-transceivers
+  input: product/optical-dsps
+  bucket: dominant
+  reason: Optical DSPs primarily support signal processing in optical transmission
+    modules.
+  section: '1'
+  start: 67295
+  end: 67428
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-f6df7564d6
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: AI datacenters require electricity but represent a small portion of total
+    electricity demand across industries and households.
+  section: 1A
+  start: 105789
+  end: 105882
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-e9094910af
+  description: Two unnamed customers each exceeded this revenue-share threshold; exact
+    shares were not disclosed.
+  share: 0.1
+  period: Fiscal 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 79379
+  end: 79465
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-18b526757c
+  description: Two unnamed customers each exceeded the 10% revenue threshold; the
+    stated figure is a lower bound, not an exact share.
+  share: 0.1
+  period: fiscal 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 108153
+  end: 108231
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-f57490eefa
+  product: product/optical-transceivers
+  section: '1'
+  start: 71461
+  end: 71561
+- id: pro-9d4442c284
+  product: product/lasers
+  section: '1'
+  start: 70173
+  end: 70283
+- id: pro-7c9e7d1da5
+  product: product/fiber-cable
+  section: '1'
+  start: 67889
+  end: 68062
+- id: pro-31ef1348e6
+  product: product/optical-transceivers
+  section: '7'
+  start: 202177
+  end: 202343
+- id: pro-186dbaf628
+  product: product/lasers
+  section: '7'
+  start: 203245
+  end: 203330
+supplies: []
+new_products:
+- id: new-eb305cdceb
+  label: Co-packaged optics
+  reason: Integrated optical connectivity for AI infrastructure is distinct from standalone
+    transceivers.
+  section: '1'
+  start: 69997
+  end: 70170
+- id: new-517d5a7623
+  label: Optical circuit switches
+  reason: Optical switching is distinct from the electrical packet switches represented
+    in the taxonomy.
+  section: '1'
+  start: 82752
+  end: 82867
+- id: new-ee12763755
+  label: Indium phosphide substrates
+  reason: Compound-semiconductor substrates support optical interconnect manufacturing
+    and are not silicon wafers.
+  section: '1'
+  start: 67295
+  end: 67428
+- id: new-ea10e7488a
+  label: Photonic integrated circuits
+  reason: Integrated photonic components support transceivers but lack a dedicated
+    taxonomy entry.
+  section: '1'
+  start: 71815
+  end: 71948
+- id: new-dc842fab88
+  label: Optical detectors
+  reason: Optical receiver components are separate from laser chips and complete transceivers.
+  section: '1'
+  start: 71815
+  end: 71948
+- id: new-3fdd09d913
+  label: Passive optical components
+  reason: Transceiver optics and isolators are not represented by the fiber-and-cable
+    category.
+  section: '1'
+  start: 71815
+  end: 71948
+- id: new-65efb5e3c8
+  label: Thermoelectric coolers
+  reason: Component-level transceiver cooling is distinct from datacenter air and
+    liquid cooling.
+  section: '1'
+  start: 82570
+  end: 82722
+- id: new-cbd0fb1e0e
+  label: Optical amplifiers
+  reason: Optical signal amplification supports communications and datacenter interconnect
+    networks.
+  section: '1'
+  start: 73223
+  end: 73415
+- id: new-a925fe48c5
+  label: Optical transport and line systems
+  reason: Network-level optical transport equipment supports connectivity between
+    datacenters.
+  section: '1'
+  start: 73223
+  end: 73415
+- id: new-6cb8f86b41
+  label: Indium phosphide
+  reason: A semiconductor material used in optical communications components, absent
+    from the taxonomy.
+  section: 1A
+  start: 129878
+  end: 130036
+- id: new-8749703ee2
+  label: Compound semiconductor and specialty optical materials
+  reason: Materials supporting photonics, thermal management, and power electronics
+    are not covered by the listed silicon-wafer category.
+  section: 1A
+  start: 125705
+  end: 125864
+- id: new-f6bb2e4640
+  label: Indium phosphide
+  reason: Compound semiconductor material supporting datacenter and communications
+    optics is not covered by the silicon-wafer category.
+  section: '7'
+  start: 202627
+  end: 202764
+- id: new-040ab11074
+  label: Co-packaged optics
+  reason: Integrated optical connectivity is distinct from pluggable transceivers
+    and semiconductor packaging services.
+  section: '7'
+  start: 223453
+  end: 223561
+- id: new-8a2bc81c75
+  label: Optical circuit switches
+  reason: Optical switching systems are distinct from the taxonomy's Ethernet and
+    InfiniBand switches.
+  section: '7'
+  start: 223574
+  end: 223646
+- id: new-2fe46289e3
+  label: Multi-rail networking solutions
+  reason: The identified communications systems have no direct category in the supplied
+    taxonomy.
+  section: '7'
+  start: 223574
+  end: 223646
+dropped:
+  supplies: 3

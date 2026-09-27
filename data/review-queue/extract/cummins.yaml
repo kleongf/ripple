@@ -1,0 +1,431 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/cummins
+form: 10-K
+requires: []
+disclosed:
+- id: dis-836248d8d2
+  description: Engine segment revenue before intersegment eliminations.
+  share: 0.26
+  period: '2025'
+  basis: segment
+  products: []
+  section: '1'
+  start: 70573
+  end: 70640
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5191481723
+  description: Engine segment revenue before intersegment eliminations.
+  share: 0.28
+  period: '2024'
+  basis: segment
+  products: []
+  section: '1'
+  start: 70573
+  end: 70640
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5191481723
+  description: Engine segment revenue before intersegment eliminations.
+  share: 0.28
+  period: '2023'
+  basis: segment
+  products: []
+  section: '1'
+  start: 70573
+  end: 70640
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d3a83281ce
+  description: Components segment revenue before intersegment eliminations.
+  share: 0.25
+  period: '2025'
+  basis: segment
+  products: []
+  section: '1'
+  start: 74279
+  end: 74346
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c2359a1dbb
+  description: Components segment revenue before intersegment eliminations.
+  share: 0.28
+  period: '2024'
+  basis: segment
+  products: []
+  section: '1'
+  start: 74279
+  end: 74346
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-027fc7804d
+  description: Components segment revenue before intersegment eliminations.
+  share: 0.32
+  period: '2023'
+  basis: segment
+  products: []
+  section: '1'
+  start: 74279
+  end: 74346
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-740e0edebb
+  description: Distribution segment revenue before intersegment eliminations; includes
+    generator sales and other products and services.
+  share: 0.3
+  period: '2025'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 78358
+  end: 78425
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-9108b856a7
+  description: Distribution segment revenue before intersegment eliminations; includes
+    generator sales and other products and services.
+  share: 0.27
+  period: '2024'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 78358
+  end: 78425
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-d106c14267
+  description: Distribution segment revenue before intersegment eliminations; includes
+    generator sales and other products and services.
+  share: 0.25
+  period: '2023'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 78358
+  end: 78425
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-4a4875015c
+  description: Power Systems segment revenue before intersegment eliminations; includes
+    generators, industrial engines and alternators.
+  share: 0.18
+  period: '2025'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 80298
+  end: 80365
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-b84fcf2c72
+  description: Power Systems segment revenue before intersegment eliminations; includes
+    generators, industrial engines and alternators.
+  share: 0.16
+  period: '2024'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 80298
+  end: 80365
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-5c9fc55d13
+  description: Power Systems segment revenue before intersegment eliminations; includes
+    generators, industrial engines and alternators.
+  share: 0.14
+  period: '2023'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 80298
+  end: 80365
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-8bb4c8d9f1
+  description: Revenue attributable to PACCAR.
+  share: 0.13
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 96090
+  end: 96229
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3b5df56bc2
+  description: Revenue attributable to PACCAR.
+  share: 0.16
+  period: '2024'
+  basis: customer
+  products: []
+  section: '1'
+  start: 96090
+  end: 96229
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3b5df56bc2
+  description: Revenue attributable to PACCAR.
+  share: 0.16
+  period: '2023'
+  basis: customer
+  products: []
+  section: '1'
+  start: 96090
+  end: 96229
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0d2ea96336
+  description: Combined revenue attributable to PACCAR, Traton, Daimler and Stellantis.
+  share: 0.31
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 97396
+  end: 97493
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ced48e543f
+  description: Combined revenue attributable to PACCAR, Traton, Daimler and Stellantis.
+  share: 0.36
+  period: '2024'
+  basis: customer
+  products: []
+  section: '1'
+  start: 97396
+  end: 97493
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-42261e37c9
+  description: Combined revenue attributable to PACCAR, Traton, Daimler and Stellantis.
+  share: 0.37
+  period: '2023'
+  basis: customer
+  products: []
+  section: '1'
+  start: 97396
+  end: 97493
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-14da7c562d
+  description: Engine share of total segment sales before intersegment eliminations.
+  share: 0.26
+  period: '2025'
+  basis: segment
+  products: []
+  section: '7'
+  start: 209514
+  end: 209556
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-969da5c632
+  description: Engine share of total segment sales before intersegment eliminations.
+  share: 0.28
+  period: '2024'
+  basis: segment
+  products: []
+  section: '7'
+  start: 209514
+  end: 209556
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0d4bb77ebd
+  description: Components share of total segment sales before intersegment eliminations.
+  share: 0.25
+  period: '2025'
+  basis: segment
+  products: []
+  section: '7'
+  start: 209578
+  end: 209618
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b061c893b8
+  description: Components share of total segment sales before intersegment eliminations.
+  share: 0.28
+  period: '2024'
+  basis: segment
+  products: []
+  section: '7'
+  start: 209578
+  end: 209618
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8c1457b75f
+  description: Distribution share of total segment sales before intersegment eliminations,
+    including generators and other offerings.
+  share: 0.3
+  period: '2025'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '7'
+  start: 209639
+  end: 209681
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-767bf9a6e2
+  description: Distribution share of total segment sales before intersegment eliminations,
+    including generators and other offerings.
+  share: 0.27
+  period: '2024'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '7'
+  start: 209639
+  end: 209681
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-3141aeae23
+  description: Power Systems share of total segment sales before intersegment eliminations,
+    including generators and other offerings.
+  share: 0.18
+  period: '2025'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '7'
+  start: 209697
+  end: 209738
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-182207f3ff
+  description: Power Systems share of total segment sales before intersegment eliminations,
+    including generators and other offerings.
+  share: 0.16
+  period: '2024'
+  basis: segment
+  products:
+  - product/backup-generators
+  section: '7'
+  start: 209697
+  end: 209738
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-cea3bb7d57
+  description: Accelera share of total segment sales before intersegment eliminations.
+  share: 0.01
+  period: '2025'
+  basis: segment
+  products: []
+  section: '7'
+  start: 209755
+  end: 209795
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cea3bb7d57
+  description: Accelera share of total segment sales before intersegment eliminations.
+  share: 0.01
+  period: '2024'
+  basis: segment
+  products: []
+  section: '7'
+  start: 209755
+  end: 209795
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-d69b764312
+  product: product/backup-generators
+  section: '1'
+  start: 80558
+  end: 80663
+- id: pro-78b4caa359
+  product: product/backup-generators
+  section: 1A
+  start: 179492
+  end: 179663
+- id: pro-6efc1d5c7f
+  product: product/backup-generators
+  section: '7'
+  start: 197323
+  end: 197454
+supplies: []
+new_products:
+- id: new-5ee4e1e997
+  label: Stationary power-generation engines
+  reason: Diesel and gas engines power generator sets but are distinct from complete
+    backup generators and gas turbines.
+  section: '1'
+  start: 92671
+  end: 92766
+- id: new-b3cb37fc4f
+  label: Generator alternators
+  reason: Alternators are generator-set components relevant to data-center backup
+    power and lack a separate taxonomy entry.
+  section: '1'
+  start: 81390
+  end: 81547
+- id: new-8b2025719a
+  label: Battery energy storage systems
+  reason: Stationary batteries support distributed generation and energy management;
+    they are not necessarily UPS systems.
+  section: '1'
+  start: 80869
+  end: 81006
+- id: new-3b8ef7a47c
+  label: Generator controls and paralleling systems
+  reason: These systems coordinate generator operation for data-center power infrastructure
+    and are not separately covered by the taxonomy.
+  section: '1'
+  start: 80676
+  end: 80852
+- id: new-0ca896c64a
+  label: Power transfer switches
+  reason: These devices transfer loads between power sources and are distinct from
+    the listed low- and medium-voltage switchgear categories.
+  section: '1'
+  start: 80676
+  end: 80852
+- id: new-f9c3c07e3e
+  label: Generator engines
+  reason: Engines are components of data-center backup generation equipment, distinct
+    from complete generator sets.
+  section: '7'
+  start: 197456
+  end: 197529
+- id: new-8f9dee573f
+  label: Alternators
+  reason: These generator components convert mechanical energy into electricity and
+    are not separately covered by the taxonomy.
+  section: '7'
+  start: 197617
+  end: 197655
+dropped:
+  supplies: 24

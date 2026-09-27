@@ -1,0 +1,498 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/intel
+form: 10-K
+requires:
+- id: req-922e38f0ec
+  product: product/leading-edge-logic
+  input: product/euv-lithography
+  bucket: major
+  reason: Advanced logic manufacturing is a major source of EUV demand, alongside
+    memory manufacturing.
+  section: part-1
+  start: 121281
+  end: 121394
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-f79d1fc735
+  product: product/leading-edge-logic
+  input: material/silicon-wafers
+  bucket: minor
+  reason: Leading-edge logic consumes a subset of silicon wafers, which also serve
+    memory and mature-node manufacturing.
+  section: part-1
+  start: 115584
+  end: 115713
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-f37aa617fb
+  product: product/server-cpus
+  input: product/advanced-packaging
+  bucket: minor
+  reason: Server CPUs use 2.5D integration, but represent a smaller demand source
+    than accelerators and other packaged chips.
+  section: part-1
+  start: 106863
+  end: 107037
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-66d24bad39
+  product: product/server-cpus
+  input: product/dram
+  bucket: major
+  reason: Server CPU platforms drive substantial conventional DRAM demand alongside
+    PCs and mobile devices.
+  section: part-1
+  start: 109041
+  end: 109170
+  status: rejected
+  reviewer: claude-code
+  judge: false
+- id: req-13163983d4
+  product: product/leading-edge-logic
+  input: product/euv-lithography
+  bucket: dominant
+  reason: Leading-edge logic fabrication is the principal application for EUV tools;
+    the demand bucket is an estimate, not a disclosed share.
+  section: part-2
+  start: 129540
+  end: 129642
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-3bf9a8abc5
+  product: product/leading-edge-logic
+  input: product/euv-lithography
+  bucket: dominant
+  reason: Leading-edge logic manufacturing is the primary demand driver for EUV tools,
+    which Intel deploys across its advanced nodes.
+  section: part-3
+  start: 287647
+  end: 287786
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-89a061ac10
+  description: Revenue from markets outside the United States.
+  share: 0.7
+  period: '2025'
+  basis: end market
+  products: []
+  section: part-3
+  start: 267145
+  end: 267210
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8ad1e069a3
+  description: Revenue billed to China.
+  share: 0.24
+  period: '2025'
+  basis: end market
+  products: []
+  section: part-3
+  start: 271726
+  end: 271795
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-eab563aa36
+  description: Combined net revenue from the three largest customers.
+  share: 0.43
+  period: '2025'
+  basis: customer
+  products: []
+  section: part-3
+  start: 316391
+  end: 316531
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3566484212
+  description: Combined net revenue from the three largest customers.
+  share: 0.45
+  period: '2024'
+  basis: customer
+  products: []
+  section: part-3
+  start: 316391
+  end: 316531
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f03db440f9
+  description: Combined net revenue from the three largest customers.
+  share: 0.4
+  period: '2023'
+  basis: customer
+  products: []
+  section: part-3
+  start: 316391
+  end: 316531
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3a4d574072
+  description: Revenue attributable to Customer A
+  share: 0.19
+  period: '2025'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419391
+  end: 419416
+  status: pending
+  reviewer: null
+  judge: null
+- id: dis-3a4d574072
+  description: Revenue attributable to Customer A
+  share: 0.19
+  period: '2024'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419391
+  end: 419416
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3a4d574072
+  description: Revenue attributable to Customer A
+  share: 0.19
+  period: '2023'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419391
+  end: 419416
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fd3f3df5f3
+  description: Revenue attributable to Customer B
+  share: 0.12
+  period: '2025'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419417
+  end: 419442
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c2ab148b27
+  description: Revenue attributable to Customer B
+  share: 0.14
+  period: '2024'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419417
+  end: 419442
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dc8ca20404
+  description: Revenue attributable to Customer B
+  share: 0.11
+  period: '2023'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419417
+  end: 419442
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3176ef3b71
+  description: Revenue attributable to Customer C
+  share: 0.12
+  period: '2025'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419443
+  end: 419468
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3176ef3b71
+  description: Revenue attributable to Customer C
+  share: 0.12
+  period: '2024'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419443
+  end: 419468
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e634418859
+  description: Revenue attributable to Customer C
+  share: 0.1
+  period: '2023'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419443
+  end: 419468
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-65b0c943f3
+  description: Combined revenue attributable to the three largest customers
+  share: 0.43
+  period: '2025'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419469
+  end: 419515
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d20ae156c8
+  description: Combined revenue attributable to the three largest customers
+  share: 0.45
+  period: '2024'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419469
+  end: 419515
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-732f1c4cd5
+  description: Combined revenue attributable to the three largest customers
+  share: 0.4
+  period: '2023'
+  basis: customer
+  products: []
+  section: part-4
+  start: 419469
+  end: 419515
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-5ff45a1f5c
+  product: product/server-cpus
+  section: part-1
+  start: 105649
+  end: 105779
+- id: pro-042866fe02
+  product: product/ai-accelerators
+  section: part-1
+  start: 90746
+  end: 90900
+- id: pro-b7cb9ea820
+  product: product/custom-ai-asics
+  section: part-1
+  start: 90746
+  end: 90900
+- id: pro-0c2c1a1372
+  product: product/leading-edge-logic
+  section: part-1
+  start: 84397
+  end: 84453
+- id: pro-c534803d56
+  product: product/advanced-packaging
+  section: part-1
+  start: 125136
+  end: 125229
+- id: pro-6ac03a0850
+  product: product/server-cpus
+  section: part-2
+  start: 135276
+  end: 135374
+- id: pro-7581952885
+  product: product/ai-accelerators
+  section: part-2
+  start: 244452
+  end: 244560
+- id: pro-7133c5265a
+  product: product/custom-ai-asics
+  section: part-2
+  start: 168101
+  end: 168254
+- id: pro-ec6636a328
+  product: product/leading-edge-logic
+  section: part-2
+  start: 175878
+  end: 175971
+- id: pro-706c3db3be
+  product: product/advanced-packaging
+  section: part-2
+  start: 175616
+  end: 175758
+- id: pro-facb4fc320
+  product: product/leading-edge-logic
+  section: part-3
+  start: 257781
+  end: 257863
+- id: pro-62f8fc4e4a
+  product: product/leading-edge-logic
+  section: part-4
+  start: 446129
+  end: 446220
+- id: pro-2fc87a8ff3
+  product: product/advanced-packaging
+  section: part-4
+  start: 443844
+  end: 444003
+- id: pro-b86167f507
+  product: product/advanced-packaging
+  section: part-5
+  start: 544679
+  end: 544842
+supplies:
+- id: sup-0ec97ac73a
+  supplier: company/tsmc
+  customer: company/intel
+  product: product/leading-edge-logic
+  section: part-1
+  start: 114210
+  end: 114383
+- id: sup-9a467a2e8f
+  supplier: company/asml
+  customer: company/intel
+  product: product/euv-lithography
+  section: part-2
+  start: 129484
+  end: 129586
+- id: sup-2d516374ef
+  supplier: company/tsmc
+  customer: company/intel
+  product: product/leading-edge-logic
+  section: part-2
+  start: 247489
+  end: 247615
+- id: sup-8173d113a9
+  supplier: company/asml
+  customer: company/intel
+  product: product/euv-lithography
+  section: part-3
+  start: 287588
+  end: 287690
+- id: sup-33bb631293
+  supplier: company/tsmc
+  customer: company/intel
+  product: product/leading-edge-logic
+  section: part-3
+  start: 288212
+  end: 288410
+- id: sup-814566d061
+  supplier: company/intel
+  customer: company/cisco
+  product: null
+  section: part-5
+  start: 538728
+  end: 538895
+- id: sup-178b0a671e
+  supplier: company/intel
+  customer: company/dell
+  product: null
+  section: part-5
+  start: 538728
+  end: 538895
+- id: sup-5a957206a1
+  supplier: company/intel
+  customer: company/hewlett-packard-enterprise
+  product: null
+  section: part-5
+  start: 538728
+  end: 538895
+- id: sup-f2c545b6a3
+  supplier: company/intel
+  customer: company/oracle
+  product: null
+  section: part-5
+  start: 538728
+  end: 538895
+new_products:
+- id: new-b62367313d
+  label: Ethernet controllers and network adapters
+  reason: These server networking components support AI data movement and are distinct
+    from complete datacenter switches.
+  section: part-1
+  start: 110611
+  end: 110810
+- id: new-145e5fa00d
+  label: Infrastructure processing units
+  reason: Programmable networking processors offload infrastructure tasks from server
+    CPUs and are not separately represented in the taxonomy.
+  section: part-1
+  start: 111560
+  end: 111711
+- id: new-ce2672d0c5
+  label: Multi-beam mask writing equipment
+  reason: Mask fabrication tools support semiconductor production upstream of AI chips
+    and are distinct from wafer lithography systems.
+  section: part-1
+  start: 97667
+  end: 97752
+- id: new-2e13db44ca
+  label: 3D die-stacking and hybrid-bonding packaging
+  reason: Three-dimensional chip integration extends beyond the taxonomy's 2.5D packaging
+    category.
+  section: part-1
+  start: 125486
+  end: 125591
+- id: new-95eaf53335
+  label: Network interface controllers
+  reason: Data-center network adapters are distinct from switches and optical components
+    in the taxonomy.
+  section: part-2
+  start: 168101
+  end: 168254
+- id: new-6a099f33fa
+  label: Infrastructure processing units
+  reason: Infrastructure offload processors support data-center networking and services
+    rather than AI computation, and lack a dedicated taxonomy category.
+  section: part-2
+  start: 168101
+  end: 168254
+- id: new-129bb09c7a
+  label: PFAS semiconductor manufacturing chemicals
+  reason: These chemicals support semiconductor fabrication upstream of AI chips and
+    are not covered by the listed material categories.
+  section: part-3
+  start: 327873
+  end: 328029
+- id: new-d10ee90555
+  label: Field-programmable gate arrays
+  reason: Reconfigurable chips are relevant to datacenter acceleration and networking
+    but lack a dedicated taxonomy category.
+  section: part-5
+  start: 543258
+  end: 543399
+- id: new-db0b746580
+  label: Infrastructure processing units
+  reason: Cloud infrastructure offload processors are distinct from the listed CPUs,
+    AI accelerators, and switches.
+  section: part-5
+  start: 546254
+  end: 546435
+- id: new-bd53cf2677
+  label: Electron-beam semiconductor manufacturing systems
+  reason: These upstream chipmaking systems are not covered by the listed lithography
+    equipment categories.
+  section: part-5
+  start: 545960
+  end: 546101
+- id: new-35407a6606
+  label: Electronic design automation software
+  reason: Chip design and verification tools support AI semiconductor development
+    but are absent from the taxonomy.
+  section: part-5
+  start: 544538
+  end: 544678
+dropped:
+  requires: 1
+  supplies: 10

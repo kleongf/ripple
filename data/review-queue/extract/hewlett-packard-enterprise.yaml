@@ -1,0 +1,175 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/hewlett-packard-enterprise
+form: 10-K
+requires:
+- id: req-6ce47c8cd2
+  product: product/ai-servers
+  input: product/liquid-cooling
+  bucket: dominant
+  reason: Large AI systems drive most demand for datacenter liquid cooling; the demand
+    bucket is inferred, not disclosed.
+  section: '1'
+  start: 118934
+  end: 119025
+  status: rejected
+  reviewer: claude-code
+  judge: true
+disclosed:
+- id: dis-252c576d71
+  description: Revenue attributable to one unnamed distributor, mainly serving Server
+    and Networking.
+  share: 0.1
+  period: fiscal 2025
+  basis: customer
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '1'
+  start: 120696
+  end: 120867
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-27c8727ca4
+  description: Revenue from customers outside the United States.
+  share: 0.61
+  period: fiscal 2025
+  basis: end market
+  products: []
+  section: '1'
+  start: 141359
+  end: 141461
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-965891eb24
+  description: Revenue from markets outside the United States.
+  share: 0.61
+  period: fiscal year 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 269450
+  end: 269551
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-122faeec65
+  product: product/ai-servers
+  section: '1'
+  start: 118771
+  end: 118856
+- id: pro-88c2a89b82
+  product: product/liquid-cooling
+  section: '1'
+  start: 118934
+  end: 119025
+- id: pro-5869e6b3a3
+  product: product/datacenter-switches
+  section: '1'
+  start: 127178
+  end: 127313
+- id: pro-c15d48f107
+  product: product/ai-servers
+  section: '7'
+  start: 383180
+  end: 383279
+supplies:
+- id: sup-e6b9ab1d3d
+  supplier: company/intel
+  customer: company/hewlett-packard-enterprise
+  product: product/server-cpus
+  section: '1'
+  start: 137069
+  end: 137156
+- id: sup-7206d26141
+  supplier: company/amd
+  customer: company/hewlett-packard-enterprise
+  product: product/server-cpus
+  section: '1'
+  start: 137069
+  end: 137156
+- id: sup-8daaf541b1
+  supplier: company/nvidia
+  customer: company/hewlett-packard-enterprise
+  product: product/ai-accelerators
+  section: '1'
+  start: 137238
+  end: 137337
+- id: sup-0abe53146a
+  supplier: company/broadcom
+  customer: company/hewlett-packard-enterprise
+  product: null
+  section: '1'
+  start: 137157
+  end: 137236
+new_products:
+- id: new-58d8b7e2fa
+  label: General-purpose servers
+  reason: Conventional datacenter compute systems are distinct from AI servers and
+    server CPU components.
+  section: '1'
+  start: 121188
+  end: 121271
+- id: new-e59691f6a6
+  label: Enterprise storage systems and data management
+  reason: AI data infrastructure includes complete storage systems and management
+    software, not just enterprise SSDs.
+  section: '1'
+  start: 122371
+  end: 122519
+- id: new-f1a23ea8aa
+  label: Network routers
+  reason: Routing equipment supports datacenter and cloud connectivity but is not
+    covered by the switch category.
+  section: '1'
+  start: 124128
+  end: 124187
+- id: new-b6e5c38722
+  label: Private cloud infrastructure software
+  reason: Virtualization and private cloud management enable deployment and operation
+    of datacenter workloads.
+  section: '1'
+  start: 123124
+  end: 123241
+- id: new-52771401bf
+  label: Cluster management software
+  reason: AI and high-performance computing clusters require orchestration software
+    absent from the taxonomy.
+  section: '1'
+  start: 144333
+  end: 144439
+- id: new-4c1dfbfb37
+  label: Hybrid cloud platform
+  reason: Cloud infrastructure platforms support AI workload deployment and management
+    but are absent from the taxonomy.
+  section: 1A
+  start: 199590
+  end: 199702
+- id: new-0a2f8e1c4b
+  label: General-purpose servers
+  reason: General-purpose data-center computing systems are distinct from AI servers
+    and server CPU components.
+  section: '7'
+  start: 383180
+  end: 383279
+- id: new-835b7ab13a
+  label: Software-defined storage platforms
+  reason: Storage platforms support data-center workloads but are not equivalent to
+    enterprise SSD components.
+  section: '7'
+  start: 382138
+  end: 382244
+- id: new-9dc5c89e2a
+  label: Private cloud solutions
+  reason: Private cloud infrastructure and services support enterprise data-center
+    workloads and are absent from the taxonomy.
+  section: '7'
+  start: 396318
+  end: 396413
+dropped:
+  requires: 3
+  produces: 1
+  supplies: 1

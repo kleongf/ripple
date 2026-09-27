@@ -1,0 +1,104 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/belden
+form: 10-K
+requires: []
+disclosed:
+- id: dis-6070558e72
+  description: Revenue attributable to the largest distributor
+  share: 0.14
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 55075
+  end: 55206
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2bb2b8ae77
+  description: Sales to customers outside the United States
+  share: 0.42
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 56044
+  end: 56127
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f7c1dd9adf
+  description: Revenue attributable to the largest distributor
+  share: 0.14
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 101829
+  end: 101908
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cf1c2626f3
+  description: Combined revenue attributable to the eight largest distributors
+  share: 0.35
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 101913
+  end: 101995
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-4ea321a40e
+  product: product/copper-interconnect
+  section: '1'
+  start: 50466
+  end: 50598
+- id: pro-5225121bdc
+  product: product/fiber-cable
+  section: '1'
+  start: 50466
+  end: 50598
+- id: pro-a25c507fd1
+  product: product/optical-transceivers
+  section: '1'
+  start: 53850
+  end: 54036
+- id: pro-8da35d2e09
+  product: product/air-cooling
+  section: '1'
+  start: 51285
+  end: 51433
+- id: pro-4ba6e17f52
+  product: product/copper-interconnect
+  section: 1A
+  start: 105529
+  end: 105605
+supplies: []
+new_products:
+- id: new-d464ab9bbd
+  label: Network racks and enclosures
+  reason: These house data-center networking infrastructure and are not covered by
+    the listed AI server category.
+  section: '1'
+  start: 50560
+  end: 50641
+- id: new-8f719e771c
+  label: Intelligent data-center power management
+  reason: Power management supports data-center operations but is not necessarily
+    a UPS or switchgear product.
+  section: '1'
+  start: 51285
+  end: 51433
+- id: new-fe6a01ae0a
+  label: Raw copper
+  reason: Conductor material used in cables, distinct from the finished copper interconnects
+    covered by the taxonomy.
+  section: 1A
+  start: 105529
+  end: 105605
+dropped: {}

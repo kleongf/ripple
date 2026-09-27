@@ -1,0 +1,74 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/trane
+form: 10-K
+requires: []
+disclosed: []
+produces:
+- id: pro-95548d7eea
+  product: product/datacenter-chillers
+  section: '1'
+  start: 52750
+  end: 52758
+- id: pro-e239fba52b
+  product: product/air-cooling
+  section: '1'
+  start: 53163
+  end: 53187
+- id: pro-53d1c256e7
+  product: product/liquid-cooling
+  section: '1'
+  start: 53225
+  end: 53261
+supplies: []
+new_products:
+- id: new-8aa396af14
+  label: Data center facility controls
+  reason: Facility monitoring and control systems support data center cooling operations
+    but are not covered by the taxonomy.
+  section: '1'
+  start: 53097
+  end: 53126
+- id: new-621715671d
+  label: Data center services
+  reason: Services supporting data center infrastructure are distinct from the equipment
+    categories in the taxonomy.
+  section: '1'
+  start: 53303
+  end: 53323
+- id: new-1a2b822e5a
+  label: Thermal energy storage
+  reason: Stored cooling can support data center thermal management; the taxonomy
+    lacks a thermal storage category.
+  section: '1'
+  start: 53590
+  end: 53612
+- id: new-986f97bfc8
+  label: Battery energy storage
+  reason: Battery storage is relevant to data center power management and is distinct
+    from UPS equipment.
+  section: '1'
+  start: 53840
+  end: 53864
+- id: new-182524c5dd
+  label: Refrigerants
+  reason: Working fluids used in cooling equipment, including data center cooling
+    systems, are absent from the taxonomy.
+  section: 1A
+  start: 124388
+  end: 124517
+- id: new-48f7c5dc00
+  label: AI-based HVAC optimization software
+  reason: Software for optimizing cooling-system operation is relevant to data-center
+    thermal management and is not covered by the hardware categories.
+  section: '7'
+  start: 159383
+  end: 159486
+- id: new-eaf401c549
+  label: Building automation and energy-management systems
+  reason: Facility automation controls can support data-center cooling and energy
+    management; the taxonomy lacks control systems.
+  section: '7'
+  start: 160174
+  end: 160308
+dropped: {}

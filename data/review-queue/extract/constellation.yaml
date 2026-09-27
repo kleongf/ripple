@@ -1,0 +1,155 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/constellation
+form: 10-K
+requires:
+- id: req-86d917ee1a
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require continuous electricity but remain a smaller demand
+    source alongside the other economic sectors described.
+  section: '1'
+  start: 136130
+  end: 136214
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed: []
+produces:
+- id: pro-c92f9b50a6
+  product: product/nuclear-generation
+  section: '1'
+  start: 95649
+  end: 95810
+- id: pro-3bf778122a
+  product: product/nuclear-generation
+  section: 1A
+  start: 208312
+  end: 208441
+- id: pro-27243cb7be
+  product: product/nuclear-generation
+  section: '7'
+  start: 258504
+  end: 258607
+supplies:
+- id: sup-c3f56bdf0c
+  supplier: company/constellation
+  customer: company/microsoft
+  product: product/nuclear-generation
+  section: '7'
+  start: 261362
+  end: 261475
+new_products:
+- id: new-c244dbcd30
+  label: Natural gas-fired electricity generation
+  reason: Dispatchable electricity supports continuous data center operation; gas
+    turbine equipment does not cover generation itself.
+  section: '1'
+  start: 103606
+  end: 103716
+- id: new-1c5ad68919
+  label: Battery energy storage
+  reason: Grid-scale storage supports power reliability and is distinct from data
+    center UPS equipment.
+  section: '1'
+  start: 107604
+  end: 107727
+- id: new-7ae26feb17
+  label: Geothermal electricity generation
+  reason: Geothermal generation provides another source of dependable electricity
+    for growing data center loads.
+  section: '1'
+  start: 107458
+  end: 107603
+- id: new-8c5ae1f6b0
+  label: Renewable electricity generation
+  reason: Hydroelectric, wind, and solar generation supply electricity and support
+    data center clean-energy procurement.
+  section: '1'
+  start: 104071
+  end: 104177
+- id: new-fb3fd9e4b3
+  label: Nuclear fuel and fuel-cycle services
+  reason: These upstream materials and services sustain nuclear generation used to
+    supply data centers.
+  section: '1'
+  start: 121791
+  end: 121977
+- id: new-55b0cd0cdd
+  label: Nuclear fuel
+  reason: An essential input to nuclear electricity production that is absent from
+    the taxonomy.
+  section: 1A
+  start: 170105
+  end: 170227
+- id: new-636fd55208
+  label: Water supply
+  reason: Supports power generation and data center operations.
+  section: 1A
+  start: 205299
+  end: 205422
+- id: new-23f4fc1717
+  label: Geothermal generation
+  reason: A source of firm electricity for energy-intensive computing that is not
+    covered by nuclear generation.
+  section: 1A
+  start: 214767
+  end: 214916
+- id: new-962c4386f0
+  label: Battery energy storage
+  reason: Grid-scale electricity storage is distinct from the listed uninterruptible
+    power supplies.
+  section: 1A
+  start: 225343
+  end: 225461
+- id: new-e0e771345f
+  label: Natural gas generation
+  reason: Electricity production from gas is distinct from manufacturing gas turbine
+    equipment.
+  section: 1A
+  start: 208661
+  end: 208733
+- id: new-4d6b690fe5
+  label: Hydroelectric generation
+  reason: An additional electricity source relevant to data center power supply.
+  section: 1A
+  start: 198368
+  end: 198501
+- id: new-d940b8766a
+  label: Carbon capture, utilization and storage
+  reason: Enables lower-emission gas-fired electricity supply.
+  section: 1A
+  start: 176264
+  end: 176368
+- id: new-b5806c54dd
+  label: Nuclear fuel
+  reason: Fuel supplies are essential inputs to nuclear electricity production but
+    are absent from the taxonomy.
+  section: '7'
+  start: 267750
+  end: 267848
+- id: new-6e902961c3
+  label: Natural gas power generation
+  reason: Gas-fired electricity supports reliable power supply; the taxonomy covers
+    turbine equipment rather than its electricity output.
+  section: '7'
+  start: 260482
+  end: 260538
+- id: new-4d06b01dfa
+  label: Battery energy storage
+  reason: Utility-scale batteries support power availability and flexibility and are
+    distinct from datacenter UPS systems.
+  section: '7'
+  start: 340232
+  end: 340317
+- id: new-7b0c293320
+  label: Renewable power generation
+  reason: Wind, solar, hydroelectric, and geothermal electricity provide additional
+    power sources not covered by the nuclear generation category.
+  section: '7'
+  start: 259962
+  end: 260068
+dropped:
+  supplies: 3
+  requires: 1

@@ -1,0 +1,413 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/marvell
+form: 10-K
+requires:
+- id: req-acb1884ee9
+  product: product/custom-ai-asics
+  input: product/hbm
+  bucket: major
+  reason: Custom AI chips use HBM and represent a substantial demand source alongside
+    merchant accelerators; the bucket is inferred.
+  section: '1'
+  start: 55074
+  end: 55208
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-6547bd83df
+  product: product/custom-ai-asics
+  input: product/leading-edge-logic
+  bucket: minor
+  reason: Custom AI chips require advanced nodes but are one application within the
+    wider leading-edge logic market; the bucket is inferred.
+  section: '1'
+  start: 55209
+  end: 55341
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-41840bc773
+  product: product/custom-ai-asics
+  input: product/advanced-packaging
+  bucket: major
+  reason: Complex custom accelerators drive substantial advanced-packaging demand
+    alongside merchant accelerators; the bucket is inferred.
+  section: '1'
+  start: 74586
+  end: 74685
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-2ae5304cfb
+  product: product/optical-transceivers
+  input: product/optical-dsps
+  bucket: dominant
+  reason: Optical transmission modules are the principal application for optical DSPs,
+    although DSP-free alternatives exist; the bucket is inferred.
+  section: '1'
+  start: 57137
+  end: 57268
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-13bae41e3a
+  description: Data-center end-market revenue
+  share: 0.74
+  period: Fiscal 2026, ended January 31, 2026
+  basis: end market
+  products:
+  - product/custom-ai-asics
+  - product/optical-dsps
+  - product/datacenter-switches
+  section: '1'
+  start: 53120
+  end: 53176
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c13430658d
+  description: Data-center end-market revenue
+  share: 0.72
+  period: Fiscal 2025, ended February 1, 2025
+  basis: end market
+  products:
+  - product/custom-ai-asics
+  - product/optical-dsps
+  - product/datacenter-switches
+  section: '1'
+  start: 53120
+  end: 53176
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cb611a4acd
+  description: Data-center end-market revenue
+  share: 0.4
+  period: Fiscal 2024, ended February 3, 2024
+  basis: end market
+  products:
+  - product/custom-ai-asics
+  - product/optical-dsps
+  - product/datacenter-switches
+  section: '1'
+  start: 53120
+  end: 53176
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-683543a719
+  description: Communications and other end-market revenue
+  share: 0.26
+  period: Fiscal 2026, ended January 31, 2026
+  basis: end market
+  products:
+  - product/optical-dsps
+  section: '1'
+  start: 53177
+  end: 53240
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ea652254f7
+  description: Communications and other end-market revenue
+  share: 0.28
+  period: Fiscal 2025, ended February 1, 2025
+  basis: end market
+  products:
+  - product/optical-dsps
+  section: '1'
+  start: 53177
+  end: 53240
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-816c02569c
+  description: Communications and other end-market revenue
+  share: 0.6
+  period: Fiscal 2024, ended February 3, 2024
+  basis: end market
+  products:
+  - product/optical-dsps
+  section: '1'
+  start: 53177
+  end: 53240
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e6f272569a
+  description: Revenue attributable to anonymous direct Customer A
+  share: 0.14
+  period: Fiscal 2026, ended January 31, 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 72336
+  end: 72356
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-22e099774d
+  description: Revenue attributable to anonymous direct Customer A
+  share: 0.13
+  period: Fiscal 2025, ended February 1, 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 72336
+  end: 72356
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5743d8a243
+  description: Revenue attributable to anonymous Distributor A
+  share: 0.37
+  period: Fiscal 2026, ended January 31, 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 72370
+  end: 72395
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-175dee62a2
+  description: Revenue attributable to anonymous Distributor A
+  share: 0.34
+  period: Fiscal 2025, ended February 1, 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 72370
+  end: 72395
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9d97e8dc6a
+  description: Revenue attributable to anonymous Distributor A
+  share: 0.24
+  period: Fiscal 2024, ended February 3, 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 72370
+  end: 72395
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-90ecc08e75
+  description: Revenue from the ten largest customers, including distributors and
+    direct customers.
+  share: 0.82
+  period: fiscal 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 106495
+  end: 106635
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-38dedc598a
+  description: Revenue from shipments to customers with Asian operations.
+  share: 0.77
+  period: fiscal 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 176847
+  end: 176993
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a727d5293f
+  description: Revenue from shipments to customers with Asian operations.
+  share: 0.75
+  period: fiscal 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 176847
+  end: 176993
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fde935966b
+  description: Revenue from shipments to customers operating in Asia.
+  share: 0.77
+  period: fiscal 2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 272035
+  end: 272149
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-11603101d4
+  description: Revenue from shipments to customers operating in Asia.
+  share: 0.75
+  period: fiscal 2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 272151
+  end: 272188
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5baf5c4ae2
+  description: Revenue from shipments to customers operating in Asia.
+  share: 0.7
+  period: fiscal 2024
+  basis: customer
+  products: []
+  section: '7'
+  start: 272193
+  end: 272231
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-1f32c745cc
+  product: product/custom-ai-asics
+  section: '1'
+  start: 54582
+  end: 54808
+- id: pro-087569fe32
+  product: product/optical-dsps
+  section: '1'
+  start: 55932
+  end: 56113
+- id: pro-b719126d10
+  product: product/datacenter-switches
+  section: '1'
+  start: 61167
+  end: 61292
+- id: pro-ddf6221f24
+  product: product/custom-ai-asics
+  section: '7'
+  start: 264805
+  end: 264940
+- id: pro-e0c09b9521
+  product: product/optical-dsps
+  section: '7'
+  start: 264805
+  end: 264940
+supplies: []
+new_products:
+- id: new-49723bbba0
+  label: Co-packaged optics and silicon-photonics engines
+  reason: Integrated optical engines support AI compute connectivity and are distinct
+    from discrete lasers, DSPs and pluggable transceivers.
+  section: '1'
+  start: 57753
+  end: 57904
+- id: new-f2334091bb
+  label: Optical analog front-end chipsets
+  reason: Laser drivers and transimpedance amplifiers are optical-link components,
+    not laser chips or complete transceivers.
+  section: '1'
+  start: 57919
+  end: 58085
+- id: new-fa434c8a62
+  label: Active electrical cable DSPs
+  reason: Copper-link signal-processing chips are distinct from optical DSPs and finished
+    copper cables.
+  section: '1'
+  start: 58306
+  end: 58429
+- id: new-91d6d3569a
+  label: PCIe retimers
+  reason: These chips restore signal integrity between AI-server components and are
+    not covered by the existing product categories.
+  section: '1'
+  start: 58908
+  end: 59059
+- id: new-4b9cf6ae83
+  label: Photonic interconnect chiplets
+  reason: Integrated optical-fabric chiplets provide a distinct connectivity component
+    for large AI clusters.
+  section: '1'
+  start: 59975
+  end: 60104
+- id: new-7aa24fadf5
+  label: PCIe and CXL switches
+  reason: Compute and memory fabric switches differ from Ethernet and InfiniBand network
+    switches.
+  section: '1'
+  start: 62851
+  end: 62979
+- id: new-d905baaac9
+  label: Data processing units and infrastructure processors
+  reason: Network and security offload processors are distinct from general-purpose
+    server CPUs and AI accelerators.
+  section: '1'
+  start: 64849
+  end: 65004
+- id: new-b40ae7bc38
+  label: Ethernet controllers and network adapters
+  reason: Server network-interface products are distinct from network switches and
+    physical interconnects.
+  section: '1'
+  start: 61860
+  end: 61985
+- id: new-18e4df9c66
+  label: Ethernet physical-layer chips
+  reason: Electrical and optical PHY chips are components rather than complete optical
+    transceiver modules.
+  section: '1'
+  start: 61364
+  end: 61470
+- id: new-a208420dab
+  label: Fibre Channel adapters and controllers
+  reason: Storage-network interface devices support data-center storage connectivity
+    but lack a taxonomy category.
+  section: '1'
+  start: 63761
+  end: 63900
+- id: new-002846ec49
+  label: Storage controllers
+  reason: HDD and SSD controller chips enable data-center storage but are not complete
+    enterprise SSDs.
+  section: '1'
+  start: 67851
+  end: 67994
+- id: new-a55f61a33c
+  label: Hardware security processors and appliances
+  reason: Dedicated cryptographic processing and key-management hardware supports
+    cloud infrastructure outside the listed categories.
+  section: '1'
+  start: 66939
+  end: 67090
+- id: new-340939dcaf
+  label: Electronic design automation software
+  reason: Chip-design software supports development of data-center semiconductors
+    and is absent from the taxonomy.
+  section: 1A
+  start: 145236
+  end: 145303
+- id: new-dfb59dbc64
+  label: Photonic scale-up interconnect platform
+  reason: An optical scale-up connectivity platform is distinct from the listed fiber,
+    transceiver and DSP categories.
+  section: '7'
+  start: 265601
+  end: 265712
+- id: new-467f46b179
+  label: PCIe and CXL switching silicon
+  reason: These chips support accelerator and memory connectivity rather than the
+    network switches covered by the taxonomy.
+  section: '7'
+  start: 266378
+  end: 266431
+- id: new-02d4f48598
+  label: UALink scale-up switches
+  reason: Accelerator scale-up switching is distinct from the listed Ethernet and
+    InfiniBand network switch category.
+  section: '7'
+  start: 266475
+  end: 266547
+dropped:
+  supplies: 1

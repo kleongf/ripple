@@ -1,0 +1,703 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/tsmc
+form: 20-F
+requires:
+- id: req-4e39579129
+  product: product/leading-edge-logic
+  input: material/silicon-wafers
+  bucket: major
+  reason: Advanced-node fabrication consumes silicon wafers; the demand bucket is
+    an estimate, not a disclosed share.
+  section: 3D
+  start: 165996
+  end: 166138
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-e761eacb69
+  product: product/leading-edge-logic
+  input: material/photoresist
+  bucket: major
+  reason: Advanced-node fabrication consumes photoresist; the demand bucket is an
+    estimate, not a disclosed share.
+  section: 3D
+  start: 165996
+  end: 166138
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-3c61b44742
+  product: product/leading-edge-logic
+  input: material/silicon-wafers
+  bucket: major
+  reason: Advanced logic is a substantial wafer-demand category, alongside memory
+    and mature-node chips; the bucket is an estimate.
+  section: '4'
+  start: 195433
+  end: 195546
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-21d17ef0fc
+  product: product/ai-accelerators
+  input: product/leading-edge-logic
+  bucket: major
+  reason: AI accelerators are a substantial advanced-node application alongside smartphones
+    and other processors; the bucket is an estimate.
+  section: '4'
+  start: 205796
+  end: 205898
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-30180dafa4
+  product: product/custom-ai-asics
+  input: product/leading-edge-logic
+  bucket: minor
+  reason: Custom AI chips are one subset of the broad advanced-node application mix;
+    the bucket is an estimate.
+  section: '4'
+  start: 205796
+  end: 206004
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-f9db81f58f
+  description: Combined net revenue contribution of the ten largest customers.
+  share: 0.7
+  period: '2023'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157344
+  end: 157459
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-059671fa93
+  description: Combined net revenue contribution of the ten largest customers.
+  share: 0.76
+  period: '2024'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157344
+  end: 157459
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c36e48e6d2
+  description: Combined net revenue contribution of the ten largest customers.
+  share: 0.78
+  period: '2025'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157344
+  end: 157459
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-727e76fd5a
+  description: Net revenue contribution of the largest customer.
+  share: 0.25
+  period: '2023'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157484
+  end: 157579
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-61a90aeb8c
+  description: Net revenue contribution of the largest customer.
+  share: 0.22
+  period: '2024'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157484
+  end: 157579
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f5331fa2b9
+  description: Net revenue contribution of the largest customer.
+  share: 0.19
+  period: '2025'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157484
+  end: 157579
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9707ca7717
+  description: Net revenue contribution of the second-largest customer.
+  share: 0.11
+  period: '2023'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157604
+  end: 157708
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-da2368d1b7
+  description: Net revenue contribution of the second-largest customer.
+  share: 0.12
+  period: '2024'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157604
+  end: 157708
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-13edbf8e4e
+  description: Net revenue contribution of the second-largest customer.
+  share: 0.17
+  period: '2025'
+  basis: customer
+  products: []
+  section: 3D
+  start: 157604
+  end: 157708
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6b9a50815e
+  description: High-performance computing platform revenue
+  share: 0.43
+  period: '2023'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  - product/advanced-packaging
+  - product/ai-accelerators
+  - product/custom-ai-asics
+  - product/server-cpus
+  section: '4'
+  start: 212978
+  end: 213044
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-915c87427f
+  description: High-performance computing platform revenue
+  share: 0.51
+  period: '2024'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  - product/advanced-packaging
+  - product/ai-accelerators
+  - product/custom-ai-asics
+  - product/server-cpus
+  section: '4'
+  start: 212978
+  end: 213044
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c3c61f3d3f
+  description: High-performance computing platform revenue
+  share: 0.58
+  period: '2025'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  - product/advanced-packaging
+  - product/ai-accelerators
+  - product/custom-ai-asics
+  - product/server-cpus
+  section: '4'
+  start: 212978
+  end: 213044
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f08369ac6c
+  description: Smartphone platform revenue
+  share: 0.38
+  period: '2023'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213045
+  end: 213095
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2264ad9357
+  description: Smartphone platform revenue
+  share: 0.35
+  period: '2024'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213045
+  end: 213095
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5d6d66b4f4
+  description: Smartphone platform revenue
+  share: 0.29
+  period: '2025'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213045
+  end: 213095
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-41989a6f9f
+  description: Internet-of-things platform revenue
+  share: 0.08
+  period: '2023'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213096
+  end: 213147
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bdd264b5ac
+  description: Internet-of-things platform revenue
+  share: 0.06
+  period: '2024'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213096
+  end: 213147
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0a64be2c61
+  description: Internet-of-things platform revenue
+  share: 0.05
+  period: '2025'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213096
+  end: 213147
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ef77053d16
+  description: Automotive platform revenue
+  share: 0.06
+  period: '2023'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213148
+  end: 213191
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4b03195ccd
+  description: Automotive platform revenue
+  share: 0.05
+  period: '2024'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213148
+  end: 213191
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4b03195ccd
+  description: Automotive platform revenue
+  share: 0.05
+  period: '2025'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213148
+  end: 213191
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-36c2390e55
+  description: Digital consumer electronics platform revenue
+  share: 0.02
+  period: '2023'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213192
+  end: 213250
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-70c30c83b2
+  description: Digital consumer electronics platform revenue
+  share: 0.01
+  period: '2024'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213192
+  end: 213250
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-70c30c83b2
+  description: Digital consumer electronics platform revenue
+  share: 0.01
+  period: '2025'
+  basis: end market
+  products:
+  - product/leading-edge-logic
+  section: '4'
+  start: 213192
+  end: 213250
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b526e55663
+  description: Other platform revenue
+  share: 0.03
+  period: '2023'
+  basis: end market
+  products: []
+  section: '4'
+  start: 213251
+  end: 213287
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4e73448272
+  description: Other platform revenue
+  share: 0.02
+  period: '2024'
+  basis: end market
+  products: []
+  section: '4'
+  start: 213251
+  end: 213287
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4e73448272
+  description: Other platform revenue
+  share: 0.02
+  period: '2025'
+  basis: end market
+  products: []
+  section: '4'
+  start: 213251
+  end: 213287
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c7db2eadfe
+  description: Wafer fabrication as a share of total net revenue, including advanced
+    and mature nodes.
+  share: 0.86
+  period: '2025'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 245039
+  end: 245163
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1b3ded1cc8
+  description: 3nm share of wafer revenue.
+  share: 0.24
+  period: '2025'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247453
+  end: 247584
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-94eef30c37
+  description: 5nm share of wafer revenue.
+  share: 0.36
+  period: '2025'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247453
+  end: 247584
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4b224bcb20
+  description: 7nm share of wafer revenue.
+  share: 0.14
+  period: '2025'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247453
+  end: 247584
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-380986d46d
+  description: 7nm and smaller nodes as a share of wafer revenue.
+  share: 0.74
+  period: '2025'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247585
+  end: 247694
+  status: applied
+  reviewer: claude-code
+  judge: true
+- id: dis-4bc999e239
+  description: 3nm share of wafer revenue.
+  share: 0.18
+  period: '2024'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247695
+  end: 247826
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7f49308085
+  description: 5nm share of wafer revenue.
+  share: 0.34
+  period: '2024'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247695
+  end: 247826
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-967018471d
+  description: 7nm share of wafer revenue.
+  share: 0.17
+  period: '2024'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247695
+  end: 247826
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d0445631a1
+  description: 7nm and smaller nodes as a share of wafer revenue.
+  share: 0.69
+  period: '2024'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247827
+  end: 247936
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5212f9f7b5
+  description: 3nm share of wafer revenue.
+  share: 0.06
+  period: '2023'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247001
+  end: 247026
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-06862098eb
+  description: 5nm share of wafer revenue.
+  share: 0.33
+  period: '2023'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247027
+  end: 247053
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-561b73d64a
+  description: 7nm share of wafer revenue.
+  share: 0.19
+  period: '2023'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247054
+  end: 247080
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c514809f9d
+  description: 7nm and smaller nodes as a share of wafer revenue.
+  share: 0.58
+  period: '2023'
+  basis: product
+  products:
+  - product/leading-edge-logic
+  section: '5'
+  start: 247827
+  end: 247936
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-e8d31ba85c
+  product: product/leading-edge-logic
+  section: 3D
+  start: 149365
+  end: 149492
+- id: pro-3f30aaac05
+  product: product/leading-edge-logic
+  section: '4'
+  start: 196059
+  end: 196120
+- id: pro-710e4d34c3
+  product: product/advanced-packaging
+  section: '4'
+  start: 206424
+  end: 206459
+- id: pro-ac53aacf41
+  product: product/ai-accelerators
+  section: '4'
+  start: 205796
+  end: 205898
+- id: pro-a75522ac32
+  product: product/custom-ai-asics
+  section: '4'
+  start: 205951
+  end: 206004
+- id: pro-194392d5ab
+  product: product/server-cpus
+  section: '4'
+  start: 206074
+  end: 206166
+- id: pro-2de6918114
+  product: product/leading-edge-logic
+  section: '5'
+  start: 247453
+  end: 247584
+- id: pro-8eec5ea532
+  product: product/advanced-packaging
+  section: '5'
+  start: 267578
+  end: 267707
+supplies: []
+new_products:
+- id: new-8c075d5fba
+  label: Semiconductor process gases
+  reason: These fabrication inputs support production of AI chips and are not covered
+    by the taxonomy.
+  section: 3D
+  start: 165996
+  end: 166138
+- id: new-c2fddb6c0c
+  label: Semiconductor process chemicals
+  reason: Fabrication chemicals other than photoresist are relevant upstream inputs
+    missing from the taxonomy.
+  section: 3D
+  start: 165996
+  end: 166138
+- id: new-435d20b94d
+  label: Field-programmable gate arrays
+  reason: Reconfigurable computing chips are identified as HPC products but lack a
+    dedicated taxonomy entry.
+  section: '4'
+  start: 206074
+  end: 206114
+- id: new-3157c6bd24
+  label: High-speed networking integrated circuits
+  reason: Datacenter networking chips are broader than complete switches or optical
+    DSPs.
+  section: '4'
+  start: 206116
+  end: 206166
+- id: new-f71206a3c0
+  label: Electronic design automation and semiconductor design IP
+  reason: Design tools and reusable circuit blocks enable advanced AI chip development
+    but are absent from the taxonomy.
+  section: '4'
+  start: 213953
+  end: 214112
+- id: new-4de071dda8
+  label: Semiconductor polishing equipment
+  reason: Wafer planarization equipment supports advanced semiconductor fabrication
+    but lacks a taxonomy entry.
+  section: '4'
+  start: 222011
+  end: 222054
+- id: new-4a9627413c
+  label: Semiconductor test and probing equipment
+  reason: Electrical testing equipment supports chip production and differs from wafer
+    inspection and metrology.
+  section: '4'
+  start: 222056
+  end: 222075
+- id: new-1623e25ac3
+  label: Ion implantation equipment
+  reason: Doping equipment is part of semiconductor fabrication and is not covered
+    by the listed equipment categories.
+  section: '4'
+  start: 221907
+  end: 221964
+- id: new-ba57b050a0
+  label: Semiconductor photomasks
+  reason: Lithographic patterning masks support chip fabrication and are distinct
+    from photoresist and lithography equipment.
+  section: '5'
+  start: 245164
+  end: 245288
+- id: new-625b89266f
+  label: Semiconductor testing services
+  reason: Chip testing supports semiconductor production for AI infrastructure but
+    is not represented in the taxonomy.
+  section: '5'
+  start: 245164
+  end: 245288
+dropped:
+  requires: 6
+  new_products: 2

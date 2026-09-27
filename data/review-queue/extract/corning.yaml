@@ -1,0 +1,187 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/corning
+form: 10-K
+requires: []
+disclosed:
+- id: dis-414bb3ee80
+  description: Optical Communications share of total segment net sales
+  share: 0.38
+  period: '2025'
+  basis: segment
+  products:
+  - product/fiber-cable
+  section: '1'
+  start: 79384
+  end: 79480
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dd7132aba1
+  description: Display share of total segment net sales
+  share: 0.23
+  period: '2025'
+  basis: segment
+  products: []
+  section: '1'
+  start: 82080
+  end: 82161
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a65882796c
+  description: Specialty Materials share of total segment net sales
+  share: 0.13
+  period: '2025'
+  basis: segment
+  products:
+  - product/inspection-metrology
+  section: '1'
+  start: 85239
+  end: 85332
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0e156cfce8
+  description: Automotive share of total segment net sales
+  share: 0.11
+  period: '2025'
+  basis: segment
+  products: []
+  section: '1'
+  start: 87653
+  end: 87737
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3054930d36
+  description: Life Sciences share of total segment net sales
+  share: 0.06
+  period: '2025'
+  basis: segment
+  products: []
+  section: '1'
+  start: 89622
+  end: 89708
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7350cfe979
+  description: Hemlock and Emerging Growth Businesses share of total segment net sales
+  share: 0.09
+  period: '2025'
+  basis: segment
+  products: []
+  section: '1'
+  start: 90802
+  end: 90901
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-92df48d045
+  description: Two end customers accounted for 28% of Optical Communications segment
+    net sales, not total company revenue.
+  share: 0.28
+  period: '2025'
+  basis: customer
+  products:
+  - product/fiber-cable
+  section: 1A
+  start: 128823
+  end: 128852
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b83afea200
+  description: Three end customers accounted for 59% of Display segment net sales,
+    not total company revenue.
+  share: 0.59
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 128853
+  end: 128867
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-73981686e9
+  description: Two end customers accounted for 43% of Specialty Materials segment
+    net sales, not total company revenue.
+  share: 0.43
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 128868
+  end: 128894
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f0fabfb8fe
+  description: Three end customers accounted for 61% of Automotive segment net sales,
+    not total company revenue.
+  share: 0.61
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 128895
+  end: 128912
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7f8730498c
+  description: Two end customers accounted for 45% of Life Sciences segment net sales,
+    not total company revenue.
+  share: 0.45
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 128913
+  end: 128933
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-c2a87dbb09
+  product: product/fiber-cable
+  section: '1'
+  start: 73961
+  end: 74060
+- id: pro-e28a3f5f0c
+  product: product/inspection-metrology
+  section: '1'
+  start: 84126
+  end: 84246
+- id: pro-f8ffea8502
+  product: product/fiber-cable
+  section: '7'
+  start: 165564
+  end: 165692
+supplies: []
+new_products:
+- id: new-59afe32dec
+  label: Semiconductor optical materials and assemblies
+  reason: Specialized glass and optical assemblies support semiconductor manufacturing
+    but are not lithography systems or laser chips.
+  section: '1'
+  start: 83975
+  end: 84124
+- id: new-513540ba57
+  label: Glass wafers and substrates for semiconductor packaging
+  reason: Glass packaging materials are distinct from silicon wafers, ABF substrates
+    and packaging services.
+  section: '1'
+  start: 84522
+  end: 84706
+- id: new-5e55c5a885
+  label: High-purity polysilicon
+  reason: This upstream semiconductor feedstock is distinct from finished silicon
+    wafers.
+  section: '1'
+  start: 89986
+  end: 90095
+dropped:
+  supplies: 1

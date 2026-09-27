@@ -1,0 +1,154 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/sandisk
+form: 10-K
+requires:
+- id: req-6607dc19c3
+  product: product/enterprise-ssds
+  input: product/dram
+  bucket: minor
+  reason: Enterprise SSD buffering represents a small portion of overall DRAM demand;
+    the text does not quantify that share.
+  section: 1A
+  start: 81991
+  end: 82049
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-84e14317ca
+  description: International sales as a share of total net revenue.
+  share: 0.82
+  period: '2026'
+  basis: customer
+  products:
+  - product/consumer-nand
+  - product/enterprise-ssds
+  section: '1'
+  start: 58972
+  end: 59058
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5e0769e23f
+  description: International sales as a share of total net revenue.
+  share: 0.8
+  period: '2025'
+  basis: customer
+  products:
+  - product/consumer-nand
+  - product/enterprise-ssds
+  section: '1'
+  start: 58972
+  end: 59058
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d3faf70a5c
+  description: International sales as a share of total net revenue.
+  share: 0.86
+  period: '2024'
+  basis: customer
+  products:
+  - product/consumer-nand
+  - product/enterprise-ssds
+  section: '1'
+  start: 58972
+  end: 59058
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fd7eff0543
+  description: Revenue attributable to the ten largest customers.
+  share: 0.44
+  period: '2026'
+  basis: customer
+  products: []
+  section: 1A
+  start: 126772
+  end: 126892
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d2ebccd86a
+  description: Revenue attributable to the ten largest customers.
+  share: 0.4
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 126772
+  end: 126892
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ad194ab4ea
+  description: Revenue attributable to the ten largest customers.
+  share: 0.41
+  period: '2024'
+  basis: customer
+  products: []
+  section: 1A
+  start: 126772
+  end: 126892
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-670a3c6960
+  product: product/enterprise-ssds
+  section: '1'
+  start: 40145
+  end: 40232
+- id: pro-3bdafba3f7
+  product: product/consumer-nand
+  section: '1'
+  start: 41242
+  end: 41383
+- id: pro-dfdd7a9f97
+  product: product/enterprise-ssds
+  section: 1A
+  start: 81991
+  end: 82049
+- id: pro-cd5cc38c53
+  product: product/consumer-nand
+  section: '7'
+  start: 202152
+  end: 202310
+- id: pro-e3cf5e935a
+  product: product/enterprise-ssds
+  section: '7'
+  start: 202152
+  end: 202310
+supplies: []
+new_products:
+- id: new-73e61ed068
+  label: NAND flash memory wafers
+  reason: Fabricated flash memory is an input to enterprise SSDs, distinct from raw
+    silicon wafers and non-enterprise NAND products.
+  section: '1'
+  start: 50545
+  end: 50658
+- id: new-b4168e2ee5
+  label: Flash storage controllers
+  reason: Controllers support flash storage products, including enterprise SSDs, but
+    lack a dedicated taxonomy entry.
+  section: '1'
+  start: 49645
+  end: 49770
+- id: new-bbcecd3e0b
+  label: NAND flash memory components
+  reason: The taxonomy lacks raw NAND components for enterprise storage, distinguishing
+    only non-enterprise NAND and finished enterprise SSDs.
+  section: 1A
+  start: 117488
+  end: 117585
+- id: new-45e5eb9b1a
+  label: Storage controllers
+  reason: Controllers are storage-device inputs relevant to enterprise SSDs but have
+    no separate taxonomy entry.
+  section: 1A
+  start: 80965
+  end: 81138
+dropped:
+  supplies: 5

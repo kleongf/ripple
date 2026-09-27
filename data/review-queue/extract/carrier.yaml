@@ -1,0 +1,73 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/carrier
+form: 10-K
+requires: []
+disclosed:
+- id: dis-e0433075bc
+  description: International operations, including U.S. exports, as a share of company
+    net sales.
+  share: 0.52
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 55678
+  end: 55793
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-139b10feed
+  description: New equipment as a share of company net sales.
+  share: 0.72
+  period: '2025'
+  basis: product
+  products: []
+  section: '1'
+  start: 55794
+  end: 55899
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7a45a9513a
+  description: Parts and services as a share of company net sales.
+  share: 0.28
+  period: '2025'
+  basis: product
+  products: []
+  section: '1'
+  start: 55794
+  end: 55899
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f4f5f7299b
+  description: International operations, including U.S. exports, accounted for approximately
+    52% of net sales.
+  share: 0.52
+  period: Year ended December 31, 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 87614
+  end: 87758
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-b4c5ba5f7e
+  product: product/liquid-cooling
+  section: '1'
+  start: 66863
+  end: 67022
+supplies: []
+new_products:
+- id: new-5854c778af
+  label: Building and server management systems
+  reason: These control systems integrate with data center cooling to improve facility
+    performance and are not covered by the taxonomy.
+  section: '1'
+  start: 66863
+  end: 67022
+dropped:
+  supplies: 1

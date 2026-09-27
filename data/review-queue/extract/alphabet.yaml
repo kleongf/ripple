@@ -1,0 +1,136 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/alphabet
+form: 10-K
+requires:
+- id: req-08bbc70c87
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require power, but represent a small portion of total electricity
+    demand across all uses.
+  section: 1A
+  start: 94457
+  end: 94581
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-ad277e758d
+  product: product/datacenter-capacity
+  input: product/custom-ai-asics
+  bucket: dominant
+  reason: Custom AI accelerators primarily serve AI computing infrastructure in data
+    centers.
+  section: 1A
+  start: 77372
+  end: 77435
+  status: rejected
+  reviewer: claude-code
+  judge: true
+disclosed:
+- id: dis-6f0614a40a
+  description: Online advertising contributed more than 70% of total revenue; the
+    share records the disclosed lower bound.
+  share: 0.7
+  period: '2025'
+  basis: product
+  products: []
+  section: 1A
+  start: 75008
+  end: 75085
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-30bbb6880a
+  description: Markets outside the United States contributed approximately 52% of
+    consolidated revenue.
+  share: 0.52
+  period: '2025'
+  basis: end market
+  products: []
+  section: 1A
+  start: 100008
+  end: 100096
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-5dc57967c6
+  product: product/custom-ai-asics
+  section: '1'
+  start: 53765
+  end: 53863
+- id: pro-a69b9f4ffb
+  product: product/ai-accelerators
+  section: '1'
+  start: 62911
+  end: 62994
+- id: pro-6a301ad5e8
+  product: product/custom-ai-asics
+  section: 1A
+  start: 80409
+  end: 80495
+- id: pro-a9095fded5
+  product: product/datacenter-capacity
+  section: 1A
+  start: 80496
+  end: 80673
+- id: pro-f461829dda
+  product: product/datacenter-capacity
+  section: '7'
+  start: 206073
+  end: 206278
+supplies: []
+new_products:
+- id: new-ee6bb18f86
+  label: AI foundation models
+  reason: Models are a core workload for AI data centers and are not represented in
+    the taxonomy.
+  section: '1'
+  start: 54221
+  end: 54265
+- id: new-44db22b684
+  label: Managed AI development platforms
+  reason: These platforms support model development and deployment on AI infrastructure,
+    beyond the listed hardware categories.
+  section: '1'
+  start: 63088
+  end: 63230
+- id: new-797c866dcf
+  label: AI-optimized storage services
+  reason: AI storage offerings support data-center workloads but are not identified
+    as the enterprise SSD hardware covered by the taxonomy.
+  section: '1'
+  start: 62996
+  end: 63065
+- id: new-c1ca3fddfa
+  label: Cloud computing services
+  reason: Cloud services commercialize data center compute resources and are not represented
+    by the physical capacity category.
+  section: 1A
+  start: 80153
+  end: 80317
+- id: new-cf2ce62188
+  label: Generative AI models
+  reason: AI models drive training and inference workloads on data center infrastructure
+    but lack a taxonomy category.
+  section: 1A
+  start: 84810
+  end: 84932
+- id: new-ff191200b6
+  label: AI foundation models
+  reason: Models are a core software layer driving AI infrastructure usage and are
+    absent from the taxonomy.
+  section: '7'
+  start: 169814
+  end: 169870
+- id: new-da2e1152e9
+  label: Cloud AI platforms and services
+  reason: Managed AI platforms provide enterprise access to AI computing and deployment
+    capabilities not represented by the hardware taxonomy.
+  section: '7'
+  start: 181209
+  end: 181358
+dropped:
+  requires: 3
+  produces: 1

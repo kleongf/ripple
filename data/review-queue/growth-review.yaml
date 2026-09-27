@@ -1,0 +1,7 @@
+# Universe additions rejected in review (M18, split approvals D67): judge verdict plus Claude Code.
+rejected:
+- {cik: 898293, name: Jabil, reason: contract manufacturer; builds switches for others}
+- {cik: 897723, name: Sanmina, reason: contract manufacturer; builds switches for others}
+- {cik: 1326801, name: Meta, reason: designs chips for internal use; sells no taxonomy product}
+- {cik: 1318605, name: Tesla, reason: in-house chips; sells no taxonomy product}
+- {cik: 97745, name: Thermo Fisher, reason: named as a life-sciences competitor}

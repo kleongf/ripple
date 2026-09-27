@@ -1,0 +1,490 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/kla
+form: 10-K
+requires:
+- id: req-ca05e250ba
+  product: product/leading-edge-logic
+  input: product/inspection-metrology
+  bucket: major
+  reason: Leading-edge logic is a substantial process-control demand driver, alongside
+    memory and other semiconductor applications.
+  section: '1'
+  start: 68743
+  end: 68897
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-526338d8e1
+  product: product/advanced-packaging
+  input: product/inspection-metrology
+  bucket: minor
+  reason: Advanced packaging uses inspection equipment but represents a narrower application
+    than the broader wafer-fabrication market.
+  section: '1'
+  start: 78430
+  end: 78571
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-ae2f89bde2
+  product: material/silicon-wafers
+  input: product/inspection-metrology
+  bucket: minor
+  reason: Wafer manufacturing is one specialized inspection application within a much
+    broader semiconductor process-control market.
+  section: '1'
+  start: 77340
+  end: 77496
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-89b638fdc3
+  product: product/leading-edge-logic
+  input: product/inspection-metrology
+  bucket: major
+  reason: Leading-edge logic is a substantial process-control demand source, alongside
+    memory and mature-node manufacturing.
+  section: '7'
+  start: 252971
+  end: 253137
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-5d7827c024
+  product: product/dram
+  input: product/inspection-metrology
+  bucket: major
+  reason: DRAM manufacturing contributes substantial process-control demand alongside
+    foundry and logic applications.
+  section: '7'
+  start: 252801
+  end: 252937
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-fcbe1315ae
+  product: product/hbm
+  input: product/inspection-metrology
+  bucket: minor
+  reason: HBM is a narrower application within the broader memory and logic process-control
+    market.
+  section: '7'
+  start: 252801
+  end: 252937
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-d39c1716d5
+  product: product/advanced-packaging
+  input: product/inspection-metrology
+  bucket: minor
+  reason: Advanced packaging is a growing inspection application within a broader
+    market dominated by semiconductor fabrication.
+  section: '7'
+  start: 251954
+  end: 252122
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-a8dc1952ea
+  product: product/leading-edge-logic
+  input: product/euv-lithography
+  bucket: dominant
+  reason: Leading-edge logic is the principal EUV application, while DRAM represents
+    an additional adopting market.
+  section: '7'
+  start: 252801
+  end: 252886
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-2bd4f8bdae
+  product: product/dram
+  input: product/euv-lithography
+  bucket: minor
+  reason: Conventional DRAM is a smaller EUV application than leading-edge logic.
+  section: '7'
+  start: 252801
+  end: 252886
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-0016dd6a34
+  description: Maintenance and other services contributed approximately 23% of company
+    revenue.
+  share: 0.23
+  period: Fiscal year ended June 30, 2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '1'
+  start: 62841
+  end: 62979
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4937a519de
+  description: Revenue from customers located in China.
+  share: 0.3
+  period: FY2026
+  basis: customer
+  products:
+  - product/inspection-metrology
+  section: 1A
+  start: 121562
+  end: 121673
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3c946961e1
+  description: Revenue from customers located in China.
+  share: 0.33
+  period: FY2025
+  basis: customer
+  products:
+  - product/inspection-metrology
+  section: 1A
+  start: 121562
+  end: 121673
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7ad1b14439
+  description: Revenue from customers located in China.
+  share: 0.43
+  period: FY2024
+  basis: customer
+  products:
+  - product/inspection-metrology
+  section: 1A
+  start: 121562
+  end: 121673
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-093d655064
+  description: Wafer inspection revenue
+  share: 0.49
+  period: FY2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275275
+  end: 275342
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4c045b6c39
+  description: Wafer inspection revenue
+  share: 0.51
+  period: FY2025
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275275
+  end: 275342
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4c6c90dbd7
+  description: Wafer inspection revenue
+  share: 0.44
+  period: FY2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275275
+  end: 275342
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ae4ebea675
+  description: Patterning product revenue
+  share: 0.2
+  period: FY2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275374
+  end: 275429
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-558d6b190b
+  description: Patterning product revenue
+  share: 0.18
+  period: FY2025
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275374
+  end: 275429
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bfb9203d73
+  description: Patterning product revenue
+  share: 0.21
+  period: FY2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275374
+  end: 275429
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-85c99496bc
+  description: Specialty semiconductor processing product revenue
+  share: 0.04
+  period: FY2026
+  basis: product
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 275455
+  end: 275522
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-85c99496bc
+  description: Specialty semiconductor processing product revenue
+  share: 0.04
+  period: FY2025
+  basis: product
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 275455
+  end: 275522
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a2815c71be
+  description: Specialty semiconductor processing product revenue
+  share: 0.05
+  period: FY2024
+  basis: product
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 275455
+  end: 275522
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7c2c24478f
+  description: PCB and component inspection product revenue
+  share: 0.03
+  period: FY2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275550
+  end: 275614
+  status: pending
+  reviewer: null
+  judge: null
+- id: dis-7c2c24478f
+  description: PCB and component inspection product revenue
+  share: 0.03
+  period: FY2025
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275550
+  end: 275614
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7c2c24478f
+  description: PCB and component inspection product revenue
+  share: 0.03
+  period: FY2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 275550
+  end: 275614
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bb0d04a11f
+  description: Equipment maintenance and support revenue
+  share: 0.23
+  period: FY2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 275640
+  end: 275693
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-19fc43aaf4
+  description: Equipment maintenance and support revenue
+  share: 0.22
+  period: FY2025
+  basis: product
+  products:
+  - product/inspection-metrology
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 275640
+  end: 275693
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-14f80f98e9
+  description: Equipment maintenance and support revenue
+  share: 0.24
+  period: FY2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 275640
+  end: 275693
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-a75aef1d3d
+  description: Other product category revenue
+  share: 0.01
+  period: FY2026
+  basis: product
+  products: []
+  section: '7'
+  start: 275720
+  end: 275761
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8c6cc02216
+  description: Other product category revenue
+  share: 0.02
+  period: FY2025
+  basis: product
+  products: []
+  section: '7'
+  start: 275720
+  end: 275761
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-63608c1805
+  description: Other product category revenue
+  share: 0.03
+  period: FY2024
+  basis: product
+  products: []
+  section: '7'
+  start: 275720
+  end: 275761
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-a0311eaa2a
+  product: product/inspection-metrology
+  section: '1'
+  start: 74225
+  end: 74394
+- id: pro-da944ed4b7
+  product: product/deposition-equipment
+  section: '1'
+  start: 80337
+  end: 80452
+- id: pro-1d7eac28eb
+  product: product/etch-equipment
+  section: '1'
+  start: 80337
+  end: 80452
+- id: pro-db3cf3850e
+  product: product/inspection-metrology
+  section: 1A
+  start: 179918
+  end: 180044
+- id: pro-f72d7409cf
+  product: product/inspection-metrology
+  section: '7'
+  start: 250344
+  end: 250520
+- id: pro-4767dfb43b
+  product: product/deposition-equipment
+  section: '7'
+  start: 251765
+  end: 251910
+- id: pro-82a161c503
+  product: product/etch-equipment
+  section: '7'
+  start: 251765
+  end: 251910
+supplies:
+- id: sup-78e64a92d2
+  supplier: company/kla
+  customer: company/tsmc
+  product: product/inspection-metrology
+  section: '1'
+  start: 71958
+  end: 72125
+- id: sup-170bdba38d
+  supplier: company/kla
+  customer: company/tsmc
+  product: product/inspection-metrology
+  section: '7'
+  start: 276104
+  end: 276256
+new_products:
+- id: new-881140ddca
+  label: Semiconductor manufacturing software
+  reason: Yield analytics and patterning simulation software support advanced-chip
+    manufacturing but lack a separate taxonomy entry.
+  section: '1'
+  start: 79050
+  end: 79208
+- id: new-efb11e9b7e
+  label: PCB and IC-substrate patterning equipment
+  reason: Circuit-patterning and additive-printing tools enable electronic boards
+    and chip substrates used in computing hardware.
+  section: '1'
+  start: 81639
+  end: 81815
+- id: new-6bb81b4773
+  label: Rare earth elements
+  reason: These materials support components in semiconductor manufacturing equipment
+    and are absent from the taxonomy.
+  section: 1A
+  start: 209501
+  end: 209582
+- id: new-cca98f6587
+  label: Direct imaging patterning equipment
+  reason: Patterning tools for circuit boards and advanced packages support AI hardware
+    manufacturing but are not covered by the listed lithography or inspection categories.
+  section: '7'
+  start: 251995
+  end: 252122
+dropped:
+  requires: 1

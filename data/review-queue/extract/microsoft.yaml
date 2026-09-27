@@ -1,0 +1,86 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/microsoft
+form: 10-K
+requires:
+- id: req-0c417a225c
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Datacenters require electricity but represent a small portion of total electricity
+    consumption; the bucket is an estimate, not a disclosed share.
+  section: '1'
+  start: 127409
+  end: 127532
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-be5edef731
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Datacenters require electricity but represent a small portion of total electricity
+    consumption.
+  section: '7'
+  start: 180395
+  end: 180582
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed: []
+produces:
+- id: pro-cfd770edf8
+  product: product/datacenter-capacity
+  section: '1'
+  start: 126476
+  end: 126591
+- id: pro-57e9c7348a
+  product: product/custom-ai-asics
+  section: '1'
+  start: 56530
+  end: 56662
+- id: pro-b5b2dd871e
+  product: product/datacenter-capacity
+  section: '7'
+  start: 212593
+  end: 212789
+supplies: []
+new_products:
+- id: new-1dc2932dc6
+  label: Cloud computing services
+  reason: Hosted compute, networking, and storage services monetize datacenter infrastructure
+    but are not separately represented in the taxonomy.
+  section: '1'
+  start: 55861
+  end: 56027
+- id: new-f5e1f41cdd
+  label: AI application development platforms
+  reason: Platforms for developing and managing AI workloads form a software layer
+    above datacenter infrastructure that the taxonomy lacks.
+  section: '1'
+  start: 56712
+  end: 56826
+- id: new-11f52bfd14
+  label: Cloud computing services
+  reason: Cloud services rely on datacenter infrastructure but are not represented
+    as a service category in the taxonomy.
+  section: 1A
+  start: 159609
+  end: 159686
+- id: new-c75a018e11
+  label: Cloud AI services
+  reason: Consumption-based AI services monetize datacenter compute but are not represented
+    by the physical infrastructure categories.
+  section: '7'
+  start: 186442
+  end: 186536
+- id: new-4263eb2ef7
+  label: AI models
+  reason: AI models are inputs to AI applications and datacenter workloads, distinct
+    from the listed hardware products.
+  section: '7'
+  start: 179154
+  end: 179275
+dropped:
+  requires: 2
+  supplies: 1

@@ -1,0 +1,331 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/nvidia
+form: 10-K
+requires:
+- id: req-17fb284692
+  product: product/ai-servers
+  input: product/ai-accelerators
+  bucket: dominant
+  reason: AI servers are the primary systems incorporating data center GPUs.
+  section: '1'
+  start: 48868
+  end: 48968
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-4d960a6d9d
+  product: product/ai-servers
+  input: product/server-cpus
+  bucket: minor
+  reason: AI servers incorporate CPUs but represent a subset of the broader server
+    CPU market.
+  section: '1'
+  start: 48868
+  end: 48968
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-3b6c57488d
+  product: product/ai-servers
+  input: product/liquid-cooling
+  bucket: major
+  reason: Dense AI systems are a substantial application for data center liquid cooling.
+  section: '1'
+  start: 35180
+  end: 35271
+  status: rejected
+  reviewer: claude-code
+  judge: true
+- id: req-4042b588ee
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require electricity but represent a minority of overall electricity
+    consumption; the demand bucket is inferred, not disclosed.
+  section: 1A
+  start: 126377
+  end: 126445
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-e6cb235862
+  description: Revenue from sales outside the United States.
+  share: 0.31
+  period: fiscal year 2026
+  basis: end market
+  products: []
+  section: 1A
+  start: 112465
+  end: 112554
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-308154c628
+  description: Revenue attributable to one unnamed direct customer, primarily within
+    Compute & Networking.
+  share: 0.22
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 135875
+  end: 135958
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8fd1ebd91a
+  description: Revenue attributable to another unnamed direct customer, primarily
+    within Compute & Networking.
+  share: 0.14
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 135963
+  end: 136028
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-42d121bc16
+  description: Largest direct customer's share of total revenue.
+  share: 0.22
+  period: Fiscal year 2026
+  basis: customer
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 224155
+  end: 224238
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-518e798e74
+  description: Second large direct customer's share of total revenue.
+  share: 0.14
+  period: Fiscal year 2026
+  basis: customer
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 224243
+  end: 224308
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4f4b8960f2
+  description: Largest direct customer's share of total revenue.
+  share: 0.12
+  period: Fiscal year 2025
+  basis: customer
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 224388
+  end: 224471
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-00b98e05fc
+  description: Each of two additional direct customers accounted for this share of
+    total revenue.
+  share: 0.11
+  period: Fiscal year 2025
+  basis: customer
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 224476
+  end: 224543
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a5257240c4
+  description: One direct customer's share of total revenue.
+  share: 0.13
+  period: Fiscal year 2024
+  basis: customer
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 224623
+  end: 224706
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-84b00185c6
+  description: Revenue share from customers headquartered outside the United States.
+  share: 0.31
+  period: Fiscal year 2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 225728
+  end: 225869
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f903fef1fe
+  description: Revenue share from customers headquartered outside the United States.
+  share: 0.41
+  period: Fiscal year 2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 225728
+  end: 225869
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-478a138858
+  product: product/ai-accelerators
+  section: '1'
+  start: 41923
+  end: 42090
+- id: pro-80f8c2b603
+  product: product/server-cpus
+  section: '1'
+  start: 35001
+  end: 35122
+- id: pro-d59316755c
+  product: product/ai-servers
+  section: '1'
+  start: 40224
+  end: 40393
+- id: pro-5b4084f2d5
+  product: product/datacenter-switches
+  section: '1'
+  start: 40601
+  end: 40717
+- id: pro-8922853457
+  product: product/ai-accelerators
+  section: 1A
+  start: 166265
+  end: 166329
+- id: pro-5d0e679ec8
+  product: product/datacenter-switches
+  section: '7'
+  start: 222848
+  end: 222989
+supplies:
+- id: sup-1e6c1bd353
+  supplier: company/tsmc
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 57722
+  end: 57866
+- id: sup-e34c962686
+  supplier: company/samsung-electronics
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 57722
+  end: 57866
+- id: sup-950e690b39
+  supplier: company/sk-hynix
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 57867
+  end: 57943
+- id: sup-555f94b187
+  supplier: company/micron
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 57867
+  end: 57943
+- id: sup-d4997cfe89
+  supplier: company/samsung-electronics
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 57867
+  end: 57943
+- id: sup-f2d00279c5
+  supplier: company/fabrinet
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 58078
+  end: 58215
+new_products:
+- id: new-94e49e958e
+  label: Data processing units
+  reason: DPUs handle infrastructure processing in AI servers and are distinct from
+    the listed CPUs and accelerators.
+  section: '1'
+  start: 48868
+  end: 48968
+- id: new-48d9d0a74e
+  label: Network interface adapters
+  reason: Server network adapters are separate components from the listed switches
+    and interconnect cables.
+  section: '1'
+  start: 42091
+  end: 42209
+- id: new-a42ed3acbe
+  label: Scale-up interconnect platforms
+  reason: NVLink provides processor connectivity beyond the taxonomy's cable and switch
+    categories.
+  section: '1'
+  start: 41144
+  end: 41280
+- id: new-2ad62b8c62
+  label: Enterprise AI software
+  reason: Software for developing and deploying AI workloads is a commercial part
+    of the data center platform absent from the taxonomy.
+  section: '1'
+  start: 42727
+  end: 42828
+- id: new-d639519d4e
+  label: AI inference software
+  reason: Inference orchestration software improves AI infrastructure throughput and
+    efficiency but has no listed category.
+  section: '1'
+  start: 35524
+  end: 35683
+- id: new-3e9c79bb87
+  label: Enterprise AI software
+  reason: Software supporting enterprise AI workloads is absent from the hardware-focused
+    taxonomy.
+  section: 1A
+  start: 86796
+  end: 86888
+- id: new-9568c75fea
+  label: AI cloud services
+  reason: Managed AI computing services are distinct from physical data center capacity.
+  section: 1A
+  start: 88656
+  end: 88742
+- id: new-f0adfcae6c
+  label: High-speed network interconnects
+  reason: The text identifies networking interconnects without specifying copper,
+    optical, or switch implementations.
+  section: 1A
+  start: 166472
+  end: 166537
+- id: new-ef977f401c
+  label: GPU scale-up interconnect fabric
+  reason: NVLink connects accelerators within AI systems; the taxonomy does not separately
+    cover scale-up compute fabrics.
+  section: '7'
+  start: 222848
+  end: 222936
+dropped:
+  requires: 2
+  supplies: 3
+  produces: 3

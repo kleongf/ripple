@@ -1,0 +1,390 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/broadcom
+form: 10-K
+requires:
+- id: req-17b3203cee
+  product: product/custom-ai-asics
+  input: product/hbm
+  bucket: major
+  reason: Custom AI accelerators are a substantial HBM application alongside other
+    accelerators; the demand bucket is inferred, not disclosed.
+  section: '1'
+  start: 48612
+  end: 48817
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-fc13d8e0f2
+  product: product/custom-ai-asics
+  input: product/advanced-packaging
+  bucket: major
+  reason: Custom AI accelerators are a substantial advanced-packaging application;
+    the demand bucket is inferred, not disclosed.
+  section: '1'
+  start: 48612
+  end: 48817
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-c2669fb52e
+  product: product/ai-servers
+  input: product/custom-ai-asics
+  bucket: dominant
+  reason: AI systems and racks are the principal deployment platform for custom AI
+    accelerators; the demand bucket is inferred.
+  section: '1'
+  start: 47388
+  end: 47435
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-494574e1c4
+  product: product/ai-servers
+  input: product/custom-ai-asics
+  bucket: dominant
+  reason: AI servers and racks are the primary deployment platform for custom AI compute
+    chips.
+  section: 1A
+  start: 107561
+  end: 107598
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-b35850853c
+  description: Revenue attributable to distributor customers.
+  share: 0.48
+  period: Fiscal years 2025 and 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 70218
+  end: 70320
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e9e5dfff3e
+  description: Approximate combined revenue attributable to the five largest end customers
+    across distribution channels.
+  share: 0.4
+  period: Fiscal years 2025 and 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 70355
+  end: 70495
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e17ea0702c
+  description: Revenue attributable to distributor sales.
+  share: 0.48
+  period: fiscal year 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 106316
+  end: 106397
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cf0c084078
+  description: Approximate revenue attributable to the five largest end customers
+    across all sales channels.
+  share: 0.4
+  period: fiscal year 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 106398
+  end: 106550
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6c2c086c9d
+  description: Product sales, including upfront software licenses
+  share: 0.7
+  period: FY2025
+  basis: product
+  products:
+  - product/custom-ai-asics
+  section: '7'
+  start: 217841
+  end: 217877
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-cad000a443
+  description: Product sales, including upfront software licenses
+  share: 0.68
+  period: FY2024
+  basis: product
+  products:
+  - product/custom-ai-asics
+  section: '7'
+  start: 217841
+  end: 217877
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-ad5e3edbe6
+  description: Direct sales to an unnamed semiconductor distributor
+  share: 0.32
+  period: FY2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 219257
+  end: 219371
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b99314e7d8
+  description: Direct sales to an unnamed semiconductor distributor
+  share: 0.28
+  period: FY2024
+  basis: customer
+  products: []
+  section: '7'
+  start: 219257
+  end: 219371
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1fe5c76127
+  description: Approximately combined sales to the five largest end customers across
+    all channels
+  share: 0.4
+  period: FY2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 219452
+  end: 219546
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1fe5c76127
+  description: Approximately combined sales to the five largest end customers across
+    all channels
+  share: 0.4
+  period: FY2024
+  basis: customer
+  products: []
+  section: '7'
+  start: 219452
+  end: 219546
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-27373096f1
+  description: Revenue attributed to delivery destinations in China, including Hong
+    Kong, rather than ultimate customer locations
+  share: 0.17
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 220670
+  end: 220812
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9cb25f2888
+  description: Revenue attributed to delivery destinations in China, including Hong
+    Kong, rather than ultimate customer locations
+  share: 0.2
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 220670
+  end: 220812
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cc17bb74ef
+  description: Semiconductor business revenue
+  share: 0.58
+  period: FY2025
+  basis: segment
+  products:
+  - product/custom-ai-asics
+  section: '7'
+  start: 221745
+  end: 221778
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cc17bb74ef
+  description: Semiconductor business revenue
+  share: 0.58
+  period: FY2024
+  basis: segment
+  products:
+  - product/custom-ai-asics
+  section: '7'
+  start: 221745
+  end: 221778
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-9eee3bda29
+  product: product/custom-ai-asics
+  section: '1'
+  start: 47209
+  end: 47275
+- id: pro-0def3cfa46
+  product: product/ai-servers
+  section: '1'
+  start: 47388
+  end: 47435
+- id: pro-ffba3fccc7
+  product: product/datacenter-switches
+  section: '1'
+  start: 49237
+  end: 49396
+- id: pro-bb45b56c01
+  product: product/lasers
+  section: '1'
+  start: 74835
+  end: 75004
+- id: pro-5074202fb6
+  product: product/custom-ai-asics
+  section: 1A
+  start: 109280
+  end: 109362
+- id: pro-f6485f044d
+  product: product/datacenter-switches
+  section: 1A
+  start: 109280
+  end: 109362
+- id: pro-41e20eddf4
+  product: product/ai-servers
+  section: 1A
+  start: 109411
+  end: 109471
+- id: pro-a1306fe159
+  product: product/custom-ai-asics
+  section: '7'
+  start: 221839
+  end: 222013
+supplies:
+- id: sup-ee779d8bcb
+  supplier: company/tsmc
+  customer: company/broadcom
+  product: null
+  section: '1'
+  start: 74260
+  end: 74428
+- id: sup-2d9c15001b
+  supplier: company/amkor-technology
+  customer: company/broadcom
+  product: null
+  section: '1'
+  start: 74482
+  end: 74669
+- id: sup-b4f771748a
+  supplier: company/tsmc
+  customer: company/broadcom
+  product: null
+  section: 1A
+  start: 114367
+  end: 114470
+new_products:
+- id: new-0caf680b29
+  label: Ethernet NICs and controllers
+  reason: Server network interfaces support AI connectivity and are distinct from
+    switches.
+  section: '1'
+  start: 50152
+  end: 50313
+- id: new-ee17e2e539
+  label: Ethernet PHY chips
+  reason: Physical-layer interface chips support copper and optical networking but
+    are not necessarily optical transceiver modules or optical DSPs.
+  section: '1'
+  start: 50341
+  end: 50501
+- id: new-3b6d3951a5
+  label: PCIe switches
+  reason: Internal compute interconnect chips serve AI systems and differ from Ethernet
+    fabric switches.
+  section: '1'
+  start: 53264
+  end: 53418
+- id: new-7b51824340
+  label: Storage controllers and adapters
+  reason: Server storage connectivity requires controller chips and adapters, which
+    are distinct from complete SSDs.
+  section: '1'
+  start: 53632
+  end: 53784
+- id: new-8eb057e35a
+  label: SSD flash controllers
+  reason: These chips manage flash storage rather than constitute complete enterprise
+    SSDs.
+  section: '1'
+  start: 54883
+  end: 54971
+- id: new-eeb1443c1a
+  label: Fibre Channel storage networking
+  reason: Storage network adapters and systems provide data-center connectivity outside
+    the listed Ethernet and InfiniBand switch categories.
+  section: '1'
+  start: 54003
+  end: 54151
+- id: new-5e0996e8bf
+  label: Private-cloud infrastructure software
+  reason: Virtualization and cloud management software provide infrastructure for
+    enterprise AI workloads, but the taxonomy contains no software category.
+  section: '1'
+  start: 58365
+  end: 58549
+- id: new-d7c9ce534b
+  label: Private AI software
+  reason: Private AI deployment software supports generative AI infrastructure with
+    privacy and compliance controls.
+  section: '1'
+  start: 59949
+  end: 60099
+- id: new-98ab4f5aaa
+  label: Indium phosphide wafers
+  reason: Compound-semiconductor wafers support optical connectivity components and
+    are distinct from silicon wafers.
+  section: 1A
+  start: 129788
+  end: 129842
+- id: new-7245d99bcd
+  label: Data center virtualization software
+  reason: Software for managing private and hybrid cloud computing infrastructure
+    is absent from the taxonomy.
+  section: 1A
+  start: 138736
+  end: 138908
+- id: new-daa76be961
+  label: Network interface cards
+  reason: Server network adapters are relevant to data-center connectivity and are
+    not separately represented in the taxonomy.
+  section: '7'
+  start: 190912
+  end: 191002
+- id: new-05273ee945
+  label: Fibre Channel storage networking products
+  reason: Storage-network modules and systems support data-center storage connectivity,
+    distinct from the listed Ethernet and InfiniBand switches.
+  section: '7'
+  start: 191891
+  end: 192048
+- id: new-16d851574c
+  label: Private-cloud infrastructure software
+  reason: Software for operating private and hybrid data-center environments is absent
+    from the hardware-focused taxonomy.
+  section: '7'
+  start: 198584
+  end: 198807
+dropped:
+  supplies: 3
+  disclosed: 4

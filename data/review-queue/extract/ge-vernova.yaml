@@ -1,0 +1,158 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/ge-vernova
+form: 10-K
+requires: []
+disclosed: []
+produces:
+- id: pro-dc33c8ab55
+  product: product/gas-turbines
+  section: '1'
+  start: 76595
+  end: 76675
+- id: pro-670ca520d7
+  product: product/nuclear-generation
+  section: '1'
+  start: 76945
+  end: 77085
+- id: pro-5f3d493ab6
+  product: product/grid-equipment
+  section: '1'
+  start: 83782
+  end: 83930
+- id: pro-194c0c636d
+  product: product/switchgear
+  section: '1'
+  start: 83782
+  end: 83930
+- id: pro-2704e9f5f3
+  product: product/gas-turbines
+  section: 1A
+  start: 114258
+  end: 114389
+- id: pro-8259474bab
+  product: product/grid-equipment
+  section: 1A
+  start: 114367
+  end: 114486
+- id: pro-556e570e26
+  product: product/nuclear-generation
+  section: 1A
+  start: 126283
+  end: 126386
+- id: pro-be8f5e28e8
+  product: product/gas-turbines
+  section: '7'
+  start: 247367
+  end: 247495
+- id: pro-02c55aa955
+  product: product/grid-equipment
+  section: '7'
+  start: 208485
+  end: 208619
+- id: pro-dd9bdfa86b
+  product: product/switchgear
+  section: '7'
+  start: 207797
+  end: 207913
+- id: pro-93f1591318
+  product: product/nuclear-generation
+  section: '7'
+  start: 207633
+  end: 207718
+supplies: []
+new_products:
+- id: new-a52d415bc0
+  label: Wind turbines
+  reason: Renewable generation equipment can support data-center electricity supply
+    and is absent from the taxonomy.
+  section: '1'
+  start: 80271
+  end: 80349
+- id: new-057edf286f
+  label: Hydropower generation equipment
+  reason: Hydropower equipment supports electricity supply upstream of data centers
+    and lacks a taxonomy category.
+  section: '1'
+  start: 77186
+  end: 77337
+- id: new-58578451a0
+  label: Steam turbines
+  reason: Steam turbines are distinct generation components used in power plants supplying
+    the electricity system.
+  section: '1'
+  start: 77338
+  end: 77458
+- id: new-cd201eb06b
+  label: Energy conversion and storage systems
+  reason: These systems support power stability and electricity storage beyond the
+    taxonomy's UPS category.
+  section: '1'
+  start: 84502
+  end: 84649
+- id: new-4593539fc5
+  label: Grid orchestration software
+  reason: Software for reliable electricity delivery supports data-center power infrastructure
+    but lacks a taxonomy category.
+  section: '1'
+  start: 105068
+  end: 105280
+- id: new-fd61580d1a
+  label: Wind turbines
+  reason: Wind generation can supply electricity to data centers and is not covered
+    by the taxonomy.
+  section: 1A
+  start: 114367
+  end: 114486
+- id: new-a15c80122a
+  label: Grid-scale energy storage
+  reason: Utility-scale storage supports reliable power supply for data centers and
+    differs from UPS systems.
+  section: 1A
+  start: 124963
+  end: 125010
+- id: new-45ba3d3235
+  label: Hydrogen-based power generation
+  reason: Hydrogen power systems are a potential data-center electricity source not
+    separately represented in the taxonomy.
+  section: 1A
+  start: 124892
+  end: 124923
+- id: new-56133ef50c
+  label: Carbon capture systems
+  reason: Capture technology can reduce emissions from gas-fired generation supplying
+    data centers; the taxonomy lacks this equipment.
+  section: 1A
+  start: 144256
+  end: 144395
+- id: new-a958d098ca
+  label: Energy storage systems
+  reason: Storage supports electricity availability and balancing for data center
+    power infrastructure and is distinct from UPS equipment.
+  section: '7'
+  start: 207918
+  end: 207989
+- id: new-abd5ce3ebd
+  label: Synchronous condensers
+  reason: These support grid stability for large electrical loads and are not explicitly
+    represented in the taxonomy.
+  section: '7'
+  start: 207918
+  end: 207989
+- id: new-f544e9c3e8
+  label: Wind turbines
+  reason: Wind generation can supply electricity to data centers, but the taxonomy
+    lacks wind power equipment.
+  section: '7'
+  start: 247367
+  end: 247495
+- id: new-aa9c4a5a64
+  label: Hydropower equipment
+  reason: Hydroelectric generation is an electricity supply option for data centers
+    missing from the taxonomy.
+  section: '7'
+  start: 207633
+  end: 207718
+dropped:
+  requires: 3
+  supplies: 1

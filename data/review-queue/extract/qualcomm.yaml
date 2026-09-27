@@ -1,0 +1,83 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/qualcomm
+form: 10-K
+requires: []
+disclosed:
+- id: dis-0636964ab3
+  description: Apple accounted for at least 10% of consolidated revenue.
+  share: 0.1
+  period: Fiscal 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 73317
+  end: 73429
+  status: pending
+  reviewer: null
+  judge: null
+- id: dis-0636964ab3
+  description: Samsung accounted for at least 10% of consolidated revenue.
+  share: 0.1
+  period: Fiscal 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 73317
+  end: 73429
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0636964ab3
+  description: Xiaomi accounted for at least 10% of consolidated revenue.
+  share: 0.1
+  period: Fiscal 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 73317
+  end: 73429
+  status: accepted
+  reviewer: judge
+  judge: true
+produces: []
+supplies:
+- id: sup-f5fc2747f4
+  supplier: company/tsmc
+  customer: company/qualcomm
+  product: null
+  section: '1'
+  start: 57876
+  end: 58082
+- id: sup-0866463ee4
+  supplier: company/samsung-electronics
+  customer: company/qualcomm
+  product: null
+  section: '1'
+  start: 57876
+  end: 58082
+- id: sup-759a18af54
+  supplier: company/amkor-technology
+  customer: company/qualcomm
+  product: null
+  section: '1'
+  start: 58083
+  end: 58245
+- id: sup-ab96e073c1
+  supplier: company/qualcomm
+  customer: company/samsung-electronics
+  product: null
+  section: 1A
+  start: 104276
+  end: 104410
+new_products:
+- id: new-34a4025bae
+  label: Semiconductor assembly and testing services
+  reason: Chip assembly and testing support AI semiconductor production; the taxonomy
+    covers advanced packaging but not general assembly and testing.
+  section: '1'
+  start: 58083
+  end: 58245
+dropped:
+  produces: 1
+  supplies: 9

@@ -1,0 +1,373 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/asml
+form: 20-F
+requires:
+- id: req-f9750e0b1c
+  product: product/leading-edge-logic
+  input: product/euv-lithography
+  bucket: dominant
+  reason: Advanced logic is the principal application for EUV's finest patterning,
+    with memory accounting for another substantial demand source.
+  section: part-1
+  start: 87366
+  end: 87478
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-6d5c91aaaa
+  product: product/dram
+  input: product/euv-lithography
+  bucket: major
+  reason: DRAM is a substantial and growing EUV application alongside advanced logic.
+  section: part-1
+  start: 107203
+  end: 107284
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-e9bc36fe7e
+  product: product/leading-edge-logic
+  input: product/euv-lithography
+  bucket: dominant
+  reason: Advanced logic is the principal EUV demand driver, with DRAM providing another
+    growing market.
+  section: part-2
+  start: 210752
+  end: 210836
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-88df08d39d
+  product: product/dram
+  input: product/euv-lithography
+  bucket: major
+  reason: DRAM represents a substantial EUV demand source alongside advanced logic.
+  section: part-2
+  start: 202535
+  end: 202643
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-6c20c53afb
+  description: Revenue from customers in China
+  share: 0.291
+  period: '2025'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 244981
+  end: 245078
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1157060c25
+  description: Revenue from customers in China
+  share: 0.361
+  period: '2024'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 244981
+  end: 245078
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-65e53796d0
+  description: Revenue from customers in Taiwan
+  share: 0.255
+  period: '2025'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 246043
+  end: 246153
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e7d2191030
+  description: Revenue from customers in Taiwan
+  share: 0.154
+  period: '2024'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 246043
+  end: 246153
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b04ec375fd
+  description: Revenue from customers in South Korea
+  share: 0.25
+  period: '2025'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 246339
+  end: 246448
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b2fffd54f2
+  description: Revenue from customers in South Korea
+  share: 0.227
+  period: '2024'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 246339
+  end: 246448
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b9a9009c4c
+  description: Revenue attributable to the largest unnamed customer
+  share: 0.239
+  period: '2025'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 250032
+  end: 250138
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4561d3ee21
+  description: Revenue attributable to the largest unnamed customer
+  share: 0.166
+  period: '2024'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 250141
+  end: 250211
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-87d1160333
+  description: Combined revenue from the two largest unnamed customers
+  share: 0.38
+  period: '2025'
+  basis: customer
+  products:
+  - product/euv-lithography
+  - product/duv-lithography
+  - product/inspection-metrology
+  section: part-2
+  start: 250212
+  end: 250286
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-4eec0f4373
+  product: product/euv-lithography
+  section: part-1
+  start: 88096
+  end: 88171
+- id: pro-3985ec9f1a
+  product: product/duv-lithography
+  section: part-1
+  start: 111242
+  end: 111318
+- id: pro-e30445ec6f
+  product: product/inspection-metrology
+  section: part-1
+  start: 94495
+  end: 94653
+- id: pro-d403a3dea3
+  product: product/duv-lithography
+  section: part-2
+  start: 135613
+  end: 135719
+- id: pro-3189cf41b5
+  product: product/euv-lithography
+  section: part-2
+  start: 135613
+  end: 135719
+- id: pro-95aa6154b1
+  product: product/inspection-metrology
+  section: part-2
+  start: 135613
+  end: 135719
+- id: pro-4ccd8d224a
+  product: product/euv-lithography
+  section: part-3
+  start: 372414
+  end: 372517
+- id: pro-25019e7de8
+  product: product/duv-lithography
+  section: part-3
+  start: 372414
+  end: 372517
+- id: pro-6029b0ec71
+  product: product/inspection-metrology
+  section: part-3
+  start: 372414
+  end: 372517
+- id: pro-466eb38fcb
+  product: product/euv-lithography
+  section: part-4
+  start: 423816
+  end: 423873
+- id: pro-58bfc6f0ab
+  product: product/duv-lithography
+  section: part-4
+  start: 423182
+  end: 423238
+- id: pro-da20166962
+  product: product/inspection-metrology
+  section: part-4
+  start: 419905
+  end: 420014
+- id: pro-1d805d3ebe
+  product: product/euv-lithography
+  section: part-5
+  start: 621937
+  end: 622054
+- id: pro-393598ec08
+  product: product/duv-lithography
+  section: part-5
+  start: 621937
+  end: 622054
+- id: pro-7c37d65649
+  product: product/inspection-metrology
+  section: part-5
+  start: 621937
+  end: 622054
+supplies: []
+new_products:
+- id: new-8db61564f1
+  label: Lithography projection optics
+  reason: Precision optics are essential lithography components for advanced chip
+    manufacturing and are not separately covered by the taxonomy.
+  section: part-1
+  start: 89492
+  end: 89623
+- id: new-09bf3dbaeb
+  label: Computational lithography software
+  reason: Pattern simulation and optimization software supports advanced chip fabrication
+    but is absent from the hardware-oriented taxonomy.
+  section: part-1
+  start: 99953
+  end: 100126
+- id: new-41b702b262
+  label: Lithography system and process control software
+  reason: Manufacturing control software improves chip yields through exposure corrections
+    and is not a listed product category.
+  section: part-1
+  start: 98754
+  end: 98908
+- id: new-571b13615f
+  label: Lithography excimer laser sources
+  reason: DUV light sources support semiconductor fabrication and differ from the
+    taxonomy's optical laser chips.
+  section: part-1
+  start: 91037
+  end: 91128
+- id: new-2983ff352a
+  label: Computational lithography and manufacturing control software
+  reason: Software supporting chip patterning and equipment control is distinct from
+    the listed physical equipment categories.
+  section: part-2
+  start: 135721
+  end: 135786
+- id: new-b3982c5560
+  label: EUV light sources
+  reason: These specialized lithography components are not optical laser chips or
+    complete EUV scanners.
+  section: part-2
+  start: 139221
+  end: 139294
+- id: new-876da36c7a
+  label: Packaging lithography equipment
+  reason: Equipment for patterning packages is distinct from advanced packaging services
+    and conventional wafer lithography.
+  section: part-2
+  start: 202903
+  end: 202947
+- id: new-e9b38bcaa7
+  label: Lithography optics
+  reason: Critical components of semiconductor lithography equipment are not covered
+    by the taxonomy.
+  section: part-3
+  start: 259001
+  end: 259117
+- id: new-54d1c04cf5
+  label: Advanced packaging equipment
+  reason: The taxonomy covers 2.5D packaging but not the equipment ASML supplies to
+    the packaging market.
+  section: part-3
+  start: 376981
+  end: 377058
+- id: new-3b239787ba
+  label: 3D packaging
+  reason: Three-dimensional device integration is distinct from the taxonomy's 2.5D
+    packaging category.
+  section: part-3
+  start: 376751
+  end: 376828
+- id: new-c7cd504b98
+  label: Computational lithography software
+  reason: Software supporting semiconductor patterning is distinct from the listed
+    lithography equipment and inspection systems.
+  section: part-4
+  start: 421291
+  end: 421382
+- id: new-3d9dce748b
+  label: Lithography light sources
+  reason: Light sources for semiconductor lithography are distinct from the optical
+    laser chips covered by the taxonomy.
+  section: part-4
+  start: 422442
+  end: 422525
+- id: new-58fe20c10c
+  label: Computational lithography
+  reason: Chip-patterning software is part of ASML's portfolio but lacks a taxonomy
+    entry.
+  section: part-5
+  start: 621937
+  end: 622054
+- id: new-138f784147
+  label: EUV light sources
+  reason: These lithography components support semiconductor manufacturing and are
+    distinct from optical laser chips.
+  section: part-5
+  start: 619762
+  end: 619906
+- id: new-95aba296fa
+  label: Wafer and reticle stages
+  reason: These positioning components for semiconductor lithography are absent from
+    the taxonomy.
+  section: part-5
+  start: 619762
+  end: 619906
+dropped:
+  supplies: 2
+  disclosed: 4

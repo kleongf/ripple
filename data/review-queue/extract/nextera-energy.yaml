@@ -1,0 +1,157 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/nextera-energy
+form: 10-K
+requires:
+- id: req-35a9aeef29
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require electricity but are one subset of the broader utility
+    customer base; the demand bucket is an estimate.
+  section: '1'
+  start: 140239
+  end: 140328
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-736e248204
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers consume electricity but represent one part of the broader customer
+    demand described.
+  section: 1A
+  start: 188754
+  end: 188861
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-476b35bf41
+  description: Wholesale and industrial customers accounted for approximately 5% of
+    FPL operating revenue, not consolidated NextEra revenue.
+  share: 0.05
+  period: 2025, 2024 and 2023
+  basis: customer
+  products:
+  - product/electricity-demand
+  section: '1'
+  start: 95457
+  end: 95629
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-2717cb54c4
+  product: product/nuclear-generation
+  section: '1'
+  start: 124925
+  end: 125044
+- id: pro-72a3e0a4b2
+  product: product/electricity-demand
+  section: 1A
+  start: 166712
+  end: 166809
+- id: pro-1506d90208
+  product: product/nuclear-generation
+  section: 1A
+  start: 217907
+  end: 218035
+- id: pro-b21e4a3542
+  product: product/electricity-demand
+  section: '7'
+  start: 258546
+  end: 258639
+- id: pro-fb094470f7
+  product: product/nuclear-generation
+  section: '7'
+  start: 315748
+  end: 315887
+supplies: []
+new_products:
+- id: new-2dfa8468e7
+  label: Stationary battery energy storage
+  reason: Utility-scale storage supports reliable power delivery and is distinct from
+    datacenter UPS equipment.
+  section: '1'
+  start: 97310
+  end: 97367
+- id: new-4f80ce4957
+  label: Solar power generation
+  reason: Solar generation supplies electricity for loads including data centers and
+    is absent from the taxonomy.
+  section: '1'
+  start: 97932
+  end: 98001
+- id: new-a6a9acaf06
+  label: Wind power generation
+  reason: Wind-generated electricity is a potential datacenter energy source not covered
+    by the listed generation products.
+  section: '1'
+  start: 122556
+  end: 122692
+- id: new-64dc2f863a
+  label: Natural gas power generation
+  reason: Gas-fired electricity generation is distinct from manufacturing gas turbines
+    and can serve large power loads.
+  section: '1'
+  start: 126649
+  end: 126791
+- id: new-9573a6c41b
+  label: Wind and solar generation
+  reason: These electricity sources can supply data-center loads but are absent from
+    the taxonomy.
+  section: 1A
+  start: 193899
+  end: 194060
+- id: new-436d0cbd59
+  label: Battery energy storage
+  reason: Grid-scale storage supports electricity availability for data centers and
+    is distinct from UPS systems.
+  section: 1A
+  start: 181090
+  end: 181283
+- id: new-9e03a494bc
+  label: Natural gas
+  reason: This fuel supports power generation serving data-center electricity needs.
+  section: 1A
+  start: 172846
+  end: 172905
+- id: new-0b6ab1cf80
+  label: Nuclear fuel
+  reason: Nuclear fuel is an upstream input to nuclear electricity generation, not
+    separately represented in the taxonomy.
+  section: 1A
+  start: 205764
+  end: 205906
+- id: new-562652300d
+  label: Wind power generation
+  reason: Wind generation supplies electricity for data center loads and is not separately
+    covered by the taxonomy.
+  section: '7'
+  start: 255581
+  end: 255646
+- id: new-d8aedef509
+  label: Solar power generation
+  reason: Solar generation is a potential data center electricity source missing from
+    the taxonomy.
+  section: '7'
+  start: 255648
+  end: 255685
+- id: new-18d01df9af
+  label: Utility-scale battery storage
+  reason: Grid-scale batteries support electricity availability and renewable integration,
+    distinct from data center UPS systems.
+  section: '7'
+  start: 255690
+  end: 255726
+- id: new-628b25dc8e
+  label: Natural gas production
+  reason: Natural gas fuels power generation serving data centers; the taxonomy covers
+    turbines but not their fuel.
+  section: '7'
+  start: 266994
+  end: 267062
+dropped:
+  produces: 1

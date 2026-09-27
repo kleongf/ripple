@@ -1,0 +1,242 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/dell
+form: 10-K
+requires: []
+disclosed:
+- id: dis-6e6270afff
+  description: Americas customers account for approximately 65% of ISG revenue, not
+    consolidated revenue.
+  share: 0.65
+  period: Fiscal 2026
+  basis: customer
+  products:
+  - product/ai-servers
+  section: '1'
+  start: 58871
+  end: 58954
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5d8e0e652e
+  description: Americas customers account for approximately 60% of CSG revenue, not
+    consolidated revenue.
+  share: 0.6
+  period: Fiscal 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 60283
+  end: 60366
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-21ddaeac1e
+  description: Sales channels other than direct sales account for approximately 40%
+    of consolidated net revenue.
+  share: 0.4
+  period: Fiscal 2026
+  basis: customer
+  products:
+  - product/ai-servers
+  section: '1'
+  start: 76711
+  end: 76803
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9832033e8a
+  description: Sales to markets outside the United States
+  share: 0.45
+  period: Fiscal 2026
+  basis: end market
+  products: []
+  section: 1A
+  start: 128383
+  end: 128495
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-de330a600a
+  description: Hardware and software-license sales as a share of total revenue.
+  share: 0.796
+  period: Fiscal 2026
+  basis: product
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 220795
+  end: 220861
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-d18540a0e9
+  description: Hardware and software-license sales as a share of total revenue.
+  share: 0.747
+  period: Fiscal 2025
+  basis: product
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 220795
+  end: 220861
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-dd52cfbd3f
+  description: Hardware and software-license sales as a share of total revenue.
+  share: 0.728
+  period: Fiscal 2024
+  basis: product
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  section: '7'
+  start: 220795
+  end: 220861
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-26b2d4a39a
+  description: Services as a share of total revenue.
+  share: 0.204
+  period: Fiscal 2026
+  basis: product
+  products: []
+  section: '7'
+  start: 220862
+  end: 220922
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-01049981f0
+  description: Services as a share of total revenue.
+  share: 0.253
+  period: Fiscal 2025
+  basis: product
+  products: []
+  section: '7'
+  start: 220862
+  end: 220922
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d9600d38bc
+  description: Services as a share of total revenue.
+  share: 0.272
+  period: Fiscal 2024
+  basis: product
+  products: []
+  section: '7'
+  start: 220862
+  end: 220922
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-35f5c5abc9
+  description: Revenue from customers located outside the United States.
+  share: 0.45
+  period: Fiscal 2026
+  basis: end market
+  products: []
+  section: '7'
+  start: 204563
+  end: 204721
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a99107076d
+  description: Revenue from customers located outside the United States.
+  share: 0.5
+  period: Fiscal 2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 204563
+  end: 204721
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-bc5a518f0a
+  product: product/ai-servers
+  section: '1'
+  start: 57990
+  end: 58172
+- id: pro-f866d05663
+  product: product/ai-servers
+  section: 1A
+  start: 107396
+  end: 107500
+- id: pro-566e8abb89
+  product: product/ai-servers
+  section: '7'
+  start: 190998
+  end: 191180
+- id: pro-d0cb0537a7
+  product: product/datacenter-switches
+  section: '7'
+  start: 191571
+  end: 191678
+supplies: []
+new_products:
+- id: new-30853bc251
+  label: General-purpose servers
+  reason: Complete conventional servers support data-center workloads and are distinct
+    from both AI servers and server CPUs.
+  section: '1'
+  start: 58212
+  end: 58380
+- id: new-8dd5605df9
+  label: Enterprise storage systems
+  reason: Data-center storage platforms are complete systems rather than the enterprise
+    SSD components covered by the taxonomy.
+  section: '1'
+  start: 58571
+  end: 58719
+- id: new-d6204bed8f
+  label: Hyper-converged infrastructure platforms
+  reason: Integrated infrastructure platforms combine data-center capabilities not
+    represented by an existing product category.
+  section: '1'
+  start: 58771
+  end: 58870
+- id: new-f6c433eb91
+  label: Storage systems
+  reason: Data center storage systems support AI datasets and are distinct from the
+    taxonomy's individual enterprise SSDs.
+  section: 1A
+  start: 107396
+  end: 107500
+- id: new-2b40825b5a
+  label: Converged and hyper-converged infrastructure
+  reason: Integrated infrastructure combines computing, storage, and networking for
+    data center workloads and lacks a dedicated taxonomy entry.
+  section: 1A
+  start: 107942
+  end: 108100
+- id: new-9689d8ca4c
+  label: General-purpose servers
+  reason: Complete conventional servers support data-center workloads but are distinct
+    from both AI servers and server CPU components.
+  section: '7'
+  start: 191220
+  end: 191388
+- id: new-51139e6059
+  label: Enterprise storage systems
+  reason: Storage arrays and integrated storage platforms support AI data management
+    and are distinct from individual enterprise SSDs.
+  section: '7'
+  start: 191712
+  end: 191859
+- id: new-1d9193026d
+  label: Hyper-converged infrastructure
+  reason: Integrated infrastructure platforms combine capabilities not represented
+    by the listed component categories.
+  section: '7'
+  start: 191864
+  end: 192009
+dropped:
+  supplies: 2

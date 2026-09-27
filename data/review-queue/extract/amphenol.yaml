@@ -1,0 +1,335 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/amphenol
+form: 10-K
+requires: []
+disclosed:
+- id: dis-a8e39c3ba5
+  description: Communications Solutions segment revenue
+  share: 0.52
+  period: '2025'
+  basis: segment
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '1'
+  start: 77781
+  end: 77784
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c188cf88f8
+  description: Harsh Environment Solutions segment revenue
+  share: 0.26
+  period: '2025'
+  basis: segment
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '1'
+  start: 77785
+  end: 77788
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-54ba494b40
+  description: Interconnect and Sensor Systems segment revenue
+  share: 0.22
+  period: '2025'
+  basis: segment
+  products:
+  - product/copper-interconnect
+  section: '1'
+  start: 77789
+  end: 77792
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b49c810cbe
+  description: Automotive end-market revenue
+  share: 0.15
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87223
+  end: 87320
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-81524f39b2
+  description: Commercial aerospace end-market revenue
+  share: 0.05
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 88364
+  end: 88470
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cba9486dd5
+  description: Communications networks end-market revenue
+  share: 0.1
+  period: '2025'
+  basis: end market
+  products:
+  - product/fiber-cable
+  section: '1'
+  start: 89202
+  end: 89312
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-da1de7eaad
+  description: Defense end-market revenue
+  share: 0.09
+  period: '2025'
+  basis: end market
+  products:
+  - product/copper-interconnect
+  section: '1'
+  start: 90529
+  end: 90622
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bb1896b850
+  description: Industrial end-market revenue
+  share: 0.19
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 91588
+  end: 91685
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8a081dd7e9
+  description: Information technology and data communications end-market revenue
+  share: 0.36
+  period: '2025'
+  basis: end market
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '1'
+  start: 93166
+  end: 93263
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-398caca6e1
+  description: Mobile devices end-market revenue
+  share: 0.06
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 93907
+  end: 94007
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fb336a17e3
+  description: Revenue from distributor customers
+  share: 0.19
+  period: '2025'
+  basis: customer
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '1'
+  start: 96767
+  end: 96899
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5e551e9ed6
+  description: Revenue from distributor customers
+  share: 0.18
+  period: '2024'
+  basis: customer
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '1'
+  start: 96767
+  end: 96899
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8fc6c8bca4
+  description: Revenue from markets outside the United States.
+  share: 0.65
+  period: '2025'
+  basis: end market
+  products: []
+  section: 1A
+  start: 121576
+  end: 121662
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e4d7525c8e
+  description: Revenue from China.
+  share: 0.16
+  period: '2025'
+  basis: end market
+  products: []
+  section: 1A
+  start: 121576
+  end: 121733
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-15a6b493bc
+  description: Communications Solutions accounted for approximately 52% of company
+    sales.
+  share: 0.52
+  period: '2025'
+  basis: segment
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '7'
+  start: 203767
+  end: 203849
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3310d552e0
+  description: Harsh Environment Solutions accounted for approximately 26% of company
+    sales.
+  share: 0.26
+  period: '2025'
+  basis: segment
+  products: []
+  section: '7'
+  start: 204318
+  end: 204403
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-273a7f579b
+  description: Interconnect and Sensor Systems accounted for approximately 22% of
+    company sales.
+  share: 0.22
+  period: '2025'
+  basis: segment
+  products: []
+  section: '7'
+  start: 204700
+  end: 204789
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dbb22523e0
+  description: Communications Solutions accounted for approximately 42% of company
+    sales.
+  share: 0.42
+  period: '2024'
+  basis: segment
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  section: '7'
+  start: 222451
+  end: 222533
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7e074c6b22
+  description: Harsh Environment Solutions accounted for approximately 29% of company
+    sales.
+  share: 0.29
+  period: '2024'
+  basis: segment
+  products: []
+  section: '7'
+  start: 222942
+  end: 223027
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7b49e408eb
+  description: Interconnect and Sensor Systems accounted for approximately 29% of
+    company sales.
+  share: 0.29
+  period: '2024'
+  basis: segment
+  products: []
+  section: '7'
+  start: 223455
+  end: 223544
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-ed3639d3f3
+  product: product/copper-interconnect
+  section: '1'
+  start: 78924
+  end: 78954
+- id: pro-689d79f7e8
+  product: product/fiber-cable
+  section: '1'
+  start: 76889
+  end: 76937
+- id: pro-e70d7ad19b
+  product: product/copper-interconnect
+  section: '7'
+  start: 196253
+  end: 196428
+- id: pro-43f9ae3d21
+  product: product/fiber-cable
+  section: '7'
+  start: 196253
+  end: 196428
+supplies: []
+new_products:
+- id: new-3d3b99625b
+  label: Power connectors and busbar distribution systems
+  reason: These deliver electrical power within computing systems and are distinct
+    from the listed switchgear, UPS and high-speed data interconnect categories.
+  section: '1'
+  start: 79158
+  end: 79196
+- id: new-f0a238fad7
+  label: Printed circuit boards
+  reason: These provide board-level electrical connections for computing hardware
+    and are distinct from semiconductor package substrates.
+  section: '1'
+  start: 79075
+  end: 79116
+- id: new-9b6a4fdcee
+  label: Cable management hardware
+  reason: These organize and support data-center cabling rather than providing the
+    cables themselves.
+  section: '1'
+  start: 78993
+  end: 79018
+- id: new-c792064ac7
+  label: Power connectors and cables
+  reason: Power connectivity supports electrical delivery to data-center equipment
+    and is distinct from the listed high-speed signal interconnects.
+  section: '7'
+  start: 196253
+  end: 196428
+- id: new-3d4b73cef1
+  label: Sensors and sensor systems
+  reason: Sensing components support equipment monitoring and control but have no
+    dedicated category in the taxonomy.
+  section: '7'
+  start: 197197
+  end: 197290
+- id: new-b3da5f6eba
+  label: Printed circuit boards and assemblies
+  reason: Circuit boards and assembled circuits support computing and networking hardware
+    and are distinct from IC package substrates.
+  section: '7'
+  start: 196839
+  end: 196903
+dropped: {}

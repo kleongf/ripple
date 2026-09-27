@@ -1,0 +1,100 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/alibaba
+form: 20-F
+requires:
+- id: req-15519c7944
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Cloud infrastructure needs electricity, but data centers represent a small
+    portion of total electricity demand.
+  section: 3D
+  start: 166425
+  end: 166532
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed: []
+produces:
+- id: pro-fbd89effcf
+  product: product/datacenter-capacity
+  section: '5'
+  start: 804471
+  end: 804572
+supplies: []
+new_products:
+- id: new-fd3b929ff5
+  label: Cloud computing services
+  reason: Hosted computing and storage services are downstream offerings of data center
+    infrastructure, distinct from physical capacity.
+  section: 3D
+  start: 318071
+  end: 318261
+- id: new-df95438919
+  label: AI models and applications
+  reason: AI software and model services drive data center training and inference
+    workloads but are absent from the taxonomy.
+  section: 3D
+  start: 206103
+  end: 206194
+- id: new-64a7f3d6fe
+  label: Cloud computing and model-serving services
+  reason: Hosted infrastructure, development platforms and model access monetize data-center
+    computing but are not represented as services in the taxonomy.
+  section: '4'
+  start: 499504
+  end: 499678
+- id: new-63180a4ce6
+  label: AI foundation models
+  reason: Foundation models drive training and inference workloads on AI data-center
+    infrastructure.
+  section: '4'
+  start: 533904
+  end: 534020
+- id: new-4a3700a220
+  label: AI training and inference software platforms
+  reason: Software for model deployment and optimization is a distinct layer beyond
+    the listed hardware products.
+  section: '4'
+  start: 532382
+  end: 532533
+- id: new-4aa9f66309
+  label: Distributed cloud operating systems
+  reason: Cloud operating software coordinates compute, storage and networking resources
+    in data centers.
+  section: '4'
+  start: 547022
+  end: 547116
+- id: new-e7f05d1975
+  label: Cloud-native databases
+  reason: Database software supplies data management and inference support for AI
+    workloads, which the hardware taxonomy does not cover.
+  section: '4'
+  start: 547687
+  end: 547863
+- id: new-4a7b906279
+  label: Enterprise AI agent platforms
+  reason: Agent platforms consume model-serving capacity and connect AI infrastructure
+    to enterprise applications.
+  section: '4'
+  start: 536396
+  end: 536482
+- id: new-651f31cb97
+  label: Cloud computing services
+  reason: Hosted computing and storage services support AI workloads but are distinct
+    from physical datacenter capacity.
+  section: '5'
+  start: 726763
+  end: 726923
+- id: new-b582bd8ea7
+  label: AI foundation models and model-serving services
+  reason: AI models and hosted model access form a software layer of the AI datacenter
+    value chain absent from the taxonomy.
+  section: '5'
+  start: 729236
+  end: 729392
+dropped:
+  produces: 3
+  supplies: 6
+  requires: 1

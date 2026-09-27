@@ -1,0 +1,414 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/fabrinet
+form: 10-K
+requires: []
+disclosed:
+- id: dis-db5f203e61
+  description: Data center revenue
+  share: 0.462
+  period: fiscal year 2025
+  basis: end market
+  products:
+  - product/optical-transceivers
+  - product/fiber-cable
+  section: '1'
+  start: 49147
+  end: 49269
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5ac86f5d27
+  description: Data center revenue
+  share: 0.479
+  period: fiscal year 2026
+  basis: end market
+  products:
+  - product/optical-transceivers
+  - product/fiber-cable
+  section: '1'
+  start: 49147
+  end: 49269
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-22bb9f2a1c
+  description: Communications infrastructure revenue
+  share: 0.307
+  period: fiscal year 2025
+  basis: end market
+  products:
+  - product/optical-transceivers
+  - product/lasers
+  - product/fiber-cable
+  section: '1'
+  start: 49271
+  end: 49411
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4396c532b0
+  description: Communications infrastructure revenue
+  share: 0.333
+  period: fiscal year 2026
+  basis: end market
+  products:
+  - product/optical-transceivers
+  - product/lasers
+  - product/fiber-cable
+  section: '1'
+  start: 49271
+  end: 49411
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4e811e2312
+  description: Automotive, industrial and other market revenue
+  share: 0.231
+  period: fiscal year 2025
+  basis: end market
+  products: []
+  section: '1'
+  start: 49417
+  end: 49560
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-247a0c371a
+  description: Automotive, industrial and other market revenue
+  share: 0.188
+  period: fiscal year 2026
+  basis: end market
+  products: []
+  section: '1'
+  start: 49417
+  end: 49560
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c505d788aa
+  description: Revenue attributable to Cisco
+  share: 0.199
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 76830
+  end: 76983
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-620c788061
+  description: Revenue attributable to NVIDIA
+  share: 0.163
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 76830
+  end: 76983
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3a1feeab42
+  description: Revenue attributable to Nokia
+  share: 0.107
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 76830
+  end: 76983
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-565c427c61
+  description: Revenue attributable to Amazon
+  share: 0.105
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 76830
+  end: 76983
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1f431e41dd
+  description: Revenue attributable to NVIDIA
+  share: 0.276
+  period: fiscal year 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 76984
+  end: 77111
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b8e582d88c
+  description: Revenue attributable to Cisco
+  share: 0.182
+  period: fiscal year 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 76984
+  end: 77111
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6895a48926
+  description: Combined revenue from four customers each contributing at least 10%
+  share: 0.574
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 96747
+  end: 96854
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d49d005413
+  description: Combined revenue from two customers each contributing at least 10%
+  share: 0.458
+  period: fiscal year 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 96747
+  end: 96854
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5f2a601b4e
+  description: Combined revenue from two customers each contributing at least 10%
+  share: 0.485
+  period: fiscal year 2024
+  basis: customer
+  products: []
+  section: 1A
+  start: 96747
+  end: 96854
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c5774ff8e6
+  description: Revenue from the data center market
+  share: 0.479
+  period: fiscal year 2026
+  basis: end market
+  products: []
+  section: 1A
+  start: 100546
+  end: 100681
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-45ae67b0ab
+  description: Revenue from the data center market
+  share: 0.462
+  period: fiscal year 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 100546
+  end: 100681
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3f42345094
+  description: Revenue from the communications infrastructure market
+  share: 0.333
+  period: fiscal year 2026
+  basis: end market
+  products: []
+  section: 1A
+  start: 100682
+  end: 100835
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0442c9f5c3
+  description: Revenue from the communications infrastructure market
+  share: 0.307
+  period: fiscal year 2025
+  basis: end market
+  products: []
+  section: 1A
+  start: 100682
+  end: 100835
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b911a66a6e
+  description: Revenue from customers shipping to destinations outside North America
+  share: 0.773
+  period: fiscal year 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 129484
+  end: 129597
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3b723fe72f
+  description: Revenue from customers shipping to destinations outside North America
+  share: 0.784
+  period: fiscal year 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 129484
+  end: 129597
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f8d5e23275
+  description: Revenue from customers shipping to destinations outside North America
+  share: 0.818
+  period: fiscal year 2024
+  basis: customer
+  products: []
+  section: 1A
+  start: 129484
+  end: 129597
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f2281e9cb5
+  description: Revenue from data center applications
+  share: 0.479
+  period: FY2026
+  basis: end market
+  products: []
+  section: '7'
+  start: 232087
+  end: 232159
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6caa7395a4
+  description: Revenue from data center applications
+  share: 0.462
+  period: FY2025
+  basis: end market
+  products: []
+  section: '7'
+  start: 232087
+  end: 232159
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-94aa3ed8b4
+  description: Revenue from data center applications
+  share: 0.531
+  period: FY2024
+  basis: end market
+  products: []
+  section: '7'
+  start: 232087
+  end: 232159
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-e03fecf2cf
+  product: product/optical-transceivers
+  section: '1'
+  start: 46818
+  end: 47002
+- id: pro-f141ecd2a3
+  product: product/lasers
+  section: '1'
+  start: 46818
+  end: 46864
+- id: pro-66b5201ac6
+  product: product/fiber-cable
+  section: '1'
+  start: 47074
+  end: 47265
+supplies:
+- id: sup-4fcd8cf3e3
+  supplier: company/fabrinet
+  customer: company/nvidia
+  product: null
+  section: '1'
+  start: 76830
+  end: 76983
+new_products:
+- id: new-3a4220c4bc
+  label: Optical switching and wavelength-routing components
+  reason: Optical network routing equipment is distinct from the taxonomy's datacenter
+    packet switches.
+  section: '1'
+  start: 46466
+  end: 46632
+- id: new-0d727aad17
+  label: Optical amplifiers and modulators
+  reason: These optical signal-processing components support communications links
+    but lack dedicated taxonomy entries.
+  section: '1'
+  start: 46466
+  end: 46632
+- id: new-a6039c52a8
+  label: Customized optical components
+  reason: Precision optics are inputs to optical connectivity equipment and are not
+    separately represented.
+  section: '1'
+  start: 47949
+  end: 48065
+- id: new-51b4b1fac3
+  label: Fiber-optic alignment components
+  reason: Ferrules and sleeves enable optical connection and alignment rather than
+    constituting fiber cable itself.
+  section: '1'
+  start: 69696
+  end: 69818
+- id: new-0cecead330
+  label: Printed circuit board assemblies
+  reason: Electronic board assemblies underpin optical and computing hardware but
+    are absent from the taxonomy.
+  section: '1'
+  start: 64291
+  end: 64488
+- id: new-6fd9acfce9
+  label: Advanced optical packaging services
+  reason: Optical assembly packaging differs from the taxonomy's advanced 2.5D semiconductor
+    packaging.
+  section: '1'
+  start: 63471
+  end: 63588
+- id: new-1254a3b0d7
+  label: Photonic integrated circuits
+  reason: The report identifies integrated photonic chips as a potential future optical
+    product, distinct from electronic optical DSPs.
+  section: '1'
+  start: 76029
+  end: 76154
+- id: new-a41830f939
+  label: Industrial laser systems
+  reason: Lasers used in semiconductor manufacturing are upstream production tools,
+    not optical laser chips.
+  section: '1'
+  start: 47346
+  end: 47491
+- id: new-3102f9ab58
+  label: Customized optical components
+  reason: Custom optics support optical communications hardware but are not separately
+    covered by the listed product categories.
+  section: 1A
+  start: 136138
+  end: 136261
+- id: new-9815de1834
+  label: Custom optical and glass components
+  reason: Optical components are relevant to data center optical connectivity but
+    are not separately covered by the listed finished devices and materials.
+  section: '7'
+  start: 221833
+  end: 221992
+dropped:
+  supplies: 3
+  disclosed: 6

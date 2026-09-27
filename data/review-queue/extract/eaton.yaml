@@ -1,0 +1,75 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/eaton
+form: 10-K
+requires: []
+disclosed:
+- id: dis-947a76974a
+  description: Six customers accounted for 22% of combined Electrical Americas and
+    Electrical Global sales, not consolidated revenue.
+  share: 0.22
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 55243
+  end: 55373
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-940cf9905a
+  description: Three aircraft manufacturers accounted for 20% of Aerospace segment
+    sales.
+  share: 0.2
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 56063
+  end: 56170
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8e73814c94
+  description: Four vehicle and component manufacturers accounted for 37% of Vehicle
+    segment sales.
+  share: 0.37
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 56718
+  end: 56847
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-30e92a88c3
+  description: One vehicle and component manufacturer accounted for 18% of eMobility
+    segment sales.
+  share: 0.18
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 56971
+  end: 57098
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-a76ea26315
+  product: product/grid-equipment
+  section: '1'
+  start: 52434
+  end: 52621
+supplies: []
+new_products:
+- id: new-06bf1b411e
+  label: Modular data center solutions
+  reason: Modular infrastructure supplied through Fibrebond is distinct from data
+    center capacity itself and lacks a dedicated taxonomy entry.
+  section: '1'
+  start: 52622
+  end: 52779
+dropped:
+  supplies: 1

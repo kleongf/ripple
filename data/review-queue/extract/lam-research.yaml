@@ -1,0 +1,217 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/lam-research
+form: 10-K
+requires:
+- id: req-c03a8c0ea7
+  product: product/leading-edge-logic
+  input: product/deposition-equipment
+  bucket: major
+  reason: Advanced logic is a substantial deposition-equipment application, alongside
+    memory and other semiconductor devices.
+  section: '1'
+  start: 45911
+  end: 46091
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-0d253a3793
+  product: product/leading-edge-logic
+  input: product/etch-equipment
+  bucket: major
+  reason: Advanced logic contributes substantial etch demand, with memory also representing
+    an important application.
+  section: '1'
+  start: 48585
+  end: 48756
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-a48d415cfc
+  product: product/dram
+  input: product/etch-equipment
+  bucket: major
+  reason: DRAM is a significant etch-equipment end market, sharing demand with logic
+    and NAND.
+  section: '1'
+  start: 48040
+  end: 48228
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-d0a38074ae
+  product: product/hbm
+  input: product/deposition-equipment
+  bucket: minor
+  reason: HBM packaging is a specialized deposition application within a broader logic,
+    memory, and packaging market.
+  section: '1'
+  start: 45706
+  end: 45885
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-c651d71882
+  description: Foundry share of equipment and upgrade revenue, including leading-
+    and non-leading-edge equipment.
+  share: 0.54
+  period: FY2026 ended June 28, 2026
+  basis: end market
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 209403
+  end: 209420
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e5b4187f23
+  description: Foundry share of equipment and upgrade revenue, including leading-
+    and non-leading-edge equipment.
+  share: 0.45
+  period: FY2025 ended June 29, 2025
+  basis: end market
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 209403
+  end: 209420
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f441189248
+  description: Memory share of equipment and upgrade revenue, including leading- and
+    non-leading-edge equipment.
+  share: 0.39
+  period: FY2026 ended June 28, 2026
+  basis: end market
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 209421
+  end: 209437
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0e3adc037f
+  description: Memory share of equipment and upgrade revenue, including leading- and
+    non-leading-edge equipment.
+  share: 0.42
+  period: FY2025 ended June 29, 2025
+  basis: end market
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 209421
+  end: 209437
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d074c5ee7a
+  description: Logic and integrated device manufacturing share of equipment and upgrade
+    revenue, including leading- and non-leading-edge equipment.
+  share: 0.07
+  period: FY2026 ended June 28, 2026
+  basis: end market
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 209438
+  end: 209484
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1330ad99ea
+  description: Logic and integrated device manufacturing share of equipment and upgrade
+    revenue, including leading- and non-leading-edge equipment.
+  share: 0.13
+  period: FY2025 ended June 29, 2025
+  basis: end market
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  section: '7'
+  start: 209438
+  end: 209484
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-be354c6139
+  product: product/deposition-equipment
+  section: '1'
+  start: 44226
+  end: 44329
+- id: pro-6addb7e1c1
+  product: product/etch-equipment
+  section: '1'
+  start: 51309
+  end: 51377
+- id: pro-bc4767df28
+  product: product/deposition-equipment
+  section: '7'
+  start: 207487
+  end: 207611
+- id: pro-233958c4dc
+  product: product/etch-equipment
+  section: '7'
+  start: 207487
+  end: 207611
+supplies:
+- id: sup-bf82e17f6f
+  supplier: company/lam-research
+  customer: company/micron
+  product: null
+  section: '1'
+  start: 61927
+  end: 62058
+- id: sup-788c3e0388
+  supplier: company/lam-research
+  customer: company/samsung-electronics
+  product: null
+  section: '1'
+  start: 61927
+  end: 62058
+- id: sup-7af22ce202
+  supplier: company/lam-research
+  customer: company/sk-hynix
+  product: null
+  section: '1'
+  start: 61927
+  end: 62058
+- id: sup-c986399995
+  supplier: company/lam-research
+  customer: company/tsmc
+  product: null
+  section: '1'
+  start: 61927
+  end: 62058
+new_products:
+- id: new-ac020fdefa
+  label: Wafer cleaning equipment
+  reason: Wet and plasma cleaning tools support semiconductor fabrication but have
+    no dedicated taxonomy entry.
+  section: '1'
+  start: 55676
+  end: 55856
+- id: new-a1c6a1e528
+  label: Dry resist deposition and development equipment
+  reason: Vacuum-based resist formation and dry development equipment differs from
+    conventional coater/developer tracks and EUV exposure systems.
+  section: '1'
+  start: 57169
+  end: 57333
+- id: new-554bc85ce4
+  label: Wafer cleaning equipment
+  reason: Semiconductor fabrication cleaning tools support chip manufacturing for
+    AI infrastructure but are not covered by the taxonomy.
+  section: '7'
+  start: 207487
+  end: 207611
+dropped: {}

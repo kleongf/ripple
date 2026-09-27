@@ -1,0 +1,103 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/johnson-controls
+form: 10-K
+requires: []
+disclosed:
+- id: dis-eb69d0cc2c
+  description: Products and systems share of continuing-operations sales.
+  share: 0.68
+  period: fiscal 2025
+  basis: product
+  products: []
+  section: '1'
+  start: 93837
+  end: 93941
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-789b7a8230
+  description: Services share of continuing-operations sales.
+  share: 0.32
+  period: fiscal 2025
+  basis: product
+  products: []
+  section: '1'
+  start: 93946
+  end: 94009
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-db394b0e72
+  product: product/datacenter-chillers
+  section: '7'
+  start: 245127
+  end: 245190
+supplies: []
+new_products:
+- id: new-1ad0d03bf8
+  label: Building automation and management controls
+  reason: Controls manage facility systems, including those serving data centers,
+    and are not covered by the taxonomy.
+  section: '1'
+  start: 91864
+  end: 92016
+- id: new-433d5c2917
+  label: Fire detection and suppression systems
+  reason: Fire protection supports data center safety and operational continuity and
+    is absent from the taxonomy.
+  section: '1'
+  start: 91864
+  end: 92016
+- id: new-3c7b57a7e5
+  label: Physical security systems
+  reason: Facility security protects data center infrastructure and is not represented
+    in the taxonomy.
+  section: '1'
+  start: 91864
+  end: 92016
+- id: new-3c5bd4780e
+  label: Building operations software
+  reason: Facility software supports monitoring and predictive maintenance of critical
+    building infrastructure, a category missing from the taxonomy.
+  section: '1'
+  start: 93281
+  end: 93478
+- id: new-5aacfb2893
+  label: Building management software and controls
+  reason: Building monitoring and control platforms support data center facility operations
+    but are not covered by the taxonomy.
+  section: 1A
+  start: 141009
+  end: 141196
+- id: new-db9c33d8cb
+  label: Fire protection and security systems
+  reason: These systems protect data center facilities and equipment and are absent
+    from the taxonomy.
+  section: 1A
+  start: 150246
+  end: 150365
+- id: new-852ab392f3
+  label: Building automation controls
+  reason: Controls manage building equipment and energy use, including supporting
+    data center facilities; the taxonomy lacks this category.
+  section: '7'
+  start: 226551
+  end: 226747
+- id: new-6adcf923d3
+  label: Fire detection and suppression systems
+  reason: Fire protection safeguards data center facilities and equipment but is absent
+    from the taxonomy.
+  section: '7'
+  start: 226693
+  end: 226747
+- id: new-eece49f9b0
+  label: Building security systems
+  reason: Physical security protects data center facilities and is not covered by
+    the taxonomy.
+  section: '7'
+  start: 226631
+  end: 226747
+dropped:
+  supplies: 1

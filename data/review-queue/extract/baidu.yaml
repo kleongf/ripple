@@ -1,0 +1,218 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/baidu
+form: 20-F
+requires: []
+disclosed:
+- id: dis-5db541b4a4
+  description: External revenue attributable to consolidated variable interest entities.
+  share: 0.45
+  period: '2023'
+  basis: segment
+  products: []
+  section: 3D
+  start: 295778
+  end: 295905
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-315f90a6de
+  description: External revenue attributable to consolidated variable interest entities.
+  share: 0.44
+  period: '2024'
+  basis: segment
+  products: []
+  section: 3D
+  start: 295778
+  end: 295905
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6f316a6b32
+  description: External revenue attributable to consolidated variable interest entities.
+  share: 0.5
+  period: '2025'
+  basis: segment
+  products: []
+  section: 3D
+  start: 295778
+  end: 295905
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a92eebfcdf
+  description: Baidu General Business contributed more than 70% of consolidated revenue.
+  share: 0.7
+  period: 2023, 2024 and 2025
+  basis: segment
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  section: '4'
+  start: 471998
+  end: 472115
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-77ceace4c8
+  description: Chinese mainland generated more than 96% of consolidated revenue.
+  share: 0.96
+  period: '2025'
+  basis: end market
+  products: []
+  section: '4'
+  start: 481716
+  end: 481827
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e46a036486
+  description: Consolidated variable interest entities accounted for this share of
+    external revenue.
+  share: 0.45
+  period: '2023'
+  basis: segment
+  products: []
+  section: '4'
+  start: 743831
+  end: 743958
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9a27864dd5
+  description: Consolidated variable interest entities accounted for this share of
+    external revenue.
+  share: 0.44
+  period: '2024'
+  basis: segment
+  products: []
+  section: '4'
+  start: 743831
+  end: 743958
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-50b2035434
+  description: Consolidated variable interest entities accounted for this share of
+    external revenue.
+  share: 0.5
+  period: '2025'
+  basis: segment
+  products: []
+  section: '4'
+  start: 743831
+  end: 743958
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ce64ba1774
+  description: Baidu Netcom's revenue contribution after major intragroup adjustments.
+  share: 0.13
+  period: '2023'
+  basis: segment
+  products: []
+  section: '4'
+  start: 744091
+  end: 744233
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-917bfe028c
+  description: Baidu Netcom's revenue contribution after major intragroup adjustments.
+  share: 0.17
+  period: '2024'
+  basis: segment
+  products: []
+  section: '4'
+  start: 744091
+  end: 744233
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b4027ba8a1
+  description: Baidu Netcom's revenue contribution after major intragroup adjustments.
+  share: 0.18
+  period: '2025'
+  basis: segment
+  products: []
+  section: '4'
+  start: 744091
+  end: 744233
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-20e5046dd6
+  product: product/datacenter-capacity
+  section: '4'
+  start: 763354
+  end: 763509
+supplies: []
+new_products:
+- id: new-9e90d21de9
+  label: Cloud computing services
+  reason: Hosted computing services consume data center infrastructure and GPUs but
+    are distinct from physical data center capacity.
+  section: 3D
+  start: 163219
+  end: 163339
+- id: new-7691d15a6f
+  label: Foundation models and generative AI
+  reason: AI models are downstream software products that drive computing infrastructure
+    demand and are absent from the taxonomy.
+  section: 3D
+  start: 148547
+  end: 148648
+- id: new-dc4669494e
+  label: AI cloud computing services
+  reason: Hosted training and inference services monetize data-center infrastructure
+    but are distinct from physical capacity.
+  section: '4'
+  start: 500589
+  end: 500726
+- id: new-713903f9de
+  label: AI foundation models
+  reason: Foundation models drive training and inference workloads and are absent
+    from the hardware-focused taxonomy.
+  section: '4'
+  start: 494174
+  end: 494276
+- id: new-58de39cccd
+  label: Deep learning frameworks
+  reason: Training and inference software connects AI models to computing hardware.
+  section: '4'
+  start: 513419
+  end: 513517
+- id: new-6028a5f3bd
+  label: Model and agent development platforms
+  reason: These platforms enable deployment and orchestration of AI workloads on cloud
+    infrastructure.
+  section: '4'
+  start: 494783
+  end: 494935
+- id: new-2fdf480f4c
+  label: Data-center battery backup units
+  reason: Battery backup modules support data-center power continuity and are not
+    separately represented in the taxonomy.
+  section: '4'
+  start: 530168
+  end: 530288
+- id: new-820c53e46b
+  label: Data-center DC power supply systems
+  reason: Facility-level DC power delivery differs from the grid-scale HVDC equipment
+    covered by the taxonomy.
+  section: '4'
+  start: 530168
+  end: 530288
+- id: new-739d94646e
+  label: Cloud services and solutions
+  reason: Cloud computing services support enterprise AI workloads but are not covered
+    by the hardware and datacenter capacity categories.
+  section: '5'
+  start: 802874
+  end: 802973
+dropped:
+  supplies: 6
+  requires: 1
+  disclosed: 1
+  produces: 1

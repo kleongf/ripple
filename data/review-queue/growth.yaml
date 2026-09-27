@@ -1,0 +1,6021 @@
+# Universe growth candidates (M18). Mentions are offsets into cached filing text.
+target: 150
+candidates:
+- name: Nvidia Corporation
+  ticker: NVDA
+  cik: 1045810
+  title: NVIDIA CORP
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/copper-interconnect
+  - product/datacenter-switches
+  - product/optical-transceivers
+  - product/server-cpus
+  decision: already in the universe
+  named_by:
+  - company/amd
+  - company/arista
+  - company/coherent
+  - company/intel
+  - company/marvell
+  - company/super-micro
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 76897
+    end: 76974
+    role: competitor
+  - filer: company/amd
+    section: 1A
+    start: 107185
+    end: 107352
+    role: competitor
+  - filer: company/arista
+    section: '1'
+    start: 54549
+    end: 54646
+    role: competitor
+  - filer: company/arista
+    section: 1A
+    start: 120365
+    end: 120519
+    role: competitor
+  - filer: company/coherent
+    section: '1'
+    start: 72334
+    end: 72495
+    role: customer
+  - filer: company/intel
+    section: part-1
+    start: 77664
+    end: 77770
+    role: partner
+  - filer: company/intel
+    section: part-1
+    start: 92735
+    end: 92843
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 234965
+    end: 235041
+    role: competitor
+  - filer: company/intel
+    section: part-5
+    start: 562405
+    end: 562508
+    role: partner
+  - filer: company/marvell
+    section: '1'
+    start: 85726
+    end: 85744
+    role: competitor
+  - filer: company/super-micro
+    section: '1'
+    start: 92619
+    end: 92796
+    role: supplier
+  - filer: company/super-micro
+    section: 1A
+    start: 208919
+    end: 209063
+    role: supplier
+- name: Broadcom Corporation
+  ticker: AVGO
+  cik: 1730168
+  title: Broadcom Inc.
+  products:
+  - product/copper-interconnect
+  - product/custom-ai-asics
+  - product/datacenter-switches
+  - product/lasers
+  - product/optical-dsps
+  decision: already in the universe
+  named_by:
+  - company/amd
+  - company/arista
+  - company/intel
+  - company/marvell
+  - company/nvidia
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78594
+    end: 78683
+    role: competitor
+  - filer: company/arista
+    section: '1'
+    start: 51597
+    end: 51717
+    role: supplier
+  - filer: company/arista
+    section: 1A
+    start: 77655
+    end: 77775
+    role: supplier
+  - filer: company/intel
+    section: part-1
+    start: 93160
+    end: 93229
+    role: competitor
+  - filer: company/marvell
+    section: '1'
+    start: 85436
+    end: 85462
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60897
+    end: 61011
+    role: competitor
+- name: Cisco
+  ticker: CSCO
+  cik: 858877
+  title: CISCO SYSTEMS, INC.
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  - product/optical-dsps
+  - product/optical-transceivers
+  decision: added
+  named_by:
+  - company/arista
+  - company/intel
+  - company/marvell
+  - company/nvidia
+  - company/super-micro
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 53238
+    end: 53325
+    role: competitor
+  - filer: company/arista
+    section: 1A
+    start: 120192
+    end: 120279
+    role: competitor
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+  - filer: company/marvell
+    section: '1'
+    start: 85464
+    end: 85493
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 61276
+    end: 61432
+    role: competitor
+  - filer: company/super-micro
+    section: '1'
+    start: 101559
+    end: 101646
+    role: competitor
+- name: Taiwan Semiconductor Manufacturing Company Limited
+  ticker: TSM
+  cik: 1046179
+  title: TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD
+  products:
+  - product/advanced-packaging
+  - product/leading-edge-logic
+  decision: already in the universe
+  named_by:
+  - company/amd
+  - company/broadcom
+  - company/kla
+  - company/lam-research
+  - company/nvidia
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 81179
+    end: 81320
+    role: supplier
+  - filer: company/amd
+    section: 1A
+    start: 127683
+    end: 127820
+    role: supplier
+  - filer: company/broadcom
+    section: '1'
+    start: 74260
+    end: 74428
+    role: supplier
+  - filer: company/kla
+    section: '1'
+    start: 71973
+    end: 72023
+    role: customer
+  - filer: company/lam-research
+    section: '1'
+    start: 61927
+    end: 62058
+    role: customer
+  - filer: company/nvidia
+    section: '1'
+    start: 57692
+    end: 57828
+    role: supplier
+- name: Microsoft
+  ticker: MSFT
+  cik: 789019
+  title: MICROSOFT CORP
+  products:
+  - product/ai-accelerators
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: added
+  named_by:
+  - company/amd
+  - company/constellation
+  - company/intel
+  - company/nvidia
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 59269
+    end: 59320
+    role: customer
+  - filer: company/amd
+    section: 1A
+    start: 113252
+    end: 113350
+    role: customer
+  - filer: company/amd
+    section: 1A
+    start: 101836
+    end: 101979
+    role: partner
+  - filer: company/constellation
+    section: '1'
+    start: 96564
+    end: 96681
+    role: customer
+  - filer: company/intel
+    section: part-1
+    start: 92911
+    end: 93028
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60441
+    end: 60565
+    role: competitor
+  - filer: company/nvidia
+    section: 1A
+    start: 193196
+    end: 193243
+    role: partner
+- name: Samsung Electronics Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/advanced-packaging
+  - product/consumer-nand
+  - product/dram
+  - product/enterprise-ssds
+  - product/hbm
+  - product/leading-edge-logic
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  - company/lam-research
+  - company/micron
+  - company/nvidia
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 81460
+    end: 81582
+    role: supplier
+  - filer: company/amd
+    section: 1A
+    start: 128005
+    end: 128135
+    role: supplier
+  - filer: company/lam-research
+    section: '1'
+    start: 61927
+    end: 62058
+    role: customer
+  - filer: company/micron
+    section: '1'
+    start: 65870
+    end: 65975
+    role: competitor
+  - filer: company/micron
+    section: 1A
+    start: 119703
+    end: 119808
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 57692
+    end: 57828
+    role: supplier
+- name: Intel Corporation
+  ticker: INTC
+  cik: 50863
+  title: INTEL CORP
+  products:
+  - product/advanced-packaging
+  - product/ai-accelerators
+  - product/leading-edge-logic
+  - product/server-cpus
+  decision: already in the universe
+  named_by:
+  - company/amd
+  - company/marvell
+  - company/nvidia
+  - company/super-micro
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 76897
+    end: 76974
+    role: competitor
+  - filer: company/amd
+    section: 1A
+    start: 106855
+    end: 107026
+    role: competitor
+  - filer: company/marvell
+    section: '1'
+    start: 85531
+    end: 85548
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60127
+    end: 60246
+    role: competitor
+  - filer: company/super-micro
+    section: '1'
+    start: 81470
+    end: 81570
+    role: supplier
+- name: Qualcomm Incorporated
+  ticker: QCOM
+  cik: 804328
+  title: QUALCOMM INC/DE
+  products:
+  - product/ai-accelerators
+  decision: added
+  named_by:
+  - company/amd
+  - company/intel
+  - company/marvell
+  - company/nvidia
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78669
+    end: 78775
+    role: competitor
+  - filer: company/intel
+    section: part-1
+    start: 90511
+    end: 90631
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 234877
+    end: 234963
+    role: competitor
+  - filer: company/marvell
+    section: '1'
+    start: 85803
+    end: 85837
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60897
+    end: 61011
+    role: competitor
+- name: SK hynix
+  ticker: SKHY
+  cik: 2120882
+  title: SK hynix Inc.
+  products:
+  - product/consumer-nand
+  - product/dram
+  - product/enterprise-ssds
+  - product/hbm
+  decision: no annual report
+  named_by:
+  - company/intel
+  - company/lam-research
+  - company/micron
+  - company/nvidia
+  mentions:
+  - filer: company/intel
+    section: part-4
+    start: 474742
+    end: 474855
+    role: customer
+  - filer: company/lam-research
+    section: '1'
+    start: 61927
+    end: 62058
+    role: customer
+  - filer: company/micron
+    section: '1'
+    start: 65870
+    end: 65975
+    role: competitor
+  - filer: company/micron
+    section: 1A
+    start: 119703
+    end: 119808
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 57867
+    end: 57943
+    role: supplier
+- name: Applied Materials Inc.
+  ticker: AMAT
+  cik: 6951
+  title: APPLIED MATERIALS INC /DE
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  - product/inspection-metrology
+  decision: already in the universe
+  named_by:
+  - company/asml
+  - company/kla
+  - company/lam-research
+  mentions:
+  - filer: company/asml
+    section: part-2
+    start: 233319
+    end: 233478
+    role: competitor
+  - filer: company/asml
+    section: part-3
+    start: 299451
+    end: 299551
+    role: competitor
+  - filer: company/kla
+    section: '1'
+    start: 87148
+    end: 87225
+    role: competitor
+  - filer: company/lam-research
+    section: '1'
+    start: 73299
+    end: 73395
+    role: competitor
+- name: Hewlett Packard Enterprise
+  ticker: HPE
+  cik: 1645590
+  title: Hewlett Packard Enterprise Co
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  - product/liquid-cooling
+  decision: added
+  named_by:
+  - company/arista
+  - company/nvidia
+  - company/super-micro
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 53411
+    end: 53587
+    role: competitor
+  - filer: company/arista
+    section: 1A
+    start: 120365
+    end: 120519
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 61276
+    end: 61432
+    role: competitor
+  - filer: company/super-micro
+    section: '1'
+    start: 101559
+    end: 101646
+    role: competitor
+- name: TSMC
+  ticker: TSM
+  cik: null
+  title: null
+  products:
+  - product/advanced-packaging
+  - product/leading-edge-logic
+  decision: not an SEC filer
+  named_by:
+  - company/broadcom
+  - company/intel
+  mentions:
+  - filer: company/broadcom
+    section: 1A
+    start: 114367
+    end: 114470
+    role: supplier
+  - filer: company/intel
+    section: part-1
+    start: 114676
+    end: 114815
+    role: supplier
+  - filer: company/intel
+    section: part-1
+    start: 96465
+    end: 96544
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 247611
+    end: 247669
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 247589
+    end: 247710
+    role: supplier
+  - filer: company/intel
+    section: part-3
+    start: 288324
+    end: 288410
+    role: supplier
+- name: AMD
+  ticker: AMD
+  cik: null
+  title: null
+  products:
+  - product/ai-accelerators
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  - company/super-micro
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 90094
+    end: 90190
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 234877
+    end: 234963
+    role: competitor
+  - filer: company/intel
+    section: part-5
+    start: 538555
+    end: 538636
+    role: competitor
+  - filer: company/super-micro
+    section: '1'
+    start: 81752
+    end: 81815
+    role: supplier
+- name: GLOBALFOUNDRIES Inc.
+  ticker: GFS
+  cik: 1709048
+  title: GLOBALFOUNDRIES Inc.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  - company/intel
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 81325
+    end: 81445
+    role: supplier
+  - filer: company/amd
+    section: 1A
+    start: 127863
+    end: 128004
+    role: supplier
+  - filer: company/intel
+    section: part-1
+    start: 96686
+    end: 96810
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 239480
+    end: 239596
+    role: competitor
+- name: ASML
+  ticker: ASML
+  cik: 937966
+  title: ASML HOLDING NV
+  products:
+  - product/duv-lithography
+  - product/euv-lithography
+  - product/inspection-metrology
+  decision: already in the universe
+  named_by:
+  - company/intel
+  - company/kla
+  mentions:
+  - filer: company/intel
+    section: part-2
+    start: 129540
+    end: 129642
+    role: supplier
+  - filer: company/intel
+    section: part-3
+    start: 287588
+    end: 287668
+    role: supplier
+  - filer: company/kla
+    section: '1'
+    start: 87202
+    end: 87317
+    role: competitor
+- name: Altera
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  - company/intel
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 77033
+    end: 77119
+    role: competitor
+  - filer: company/intel
+    section: part-4
+    start: 469260
+    end: 469402
+    role: customer
+  - filer: company/intel
+    section: part-5
+    start: 554903
+    end: 555013
+    role: partner
+- name: Apple
+  ticker: AAPL
+  cik: 320193
+  title: Apple Inc.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/corning
+  - company/intel
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 83683
+    end: 83815
+    role: partner
+  - filer: company/intel
+    section: part-1
+    start: 90511
+    end: 90631
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 236131
+    end: 236198
+    role: competitor
+- name: Dell
+  ticker: DELL
+  cik: 1571996
+  title: Dell Technologies Inc.
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  decision: already in the universe
+  named_by:
+  - company/intel
+  - company/super-micro
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 8542
+    end: 8630
+    role: customer
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+  - filer: company/super-micro
+    section: '1'
+    start: 101559
+    end: 101646
+    role: competitor
+- name: Eaton Corporation plc.
+  ticker: ETN
+  cik: 1551182
+  title: Eaton Corp plc
+  products:
+  - product/grid-equipment
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  decision: already in the universe
+  named_by:
+  - company/cummins
+  - company/vertiv
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 76991
+    end: 77073
+    role: partner
+  - filer: company/vertiv
+    section: '1'
+    start: 69132
+    end: 69273
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106167
+    end: 106282
+    role: competitor
+- name: Huawei
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-switches
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  - company/coherent
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 53411
+    end: 53587
+    role: competitor
+  - filer: company/arista
+    section: 1A
+    start: 120365
+    end: 120519
+    role: competitor
+  - filer: company/coherent
+    section: 1A
+    start: 159608
+    end: 159717
+    role: customer
+- name: Lenovo
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  - product/liquid-cooling
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  - company/super-micro
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 8908
+    end: 9007
+    role: customer
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+  - filer: company/super-micro
+    section: '1'
+    start: 101559
+    end: 101646
+    role: competitor
+- name: Samsung
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/advanced-packaging
+  - product/consumer-nand
+  - product/dram
+  - product/enterprise-ssds
+  - product/hbm
+  - product/leading-edge-logic
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  - company/nvidia
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 96632
+    end: 96685
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 239480
+    end: 239596
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60897
+    end: 61011
+    role: competitor
+- name: Advanced Micro Devices, Inc.
+  ticker: AMD
+  cik: 2488
+  title: ADVANCED MICRO DEVICES INC
+  products:
+  - product/ai-accelerators
+  - product/server-cpus
+  decision: already in the universe
+  named_by:
+  - company/marvell
+  - company/nvidia
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85316
+    end: 85352
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60127
+    end: 60246
+    role: competitor
+- name: Amazon
+  ticker: AMZN
+  cik: 1018724
+  title: AMAZON COM INC
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: added
+  named_by:
+  - company/intel
+  - company/nvidia
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 92911
+    end: 93028
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 60441
+    end: 60565
+    role: competitor
+- name: CNH Industrial N.V.
+  ticker: CNH
+  cik: 1567094
+  title: CNH Industrial N.V.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132048
+    end: 132082
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73992
+    end: 74132
+    role: competitor
+- name: Deutz AG
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137759
+    end: 137871
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73695
+    end: 73787
+    role: competitor
+- name: Generac Holdings Inc.
+  ticker: GNRC
+  cik: 1474735
+  title: GENERAC HOLDINGS INC.
+  products:
+  - product/backup-generators
+  decision: added
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138182
+    end: 138283
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 82309
+    end: 82425
+    role: competitor
+- name: Guangxi LiuGong Machinery Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132652
+    end: 132749
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73432
+    end: 73559
+    role: customer
+- name: Hitachi, Ltd.
+  ticker: HTHIY
+  cik: 47710
+  title: HITACHI LTD
+  products:
+  - product/etch-equipment
+  - product/grid-equipment
+  - product/inspection-metrology
+  - product/nuclear-generation
+  - product/switchgear
+  decision: no annual report
+  named_by:
+  - company/ge-vernova
+  - company/lam-research
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 77091
+    end: 77185
+    role: partner
+  - filer: company/lam-research
+    section: '1'
+    start: 73472
+    end: 73585
+    role: competitor
+- name: Huawei Technologies Co. Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/datacenter-capacity
+  - product/datacenter-switches
+  - product/optical-transceivers
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/lumentum
+  - company/nvidia
+  mentions:
+  - filer: company/lumentum
+    section: 1A
+    start: 110546
+    end: 110693
+    role: customer
+  - filer: company/nvidia
+    section: '1'
+    start: 60127
+    end: 60246
+    role: competitor
+- name: Hyundai Heavy Industries Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132263
+    end: 132343
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73196
+    end: 73322
+    role: customer
+- name: INNIO Group
+  ticker: INIO
+  cik: 2109150
+  title: INNIO N.V.
+  products:
+  - product/backup-generators
+  decision: no annual report
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137949
+    end: 138009
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 82309
+    end: 82425
+    role: competitor
+- name: J.C. Bamford Excavators Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132345
+    end: 132431
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73323
+    end: 73431
+    role: customer
+- name: JP Morgan Chase Bank, N.A.
+  ticker: JPM
+  cik: 19617
+  title: JPMORGAN CHASE & CO
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/asml
+  - company/super-micro
+  mentions:
+  - filer: company/asml
+    section: part-3
+    start: 334810
+    end: 334873
+    role: supplier
+  - filer: company/super-micro
+    section: 1A
+    start: 137654
+    end: 137781
+    role: partner
+- name: Komatsu Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 135723
+    end: 135806
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73323
+    end: 73431
+    role: customer
+- name: Marvell Technology Group, Ltd.
+  ticker: MRVL
+  cik: 1835632
+  title: Marvell Technology, Inc.
+  products:
+  - product/copper-interconnect
+  - product/custom-ai-asics
+  - product/datacenter-switches
+  - product/optical-dsps
+  decision: already in the universe
+  named_by:
+  - company/amd
+  - company/nvidia
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78594
+    end: 78683
+    role: competitor
+  - filer: company/nvidia
+    section: '1'
+    start: 61276
+    end: 61432
+    role: competitor
+- name: MediaTek
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/custom-ai-asics
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  - company/marvell
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 90511
+    end: 90631
+    role: competitor
+  - filer: company/marvell
+    section: '1'
+    start: 85664
+    end: 85677
+    role: competitor
+- name: Meta
+  ticker: META
+  cik: 1326801
+  title: Meta Platforms, Inc.
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  decision: 'rejected in review: designs chips for internal use; sells no taxonomy
+    product'
+  named_by:
+  - company/constellation
+  - company/intel
+  mentions:
+  - filer: company/constellation
+    section: '1'
+    start: 150703
+    end: 150828
+    role: customer
+  - filer: company/intel
+    section: part-1
+    start: 92911
+    end: 93028
+    role: competitor
+- name: Micron Technology, Inc.
+  ticker: MU
+  cik: 723125
+  title: MICRON TECHNOLOGY INC
+  products:
+  - product/consumer-nand
+  - product/dram
+  - product/enterprise-ssds
+  - product/hbm
+  decision: already in the universe
+  named_by:
+  - company/lam-research
+  - company/nvidia
+  mentions:
+  - filer: company/lam-research
+    section: '1'
+    start: 61927
+    end: 62058
+    role: customer
+  - filer: company/nvidia
+    section: '1'
+    start: 57867
+    end: 57943
+    role: supplier
+- name: NXP Semiconductors N.V.
+  ticker: NXPI
+  cik: 1413447
+  title: NXP Semiconductors N.V.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  - company/marvell
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78669
+    end: 78775
+    role: competitor
+  - filer: company/marvell
+    section: '1'
+    start: 85746
+    end: 85769
+    role: competitor
+- name: Oracle
+  ticker: ORCL
+  cik: 1341439
+  title: ORACLE CORP
+  products:
+  - product/datacenter-capacity
+  decision: added
+  named_by:
+  - company/intel
+  - company/vertiv
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+  - filer: company/vertiv
+    section: '1'
+    start: 80505
+    end: 80564
+    role: supplier
+- name: Robert Bosch GmbH
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  - company/tsmc
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77986
+    end: 78107
+    role: competitor
+  - filer: company/tsmc
+    section: '4'
+    start: 243592
+    end: 243689
+    role: partner
+- name: Sany Heavy Industry Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132512
+    end: 132602
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73432
+    end: 73559
+    role: customer
+- name: Schneider Electric
+  ticker: SBGSY
+  cik: null
+  title: null
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  - product/grid-equipment
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  - company/johnson-controls
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75912
+    end: 76050
+    role: competitor
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94740
+    end: 94814
+    role: competitor
+- name: Siemens Energy AG
+  ticker: SMERY
+  cik: 1830056
+  title: Siemens Energy AG/ADR
+  products:
+  - product/gas-turbines
+  - product/grid-equipment
+  - product/switchgear
+  decision: no annual report
+  named_by:
+  - company/caterpillar
+  - company/ge-vernova
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137759
+    end: 137871
+    role: competitor
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75704
+    end: 75818
+    role: competitor
+- name: Siliconware Precision Industries Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/advanced-packaging
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  - company/broadcom
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 82164
+    end: 82289
+    role: supplier
+  - filer: company/broadcom
+    section: '1'
+    start: 74516
+    end: 74669
+    role: supplier
+- name: Weichai Power Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  - company/cummins
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138061
+    end: 138181
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 73695
+    end: 73787
+    role: competitor
+- name: Beijing Foton Cummins Engine Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77491
+    end: 77611
+    role: customer
+  - filer: company/cummins
+    section: '1'
+    start: 89156
+    end: 89255
+    role: partner
+  - filer: company/cummins
+    section: 1A
+    start: 146598
+    end: 146744
+    role: partner
+- name: Dongfeng Cummins Engine Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77491
+    end: 77611
+    role: customer
+  - filer: company/cummins
+    section: '1'
+    start: 88442
+    end: 88548
+    role: partner
+  - filer: company/cummins
+    section: 1A
+    start: 146598
+    end: 146744
+    role: partner
+- name: Mistral AI
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-1
+    start: 64916
+    end: 64982
+    role: partner
+  - filer: company/asml
+    section: part-2
+    start: 157236
+    end: 157328
+    role: partner
+  - filer: company/asml
+    section: part-3
+    start: 371429
+    end: 371494
+    role: partner
+- name: PACCAR Inc.
+  ticker: PCAR
+  cik: 75362
+  title: PACCAR INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 72704
+    end: 72816
+    role: customer
+  - filer: company/cummins
+    section: '1'
+    start: 84192
+    end: 84307
+    role: competitor
+  - filer: company/cummins
+    section: '1'
+    start: 90737
+    end: 90837
+    role: partner
+- name: SMIC
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/leading-edge-logic
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 96686
+    end: 96810
+    role: competitor
+  - filer: company/intel
+    section: part-2
+    start: 239480
+    end: 239596
+    role: competitor
+  - filer: company/intel
+    section: part-3
+    start: 276228
+    end: 276324
+    role: competitor
+- name: UMC
+  ticker: UMC
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 96686
+    end: 96810
+    role: competitor
+  - filer: company/intel
+    section: part-1
+    start: 117717
+    end: 117809
+    role: partner
+  - filer: company/intel
+    section: part-2
+    start: 239480
+    end: 239596
+    role: competitor
+- name: Apollo
+  ticker: APO
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-3
+    start: 256273
+    end: 256339
+    role: partner
+  - filer: company/intel
+    section: part-4
+    start: 499985
+    end: 500082
+    role: partner
+- name: Brookfield
+  ticker: BN
+  cik: 1001085
+  title: BROOKFIELD Corp /ON/
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-3
+    start: 256174
+    end: 256268
+    role: partner
+  - filer: company/intel
+    section: part-4
+    start: 424021
+    end: 424190
+    role: partner
+- name: Carl Zeiss SMT
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-1
+    start: 89557
+    end: 89623
+    role: partner
+  - filer: company/asml
+    section: part-3
+    start: 259001
+    end: 259117
+    role: supplier
+- name: ChangXin Memory Technologies, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/dram
+  decision: not an SEC filer
+  named_by:
+  - company/micron
+  mentions:
+  - filer: company/micron
+    section: '1'
+    start: 65976
+    end: 66072
+    role: competitor
+  - filer: company/micron
+    section: 1A
+    start: 119809
+    end: 119905
+    role: competitor
+- name: Chongqing Cummins Engine Company, Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 88114
+    end: 88227
+    role: partner
+  - filer: company/cummins
+    section: 1A
+    start: 146598
+    end: 146744
+    role: partner
+- name: Dell/EMC
+  ticker: DELL
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 53411
+    end: 53587
+    role: competitor
+  - filer: company/arista
+    section: 1A
+    start: 120365
+    end: 120519
+    role: competitor
+- name: Delta Electronics, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/air-cooling
+  - product/liquid-cooling
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69010
+    end: 69127
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106874
+    end: 106984
+    role: competitor
+- name: Ernst & Young LLP
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-3
+    start: 354077
+    end: 354150
+    role: supplier
+  - filer: company/intel
+    section: part-5
+    start: 552807
+    end: 552976
+    role: supplier
+- name: Extreme Networks
+  ticker: EXTR
+  cik: 1078271
+  title: EXTREME NETWORKS INC
+  products:
+  - product/datacenter-switches
+  decision: added
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 53411
+    end: 53587
+    role: competitor
+  - filer: company/arista
+    section: 1A
+    start: 120365
+    end: 120519
+    role: competitor
+- name: GE
+  ticker: GE
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 89889
+    end: 89977
+    role: supplier
+  - filer: company/ge-vernova
+    section: 1A
+    start: 168274
+    end: 168348
+    role: partner
+- name: HP
+  ticker: HPQ
+  cik: 47217
+  title: HP INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 9307
+    end: 9394
+    role: customer
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+- name: Huawei Investment & Holding Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-accelerators
+  - product/ai-servers
+  - product/air-cooling
+  - product/datacenter-switches
+  - product/liquid-cooling
+  - product/optical-transceivers
+  - product/server-cpus
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69132
+    end: 69273
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106167
+    end: 106282
+    role: competitor
+- name: Johnson Controls International PLC
+  ticker: JCI
+  cik: 833444
+  title: Johnson Controls International plc
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  - product/liquid-cooling
+  decision: already in the universe
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69010
+    end: 69127
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106874
+    end: 106984
+    role: competitor
+- name: KLA-Tencor Corporation
+  ticker: KLAC
+  cik: null
+  title: null
+  products:
+  - product/deposition-equipment
+  - product/etch-equipment
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-2
+    start: 233319
+    end: 233478
+    role: competitor
+  - filer: company/asml
+    section: part-3
+    start: 299451
+    end: 299551
+    role: competitor
+- name: Kioxia Holdings Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/consumer-nand
+  - product/enterprise-ssds
+  decision: not an SEC filer
+  named_by:
+  - company/micron
+  mentions:
+  - filer: company/micron
+    section: '1'
+    start: 65870
+    end: 65975
+    role: competitor
+  - filer: company/micron
+    section: 1A
+    start: 119703
+    end: 119808
+    role: competitor
+- name: Legrand SA
+  ticker: LGRDY
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  - product/liquid-cooling
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69132
+    end: 69273
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106167
+    end: 106282
+    role: competitor
+- name: PricewaterhouseCoopers Accountants N.V.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-4
+    start: 403598
+    end: 403729
+    role: supplier
+  - filer: company/asml
+    section: part-5
+    start: 525009
+    end: 525048
+    role: supplier
+- name: Sandisk Corporation
+  ticker: SNDK
+  cik: 2023554
+  title: Sandisk Corp
+  products:
+  - product/consumer-nand
+  - product/enterprise-ssds
+  decision: added
+  named_by:
+  - company/micron
+  mentions:
+  - filer: company/micron
+    section: '1'
+    start: 65870
+    end: 65975
+    role: competitor
+  - filer: company/micron
+    section: 1A
+    start: 119703
+    end: 119808
+    role: competitor
+- name: Schneider Electric, S.E.
+  ticker: SBGSY
+  cik: null
+  title: null
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  - product/grid-equipment
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69132
+    end: 69273
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106167
+    end: 106282
+    role: competitor
+- name: Socomec Holding SA
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/switchgear
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69010
+    end: 69127
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106874
+    end: 106984
+    role: competitor
+- name: Sony
+  ticker: SONY
+  cik: 313838
+  title: Sony Group Corp
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 59208
+    end: 59267
+    role: customer
+  - filer: company/amd
+    section: 1A
+    start: 113252
+    end: 113350
+    role: customer
+- name: Stulz GmbH
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  - product/liquid-cooling
+  decision: not an SEC filer
+  named_by:
+  - company/vertiv
+  mentions:
+  - filer: company/vertiv
+    section: '1'
+    start: 69010
+    end: 69127
+    role: competitor
+  - filer: company/vertiv
+    section: 1A
+    start: 106874
+    end: 106984
+    role: competitor
+- name: Tata Cummins Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77491
+    end: 77611
+    role: customer
+  - filer: company/cummins
+    section: '1'
+    start: 90072
+    end: 90140
+    role: partner
+- name: Tata Motors Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 90072
+    end: 90140
+    role: partner
+  - filer: company/cummins
+    section: '1'
+    start: 90370
+    end: 90425
+    role: customer
+- name: Tongfu Microelectronics Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/advanced-packaging
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 82042
+    end: 82149
+    role: partner
+  - filer: company/amd
+    section: 1A
+    start: 133004
+    end: 133125
+    role: partner
+- name: Traton Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 72796
+    end: 72872
+    role: customer
+  - filer: company/cummins
+    section: '1'
+    start: 84192
+    end: 84307
+    role: competitor
+- name: United Microelectronics Corporation
+  ticker: UMC
+  cik: 1033767
+  title: UNITED MICROELECTRONICS CORP
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 81460
+    end: 81582
+    role: supplier
+  - filer: company/amd
+    section: 1A
+    start: 128005
+    end: 128135
+    role: supplier
+- name: Yangtze Memory Technologies Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/consumer-nand
+  - product/enterprise-ssds
+  decision: not an SEC filer
+  named_by:
+  - company/micron
+  mentions:
+  - filer: company/micron
+    section: '1'
+    start: 65976
+    end: 66072
+    role: competitor
+  - filer: company/micron
+    section: 1A
+    start: 119809
+    end: 119905
+    role: competitor
+- name: AB Volvo
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77705
+    end: 77834
+    role: customer
+- name: ABB
+  ticker: ABBNY
+  cik: 1091587
+  title: ABB LTD
+  products:
+  - product/grid-equipment
+  - product/switchgear
+  - product/ups
+  decision: no annual report
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75912
+    end: 76050
+    role: competitor
+- name: AEP Texas
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: 1A
+    start: 212579
+    end: 212653
+    role: partner
+- name: AGC Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 93072
+    end: 93150
+    role: competitor
+- name: AHI-Carrier FZC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/carrier
+  mentions:
+  - filer: company/carrier
+    section: 1A
+    start: 91321
+    end: 91380
+    role: partner
+- name: AP Grange Holdings, LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 563182
+    end: 563262
+    role: partner
+- name: API Group
+  ticker: APG
+  cik: 1796209
+  title: APi Group Corp
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94815
+    end: 94873
+    role: competitor
+- name: ASM International
+  ticker: ASMIY
+  cik: null
+  title: null
+  products:
+  - product/deposition-equipment
+  decision: not an SEC filer
+  named_by:
+  - company/lam-research
+  mentions:
+  - filer: company/lam-research
+    section: '1'
+    start: 73396
+    end: 73471
+    role: competitor
+- name: Ablecom
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: 1A
+    start: 162719
+    end: 162822
+    role: supplier
+- name: Ablecom Technology, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: '1'
+    start: 99021
+    end: 99164
+    role: supplier
+- name: Acer
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+- name: Advanced Semiconductor Engineering, Inc.
+  ticker: ASX
+  cik: null
+  title: null
+  products:
+  - product/advanced-packaging
+  decision: not an SEC filer
+  named_by:
+  - company/broadcom
+  mentions:
+  - filer: company/broadcom
+    section: '1'
+    start: 74516
+    end: 74669
+    role: supplier
+- name: Aggreko plc
+  ticker: AGKO
+  cik: 2134090
+  title: Aggreko Inc.
+  products:
+  - product/backup-generators
+  decision: no annual report
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138182
+    end: 138283
+    role: competitor
+- name: Alchip Technologies
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/custom-ai-asics
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85354
+    end: 85384
+    role: competitor
+- name: Alibaba Group
+  ticker: BABA
+  cik: 1577552
+  title: Alibaba Group Holding Ltd
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: added
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 60441
+    end: 60565
+    role: competitor
+- name: AlixPartners LLP
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: 1A
+    start: 196195
+    end: 196271
+    role: supplier
+- name: Allison Transmission
+  ticker: ALSN
+  cik: 1411207
+  title: Allison Transmission Holdings Inc
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 78108
+    end: 78207
+    role: competitor
+- name: Alphabet Inc.
+  ticker: GOOGL
+  cik: 1652044
+  title: Alphabet Inc.
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: added
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 60441
+    end: 60565
+    role: competitor
+- name: Alstom SA
+  ticker: AOMFF
+  cik: 1062066
+  title: ALSTOM
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138580
+    end: 138716
+    role: competitor
+- name: Amazon Web Services
+  ticker: AMZN
+  cik: null
+  title: null
+  products:
+  - product/ai-accelerators
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/carrier
+  mentions:
+  - filer: company/carrier
+    section: '1'
+    start: 65459
+    end: 65580
+    role: partner
+- name: Amazon Web Services (AWS)
+  ticker: AMZN
+  cik: null
+  title: null
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+- name: Ambarella, Inc.
+  ticker: AMBA
+  cik: 1280263
+  title: AMBARELLA INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 60897
+    end: 61011
+    role: competitor
+- name: America Fujikura Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/fiber-cable
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 92396
+    end: 92527
+    role: competitor
+- name: Amkor Technology, Inc.
+  ticker: AMKR
+  cik: 1047127
+  title: AMKOR TECHNOLOGY, INC.
+  products:
+  - product/advanced-packaging
+  decision: added
+  named_by:
+  - company/broadcom
+  mentions:
+  - filer: company/broadcom
+    section: '1'
+    start: 74516
+    end: 74669
+    role: supplier
+- name: Amphenol
+  ticker: APH
+  cik: 820313
+  title: AMPHENOL CORP /DE/
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: already in the universe
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 92396
+    end: 92527
+    role: competitor
+- name: Amplify Cell Technologies LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 90520
+    end: 90628
+    role: partner
+- name: Analog Devices
+  ticker: ADI
+  cik: 6281
+  title: ANALOG DEVICES INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78669
+    end: 78775
+    role: competitor
+- name: Anhui Jianghuai Automobile Group Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73002
+    end: 73122
+    role: customer
+- name: Aptiv
+  ticker: APTV
+  cik: 1521332
+  title: Aptiv PLC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106276
+    end: 106369
+    role: competitor
+- name: Arista Networks
+  ticker: ANET
+  cik: 1596532
+  title: Arista Networks, Inc.
+  products:
+  - product/datacenter-switches
+  decision: already in the universe
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 61276
+    end: 61432
+    role: competitor
+- name: Arm
+  ticker: ARM
+  cik: 1973239
+  title: ARM HOLDINGS PLC /UK
+  products:
+  - product/server-cpus
+  decision: added
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: '1'
+    start: 82021
+    end: 82099
+    role: supplier
+- name: Astera Labs, Inc.
+  ticker: ALAB
+  cik: 1736297
+  title: Astera Labs, Inc.
+  products:
+  - product/copper-interconnect
+  - product/datacenter-switches
+  decision: added
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85386
+    end: 85403
+    role: competitor
+- name: Asus
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 56728
+    end: 56789
+    role: customer
+- name: Australia and New Zealand Banking Group Limited
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 142909
+    end: 143018
+    role: competitor
+- name: Avantor, Inc.
+  ticker: AVTR
+  cik: 1722482
+  title: Avantor, Inc.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94635
+    end: 94786
+    role: competitor
+- name: Ayar Labs, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/lasers
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85405
+    end: 85434
+    role: competitor
+- name: BNP Paribas Leasing Solutions Limited
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 142909
+    end: 143018
+    role: competitor
+- name: BYD Company Limited
+  ticker: BYDDF
+  cik: 1445162
+  title: BYD CO LTD
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 84192
+    end: 84307
+    role: competitor
+- name: Baidu, Inc.
+  ticker: BIDU
+  cik: 1329099
+  title: Baidu, Inc.
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  decision: added
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 60441
+    end: 60565
+    role: competitor
+- name: Baker Hughes Co.
+  ticker: BKR
+  cik: 1701605
+  title: Baker Hughes Co
+  products:
+  - product/gas-turbines
+  decision: added
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138318
+    end: 138456
+    role: competitor
+- name: Banc of America Leasing & Capital LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 142798
+    end: 142907
+    role: competitor
+- name: Beiqi Foton Motor Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 89156
+    end: 89255
+    role: partner
+- name: Belden
+  ticker: BDC
+  cik: 913142
+  title: BELDEN INC.
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  decision: added
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106276
+    end: 106369
+    role: competitor
+- name: Borg-Warner Inc.
+  ticker: BWA
+  cik: 908255
+  title: BORGWARNER INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77986
+    end: 78107
+    role: competitor
+- name: Brookfield
+  ticker: BAM
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 520746
+    end: 520830
+    role: partner
+- name: CASE
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132009
+    end: 132082
+    role: competitor
+- name: CTBC Bank Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: 1A
+    start: 138009
+    end: 138152
+    role: partner
+- name: Canon
+  ticker: CAJPY
+  cik: 16988
+  title: CANON INC
+  products:
+  - product/duv-lithography
+  decision: no annual report
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-2
+    start: 232504
+    end: 232572
+    role: competitor
+- name: Carrier Enterprise
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/carrier
+  mentions:
+  - filer: company/carrier
+    section: 1A
+    start: 91254
+    end: 91319
+    role: partner
+- name: Carrier Global Corporation
+  ticker: CARR
+  cik: 1783180
+  title: CARRIER GLOBAL Corp
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  decision: already in the universe
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94740
+    end: 94814
+    role: competitor
+- name: Caterpillar, Inc.
+  ticker: CAT
+  cik: 18230
+  title: CATERPILLAR INC
+  products:
+  - product/backup-generators
+  - product/gas-turbines
+  decision: already in the universe
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82192
+    end: 82307
+    role: competitor
+- name: Center for Creative Leadership
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 71779
+    end: 71930
+    role: partner
+- name: CenterPoint
+  ticker: CNP
+  cik: 1130310
+  title: CENTERPOINT ENERGY INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: 1A
+    start: 212579
+    end: 212653
+    role: partner
+- name: China First Auto Works
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73992
+    end: 74132
+    role: competitor
+- name: China National Heavy Duty Truck Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73123
+    end: 73195
+    role: customer
+- name: Chongqing Machinery and Electric Co. Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 88114
+    end: 88227
+    role: partner
+- name: Citibank N.A.
+  ticker: C
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 555350
+    end: 555420
+    role: supplier
+- name: Computershare Trust Company, National Association
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 558747
+    end: 558865
+    role: supplier
+- name: Compuware
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: 1A
+    start: 157207
+    end: 157358
+    role: supplier
+- name: Compuware Technology, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: '1'
+    start: 99021
+    end: 99164
+    role: supplier
+- name: Corning
+  ticker: GLW
+  cik: 24741
+  title: CORNING INC /NY
+  products:
+  - product/fiber-cable
+  decision: already in the universe
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106276
+    end: 106369
+    role: competitor
+- name: Credo Technology Group Holding Ltd
+  ticker: CRDO
+  cik: 1807794
+  title: Credo Technology Group Holding Ltd
+  products:
+  - product/copper-interconnect
+  - product/optical-dsps
+  decision: added
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85495
+    end: 85529
+    role: competitor
+- name: Cummins Inc.
+  ticker: CMI
+  cik: 26172
+  title: CUMMINS INC
+  products:
+  - product/backup-generators
+  decision: already in the universe
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137759
+    end: 137871
+    role: competitor
+- name: DENSO Corporation
+  ticker: DNZOY
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 242848
+    end: 242934
+    role: partner
+- name: Daikin Industries, Ltd.
+  ticker: DKILF
+  cik: 1446519
+  title: Daikin Industries Ltd
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  decision: no annual report
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94815
+    end: 94873
+    role: competitor
+- name: Daimler
+  ticker: MBGAF
+  cik: 1067318
+  title: DAIMLER AG
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 84192
+    end: 84307
+    role: competitor
+- name: Daimler Truck and US Holding LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 90737
+    end: 90837
+    role: partner
+- name: Daimler Trucks AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 72796
+    end: 72872
+    role: customer
+- name: Dana Incorporated
+  ticker: DAN
+  cik: 26780
+  title: DANA Inc
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 84192
+    end: 84307
+    role: competitor
+- name: Danaher Corporation
+  ticker: DHR
+  cik: 313616
+  title: DANAHER CORP /DE/
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94635
+    end: 94786
+    role: competitor
+- name: Darktrace
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 55535
+    end: 55645
+    role: competitor
+- name: Deere & Company
+  ticker: DE
+  cik: 315189
+  title: DEERE & CO
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132084
+    end: 132139
+    role: competitor
+- name: Deere Construction & Forestry
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132084
+    end: 132139
+    role: competitor
+- name: Discovery Energy, LLC
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138262
+    end: 138316
+    role: competitor
+- name: Dongfeng Automotive Co. Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 88442
+    end: 88548
+    role: partner
+- name: Dongfeng Motor Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73992
+    end: 74132
+    role: competitor
+- name: Doosan Bobcat
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132141
+    end: 132177
+    role: competitor
+- name: Doosan Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132141
+    end: 132177
+    role: competitor
+- name: EDB Investment Pte. Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 238088
+    end: 238195
+    role: partner
+- name: EVE Energy
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 90868
+    end: 90928
+    role: partner
+- name: Eaton Cummins Automated Transmission Technologies
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 76913
+    end: 77025
+    role: partner
+- name: Eberspacher Holding GmbH & Co. KG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 78108
+    end: 78207
+    role: competitor
+- name: Elavon Financial Services DAC, UK Branch
+  ticker: USB
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 557249
+    end: 557310
+    role: supplier
+- name: Envision
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75819
+    end: 75911
+    role: competitor
+- name: Epiroc AB
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 135723
+    end: 135806
+    role: competitor
+- name: Eppendorf SE
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94635
+    end: 94786
+    role: competitor
+- name: Everllence SE
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  - product/gas-turbines
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138011
+    end: 138059
+    role: competitor
+- name: Exelon
+  ticker: EXC
+  cik: 1109357
+  title: EXELON CORP
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: 1A
+    start: 187374
+    end: 187484
+    role: partner
+- name: ExtraHop
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 55535
+    end: 55645
+    role: competitor
+- name: FPT Industrial SpA
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137872
+    end: 137960
+    role: competitor
+- name: Fabrinet
+  ticker: FN
+  cik: 1408710
+  title: Fabrinet
+  products:
+  - product/optical-transceivers
+  decision: added
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 58001
+    end: 58149
+    role: supplier
+- name: FiberHome Technologies
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: not an SEC filer
+  named_by:
+  - company/lumentum
+  mentions:
+  - filer: company/lumentum
+    section: 1A
+    start: 207878
+    end: 207951
+    role: customer
+- name: Finjan
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 535618
+    end: 535698
+    role: supplier
+- name: Ford Motor Company
+  ticker: F
+  cik: 37996
+  title: FORD MOTOR CO
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73992
+    end: 74132
+    role: competitor
+- name: Foundry JV Holdco LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 562747
+    end: 562887
+    role: partner
+- name: Foxconn
+  ticker: HNHPF
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: '1'
+    start: 101653
+    end: 101716
+    role: competitor
+- name: Foxconn Hon Hai
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 49986
+    end: 50077
+    role: supplier
+- name: Foxconn Interconnect Technology
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106276
+    end: 106369
+    role: competitor
+- name: Foxconn Technology Group
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/broadcom
+  mentions:
+  - filer: company/broadcom
+    section: '1'
+    start: 74516
+    end: 74669
+    role: supplier
+- name: Framatome
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75704
+    end: 75818
+    role: competitor
+- name: Fujikura
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/fiber-cable
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 92396
+    end: 92527
+    role: competitor
+- name: GE Vernova Inc.
+  ticker: GEV
+  cik: 1996810
+  title: GE Vernova Inc.
+  products:
+  - product/gas-turbines
+  - product/grid-equipment
+  - product/nuclear-generation
+  - product/switchgear
+  decision: already in the universe
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137949
+    end: 138009
+    role: competitor
+- name: Garrett Motion, Inc.
+  ticker: GTX
+  cik: 1735707
+  title: Garrett Motion Inc.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77986
+    end: 78107
+    role: competitor
+- name: Gigamon
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 55691
+    end: 55826
+    role: competitor
+- name: Glenair
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106276
+    end: 106369
+    role: competitor
+- name: Global Unichip Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/custom-ai-asics
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85550
+    end: 85584
+    role: competitor
+- name: Goldwind
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75819
+    end: 75911
+    role: competitor
+- name: Google
+  ticker: GOOGL
+  cik: null
+  title: null
+  products:
+  - product/custom-ai-asics
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-1
+    start: 92911
+    end: 93028
+    role: competitor
+- name: Greenbrier Companies, Inc.
+  ticker: GBX
+  cik: 923120
+  title: GREENBRIER COMPANIES INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138580
+    end: 138716
+    role: competitor
+- name: Greiner AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94635
+    end: 94786
+    role: competitor
+- name: Groq, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-accelerators
+  decision: not an SEC filer
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: 1A
+    start: 85616
+    end: 85758
+    role: supplier
+- name: HPE
+  ticker: HPE
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  - product/datacenter-switches
+  - product/liquid-cooling
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+- name: HUBER+SUHNER
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: Heraeus
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 93508
+    end: 93651
+    role: competitor
+- name: Higon Information Technology Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: 1A
+    start: 180759
+    end: 180919
+    role: partner
+- name: Hitachi Construction Machinery Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132179
+    end: 132261
+    role: competitor
+- name: Hitachi Energy
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/grid-equipment
+  - product/switchgear
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75912
+    end: 76050
+    role: competitor
+- name: Hitachi Global Life Solutions, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 87940
+    end: 88027
+    role: partner
+- name: Hitachi High-Tech Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/etch-equipment
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/kla
+  mentions:
+  - filer: company/kla
+    section: '1'
+    start: 87202
+    end: 87317
+    role: competitor
+- name: Hon Hai Precision Industry Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 58001
+    end: 58149
+    role: supplier
+- name: Honeywell International, Inc.
+  ticker: HON
+  cik: 773840
+  title: HONEYWELL INTERNATIONAL INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94618
+    end: 94675
+    role: competitor
+- name: Hyundai Construction Equipment Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132221
+    end: 132343
+    role: competitor
+- name: Hyundai Doosan Infracore Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132263
+    end: 132343
+    role: competitor
+- name: IBM
+  ticker: IBM
+  cik: null
+  title: null
+  products:
+  - product/datacenter-capacity
+  - product/server-cpus
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 538728
+    end: 538829
+    role: customer
+- name: ICT Luxshare
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: INSEAD
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 71779
+    end: 71930
+    role: partner
+- name: Ibiden Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/abf-substrates
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94325
+    end: 94417
+    role: competitor
+- name: Infineon Technologies AG
+  ticker: IFNNY
+  cik: 1107457
+  title: INFINEON TECHNOLOGIES AG
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 243592
+    end: 243689
+    role: partner
+- name: Isuzu
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73992
+    end: 74132
+    role: competitor
+- name: Iveco Group
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137915
+    end: 137947
+    role: competitor
+- name: JENOPTIK Industrial Metrology Germany GmbH
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 93508
+    end: 93651
+    role: competitor
+- name: JLG Industries, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73432
+    end: 73559
+    role: customer
+- name: Jabil Inc.
+  ticker: JBL
+  cik: 898293
+  title: JABIL INC
+  products:
+  - product/datacenter-switches
+  decision: 'rejected in review: contract manufacturer; builds switches for others'
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 49986
+    end: 50077
+    role: supplier
+- name: John Deere Capital Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 143168
+    end: 143286
+    role: competitor
+- name: Jonhon
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: Juniper Networks
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/datacenter-switches
+  decision: not an SEC filer
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 53411
+    end: 53587
+    role: competitor
+- name: Kawasaki Heavy Industries Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  - product/gas-turbines
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137962
+    end: 138059
+    role: competitor
+- name: Keysight
+  ticker: KEYS
+  cik: 1601046
+  title: Keysight Technologies, Inc.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 55691
+    end: 55826
+    role: competitor
+- name: King Yuan Electronics Company
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 82164
+    end: 82289
+    role: supplier
+- name: Knorr-Bremse AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 78108
+    end: 78207
+    role: competitor
+- name: Kobe Steel, Ltd
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132375
+    end: 132431
+    role: competitor
+- name: Kobelco Construction Machinery
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132375
+    end: 132431
+    role: competitor
+- name: Kohler/SDMO (Kohler Group)
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82192
+    end: 82307
+    role: competitor
+- name: Komatsu America Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 91747
+    end: 91828
+    role: partner
+- name: Komatsu Cummins Chile, Ltda.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 91747
+    end: 91828
+    role: partner
+- name: Komatsu Financial L.P.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 143168
+    end: 143286
+    role: competitor
+- name: Koninklijke Philips NV
+  ticker: PHG
+  cik: 313216
+  title: KONINKLIJKE PHILIPS NV
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 238088
+    end: 238195
+    role: partner
+- name: Kubota Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132447
+    end: 132510
+    role: competitor
+- name: Kubota Credit Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 143168
+    end: 143286
+    role: competitor
+- name: Kubota Farm & Industrial Machinery
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132447
+    end: 132510
+    role: competitor
+- name: LENS
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94325
+    end: 94417
+    role: competitor
+- name: LG Electronics Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/datacenter-chillers
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 540748
+    end: 540859
+    role: customer
+- name: Lasertec, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/kla
+  mentions:
+  - filer: company/kla
+    section: '1'
+    start: 87202
+    end: 87317
+    role: competitor
+- name: Lattice Semiconductor Corporation
+  ticker: LSCC
+  cik: 855658
+  title: LATTICE SEMICONDUCTOR CORP
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78479
+    end: 78583
+    role: competitor
+- name: Leroy Somer
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82426
+    end: 82531
+    role: competitor
+- name: Liebherr-International AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 135636
+    end: 135722
+    role: competitor
+- name: Lightmatter, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85586
+    end: 85619
+    role: competitor
+- name: Longking Holdings Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132690
+    end: 132773
+    role: competitor
+- name: Lumentum Holdings Inc.
+  ticker: LITE
+  cik: 1633978
+  title: Lumentum Holdings Inc.
+  products:
+  - product/lasers
+  - product/optical-transceivers
+  decision: already in the universe
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 61276
+    end: 61432
+    role: competitor
+- name: MACOM Technology Solutions Holdings, Inc.
+  ticker: MTSI
+  cik: 1493594
+  title: MACOM Technology Solutions Holdings, Inc.
+  products:
+  - product/lasers
+  decision: added
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85621
+    end: 85662
+    role: competitor
+- name: MSCI
+  ticker: MSCI
+  cik: 1408198
+  title: MSCI Inc.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-5
+    start: 552387
+    end: 552461
+    role: supplier
+- name: MTU (Rolls Royce Power Systems Group)
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82192
+    end: 82307
+    role: competitor
+- name: Marathon Electric
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82426
+    end: 82531
+    role: competitor
+- name: Meccalte
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82426
+    end: 82531
+    role: competitor
+- name: Microchip Technology Inc.
+  ticker: MCHP
+  cik: 827054
+  title: MICROCHIP TECHNOLOGY INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85679
+    end: 85704
+    role: competitor
+- name: Microsemi Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78479
+    end: 78583
+    role: competitor
+- name: Midea Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/carrier
+  mentions:
+  - filer: company/carrier
+    section: 1A
+    start: 91385
+    end: 91440
+    role: partner
+- name: Mitsubishi Electric
+  ticker: MIELY
+  cik: null
+  title: null
+  products:
+  - product/datacenter-chillers
+  - product/grid-equipment
+  - product/lasers
+  - product/switchgear
+  - product/ups
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75912
+    end: 76050
+    role: competitor
+- name: Mitsubishi Heavy Industries
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  - product/datacenter-chillers
+  - product/gas-turbines
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 82309
+    end: 82425
+    role: competitor
+- name: Mitsubishi Power
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/gas-turbines
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75704
+    end: 75818
+    role: competitor
+- name: Molex
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: Montage Technology
+  ticker: MNTGY
+  cik: 2123346
+  title: Montage Technology Co., Ltd./ADR
+  products:
+  - product/copper-interconnect
+  decision: no annual report
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85706
+    end: 85724
+    role: competitor
+- name: Munger, Tolles & Olson LLP
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: 1A
+    start: 196116
+    end: 196189
+    role: supplier
+- name: NEIL
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: 1A
+    start: 210797
+    end: 210886
+    role: supplier
+- name: NGK Insulators, Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94325
+    end: 94417
+    role: competitor
+- name: NXP Semiconductors Germany GmbH
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 243592
+    end: 243689
+    role: partner
+- name: National Association of Manufacturers
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 67992
+    end: 68142
+    role: partner
+- name: National Society of Black Engineers
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 68078
+    end: 68190
+    role: partner
+- name: Netscout
+  ticker: NTCT
+  cik: 1078075
+  title: NETSCOUT SYSTEMS INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 55691
+    end: 55826
+    role: competitor
+- name: NeuroLeadership Institute
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 71779
+    end: 71930
+    role: partner
+- name: NextEra Energy Resources LLC
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: '1'
+    start: 102732
+    end: 102840
+    role: partner
+- name: NextEra Energy, Inc.
+  ticker: NEE
+  cik: 753308
+  title: NEXTERA ENERGY INC
+  products:
+  - product/nuclear-generation
+  decision: added
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: '1'
+    start: 102732
+    end: 102840
+    role: partner
+- name: Nikon
+  ticker: NINOY
+  cik: null
+  title: null
+  products:
+  - product/duv-lithography
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-2
+    start: 232504
+    end: 232572
+    role: competitor
+- name: Nippon Electric Glass Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 93072
+    end: 93150
+    role: competitor
+- name: Nordex
+  ticker: NRDXF
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75819
+    end: 75911
+    role: competitor
+- name: OmniVision Technologies Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 239244
+    end: 239369
+    role: partner
+- name: Onto Innovation, Inc.
+  ticker: ONTO
+  cik: 704532
+  title: ONTO INNOVATION INC.
+  products:
+  - product/inspection-metrology
+  decision: added
+  named_by:
+  - company/kla
+  mentions:
+  - filer: company/kla
+    section: '1'
+    start: 87202
+    end: 87317
+    role: competitor
+- name: OpenAI
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: 1A
+    start: 132433
+    end: 132503
+    role: partner
+- name: OpenAI OpCo, LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 49528
+    end: 49638
+    role: customer
+- name: Opportunity at Work
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 67732
+    end: 67872
+    role: partner
+- name: PECO
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: 1A
+    start: 212448
+    end: 212578
+    role: partner
+- name: PSEG
+  ticker: PEG
+  cik: null
+  title: null
+  products:
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: '1'
+    start: 100046
+    end: 100157
+    role: partner
+- name: PSEG Nuclear, LLC
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: '1'
+    start: 97662
+    end: 97774
+    role: partner
+- name: Phison Electronics Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/enterprise-ssds
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85771
+    end: 85801
+    role: competitor
+- name: Positive Technologies
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-3
+    start: 343405
+    end: 343561
+    role: partner
+- name: PricewaterhouseCoopers Accountants N.V. (PwC)
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-3
+    start: 346389
+    end: 346471
+    role: supplier
+- name: Prysmian Group S.p.A.
+  ticker: PRYMF
+  cik: 1437672
+  title: Prysmian S.p.A.
+  products:
+  - product/fiber-cable
+  decision: no annual report
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 92396
+    end: 92527
+    role: competitor
+- name: Quanta Computer
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: '1'
+    start: 101653
+    end: 101716
+    role: competitor
+- name: Rambus, Inc.
+  ticker: RMBS
+  cik: 917273
+  title: RAMBUS INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85839
+    end: 85851
+    role: competitor
+- name: Ranovus Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/lasers
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85853
+    end: 85877
+    role: competitor
+- name: Realtek Semiconductor Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85879
+    end: 85912
+    role: competitor
+- name: Renesas Electronics Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 60897
+    end: 61011
+    role: competitor
+- name: Rolls-Royce
+  ticker: RYCEY
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75704
+    end: 75818
+    role: competitor
+- name: Rolls-Royce Power Systems AG
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137759
+    end: 137871
+    role: competitor
+- name: Rosenberger
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: SLP VII Gryphon Aggregator, L.P.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 554903
+    end: 555013
+    role: partner
+- name: STPNOC
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/constellation
+  mentions:
+  - filer: company/constellation
+    section: '1'
+    start: 100046
+    end: 100157
+    role: partner
+- name: Sandvik AB
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 135723
+    end: 135806
+    role: competitor
+- name: Sanmina Corporation
+  ticker: SANM
+  cik: 897723
+  title: SANMINA CORP
+  products:
+  - product/datacenter-switches
+  decision: 'rejected in review: contract manufacturer; builds switches for others'
+  named_by:
+  - company/arista
+  mentions:
+  - filer: company/arista
+    section: '1'
+    start: 49986
+    end: 50077
+    role: supplier
+- name: Sarstedt AG & Co. KG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94635
+    end: 94786
+    role: competitor
+- name: Schott AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 93508
+    end: 93651
+    role: competitor
+- name: Screen Holding Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/coater-developer
+  - product/inspection-metrology
+  decision: not an SEC filer
+  named_by:
+  - company/lam-research
+  mentions:
+  - filer: company/lam-research
+    section: '1'
+    start: 73590
+    end: 73709
+    role: competitor
+- name: Semes Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/coater-developer
+  - product/etch-equipment
+  decision: not an SEC filer
+  named_by:
+  - company/lam-research
+  mentions:
+  - filer: company/lam-research
+    section: '1'
+    start: 73590
+    end: 73709
+    role: competitor
+- name: Semtech Corporation
+  ticker: SMTC
+  cik: 88941
+  title: SEMTECH CORP
+  products:
+  - product/copper-interconnect
+  - product/optical-dsps
+  decision: added
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85914
+    end: 85933
+    role: competitor
+- name: Sensata
+  ticker: ST
+  cik: 1477294
+  title: Sensata Technologies Holding plc
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: Shandong Heavy Industry Group Co.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132913
+    end: 132999
+    role: competitor
+- name: Shandong Lingong Construction Machinery Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132814
+    end: 132908
+    role: competitor
+- name: Shantui Construction Machinery Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132913
+    end: 132999
+    role: competitor
+- name: Siemens
+  ticker: SIEGY
+  cik: null
+  title: null
+  products:
+  - product/grid-equipment
+  - product/switchgear
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75912
+    end: 76050
+    role: competitor
+- name: Siemens Mobility A/S
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138580
+    end: 138716
+    role: competitor
+- name: Siemens Smart Infrastructure
+  ticker: SIEGY
+  cik: null
+  title: null
+  products:
+  - product/grid-equipment
+  - product/switchgear
+  decision: not an SEC filer
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94676
+    end: 94739
+    role: competitor
+- name: Siemens-Gamesa
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75819
+    end: 75911
+    role: competitor
+- name: Silicon Motion Technology Corporation
+  ticker: SIMO
+  cik: 1329394
+  title: Silicon Motion Technology CORP
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85935
+    end: 85972
+    role: competitor
+- name: Silicon Valley Bank
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: 1A
+    start: 242366
+    end: 242475
+    role: supplier
+- name: Society for Women Engineers
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 67992
+    end: 68142
+    role: partner
+- name: Society of Hispanic Professional Engineers
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/trane
+  mentions:
+  - filer: company/trane
+    section: '1'
+    start: 68078
+    end: 68190
+    role: partner
+- name: Socionext Inc.
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/custom-ai-asics
+  decision: not an SEC filer
+  named_by:
+  - company/marvell
+  mentions:
+  - filer: company/marvell
+    section: '1'
+    start: 85978
+    end: 85992
+    role: competitor
+- name: "Soci\xE9t\xE9 G\xE9n\xE9rale S.A."
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 142997
+    end: 143065
+    role: competitor
+- name: Sony Semiconductor Solution Corporation
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 242734
+    end: 242832
+    role: partner
+- name: Stellantis N.V.
+  ticker: STLA
+  cik: 1605484
+  title: Stellantis N.V.
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 72223
+    end: 72319
+    role: customer
+- name: Sumitomo
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/fiber-cable
+  - product/optical-transceivers
+  decision: not an SEC filer
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 92396
+    end: 92527
+    role: competitor
+- name: Sustainalytics
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-5
+    start: 538194
+    end: 538292
+    role: supplier
+- name: TE Connectivity
+  ticker: TEL
+  cik: 1385157
+  title: TE Connectivity plc
+  products:
+  - product/copper-interconnect
+  - product/fiber-cable
+  decision: added
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: Tenneco Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 77986
+    end: 78107
+    role: competitor
+- name: Tesla, Inc.
+  ticker: TSLA
+  cik: 1318605
+  title: Tesla, Inc.
+  products:
+  - product/custom-ai-asics
+  decision: 'rejected in review: in-house chips; sells no taxonomy product'
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 61016
+    end: 61126
+    role: competitor
+- name: Texas Instruments Incorporated
+  ticker: TXN
+  cik: 97476
+  title: TEXAS INSTRUMENTS INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 78669
+    end: 78775
+    role: competitor
+- name: Thermo Fisher Scientific Inc.
+  ticker: TMO
+  cik: 97745
+  title: THERMO FISHER SCIENTIFIC INC.
+  products:
+  - product/inspection-metrology
+  decision: 'rejected in review: named as a life-sciences competitor'
+  named_by:
+  - company/corning
+  mentions:
+  - filer: company/corning
+    section: '1'
+    start: 94635
+    end: 94786
+    role: competitor
+- name: Tokyo Electron, Ltd.
+  ticker: TOELY
+  cik: null
+  title: null
+  products:
+  - product/coater-developer
+  - product/deposition-equipment
+  - product/etch-equipment
+  decision: not an SEC filer
+  named_by:
+  - company/lam-research
+  mentions:
+  - filer: company/lam-research
+    section: '1'
+    start: 73472
+    end: 73585
+    role: competitor
+- name: Toyota Motor Corporation
+  ticker: TM
+  cik: 1094517
+  title: TOYOTA MOTOR CORP/
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 243052
+    end: 243146
+    role: partner
+- name: Trane Technologies plc
+  ticker: TT
+  cik: 1466258
+  title: Trane Technologies plc
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  decision: already in the universe
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94763
+    end: 94873
+    role: competitor
+- name: VMware LLC
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/dell
+  mentions:
+  - filer: company/dell
+    section: '1'
+    start: 60486
+    end: 60545
+    role: supplier
+- name: Valve
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amd
+  mentions:
+  - filer: company/amd
+    section: '1'
+    start: 59322
+    end: 59378
+    role: customer
+- name: Vertiv Holdings Co.
+  ticker: VRT
+  cik: 1674101
+  title: Vertiv Holdings Co
+  products:
+  - product/air-cooling
+  - product/datacenter-chillers
+  - product/liquid-cooling
+  - product/switchgear
+  - product/ups
+  decision: already in the universe
+  named_by:
+  - company/johnson-controls
+  mentions:
+  - filer: company/johnson-controls
+    section: '1'
+    start: 94815
+    end: 94873
+    role: competitor
+- name: Vestas
+  ticker: VWDRY
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75819
+    end: 75911
+    role: competitor
+- name: Voestalpine AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138580
+    end: 138716
+    role: competitor
+- name: "Volkswagen Caminh\xF5es e \xD4nibus"
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73123
+    end: 73195
+    role: customer
+- name: Volvo Construction Equipment
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132547
+    end: 132601
+    role: competitor
+- name: Volvo Financial Services
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 143168
+    end: 143286
+    role: competitor
+- name: Volvo Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132547
+    end: 132601
+    role: competitor
+- name: Volvo Penta AB
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 137872
+    end: 137960
+    role: competitor
+- name: Volvo Powertrain
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73992
+    end: 74132
+    role: competitor
+- name: Vossloh AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138580
+    end: 138716
+    role: competitor
+- name: Wabtec Corp
+  ticker: WAB
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 138552
+    end: 138716
+    role: competitor
+- name: Watsco, Inc.
+  ticker: WSO
+  cik: 105016
+  title: WATSCO INC
+  products: []
+  decision: makes no taxonomy product
+  named_by:
+  - company/carrier
+  mentions:
+  - filer: company/carrier
+    section: 1A
+    start: 91254
+    end: 91319
+    role: partner
+- name: Wells Fargo Bank, National Association
+  ticker: WFC
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/intel
+  mentions:
+  - filer: company/intel
+    section: part-5
+    start: 556341
+    end: 556431
+    role: supplier
+- name: Wells Fargo Equipment Finance Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 142798
+    end: 142907
+    role: competitor
+- name: Westinghouse
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/nuclear-generation
+  decision: not an SEC filer
+  named_by:
+  - company/ge-vernova
+  mentions:
+  - filer: company/ge-vernova
+    section: '1'
+    start: 75704
+    end: 75818
+    role: competitor
+- name: Wistron Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/nvidia
+  mentions:
+  - filer: company/nvidia
+    section: '1'
+    start: 58001
+    end: 58149
+    role: supplier
+- name: Wiwynn Corporation
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/ai-servers
+  decision: not an SEC filer
+  named_by:
+  - company/super-micro
+  mentions:
+  - filer: company/super-micro
+    section: '1'
+    start: 101653
+    end: 101716
+    role: competitor
+- name: Wonik IPS
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/deposition-equipment
+  decision: not an SEC filer
+  named_by:
+  - company/lam-research
+  mentions:
+  - filer: company/lam-research
+    section: '1'
+    start: 73396
+    end: 73471
+    role: competitor
+- name: XCMG Construction Machinery Co., Ltd.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/caterpillar
+  mentions:
+  - filer: company/caterpillar
+    section: '1'
+    start: 132775
+    end: 132863
+    role: competitor
+- name: Xintec, Inc.
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/tsmc
+  mentions:
+  - filer: company/tsmc
+    section: '4'
+    start: 239888
+    end: 240020
+    role: supplier
+- name: Xuzhou Construction Machinery Group
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73432
+    end: 73559
+    role: customer
+- name: Yazaki
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/amphenol
+  mentions:
+  - filer: company/amphenol
+    section: '1'
+    start: 106370
+    end: 106476
+    role: competitor
+- name: Yuchai
+  ticker: null
+  cik: null
+  title: null
+  products:
+  - product/backup-generators
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73695
+    end: 73787
+    role: competitor
+- name: ZF Friedrichshafen AG
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 78108
+    end: 78207
+    role: competitor
+- name: Zoomlion Heavy Industry Science & Technology Co., Ltd
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/cummins
+  mentions:
+  - filer: company/cummins
+    section: '1'
+    start: 73323
+    end: 73431
+    role: customer
+- name: imec
+  ticker: null
+  cik: null
+  title: null
+  products: []
+  decision: not an SEC filer
+  named_by:
+  - company/asml
+  mentions:
+  - filer: company/asml
+    section: part-1
+    start: 68330
+    end: 68496
+    role: partner

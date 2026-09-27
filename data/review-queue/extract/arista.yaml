@@ -1,0 +1,425 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/arista
+form: 10-K
+requires: []
+disclosed:
+- id: dis-6181bf3f92
+  description: Revenue attributable to the larger of two unnamed major customers.
+  share: 0.26
+  period: Year ended December 31, 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 45513
+  end: 45638
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-48beae84f9
+  description: Revenue attributable to the smaller of two unnamed major customers.
+  share: 0.16
+  period: Year ended December 31, 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 45513
+  end: 45638
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-86e2c9cb1a
+  description: Revenue from the first unnamed end customer
+  share: 0.16
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 80827
+  end: 80903
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e65a431ca9
+  description: Revenue from the first unnamed end customer
+  share: 0.15
+  period: '2024'
+  basis: customer
+  products: []
+  section: 1A
+  start: 80827
+  end: 80903
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9e3e10295d
+  description: Revenue from the first unnamed end customer
+  share: 0.21
+  period: '2023'
+  basis: customer
+  products: []
+  section: 1A
+  start: 80827
+  end: 80903
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9cf1bb51f3
+  description: Revenue from the second unnamed end customer
+  share: 0.26
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 80909
+  end: 80991
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b0d7f9cbc9
+  description: Revenue from the second unnamed end customer
+  share: 0.2
+  period: '2024'
+  basis: customer
+  products: []
+  section: 1A
+  start: 80909
+  end: 80991
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4df78e26cb
+  description: Revenue from the second unnamed end customer
+  share: 0.18
+  period: '2023'
+  basis: customer
+  products: []
+  section: 1A
+  start: 80909
+  end: 80991
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f9f661023f
+  description: Revenue from cloud and AI hyperscale customers
+  share: 0.48
+  period: '2025'
+  basis: end market
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 275941
+  end: 276045
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9809acd01c
+  description: Revenue from enterprise customers
+  share: 0.32
+  period: '2025'
+  basis: end market
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 275941
+  end: 276045
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-707e5c1954
+  description: Revenue from AI-focused and specialty providers
+  share: 0.2
+  period: '2025'
+  basis: end market
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 275941
+  end: 276045
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-88c89f2423
+  description: Revenue from core AI, cloud and data center networking offerings
+  share: 0.65
+  period: '2025'
+  basis: product
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 276585
+  end: 276681
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f30f4e05d7
+  description: Revenue from campus networking and routing offerings
+  share: 0.18
+  period: '2025'
+  basis: product
+  products: []
+  section: '7'
+  start: 276585
+  end: 276681
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-91a979745f
+  description: Revenue from networking software and services
+  share: 0.17
+  period: '2025'
+  basis: product
+  products: []
+  section: '7'
+  start: 276585
+  end: 276681
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-54b17b7f48
+  description: Revenue from the first unnamed large customer
+  share: 0.16
+  period: '2025'
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 278006
+  end: 278082
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fb7aecce99
+  description: Revenue from the first unnamed large customer
+  share: 0.15
+  period: '2024'
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 278006
+  end: 278082
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1bd8e96754
+  description: Revenue from the first unnamed large customer
+  share: 0.21
+  period: '2023'
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 278006
+  end: 278082
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8c5120e892
+  description: Revenue from the second unnamed large customer
+  share: 0.26
+  period: '2025'
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 278088
+  end: 278170
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-40d0084f4c
+  description: Revenue from the second unnamed large customer
+  share: 0.2
+  period: '2024'
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 278088
+  end: 278170
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e8a7a10292
+  description: Revenue from the second unnamed large customer
+  share: 0.18
+  period: '2023'
+  basis: customer
+  products:
+  - product/datacenter-switches
+  section: '7'
+  start: 278088
+  end: 278170
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bc5a7ae28d
+  description: Revenue from product sales
+  share: 0.841
+  period: '2025'
+  basis: product
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 283286
+  end: 283344
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2cb8d1906a
+  description: Revenue from product sales
+  share: 0.84
+  period: '2024'
+  basis: product
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 283286
+  end: 283344
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-083806cd6c
+  description: Revenue from product sales
+  share: 0.858
+  period: '2023'
+  basis: product
+  products:
+  - product/datacenter-switches
+  - product/optical-transceivers
+  section: '7'
+  start: 292454
+  end: 292510
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-b0437a3595
+  product: product/datacenter-switches
+  section: '1'
+  start: 36472
+  end: 36647
+- id: pro-275b640178
+  product: product/datacenter-switches
+  section: 1A
+  start: 141156
+  end: 141276
+- id: pro-5f57bf657b
+  product: product/optical-transceivers
+  section: '7'
+  start: 309931
+  end: 310055
+supplies:
+- id: sup-8a7ae5a8a7
+  supplier: company/broadcom
+  customer: company/arista
+  product: null
+  section: '1'
+  start: 51597
+  end: 51717
+- id: sup-ef009d4d6b
+  supplier: company/broadcom
+  customer: company/arista
+  product: null
+  section: 1A
+  start: 77670
+  end: 77775
+new_products:
+- id: new-77bfa9c524
+  label: Ethernet switching silicon
+  reason: Switch chips are components of AI networking hardware, distinct from complete
+    switches and custom AI compute ASICs.
+  section: '1'
+  start: 51597
+  end: 51717
+- id: new-9ac1bbff53
+  label: Network operating systems
+  reason: Software controlling data-center networking equipment is not represented
+    in the hardware taxonomy.
+  section: '1'
+  start: 42643
+  end: 42776
+- id: new-a975c7d876
+  label: Network management and automation software
+  reason: AI-assisted network operations software supports data-center infrastructure
+    but lacks a taxonomy entry.
+  section: '1'
+  start: 39548
+  end: 39623
+- id: new-99ab59ac85
+  label: Routing platforms
+  reason: Routing equipment enables connections between distributed AI and data centers,
+    a role distinct from switching.
+  section: '1'
+  start: 38549
+  end: 38756
+- id: new-5d727e6310
+  label: Network security software
+  reason: Network threat detection protects data-center infrastructure and is absent
+    from the taxonomy.
+  section: '1'
+  start: 55516
+  end: 55645
+- id: new-3bb2549c28
+  label: Network packet brokers
+  reason: Traffic visibility and monitoring infrastructure supports data-center operations
+    but has no dedicated taxonomy entry.
+  section: '1'
+  start: 55646
+  end: 55826
+- id: new-d299d40d01
+  label: Switching silicon
+  reason: Packet-switching chips are components of data center switches, distinct
+    from the listed AI accelerators and logic wafers.
+  section: 1A
+  start: 77670
+  end: 77775
+- id: new-e1cbfaa5fe
+  label: Network routers
+  reason: Routing platforms support cloud network connectivity but are not separately
+    covered by the switch category.
+  section: 1A
+  start: 141156
+  end: 141276
+- id: new-4bdac08bcc
+  label: Network operating system software
+  reason: Software controlling network equipment is a separate infrastructure product
+    absent from the taxonomy.
+  section: 1A
+  start: 165190
+  end: 165343
+- id: new-87b2e23678
+  label: Network detection and response platforms
+  reason: Network threat detection protects data center infrastructure and is not
+    covered by the hardware categories.
+  section: 1A
+  start: 203485
+  end: 203622
+- id: new-4a430b46b6
+  label: Network operating systems and network telemetry software
+  reason: Software that operates and monitors AI and data center networks is not covered
+    by the hardware taxonomy.
+  section: '7'
+  start: 274856
+  end: 275046
+- id: new-ee35fd779a
+  label: Network routers
+  reason: Routing equipment connects cloud and data center networks but is not separately
+    represented in the taxonomy.
+  section: '7'
+  start: 283994
+  end: 284110
+- id: new-f094a7c728
+  label: Merchant networking silicon
+  reason: Third-party chips used in networking hardware are distinct from the listed
+    accelerator and optical DSP categories.
+  section: '7'
+  start: 285362
+  end: 285505
+dropped:
+  supplies: 3
+  disclosed: 3
+  produces: 1

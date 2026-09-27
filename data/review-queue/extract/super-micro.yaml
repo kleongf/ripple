@@ -1,0 +1,386 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/super-micro
+form: 10-K
+requires:
+- id: req-1522a4f092
+  product: product/ai-servers
+  input: product/ai-accelerators
+  bucket: dominant
+  reason: AI servers are the principal deployment platform for data center AI accelerators.
+  section: '1'
+  start: 87371
+  end: 87507
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-f823199640
+  product: product/ai-servers
+  input: product/server-cpus
+  bucket: minor
+  reason: AI servers use host CPUs, but general-purpose servers account for most server
+    CPU demand.
+  section: '1'
+  start: 81816
+  end: 81925
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-49dbf23eb6
+  product: product/ai-servers
+  input: product/liquid-cooling
+  bucket: dominant
+  reason: High-density AI racks are the primary demand driver for data center liquid
+    cooling.
+  section: '1'
+  start: 80096
+  end: 80242
+  status: rejected
+  reviewer: claude-code
+  judge: false
+- id: req-1fcc18e0d4
+  product: product/ai-servers
+  input: product/ai-accelerators
+  bucket: dominant
+  reason: AI servers are the principal deployment platform for data-center GPUs; the
+    demand bucket is an estimate.
+  section: 1A
+  start: 208919
+  end: 209063
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-02f7e82de1
+  product: product/ai-servers
+  input: product/server-cpus
+  bucket: minor
+  reason: AI servers require CPUs but represent a smaller portion of CPU demand than
+    the broader server market; the bucket is an estimate.
+  section: 1A
+  start: 140016
+  end: 140169
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-cbbc821207
+  product: product/ai-servers
+  input: product/dram
+  bucket: minor
+  reason: AI servers consume conventional memory alongside many other computing markets;
+    the demand bucket is an estimate.
+  section: 1A
+  start: 140016
+  end: 140169
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-415161d822
+  product: product/ai-servers
+  input: product/enterprise-ssds
+  bucket: minor
+  reason: AI servers use SSDs, while broader enterprise servers and storage also drive
+    demand; the bucket is an estimate.
+  section: 1A
+  start: 140016
+  end: 140169
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-11c30acc78
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require electricity but account for a minority of total electricity
+    consumption; the bucket is an estimate.
+  section: 1A
+  start: 132195
+  end: 132267
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-e04aa477ad
+  product: product/ai-servers
+  input: product/ai-accelerators
+  bucket: dominant
+  reason: AI servers are the primary deployment platform for data center GPUs.
+  section: '7'
+  start: 271880
+  end: 271967
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-8cfa59214e
+  product: product/ai-servers
+  input: product/server-cpus
+  bucket: minor
+  reason: AI servers use host CPUs but represent a smaller market than general-purpose
+    servers.
+  section: '7'
+  start: 271880
+  end: 271967
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-4e3ceed416
+  product: product/ai-servers
+  input: product/dram
+  bucket: minor
+  reason: AI server system memory is one application within the much broader conventional
+    DRAM market.
+  section: '7'
+  start: 271880
+  end: 271967
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-ed190e5d0e
+  product: product/ai-servers
+  input: product/enterprise-ssds
+  bucket: minor
+  reason: AI servers consume SSDs alongside a larger installed market of general-purpose
+    servers and storage systems.
+  section: '7'
+  start: 271880
+  end: 271967
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-f22c8410fe
+  product: product/ai-servers
+  input: product/liquid-cooling
+  bucket: dominant
+  reason: High-density AI servers are the principal demand driver for data center
+    liquid cooling.
+  section: '7'
+  start: 278907
+  end: 279057
+  status: rejected
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-6682702658
+  description: Revenue from customers outside the United States.
+  share: 0.291
+  period: Fiscal year ended June 30, 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 95452
+  end: 95608
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a3144c7713
+  description: Revenue from customers outside the United States.
+  share: 0.406
+  period: Fiscal year ended June 30, 2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 95452
+  end: 95608
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-9dd66e9a5e
+  description: Revenue from customers outside the United States.
+  share: 0.32
+  period: Fiscal year ended June 30, 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 95452
+  end: 95608
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-2dd3b43c3d
+  product: product/ai-servers
+  section: '1'
+  start: 87371
+  end: 87507
+- id: pro-23cdf30c8a
+  product: product/ai-accelerators
+  section: '1'
+  start: 74202
+  end: 74372
+- id: pro-4712224821
+  product: product/datacenter-switches
+  section: '1'
+  start: 74202
+  end: 74372
+- id: pro-333cf29d88
+  product: product/liquid-cooling
+  section: '1'
+  start: 84559
+  end: 84732
+- id: pro-1c4956c185
+  product: product/ai-servers
+  section: 1A
+  start: 176796
+  end: 176954
+- id: pro-0daf5e4ed1
+  product: product/ai-servers
+  section: '7'
+  start: 278907
+  end: 279057
+- id: pro-e7f9702703
+  product: product/datacenter-switches
+  section: '7'
+  start: 255324
+  end: 255457
+- id: pro-4ca776a8e4
+  product: product/air-cooling
+  section: '7'
+  start: 256268
+  end: 256364
+- id: pro-03274d3752
+  product: product/liquid-cooling
+  section: '7'
+  start: 256268
+  end: 256364
+supplies:
+- id: sup-bd9e9722b3
+  supplier: company/nvidia
+  customer: company/super-micro
+  product: product/ai-accelerators
+  section: '1'
+  start: 92619
+  end: 92796
+- id: sup-b434d34fed
+  supplier: company/intel
+  customer: company/super-micro
+  product: product/server-cpus
+  section: '1'
+  start: 81470
+  end: 81570
+- id: sup-9a93afd4eb
+  supplier: company/amd
+  customer: company/super-micro
+  product: product/server-cpus
+  section: '1'
+  start: 81470
+  end: 81570
+- id: sup-9a93afd4eb
+  supplier: company/amd
+  customer: company/super-micro
+  product: product/ai-accelerators
+  section: '1'
+  start: 81470
+  end: 81627
+- id: sup-89e84b8f08
+  supplier: company/nvidia
+  customer: company/super-micro
+  product: product/ai-accelerators
+  section: 1A
+  start: 208919
+  end: 209063
+new_products:
+- id: new-5a22f9805a
+  label: AI storage systems
+  reason: Complete storage platforms for AI workloads are distinct from enterprise
+    SSD components.
+  section: '1'
+  start: 82486
+  end: 82672
+- id: new-da5b8fa466
+  label: Data center management software
+  reason: Software for monitoring and managing data center infrastructure is not covered
+    by the hardware taxonomy.
+  section: '1'
+  start: 85279
+  end: 85371
+- id: new-c1c26accb8
+  label: Server boards and chassis
+  reason: These structural and electronic server subsystems are missing from the taxonomy.
+  section: '1'
+  start: 88614
+  end: 88754
+- id: new-f9e4447798
+  label: Server power supplies and rack power shelves
+  reason: Server and rack power conversion equipment is distinct from grid equipment,
+    switchgear, and UPS systems.
+  section: '1'
+  start: 80453
+  end: 80657
+- id: new-8a1908a57b
+  label: Rack battery backup units
+  reason: Rack-level battery modules are not explicitly represented by the taxonomy's
+    complete data center UPS category.
+  section: '1'
+  start: 80453
+  end: 80657
+- id: new-db50278218
+  label: Data center deployment and support services
+  reason: AI infrastructure design, integration, installation, and maintenance services
+    are absent from the product list.
+  section: '1'
+  start: 90170
+  end: 90316
+- id: new-1c2b82cb6f
+  label: Server power supplies
+  reason: Server-level power conversion hardware is distinct from the taxonomy's UPS
+    and grid equipment.
+  section: 1A
+  start: 157207
+  end: 157358
+- id: new-637990e4e3
+  label: Server chassis
+  reason: Server enclosures are physical infrastructure components absent from the
+    taxonomy.
+  section: 1A
+  start: 157112
+  end: 157206
+- id: new-b1ee89192f
+  label: Server motherboards
+  reason: Boards integrate server components and are not separately covered by the
+    taxonomy.
+  section: 1A
+  start: 140016
+  end: 140169
+- id: new-5f8257f754
+  label: Hard disk drives
+  reason: Data-center magnetic storage is distinct from the listed enterprise SSD
+    category.
+  section: 1A
+  start: 140016
+  end: 140169
+- id: new-a0ad74b5e2
+  label: Storage systems
+  reason: Integrated storage platforms support AI infrastructure but are not equivalent
+    to individual enterprise SSDs.
+  section: 1A
+  start: 176796
+  end: 176954
+- id: new-afdcbaa4ff
+  label: Server power supplies
+  reason: Server power conversion hardware is distinct from UPS equipment and is missing
+    from the taxonomy.
+  section: '7'
+  start: 272992
+  end: 273137
+- id: new-3e36c9c322
+  label: Server boards and chassis
+  reason: These foundational server components are not represented by the existing
+    product categories.
+  section: '7'
+  start: 272105
+  end: 272173
+- id: new-444ffa336c
+  label: Storage systems
+  reason: Complete storage systems support data center workloads and are broader than
+    enterprise SSD components.
+  section: '7'
+  start: 263944
+  end: 264047
+- id: new-c1f10bb134
+  label: Data center management software
+  reason: Software for managing integrated AI infrastructure is not covered by the
+    hardware taxonomy.
+  section: '7'
+  start: 257361
+  end: 257445
+dropped:
+  supplies: 8
+  produces: 1

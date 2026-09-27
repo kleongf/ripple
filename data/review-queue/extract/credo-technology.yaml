@@ -1,0 +1,266 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/credo-technology
+form: 10-K
+requires:
+- id: req-d34521aee9
+  product: product/optical-transceivers
+  input: product/optical-dsps
+  bucket: dominant
+  reason: Optical transceivers are the principal application for these optical signal-processing
+    components.
+  section: '1'
+  start: 47332
+  end: 47426
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-eb8981084b
+  product: product/optical-dsps
+  input: product/leading-edge-logic
+  bucket: minor
+  reason: Optical DSPs represent a specialized subset of demand for advanced-node
+    logic fabrication.
+  section: '1'
+  start: 49034
+  end: 49140
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-daa9b3a69b
+  product: product/optical-transceivers
+  input: product/fiber-cable
+  bucket: minor
+  reason: Transceiver connections consume fiber, but fiber also serves extensive telecommunications
+    and access networks.
+  section: '1'
+  start: 50650
+  end: 50753
+  status: rejected
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-a469646047
+  description: Combined revenue contribution from the ten largest customers.
+  share: 0.9
+  period: fiscal 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 56802
+  end: 56901
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5e4ac8c138
+  description: Revenue attributable to the ten largest customers.
+  share: 0.9
+  period: fiscal 2026
+  basis: customer
+  products: []
+  section: 1A
+  start: 74248
+  end: 74360
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bcfe917a7f
+  description: Revenue generated in the Hong Kong market.
+  share: 0.28
+  period: fiscal 2026
+  basis: end market
+  products: []
+  section: 1A
+  start: 174813
+  end: 174872
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a41490f034
+  description: Revenue attributable to end customer B
+  share: 0.32
+  period: Fiscal year ended May 2, 2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 260622
+  end: 260639
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-99696400c2
+  description: Revenue attributable to end customer D
+  share: 0.33
+  period: Fiscal year ended May 2, 2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 260640
+  end: 260660
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6fb7b26869
+  description: Revenue attributable to end customer D
+  share: 0.63
+  period: Fiscal year ended May 3, 2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 260640
+  end: 260660
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-055fc88055
+  description: Revenue attributable to end customer E
+  share: 0.19
+  period: Fiscal year ended May 2, 2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 260661
+  end: 260678
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-4f5201a731
+  product: product/copper-interconnect
+  section: '1'
+  start: 45038
+  end: 45148
+- id: pro-127394a12c
+  product: product/optical-dsps
+  section: '1'
+  start: 47332
+  end: 47426
+- id: pro-cb3dd64d4a
+  product: product/optical-transceivers
+  section: '1'
+  start: 49475
+  end: 49579
+- id: pro-404e60ac20
+  product: product/copper-interconnect
+  section: '7'
+  start: 255619
+  end: 255705
+- id: pro-f3b4d321c6
+  product: product/optical-transceivers
+  section: '7'
+  start: 255619
+  end: 255733
+- id: pro-8ba0d9d1be
+  product: product/optical-dsps
+  section: '7'
+  start: 255768
+  end: 255865
+supplies:
+- id: sup-399226e36c
+  supplier: company/tsmc
+  customer: company/credo-technology
+  product: null
+  section: '1'
+  start: 58717
+  end: 58851
+- id: sup-d293c90af6
+  supplier: company/amkor-technology
+  customer: company/credo-technology
+  product: null
+  section: '1'
+  start: 59014
+  end: 59124
+- id: sup-4962265ece
+  supplier: company/tsmc
+  customer: company/credo-technology
+  product: null
+  section: 1A
+  start: 161084
+  end: 161163
+new_products:
+- id: new-6ec2ee1172
+  label: PCIe and CXL retimers
+  reason: Signal-conditioning chips extend accelerator and memory connectivity; the
+    taxonomy lacks retimers.
+  section: '1'
+  start: 53213
+  end: 53332
+- id: new-9a2e63af20
+  label: SerDes chiplets
+  reason: Connectivity dies integrate with compute logic in multichip systems and
+    are distinct from packaging services.
+  section: '1'
+  start: 53001
+  end: 53090
+- id: new-b6586852f8
+  label: SerDes intellectual property
+  reason: Licensed interface designs enable high-speed chip connectivity but have
+    no corresponding taxonomy entry.
+  section: '1'
+  start: 33500
+  end: 33582
+- id: new-d3903c7480
+  label: Memory fanout gearboxes
+  reason: These chips expand AI memory connectivity rather than produce memory itself.
+  section: '1'
+  start: 51914
+  end: 52073
+- id: new-0f0ef9475d
+  label: MicroLED active cables
+  reason: LED-based optical links provide an alternative to copper and laser-based
+    interconnects for AI clusters.
+  section: '1'
+  start: 55245
+  end: 55335
+- id: new-5e0a880429
+  label: Connectivity monitoring software
+  reason: Diagnostic software improves data-center link reliability and is absent
+    from the hardware taxonomy.
+  section: '1'
+  start: 55980
+  end: 56126
+- id: new-d12920177d
+  label: Line-card PHY chips
+  reason: Physical-layer networking chips support data infrastructure but are not
+    complete switches or optical DSPs.
+  section: '1'
+  start: 40077
+  end: 40183
+- id: new-d3b12474a5
+  label: Printed circuit boards
+  reason: Boards used in connectivity hardware are distinct from the taxonomy's IC
+    package substrates.
+  section: 1A
+  start: 116986
+  end: 117103
+- id: new-bf9b17bdd3
+  label: Ethernet and PCIe retimers
+  reason: Signal-conditioning chips for data infrastructure connectivity are not separately
+    covered by the taxonomy.
+  section: '7'
+  start: 255768
+  end: 255865
+- id: new-b39fb125bb
+  label: SerDes chiplets and licensed IP
+  reason: Connectivity chiplets and interface IP are distinct from the listed optical
+    DSP products.
+  section: '7'
+  start: 256320
+  end: 256511
+- id: new-e58d71f307
+  label: OmniConnect memory connectivity solutions
+  reason: The named memory solution is not identified as DRAM or HBM and lacks an
+    appropriate taxonomy category.
+  section: '7'
+  start: 255735
+  end: 255763
+- id: new-e2585ee9a0
+  label: Connectivity diagnostics and analytics software
+  reason: Software supporting interconnect monitoring is relevant to data center connectivity
+    but absent from the hardware taxonomy.
+  section: '7'
+  start: 255867
+  end: 255934
+dropped:
+  supplies: 9
+  produces: 1

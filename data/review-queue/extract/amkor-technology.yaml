@@ -1,0 +1,388 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/amkor-technology
+form: 10-K
+requires:
+- id: req-784934598e
+  product: product/advanced-packaging
+  input: product/hbm
+  bucket: dominant
+  reason: HBM primarily serves high-performance multi-chip packages, making advanced
+    packaging its principal demand channel.
+  section: '1'
+  start: 67654
+  end: 67750
+  status: rejected
+  reviewer: claude-code
+  judge: true
+disclosed:
+- id: dis-1f363e3636
+  description: Advanced Products service category, including but not limited to 2.5D
+    packaging
+  share: 0.828
+  period: '2025'
+  basis: product
+  products:
+  - product/advanced-packaging
+  section: '1'
+  start: 73310
+  end: 73372
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-3f622010df
+  description: Advanced Products service category, including but not limited to 2.5D
+    packaging
+  share: 0.819
+  period: '2024'
+  basis: product
+  products:
+  - product/advanced-packaging
+  section: '1'
+  start: 73310
+  end: 73372
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-773eb8836b
+  description: Advanced Products service category, including but not limited to 2.5D
+    packaging
+  share: 0.774
+  period: '2023'
+  basis: product
+  products:
+  - product/advanced-packaging
+  section: '1'
+  start: 73310
+  end: 73372
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-737328b1ab
+  description: Mainstream packaging and associated testing
+  share: 0.172
+  period: '2025'
+  basis: product
+  products: []
+  section: '1'
+  start: 73373
+  end: 73431
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ce06e27249
+  description: Mainstream packaging and associated testing
+  share: 0.181
+  period: '2024'
+  basis: product
+  products: []
+  section: '1'
+  start: 73373
+  end: 73431
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-30eaa841ad
+  description: Mainstream packaging and associated testing
+  share: 0.226
+  period: '2023'
+  basis: product
+  products: []
+  section: '1'
+  start: 73373
+  end: 73431
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6ce6ad23cb
+  description: Approximate communications end-market revenue
+  share: 0.46
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87183
+  end: 87235
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1171be4ce1
+  description: Approximate communications end-market revenue
+  share: 0.48
+  period: '2024'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87183
+  end: 87235
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-40c9039553
+  description: Approximate communications end-market revenue
+  share: 0.5
+  period: '2023'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87183
+  end: 87235
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-36cd03558c
+  description: Approximate computing end-market revenue, spanning data centers and
+    other computing applications
+  share: 0.2
+  period: '2025'
+  basis: end market
+  products:
+  - product/advanced-packaging
+  section: '1'
+  start: 87236
+  end: 87310
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-10ca7f0d54
+  description: Approximate computing end-market revenue, spanning data centers and
+    other computing applications
+  share: 0.19
+  period: '2024'
+  basis: end market
+  products:
+  - product/advanced-packaging
+  section: '1'
+  start: 87236
+  end: 87310
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-95e270b075
+  description: Approximate computing end-market revenue, spanning data centers and
+    other computing applications
+  share: 0.16
+  period: '2023'
+  basis: end market
+  products:
+  - product/advanced-packaging
+  section: '1'
+  start: 87236
+  end: 87310
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f32d5687f8
+  description: Approximate automotive, industrial and miscellaneous end-market revenue
+  share: 0.19
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87311
+  end: 87404
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-38cc7a47e1
+  description: Approximate automotive, industrial and miscellaneous end-market revenue
+  share: 0.18
+  period: '2024'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87311
+  end: 87404
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7eb1b7a912
+  description: Approximate automotive, industrial and miscellaneous end-market revenue
+  share: 0.21
+  period: '2023'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87311
+  end: 87404
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b584f7d4f9
+  description: Approximate consumer end-market revenue
+  share: 0.15
+  period: '2025'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87405
+  end: 87487
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b584f7d4f9
+  description: Approximate consumer end-market revenue
+  share: 0.15
+  period: '2024'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87405
+  end: 87487
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-97ed847e4d
+  description: Approximate consumer end-market revenue
+  share: 0.13
+  period: '2023'
+  basis: end market
+  products: []
+  section: '1'
+  start: 87405
+  end: 87487
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0ddcda1097
+  description: Combined revenue from the ten largest customers
+  share: 0.72
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 92141
+  end: 92210
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-4c82c27a4d
+  description: Direct revenue from Apple
+  share: 0.298
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 92211
+  end: 92306
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-77146dd90a
+  description: Direct revenue from Qualcomm
+  share: 0.111
+  period: '2025'
+  basis: customer
+  products: []
+  section: '1'
+  start: 92211
+  end: 92306
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-df6d183efe
+  description: Combined revenue share of the ten largest customers.
+  share: 0.72
+  period: Year ended December 31, 2025
+  basis: customer
+  products: []
+  section: 1A
+  start: 135478
+  end: 135595
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-4616defdc6
+  product: product/advanced-packaging
+  section: '1'
+  start: 75905
+  end: 76001
+- id: pro-8535f01da4
+  product: product/advanced-packaging
+  section: '7'
+  start: 198349
+  end: 198514
+supplies:
+- id: sup-c5cd7bf5b3
+  supplier: company/amkor-technology
+  customer: company/qualcomm
+  product: null
+  section: '1'
+  start: 92211
+  end: 92306
+new_products:
+- id: new-0478d726f7
+  label: Co-packaged optics
+  reason: Optical integration within compute packages supports AI data-center bandwidth
+    and is distinct from pluggable optical transceivers.
+  section: '1'
+  start: 89865
+  end: 89999
+- id: new-5dfec499ff
+  label: Silicon photonics packaging
+  reason: Packaging photonic devices enables optical links within server systems and
+    is not separately represented in the taxonomy.
+  section: '1'
+  start: 78040
+  end: 78163
+- id: new-771b2f3c65
+  label: High-density fan-out packaging
+  reason: Fan-out integration supports processor and memory combinations beyond the
+    taxonomy's specifically 2.5D packaging category.
+  section: '1'
+  start: 78557
+  end: 78709
+- id: new-d85713e278
+  label: Silicon interposers
+  reason: These package components provide dense connectivity between compute and
+    memory dies and are not IC package substrates.
+  section: '1'
+  start: 67551
+  end: 67652
+- id: new-e2cc19d11f
+  label: Semiconductor testing services
+  reason: Electrical and system-level testing qualifies packaged compute devices;
+    it differs from inspection and metrology equipment.
+  section: '1'
+  start: 85946
+  end: 86109
+- id: new-1f2117e1ac
+  label: Advanced system-in-package modules
+  reason: Multi-component modules serve computer and network systems but are not necessarily
+    2.5D packages.
+  section: '1'
+  start: 84087
+  end: 84261
+- id: new-33a2f5b600
+  label: Semiconductor packaging and testing services
+  reason: These semiconductor manufacturing services support the AI hardware supply
+    chain; the taxonomy covers only advanced 2.5D packaging, not general packaging
+    and testing.
+  section: 1A
+  start: 143460
+  end: 143641
+- id: new-be75cded26
+  label: Semiconductor packaging and test equipment
+  reason: This equipment enables chip assembly and testing and is distinct from the
+    wafer fabrication equipment categories listed.
+  section: 1A
+  start: 113867
+  end: 113950
+- id: new-898db4b229
+  label: Semiconductor testing services
+  reason: Chip testing supports the AI semiconductor supply chain and is not covered
+    by the listed equipment categories.
+  section: '7'
+  start: 198649
+  end: 198825
+- id: new-58c1cb26a2
+  label: Fan-out, flip-chip and system-in-package packaging
+  reason: These semiconductor packaging technologies are distinct from the taxonomy's
+    narrowly defined 2.5D packaging category.
+  section: '7'
+  start: 198349
+  end: 198514
+dropped:
+  requires: 2
+  supplies: 1

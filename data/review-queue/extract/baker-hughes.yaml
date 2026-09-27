@@ -1,0 +1,67 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/baker-hughes
+form: 10-K
+requires: []
+disclosed: []
+produces:
+- id: pro-ee5bcae9ed
+  product: product/gas-turbines
+  section: '1'
+  start: 52149
+  end: 52273
+supplies:
+- id: sup-48514aaace
+  supplier: company/ge-vernova
+  customer: company/baker-hughes
+  product: product/gas-turbines
+  section: '1'
+  start: 69700
+  end: 69832
+- id: sup-104cc41f66
+  supplier: company/ge-vernova
+  customer: company/baker-hughes
+  product: null
+  section: 1A
+  start: 117493
+  end: 117591
+new_products:
+- id: new-5c7d6bad08
+  label: Energy storage systems
+  reason: Storage supports power availability and balancing for data center energy
+    infrastructure and is not separately covered by the taxonomy.
+  section: '1'
+  start: 52532
+  end: 52662
+- id: new-64adca3835
+  label: Steam turbines
+  reason: Steam turbines support electricity generation supplying data centers and
+    are distinct from gas turbines.
+  section: '1'
+  start: 52275
+  end: 52339
+- id: new-30c7166c8a
+  label: Geothermal energy technologies
+  reason: Geothermal technologies support an additional source of reliable data center
+    power absent from the taxonomy.
+  section: '1'
+  start: 55977
+  end: 56099
+- id: new-b8f7486928
+  label: Natural gas
+  reason: Fuel for dispatchable electricity generation serving growing AI and data
+    center loads is not covered by the taxonomy.
+  section: '7'
+  start: 199122
+  end: 199230
+- id: new-e4af726e73
+  label: Energy storage
+  reason: Storage solutions can support data center power reliability and are broader
+    than the taxonomy's UPS category.
+  section: '7'
+  start: 201890
+  end: 201995
+dropped:
+  requires: 2
+  produces: 1
+  supplies: 3

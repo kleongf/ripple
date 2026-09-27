@@ -1,0 +1,246 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/oracle
+form: 10-K
+requires:
+- id: req-4d0d017144
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers require power but represent a small portion of electricity
+    demand across all sectors.
+  section: 1A
+  start: 125925
+  end: 126044
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-e69228e97b
+  description: Combined cloud applications and infrastructure revenue as a share of
+    company revenue.
+  share: 0.51
+  period: fiscal 2026
+  basis: product
+  products:
+  - product/datacenter-capacity
+  section: '1'
+  start: 58297
+  end: 58415
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-23bac66407
+  description: Combined cloud applications and infrastructure revenue as a share of
+    company revenue.
+  share: 0.43
+  period: fiscal 2025
+  basis: product
+  products:
+  - product/datacenter-capacity
+  section: '1'
+  start: 58297
+  end: 58415
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-671b94972d
+  description: Combined cloud applications and infrastructure revenue as a share of
+    company revenue.
+  share: 0.37
+  period: fiscal 2024
+  basis: product
+  products:
+  - product/datacenter-capacity
+  section: '1'
+  start: 58297
+  end: 58415
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1d8817d575
+  description: Cloud and software segment share of total revenue, including cloud
+    infrastructure and other offerings.
+  share: 0.87
+  period: fiscal 2026
+  basis: segment
+  products:
+  - product/datacenter-capacity
+  section: '7'
+  start: 223992
+  end: 224114
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-862f5d6e04
+  description: Cloud and software segment share of total revenue, including cloud
+    infrastructure and other offerings.
+  share: 0.86
+  period: fiscal 2025
+  basis: segment
+  products:
+  - product/datacenter-capacity
+  section: '7'
+  start: 223992
+  end: 224114
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-60332be12f
+  description: Combined cloud applications and infrastructure share of total revenue.
+  share: 0.51
+  period: fiscal 2026
+  basis: product
+  products:
+  - product/datacenter-capacity
+  section: '7'
+  start: 227739
+  end: 227842
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bdd511faeb
+  description: Combined cloud applications and infrastructure share of total revenue.
+  share: 0.43
+  period: fiscal 2025
+  basis: product
+  products:
+  - product/datacenter-capacity
+  section: '7'
+  start: 227739
+  end: 227842
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dc57f9a95d
+  description: Hardware segment share of total revenue.
+  share: 0.05
+  period: fiscal 2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 231436
+  end: 231533
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-dc57f9a95d
+  description: Hardware segment share of total revenue.
+  share: 0.05
+  period: fiscal 2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 231436
+  end: 231533
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-83c863e0fd
+  description: Services segment share of total revenue.
+  share: 0.08
+  period: fiscal 2026
+  basis: segment
+  products: []
+  section: '7'
+  start: 235486
+  end: 235596
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-2f63c5152d
+  description: Services segment share of total revenue.
+  share: 0.09
+  period: fiscal 2025
+  basis: segment
+  products: []
+  section: '7'
+  start: 235486
+  end: 235596
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-8b76e8689c
+  product: product/datacenter-capacity
+  section: '1'
+  start: 85682
+  end: 85809
+- id: pro-e7ea10a136
+  product: product/datacenter-capacity
+  section: 1A
+  start: 123690
+  end: 123855
+- id: pro-2c260d8f6d
+  product: product/datacenter-capacity
+  section: '7'
+  start: 255645
+  end: 255745
+supplies: []
+new_products:
+- id: new-2b7102cd00
+  label: Cloud compute services
+  reason: Hosted GPU and bare-metal computing supports AI workloads but is distinct
+    from selling accelerator chips or AI servers.
+  section: '1'
+  start: 72227
+  end: 72348
+- id: new-5617a66dbf
+  label: Cloud storage services
+  reason: Managed storage supports data center workloads and is not equivalent to
+    enterprise SSD hardware.
+  section: '1'
+  start: 72501
+  end: 72580
+- id: new-bf2d4170c4
+  label: AI database software
+  reason: Database software supports enterprise AI data processing and is absent from
+    the hardware-oriented taxonomy.
+  section: '1'
+  start: 74797
+  end: 74938
+- id: new-5fe7311093
+  label: Integrated database infrastructure systems
+  reason: Combined database computing, storage and networking platforms are distinct
+    from AI-specific servers and individual components.
+  section: '1'
+  start: 81242
+  end: 81346
+- id: new-6d343ef8c9
+  label: Cloud infrastructure services
+  reason: Cloud computing services commercialize data center infrastructure but are
+    not separately represented in the taxonomy.
+  section: 1A
+  start: 121493
+  end: 121645
+- id: new-3b1c18a735
+  label: Cloud infrastructure services
+  reason: Hosted infrastructure services support AI workloads and are distinct from
+    physical data center capacity.
+  section: '7'
+  start: 224694
+  end: 224779
+- id: new-e492f40eb8
+  label: Enterprise servers and engineered systems
+  reason: General enterprise computing systems are relevant to data centers but are
+    not necessarily AI servers.
+  section: '7'
+  start: 231633
+  end: 231724
+- id: new-f2c1aa6eec
+  label: Enterprise storage systems
+  reason: Data center storage systems are broader than the taxonomy's enterprise SSD
+    category.
+  section: '7'
+  start: 231633
+  end: 231724
+- id: new-37ba78f4f9
+  label: Database software
+  reason: Database software supports data management for AI workloads and is absent
+    from the hardware-focused taxonomy.
+  section: '7'
+  start: 225183
+  end: 225257
+dropped:
+  requires: 3
+  supplies: 1

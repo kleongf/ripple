@@ -1,0 +1,300 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/lumentum
+form: 10-K
+requires:
+- id: req-c61a35fa9e
+  product: product/optical-transceivers
+  input: product/lasers
+  bucket: major
+  reason: Transceivers are a substantial laser-chip application, alongside consumer
+    sensing and other optical applications.
+  section: '1'
+  start: 80443
+  end: 80571
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-58e384f13b
+  description: Revenue attributable to Customer A.
+  share: 0.266
+  period: FY2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 77348
+  end: 77379
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b24d1f72dc
+  description: Revenue attributable to Customer A.
+  share: 0.154
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 77348
+  end: 77379
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-28103e6177
+  description: Revenue attributable to Customer A.
+  share: 0.189
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 77348
+  end: 77379
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7cc0fc9b01
+  description: Revenue attributable to Customer B.
+  share: 0.15
+  period: FY2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 77380
+  end: 77411
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-de53d88914
+  description: Revenue attributable to Customer B.
+  share: 0.16
+  period: FY2025
+  basis: customer
+  products: []
+  section: '1'
+  start: 77380
+  end: 77411
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fd942f340a
+  description: Revenue attributable to Customer B.
+  share: 0.114
+  period: FY2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 77380
+  end: 77411
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cfdc22efbf
+  description: Components revenue share, including laser chips and optical subsystems.
+  share: 0.665
+  period: FY2026
+  basis: product
+  products:
+  - product/lasers
+  section: '7'
+  start: 278829
+  end: 278860
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-374a9b9301
+  description: Components revenue share, including laser chips and optical subsystems.
+  share: 0.679
+  period: FY2025
+  basis: product
+  products:
+  - product/lasers
+  section: '7'
+  start: 278829
+  end: 278860
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-089e4f4959
+  description: Components revenue share, including laser chips and optical subsystems.
+  share: 0.605
+  period: FY2024
+  basis: product
+  products:
+  - product/lasers
+  section: '7'
+  start: 278829
+  end: 278860
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-c4ed1612c3
+  description: Revenue attributable to unnamed Customer A; product mix unspecified.
+  share: 0.266
+  period: FY2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 282467
+  end: 282498
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b60d2aa207
+  description: Revenue attributable to unnamed Customer A; product mix unspecified.
+  share: 0.154
+  period: FY2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 282467
+  end: 282498
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e1fd53c962
+  description: Revenue attributable to unnamed Customer A; product mix unspecified.
+  share: 0.189
+  period: FY2024
+  basis: customer
+  products: []
+  section: '7'
+  start: 282467
+  end: 282498
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-334ae0f95d
+  description: Revenue attributable to unnamed Customer B; product mix unspecified.
+  share: 0.15
+  period: FY2026
+  basis: customer
+  products: []
+  section: '7'
+  start: 282499
+  end: 282530
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a13895d6bb
+  description: Revenue attributable to unnamed Customer B; product mix unspecified.
+  share: 0.16
+  period: FY2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 282499
+  end: 282530
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ce83a0470e
+  description: Revenue attributable to unnamed Customer B; product mix unspecified.
+  share: 0.114
+  period: FY2024
+  basis: customer
+  products: []
+  section: '7'
+  start: 282499
+  end: 282530
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-477369e9e0
+  product: product/optical-transceivers
+  section: '1'
+  start: 73076
+  end: 73221
+- id: pro-9df573f211
+  product: product/lasers
+  section: '1'
+  start: 75537
+  end: 75691
+- id: pro-00c5dbbbb3
+  product: product/lasers
+  section: 1A
+  start: 129861
+  end: 130013
+- id: pro-ead708f1d7
+  product: product/lasers
+  section: '7'
+  start: 248624
+  end: 248737
+- id: pro-ad7b53f1f1
+  product: product/optical-transceivers
+  section: '7'
+  start: 281774
+  end: 281872
+supplies: []
+new_products:
+- id: new-2523c1dba3
+  label: Optical circuit switches
+  reason: Switch optical paths within data centers rather than performing conventional
+    electronic packet switching.
+  section: '1'
+  start: 74896
+  end: 75058
+- id: new-6b16993bd6
+  label: Photonic integrated circuits
+  reason: Integrate optical functions for transceivers and data interconnects; no
+    dedicated category exists in the taxonomy.
+  section: '1'
+  start: 73453
+  end: 73572
+- id: new-67438b7553
+  label: Photodiodes
+  reason: Provide optical detection in transceivers and data interconnects, distinct
+    from laser emitters.
+  section: '1'
+  start: 73453
+  end: 73572
+- id: new-6842aab98a
+  label: Optical amplifiers
+  reason: Boost optical signals in transport networks supporting data center connectivity.
+  section: '1'
+  start: 74439
+  end: 74566
+- id: new-1a1af5fc98
+  label: Reconfigurable optical add-drop multiplexers
+  reason: Manage wavelengths in optical transport networks, including infrastructure
+    connecting data centers.
+  section: '1'
+  start: 74439
+  end: 74566
+- id: new-26c924eac5
+  label: Optical channel monitors
+  reason: Monitor optical transport channels used in high-capacity network infrastructure.
+  section: '1'
+  start: 74439
+  end: 74566
+- id: new-2dfdee9933
+  label: Co-packaged optics and integrated photonics assemblies
+  reason: Integrate optical connectivity through packaging approaches not equivalent
+    to the taxonomy's advanced 2.5D packaging category.
+  section: '1'
+  start: 73924
+  end: 74015
+- id: new-b1a9832754
+  label: Optical circuit switches
+  reason: Optical-path switching systems are distinct from the taxonomy's Ethernet
+    and InfiniBand network switches.
+  section: '7'
+  start: 281996
+  end: 282146
+- id: new-fc2c243ae8
+  label: Optical line subsystems
+  reason: Transport subsystems support optical networks connecting data centers and
+    are not separately covered by the taxonomy.
+  section: '7'
+  start: 248624
+  end: 248737
+- id: new-08a12b8b81
+  label: Wavelength management systems
+  reason: These systems manage optical-network wavelengths rather than serving as
+    laser chips or transceivers.
+  section: '7'
+  start: 248624
+  end: 248737
+dropped:
+  supplies: 1
+  disclosed: 3

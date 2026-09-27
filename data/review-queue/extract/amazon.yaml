@@ -1,0 +1,62 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/amazon
+form: 10-K
+requires: []
+disclosed:
+- id: dis-80fa02edc6
+  description: North America segment share of consolidated revenue.
+  share: 0.61
+  period: '2024'
+  basis: segment
+  products: []
+  section: '7'
+  start: 140672
+  end: 140710
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-42e9f4b373
+  description: North America segment share of consolidated revenue.
+  share: 0.59
+  period: '2025'
+  basis: segment
+  products: []
+  section: '7'
+  start: 140672
+  end: 140710
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-32f00d9e32
+  product: product/datacenter-capacity
+  section: 1A
+  start: 73936
+  end: 74046
+supplies: []
+new_products:
+- id: new-2259fb57bf
+  label: Cloud computing and AI services
+  reason: AWS provides hosted computing and AI services, a downstream use of AI datacenter
+    infrastructure not covered by the taxonomy.
+  section: '1'
+  start: 37815
+  end: 37993
+- id: new-361e7872e6
+  label: Cloud computing and storage services
+  reason: Cloud services deliver computing and storage to customers using data center
+    infrastructure, distinct from physical capacity.
+  section: 1A
+  start: 84214
+  end: 84334
+- id: new-3180034a0f
+  label: Cloud computing services
+  reason: Hosted computing, storage, and machine learning services support AI workloads
+    but are not covered by the listed physical infrastructure products.
+  section: '7'
+  start: 123002
+  end: 123135
+dropped:
+  requires: 1
+  disclosed: 4

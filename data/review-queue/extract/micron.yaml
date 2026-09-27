@@ -1,0 +1,361 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/micron
+form: 10-K
+requires:
+- id: req-6ac0dc798f
+  product: product/ai-servers
+  input: product/hbm
+  bucket: dominant
+  reason: AI servers are the principal demand source for HBM, whose bandwidth and
+    efficiency suit AI workloads.
+  section: '1'
+  start: 53735
+  end: 53866
+  status: rejected
+  reviewer: claude-code
+  judge: true
+- id: req-4f90762e53
+  product: product/ai-servers
+  input: product/dram
+  bucket: minor
+  reason: AI servers consume conventional DRAM, but demand also spans broad PC, mobile,
+    automotive, and other server markets.
+  section: '1'
+  start: 53735
+  end: 53866
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-ffa84068c9
+  product: product/enterprise-ssds
+  input: product/dram
+  bucket: minor
+  reason: Enterprise SSDs use DRAM as a supporting component rather than accounting
+    for a large portion of total DRAM demand.
+  section: '1'
+  start: 56703
+  end: 56869
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-43d270aff3
+  product: product/dram
+  input: product/euv-lithography
+  bucket: minor
+  reason: DRAM is an emerging EUV application, with Micron only introducing its first
+    EUV-based DRAM node in 2025.
+  section: '1'
+  start: 82403
+  end: 82513
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-565dc7503d
+  product: product/hbm
+  input: material/silicon-wafers
+  bucket: minor
+  reason: HBM is a specialized subset of semiconductor wafer consumption; the demand
+    bucket is an estimate, not a disclosed share.
+  section: 1A
+  start: 125345
+  end: 125464
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-8edf2cf0b4
+  product: product/dram
+  input: product/euv-lithography
+  bucket: minor
+  reason: DRAM is an emerging EUV application rather than the principal source of
+    demand for these systems.
+  section: '7'
+  start: 244749
+  end: 244860
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-6a3b7634e8
+  description: Approximately 80% of revenue came from shipments to customer locations
+    outside the United States.
+  share: 0.8
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 115009
+  end: 115124
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7b6a463f4e
+  description: CMBU share of total revenue
+  share: 0.36
+  period: FY2025
+  basis: segment
+  products:
+  - product/dram
+  - product/hbm
+  section: '7'
+  start: 228983
+  end: 229027
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ce8e2df992
+  description: CMBU share of total revenue
+  share: 0.15
+  period: FY2024
+  basis: segment
+  products:
+  - product/dram
+  - product/hbm
+  section: '7'
+  start: 228983
+  end: 229027
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cb4aa82d33
+  description: CMBU share of total revenue
+  share: 0.12
+  period: FY2023
+  basis: segment
+  products:
+  - product/dram
+  - product/hbm
+  section: '7'
+  start: 228983
+  end: 229027
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-09a0e59107
+  description: CDBU share of total revenue
+  share: 0.19
+  period: FY2025
+  basis: segment
+  products:
+  - product/dram
+  - product/enterprise-ssds
+  section: '7'
+  start: 229028
+  end: 229065
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ad238b4aa5
+  description: CDBU share of total revenue
+  share: 0.2
+  period: FY2024
+  basis: segment
+  products:
+  - product/dram
+  - product/enterprise-ssds
+  section: '7'
+  start: 229028
+  end: 229065
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-7e2a3aa8d9
+  description: CDBU share of total revenue
+  share: 0.14
+  period: FY2023
+  basis: segment
+  products:
+  - product/dram
+  - product/enterprise-ssds
+  section: '7'
+  start: 229028
+  end: 229065
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-cf28fa30e0
+  description: MCBU share of total revenue
+  share: 0.32
+  period: FY2025
+  basis: segment
+  products:
+  - product/dram
+  - product/consumer-nand
+  section: '7'
+  start: 229066
+  end: 229105
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-28ba8b768f
+  description: MCBU share of total revenue
+  share: 0.46
+  period: FY2024
+  basis: segment
+  products:
+  - product/dram
+  - product/consumer-nand
+  section: '7'
+  start: 229066
+  end: 229105
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-ed2a6de1a0
+  description: MCBU share of total revenue
+  share: 0.48
+  period: FY2023
+  basis: segment
+  products:
+  - product/dram
+  - product/consumer-nand
+  section: '7'
+  start: 229066
+  end: 229105
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e1d6c7faa1
+  description: AEBU share of total revenue
+  share: 0.13
+  period: FY2025
+  basis: segment
+  products:
+  - product/dram
+  - product/consumer-nand
+  section: '7'
+  start: 229106
+  end: 229143
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-94ec44f342
+  description: AEBU share of total revenue
+  share: 0.18
+  period: FY2024
+  basis: segment
+  products:
+  - product/dram
+  - product/consumer-nand
+  section: '7'
+  start: 229106
+  end: 229143
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-1e7d0cd60a
+  description: AEBU share of total revenue
+  share: 0.27
+  period: FY2023
+  basis: segment
+  products:
+  - product/dram
+  - product/consumer-nand
+  section: '7'
+  start: 229106
+  end: 229143
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-bd5e77cd5e
+  product: product/dram
+  section: '1'
+  start: 54765
+  end: 54834
+- id: pro-9314c39f2f
+  product: product/hbm
+  section: '1'
+  start: 54102
+  end: 54193
+- id: pro-8d65262533
+  product: product/enterprise-ssds
+  section: '1'
+  start: 56210
+  end: 56359
+- id: pro-e931c96598
+  product: product/consumer-nand
+  section: '1'
+  start: 59793
+  end: 59929
+- id: pro-ba489e67ba
+  product: product/dram
+  section: 1A
+  start: 119114
+  end: 119208
+- id: pro-f511757962
+  product: product/hbm
+  section: 1A
+  start: 152869
+  end: 153000
+- id: pro-8c38de310d
+  product: product/consumer-nand
+  section: 1A
+  start: 152869
+  end: 153000
+- id: pro-6bec0730c8
+  product: product/dram
+  section: '7'
+  start: 245024
+  end: 245130
+- id: pro-92e1d647db
+  product: product/hbm
+  section: '7'
+  start: 245024
+  end: 245130
+- id: pro-bad6f86c70
+  product: product/consumer-nand
+  section: '7'
+  start: 230854
+  end: 231001
+- id: pro-2b42fb31ce
+  product: product/enterprise-ssds
+  section: '7'
+  start: 229738
+  end: 229921
+supplies: []
+new_products:
+- id: new-cd1e2a1a0d
+  label: Data center NAND components
+  reason: Discrete NAND supplied to data centers is distinct from finished enterprise
+    SSDs and the taxonomy's non-enterprise NAND category.
+  section: '1'
+  start: 55738
+  end: 55834
+- id: new-9742f3516d
+  label: SSD controllers
+  reason: Controllers are essential storage-system components not represented in the
+    taxonomy.
+  section: '1'
+  start: 51092
+  end: 51187
+- id: new-45d45c3fa3
+  label: CXL memory products
+  reason: CXL-based memory products support advanced computing architectures and lack
+    a distinct taxonomy entry.
+  section: '1'
+  start: 83127
+  end: 83287
+- id: new-55a96a49a7
+  label: Semiconductor test and burn-in systems
+  reason: Electrical testing and reliability screening equipment supports memory production
+    and is distinct from wafer inspection and metrology.
+  section: '1'
+  start: 72225
+  end: 72358
+- id: new-aa2e519dd4
+  label: Memory and storage controllers
+  reason: Controller chips support memory and storage systems but have no dedicated
+    taxonomy entry.
+  section: 1A
+  start: 138429
+  end: 138621
+- id: new-3f5c70fa34
+  label: Analog integrated circuits
+  reason: These supporting components are used in Micron products and are absent from
+    the taxonomy.
+  section: 1A
+  start: 138429
+  end: 138621
+dropped:
+  disclosed: 4

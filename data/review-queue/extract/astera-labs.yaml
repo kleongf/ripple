@@ -1,0 +1,145 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/astera-labs
+form: 10-K
+requires: []
+disclosed:
+- id: dis-e4eee57bd4
+  description: Combined revenue contribution of the three largest end customers.
+  share: 0.86
+  period: '2025'
+  basis: customer
+  products:
+  - product/copper-interconnect
+  - product/datacenter-switches
+  section: '1'
+  start: 42656
+  end: 42751
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-94daa9a57c
+  description: One unnamed end customer accounted for more than 70% of revenue; the
+    share shown is the disclosed lower bound.
+  share: 0.7
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 72691
+  end: 72757
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-b145c10c81
+  description: The three largest end customers together accounted for approximately
+    86% of revenue.
+  share: 0.86
+  period: '2025'
+  basis: customer
+  products: []
+  section: 1A
+  start: 72759
+  end: 72848
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-a9ca712de7
+  product: product/copper-interconnect
+  section: '1'
+  start: 37551
+  end: 37708
+- id: pro-12c996c8cd
+  product: product/datacenter-switches
+  section: '7'
+  start: 228892
+  end: 228966
+supplies:
+- id: sup-508ef753d5
+  supplier: company/tsmc
+  customer: company/astera-labs
+  product: null
+  section: '1'
+  start: 44000
+  end: 44087
+- id: sup-a1001f13e0
+  supplier: company/tsmc
+  customer: company/astera-labs
+  product: null
+  section: 1A
+  start: 85321
+  end: 85391
+new_products:
+- id: new-96f4e17417
+  label: PCIe/CXL retimers
+  reason: Electrical signal-conditioning chips extend high-speed data links; they
+    are distinct from optical DSPs and cable assemblies.
+  section: '1'
+  start: 36924
+  end: 37087
+- id: new-ac66c00aee
+  label: CXL memory connectivity controllers
+  reason: Controllers enable memory expansion and pooling for AI infrastructure rather
+    than supplying DRAM itself.
+  section: '1'
+  start: 38227
+  end: 38346
+- id: new-625a586102
+  label: Connectivity management software
+  reason: Software configures and monitors data-center connectivity hardware, a function
+    not covered by the listed hardware categories.
+  section: '1'
+  start: 39158
+  end: 39341
+- id: new-6863266dd3
+  label: Smart DSP retimers
+  reason: Data-center signal-retiming chips are distinct from the taxonomy's optical
+    DSPs and copper cables.
+  section: 1A
+  start: 80486
+  end: 80572
+- id: new-66521179ad
+  label: CXL connectivity solutions
+  reason: Cloud and AI memory-connectivity products are not covered by the listed
+    memory or interconnect categories.
+  section: 1A
+  start: 96376
+  end: 96479
+- id: new-0a8351074b
+  label: UALink connectivity solutions
+  reason: AI scale-up connectivity is not explicitly represented in the existing taxonomy.
+  section: 1A
+  start: 96376
+  end: 96479
+- id: new-e719a5da8d
+  label: PCIe/CXL retimers
+  reason: Electrical signal-conditioning chips for cloud and AI connectivity are not
+    covered by the optical DSP category.
+  section: '7'
+  start: 228778
+  end: 228813
+- id: new-6b23c7874c
+  label: Smart cable modules
+  reason: These connectivity modules serve AI infrastructure, but the text does not
+    specify copper or optical transmission.
+  section: '7'
+  start: 228815
+  end: 228890
+- id: new-ee4df37dc2
+  label: CXL memory controllers
+  reason: Memory connectivity controllers are distinct from the memory chips included
+    in the taxonomy.
+  section: '7'
+  start: 228892
+  end: 228931
+- id: new-2dfe6e2670
+  label: Connectivity management software
+  reason: Software for configuring and monitoring infrastructure connectivity is absent
+    from the hardware taxonomy.
+  section: '7'
+  start: 227099
+  end: 227217
+dropped:
+  produces: 1
+  supplies: 4

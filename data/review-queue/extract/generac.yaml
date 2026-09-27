@@ -1,0 +1,290 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/generac
+form: 10-K
+requires:
+- id: req-83edea11c7
+  product: product/datacenter-capacity
+  input: product/backup-generators
+  bucket: minor
+  reason: Data centers are a growing subset of generator demand across residential,
+    commercial, and industrial applications; the bucket is an estimate.
+  section: '1'
+  start: 59183
+  end: 59274
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-d7954d030a
+  product: product/datacenter-capacity
+  input: product/electricity-demand
+  bucket: minor
+  reason: Data centers consume a subset of electricity alongside numerous other commercial,
+    industrial, and residential uses; the bucket is an estimate.
+  section: '1'
+  start: 53616
+  end: 53763
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-e8eeff0606
+  product: product/datacenter-capacity
+  input: product/backup-generators
+  bucket: minor
+  reason: Data centers are a growing subset of generator demand alongside established
+    residential, commercial and industrial uses.
+  section: 1A
+  start: 139981
+  end: 140088
+  status: accepted
+  reviewer: judge
+  judge: true
+disclosed:
+- id: dis-10b2114095
+  description: Residential products' share of total net sales.
+  share: 0.539
+  period: '2025'
+  basis: product
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 81505
+  end: 81616
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-5a7a7928a6
+  description: Residential products' share of total net sales.
+  share: 0.566
+  period: '2024'
+  basis: product
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 81505
+  end: 81616
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-c1fb085b96
+  description: Residential products' share of total net sales.
+  share: 0.513
+  period: '2023'
+  basis: product
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 81505
+  end: 81616
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-32d4ebecb7
+  description: Commercial and industrial products' share of total net sales.
+  share: 0.346
+  period: '2025'
+  basis: product
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 88181
+  end: 88284
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-3644f614be
+  description: Commercial and industrial products' share of total net sales.
+  share: 0.323
+  period: '2024'
+  basis: product
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 88181
+  end: 88284
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-bc1e67bbe1
+  description: Commercial and industrial products' share of total net sales.
+  share: 0.372
+  period: '2023'
+  basis: product
+  products:
+  - product/backup-generators
+  section: '1'
+  start: 88181
+  end: 88284
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-306e71b93e
+  description: Other products and services' share of total net sales.
+  share: 0.115
+  period: '2025'
+  basis: product
+  products: []
+  section: '1'
+  start: 90261
+  end: 90381
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6837f8a11d
+  description: Other products and services' share of total net sales.
+  share: 0.111
+  period: '2024'
+  basis: product
+  products: []
+  section: '1'
+  start: 90261
+  end: 90381
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-306e71b93e
+  description: Other products and services' share of total net sales.
+  share: 0.115
+  period: '2023'
+  basis: product
+  products: []
+  section: '1'
+  start: 90261
+  end: 90381
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-24f01b64ca
+  description: Services contributed approximately 4% of net sales.
+  share: 0.04
+  period: Year ended December 31, 2025
+  basis: product
+  products: []
+  section: '7'
+  start: 213975
+  end: 214075
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-52aa3c8470
+  description: The ten largest customers collectively contributed approximately 18%
+    of net sales.
+  share: 0.18
+  period: Year ended December 31, 2025
+  basis: customer
+  products: []
+  section: '7'
+  start: 214478
+  end: 214598
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-f33f466fd9
+  description: Dealer purchases funded through the floor-plan financing arrangement
+    accounted for approximately 13% of net sales.
+  share: 0.13
+  period: Years ended December 31, 2025 and 2024
+  basis: customer
+  products: []
+  section: '7'
+  start: 234002
+  end: 234149
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-a60b6b196a
+  product: product/backup-generators
+  section: '1'
+  start: 72127
+  end: 72269
+- id: pro-f3b23bc2c7
+  product: product/backup-generators
+  section: 1A
+  start: 140349
+  end: 140485
+- id: pro-20d6f590e8
+  product: product/backup-generators
+  section: '7'
+  start: 223852
+  end: 223945
+supplies: []
+new_products:
+- id: new-89d4550c4c
+  label: Battery energy storage systems
+  reason: Stationary commercial storage supports power resilience and microgrids and
+    is distinct from the listed UPS category.
+  section: '1'
+  start: 74035
+  end: 74157
+- id: new-81ecc25c27
+  label: Microgrid controllers
+  reason: These controllers coordinate distributed power assets for resilient facility
+    power systems.
+  section: '1'
+  start: 86292
+  end: 86428
+- id: new-a3dee37262
+  label: Industrial transfer switches
+  reason: These devices transfer critical loads between power sources and merit a
+    specific category separate from general switchgear.
+  section: '1'
+  start: 84613
+  end: 84796
+- id: new-f6b97b9e8e
+  label: Generator engines and alternators
+  reason: These are core components of backup generation equipment, absent from the
+    taxonomy.
+  section: '1'
+  start: 103694
+  end: 103831
+- id: new-9f91345262
+  label: Power generation controls
+  reason: Industrial generator controls support reliable operation of critical facility
+    power systems.
+  section: '1'
+  start: 87536
+  end: 87708
+- id: new-3b0ec7c5f1
+  label: Large generator engines
+  reason: Engines are critical components of data center backup generators but lack
+    a separate taxonomy entry.
+  section: 1A
+  start: 125683
+  end: 125736
+- id: new-b6d6a77538
+  label: Battery energy storage systems
+  reason: Battery storage is relevant to power resilience and energy management but
+    is not separately covered by the taxonomy.
+  section: 1A
+  start: 138958
+  end: 139003
+- id: new-83bf502e7b
+  label: Energy storage systems
+  reason: Stored-energy equipment supports power resilience and is distinct from the
+    listed UPS category.
+  section: '7'
+  start: 202424
+  end: 202530
+- id: new-df146e8d90
+  label: Energy management devices and solutions
+  reason: Power monitoring and management technologies are relevant to data-center
+    energy infrastructure but lack a taxonomy category.
+  section: '7'
+  start: 202424
+  end: 202530
+- id: new-ce81a19288
+  label: Generator engines
+  reason: Engines are critical components of backup generation equipment and are not
+    separately covered by the taxonomy.
+  section: '7'
+  start: 214869
+  end: 215010
+- id: new-b80efa4731
+  label: Generator alternators
+  reason: Alternators convert mechanical power into electricity in generators supporting
+    backup power infrastructure.
+  section: '7'
+  start: 215348
+  end: 215417
+dropped: {}

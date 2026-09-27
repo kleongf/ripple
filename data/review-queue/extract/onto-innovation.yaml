@@ -1,0 +1,361 @@
+# Text extraction (docs/phase-1.md, M19). Offsets point into the cached filing text;
+# no filing text is stored here (D72).
+node: company/onto-innovation
+form: 10-K
+requires:
+- id: req-59c2fe013d
+  product: product/leading-edge-logic
+  input: product/inspection-metrology
+  bucket: major
+  reason: Leading-edge fabrication is a substantial inspection and metrology market,
+    alongside memory, packaging and specialty devices; the bucket is estimated.
+  section: '1'
+  start: 41602
+  end: 41754
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-3b17829e70
+  product: product/advanced-packaging
+  input: product/inspection-metrology
+  bucket: minor
+  reason: Advanced packaging needs extensive inspection but represents a smaller portion
+    of overall semiconductor inspection and metrology demand; the bucket is estimated.
+  section: '1'
+  start: 38541
+  end: 38686
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-bb4322ee72
+  product: material/silicon-wafers
+  input: product/inspection-metrology
+  bucket: minor
+  reason: Bare-wafer quality control is a narrower inspection market than downstream
+    device fabrication; the bucket is estimated.
+  section: '1'
+  start: 35024
+  end: 35162
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: req-3a373013d7
+  product: product/advanced-packaging
+  input: material/silicon-wafers
+  bucket: minor
+  reason: Wafer-based packaging uses only a subset of silicon wafers, and panel-based
+    alternatives also exist; the bucket is estimated.
+  section: '1'
+  start: 39273
+  end: 39378
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-4cfb96c0c1
+  product: product/advanced-packaging
+  input: material/photoresist
+  bucket: minor
+  reason: Packaging lithography consumes photoresist alongside much broader front-end
+    fabrication uses; the bucket is estimated.
+  section: '1'
+  start: 52731
+  end: 52867
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-e0fb219f49
+  product: product/advanced-packaging
+  input: product/inspection-metrology
+  bucket: minor
+  reason: Packaging inspection is one application within the broader wafer-processing
+    and device-manufacturing inspection market.
+  section: '7'
+  start: 189814
+  end: 189927
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: req-a519d3e41d
+  product: product/leading-edge-logic
+  input: product/inspection-metrology
+  bucket: major
+  reason: Advanced-node manufacturing is a substantial metrology application, alongside
+    memory and specialty devices; the demand bucket is an estimate.
+  section: '7'
+  start: 189949
+  end: 190031
+  status: accepted
+  reviewer: claude-code
+  judge: false
+disclosed:
+- id: dis-494d7f8eed
+  description: Revenue attributable to Customer A
+  share: 0.2
+  period: Fiscal year ended January 3, 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 57169
+  end: 57194
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-e24c03c6b7
+  description: Revenue attributable to Customer A
+  share: 0.23
+  period: Fiscal year ended December 28, 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 57169
+  end: 57194
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0ea16c6c76
+  description: Revenue attributable to Customer A
+  share: 0.14
+  period: Fiscal year ended December 30, 2023
+  basis: customer
+  products: []
+  section: '1'
+  start: 57169
+  end: 57194
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-fb766d32de
+  description: Revenue attributable to Customer B
+  share: 0.15
+  period: Fiscal year ended January 3, 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 57195
+  end: 57220
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0d52928f8c
+  description: Revenue attributable to Customer B
+  share: 0.17
+  period: Fiscal year ended December 28, 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 57195
+  end: 57220
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-df4c9a1069
+  description: Revenue attributable to Customer B
+  share: 0.19
+  period: Fiscal year ended December 30, 2023
+  basis: customer
+  products: []
+  section: '1'
+  start: 57195
+  end: 57220
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-aaa5af8eba
+  description: Revenue attributable to Customer C
+  share: 0.14
+  period: Fiscal year ended January 3, 2026
+  basis: customer
+  products: []
+  section: '1'
+  start: 57221
+  end: 57243
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-a22eaafd16
+  description: Revenue attributable to Customer C
+  share: 0.12
+  period: Fiscal year ended December 28, 2024
+  basis: customer
+  products: []
+  section: '1'
+  start: 57221
+  end: 57243
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-6de18e86d3
+  description: Systems and software revenue, including inspection and metrology alongside
+    other offerings.
+  share: 0.84
+  period: Fiscal 2025, ended January 3, 2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189412
+  end: 189477
+  status: flagged
+  reviewer: judge
+  judge: false
+- id: dis-5679ee92d3
+  description: Systems and software revenue, including inspection and metrology alongside
+    other offerings.
+  share: 0.86
+  period: Fiscal 2024, ended December 28, 2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189412
+  end: 189477
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-6de18e86d3
+  description: Systems and software revenue, including inspection and metrology alongside
+    other offerings.
+  share: 0.84
+  period: Fiscal 2023, ended December 30, 2023
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189412
+  end: 189477
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-0d77fccf97
+  description: Parts revenue supporting the company's equipment portfolio.
+  share: 0.08
+  period: Fiscal 2025, ended January 3, 2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189478
+  end: 189516
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-0d77fccf97
+  description: Parts revenue supporting the company's equipment portfolio.
+  share: 0.08
+  period: Fiscal 2024, ended December 28, 2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189478
+  end: 189516
+  status: accepted
+  reviewer: claude-code
+  judge: false
+- id: dis-7ed385b59f
+  description: Parts revenue supporting the company's equipment portfolio.
+  share: 0.09
+  period: Fiscal 2023, ended December 30, 2023
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189478
+  end: 189516
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-08610e597c
+  description: Service revenue supporting the company's equipment portfolio.
+  share: 0.08
+  period: Fiscal 2025, ended January 3, 2026
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189517
+  end: 189558
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-d25d3250f6
+  description: Service revenue supporting the company's equipment portfolio.
+  share: 0.06
+  period: Fiscal 2024, ended December 28, 2024
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189517
+  end: 189558
+  status: accepted
+  reviewer: judge
+  judge: true
+- id: dis-8fa3345dfd
+  description: Service revenue supporting the company's equipment portfolio.
+  share: 0.07
+  period: Fiscal 2023, ended December 30, 2023
+  basis: product
+  products:
+  - product/inspection-metrology
+  section: '7'
+  start: 189517
+  end: 189558
+  status: accepted
+  reviewer: judge
+  judge: true
+produces:
+- id: pro-e10f4ecf6a
+  product: product/inspection-metrology
+  section: '1'
+  start: 27577
+  end: 27733
+- id: pro-f26053d104
+  product: product/inspection-metrology
+  section: 1A
+  start: 88406
+  end: 88503
+- id: pro-9c327a6fee
+  product: product/inspection-metrology
+  section: '7'
+  start: 183039
+  end: 183159
+supplies:
+- id: sup-8f88473867
+  supplier: company/onto-innovation
+  customer: company/tsmc
+  product: null
+  section: 1A
+  start: 139979
+  end: 140119
+- id: sup-c5a3d4ee51
+  supplier: company/onto-innovation
+  customer: company/samsung-electronics
+  product: null
+  section: 1A
+  start: 140121
+  end: 140204
+new_products:
+- id: new-0002182880
+  label: Advanced packaging lithography systems
+  reason: Wafer and panel packaging steppers support AI chip packaging but are distinct
+    from the listed front-end DUV and EUV systems.
+  section: '1'
+  start: 40325
+  end: 40498
+- id: new-b04d3218ff
+  label: Packaging lithography equipment
+  reason: Lithography for fine-pitch redistribution layers supports multi-die packaging
+    and is not separately covered by the listed EUV and DUV categories.
+  section: 1A
+  start: 165758
+  end: 165941
+- id: new-bee9ace511
+  label: Semiconductor and packaging lithography systems, unspecified technology
+  reason: The company supplies lithography equipment, but the passage does not identify
+    it as either DUV or EUV, the taxonomy's available lithography categories.
+  section: '7'
+  start: 183161
+  end: 183287
+dropped:
+  supplies: 1

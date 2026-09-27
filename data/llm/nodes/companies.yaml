@@ -1,0 +1,193 @@
+# Generated from universe growth (M18) by `ripple xbrl-edges` (M14). Do not edit.
+- id: company/cisco
+  type: company
+  label: Cisco
+  aliases:
+  - CISCO SYSTEMS, INC.
+  ticker: CSCO
+  ids:
+    cik: '858877'
+- id: company/microsoft
+  type: company
+  label: Microsoft
+  aliases:
+  - MICROSOFT CORP
+  ticker: MSFT
+  ids:
+    cik: '789019'
+- id: company/qualcomm
+  type: company
+  label: Qualcomm Incorporated
+  aliases:
+  - QUALCOMM INC/DE
+  ticker: QCOM
+  ids:
+    cik: '804328'
+- id: company/hewlett-packard-enterprise
+  type: company
+  label: Hewlett Packard Enterprise
+  aliases:
+  - Hewlett Packard Enterprise Co
+  ticker: HPE
+  ids:
+    cik: '1645590'
+- id: company/amazon
+  type: company
+  label: Amazon
+  aliases:
+  - AMAZON COM INC
+  ticker: AMZN
+  ids:
+    cik: '1018724'
+- id: company/generac
+  type: company
+  label: Generac Holdings Inc.
+  aliases:
+  - GENERAC HOLDINGS INC.
+  ticker: GNRC
+  ids:
+    cik: '1474735'
+- id: company/oracle
+  type: company
+  label: Oracle
+  aliases:
+  - ORACLE CORP
+  ticker: ORCL
+  ids:
+    cik: '1341439'
+- id: company/extreme-networks
+  type: company
+  label: Extreme Networks
+  aliases:
+  - EXTREME NETWORKS INC
+  ticker: EXTR
+  ids:
+    cik: '1078271'
+- id: company/sandisk
+  type: company
+  label: Sandisk Corporation
+  aliases:
+  - Sandisk Corp
+  ticker: SNDK
+  ids:
+    cik: '2023554'
+- id: company/alibaba
+  type: company
+  label: Alibaba Group
+  aliases:
+  - Alibaba Group Holding Ltd
+  ticker: BABA
+  ids:
+    cik: '1577552'
+- id: company/alphabet
+  type: company
+  label: Alphabet Inc.
+  aliases:
+  - Alphabet Inc.
+  ticker: GOOGL
+  ids:
+    cik: '1652044'
+- id: company/amkor-technology
+  type: company
+  label: Amkor Technology, Inc.
+  aliases:
+  - AMKOR TECHNOLOGY, INC.
+  ticker: AMKR
+  ids:
+    cik: '1047127'
+- id: company/arm
+  type: company
+  label: Arm
+  aliases:
+  - ARM HOLDINGS PLC /UK
+  ticker: ARM
+  ids:
+    cik: '1973239'
+- id: company/astera-labs
+  type: company
+  label: Astera Labs, Inc.
+  aliases:
+  - Astera Labs, Inc.
+  ticker: ALAB
+  ids:
+    cik: '1736297'
+- id: company/baidu
+  type: company
+  label: Baidu, Inc.
+  aliases:
+  - Baidu, Inc.
+  ticker: BIDU
+  ids:
+    cik: '1329099'
+- id: company/baker-hughes
+  type: company
+  label: Baker Hughes Co.
+  aliases:
+  - Baker Hughes Co
+  ticker: BKR
+  ids:
+    cik: '1701605'
+- id: company/belden
+  type: company
+  label: Belden
+  aliases:
+  - BELDEN INC.
+  ticker: BDC
+  ids:
+    cik: '913142'
+- id: company/credo-technology
+  type: company
+  label: Credo Technology Group Holding Ltd
+  aliases:
+  - Credo Technology Group Holding Ltd
+  ticker: CRDO
+  ids:
+    cik: '1807794'
+- id: company/fabrinet
+  type: company
+  label: Fabrinet
+  aliases:
+  - Fabrinet
+  ticker: FN
+  ids:
+    cik: '1408710'
+- id: company/macom-technology-solutions
+  type: company
+  label: MACOM Technology Solutions Holdings, Inc.
+  aliases:
+  - MACOM Technology Solutions Holdings, Inc.
+  ticker: MTSI
+  ids:
+    cik: '1493594'
+- id: company/nextera-energy
+  type: company
+  label: NextEra Energy, Inc.
+  aliases:
+  - NEXTERA ENERGY INC
+  ticker: NEE
+  ids:
+    cik: '753308'
+- id: company/onto-innovation
+  type: company
+  label: Onto Innovation, Inc.
+  aliases:
+  - ONTO INNOVATION INC.
+  ticker: ONTO
+  ids:
+    cik: '704532'
+- id: company/semtech
+  type: company
+  label: Semtech Corporation
+  aliases:
+  - SEMTECH CORP
+  ticker: SMTC
+  ids:
+    cik: '88941'
+- id: company/te-connectivity
+  type: company
+  label: TE Connectivity
+  aliases:
+  - TE Connectivity plc
+  ticker: TEL
+  ids:
+    cik: '1385157'

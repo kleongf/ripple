@@ -1,0 +1,155 @@
+# Generated from accepted text-extraction proposals by `ripple requires-edges` (M20).
+# Do not edit: accept or reject proposals in data/review-queue/extract instead.
+- src: material/silicon-wafers
+  rel: REQUIRES
+  dst: product/inspection-metrology
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: &id002 2026-02-24
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: 'company/kla 10-K item 1: Wafer manufacturing is one specialized inspection
+      application within a much broader semiconductor process-control market.'
+    accessed: &id001 2026-09-27
+    span:
+      section: '1'
+      start: 77340
+      end: 77496
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: 'company/onto-innovation 10-K item 1: Bare-wafer quality control is a narrower
+      inspection market than downstream device fabrication; the bucket is estimated.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 35024
+      end: 35162
+- src: product/advanced-packaging
+  rel: REQUIRES
+  dst: material/photoresist
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: *id002
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: 'company/onto-innovation 10-K item 1: Packaging lithography consumes photoresist
+      alongside much broader front-end fabrication uses; the bucket is estimated.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 52731
+      end: 52867
+- src: product/advanced-packaging
+  rel: REQUIRES
+  dst: material/silicon-wafers
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: *id002
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: 'company/onto-innovation 10-K item 1: Wafer-based packaging uses only a
+      subset of silicon wafers, and panel-based alternatives also exist; the bucket
+      is estimated.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 39273
+      end: 39378
+- src: product/advanced-packaging
+  rel: REQUIRES
+  dst: product/inspection-metrology
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: *id002
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: 'company/kla 10-K item 1: Advanced packaging uses inspection equipment but
+      represents a narrower application than the broader wafer-fabrication market.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 78430
+      end: 78571
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: 'company/kla 10-K item 7: Advanced packaging is a growing inspection application
+      within a broader market dominated by semiconductor fabrication.'
+    accessed: *id001
+    span:
+      section: '7'
+      start: 251954
+      end: 252122
+  - url: https://www.sec.gov/Archives/edgar/data/704532/000119312526066937/onto-20260103.htm
+    note: 'company/onto-innovation 10-K item 1: Advanced packaging needs extensive
+      inspection but represents a smaller portion of overall semiconductor inspection
+      and metrology demand; the bucket is estimated.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 38541
+      end: 38686
+- src: product/enterprise-ssds
+  rel: REQUIRES
+  dst: product/dram
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-10-03
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
+    note: 'company/micron 10-K item 1: Enterprise SSDs use DRAM as a supporting component
+      rather than accounting for a large portion of total DRAM demand.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 56703
+      end: 56869
+  - url: https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm
+    note: 'company/sandisk 10-K item 1A: Enterprise SSD buffering represents a small
+      portion of overall DRAM demand; the text does not quantify that share.'
+    accessed: *id001
+    span:
+      section: 1A
+      start: 81991
+      end: 82049
+- src: product/hbm
+  rel: REQUIRES
+  dst: product/inspection-metrology
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2026-08-06
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/319201/000031920126000027/klac-20260630.htm
+    note: 'company/kla 10-K item 7: HBM is a narrower application within the broader
+      memory and logic process-control market.'
+    accessed: *id001
+    span:
+      section: '7'
+      start: 252801
+      end: 252937
+- src: product/optical-dsps
+  rel: REQUIRES
+  dst: product/leading-edge-logic
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2026-06-15
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1807794/000162828026043303/crdo-20260502.htm
+    note: 'company/credo-technology 10-K item 1: Optical DSPs represent a specialized
+      subset of demand for advanced-node logic fabrication.'
+    accessed: *id001
+    span:
+      section: '1'
+      start: 49034
+      end: 49140
