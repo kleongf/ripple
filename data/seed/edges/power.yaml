@@ -1,0 +1,118 @@
+# Stage B: power. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/electricity-demand
+  weight: 0.044
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2023-01-01
+  evidence:
+    - url: https://newscenter.lbl.gov/2025/01/15/berkeley-lab-report-evaluates-increase-in-electricity-demand-from-data-centers/
+      note: "LBNL: data centers used about 4.4% of total US electricity in 2023"
+      accessed: 2026-09-26
+
+- src: product/electricity-demand
+  rel: REQUIRES
+  dst: product/gas-turbines
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q4-fy-2025.html
+      note: "Large gas turbines are bought for power generation; Siemens Energy sold 194 in FY2025 on rising power demand"
+      accessed: 2026-09-26
+
+- src: product/electricity-demand
+  rel: REQUIRES
+  dst: product/nuclear-generation
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.constellationenergy.com/news/2026/02/constellation-reports-fourth-quarter-and-full-year-2025-results.html
+      note: "Nuclear output is sold as electricity; demand growth lifts contracted volume and price rather than capacity"
+      accessed: 2026-09-26
+
+- src: product/electricity-demand
+  rel: REQUIRES
+  dst: product/grid-equipment
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.gevernova.com/news/press-releases/ge-vernova-reports-fourth-quarter-full-year-2025-financial-results
+      note: "Grid equipment serves load growth, renewables and replacement; electrification revenue rose on demand growth"
+      accessed: 2026-09-26
+
+- src: company/ge-vernova
+  rel: PRODUCES
+  dst: product/gas-turbines
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.gevernova.com/news/press-releases/ge-vernova-reports-fourth-quarter-full-year-2025-financial-results
+      note: "2025: Power segment about $19.8B of $38.1B revenue, mostly gas turbines and their services"
+      accessed: 2026-09-26
+
+- src: company/ge-vernova
+  rel: PRODUCES
+  dst: product/grid-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.gevernova.com/news/press-releases/ge-vernova-reports-fourth-quarter-full-year-2025-financial-results
+      note: "2025: Electrification (grid solutions, power conversion) about $9.5B of $38.1B revenue"
+      accessed: 2026-09-26
+
+- src: company/siemens-energy
+  rel: PRODUCES
+  dst: product/gas-turbines
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-10-01
+  evidence:
+    - url: https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q4-fy-2025.html
+      note: "FY2025 revenue EUR 39.1B; Gas Services is a major segment with 31% share of large gas turbines"
+      accessed: 2026-09-26
+
+- src: company/siemens-energy
+  rel: PRODUCES
+  dst: product/grid-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-10-01
+  evidence:
+    - url: https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q4-fy-2025.html
+      note: "Grid Technologies grew 25% in FY2025 and is a major segment, including transformers and HVDC"
+      accessed: 2026-09-26
+
+- src: company/constellation
+  rel: PRODUCES
+  dst: product/nuclear-generation
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.constellationenergy.com/news/2026/02/constellation-reports-fourth-quarter-and-full-year-2025-results.html
+      note: "Constellation runs the largest US nuclear fleet; nuclear is most of its generation and margin"
+      accessed: 2026-09-26

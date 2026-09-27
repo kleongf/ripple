@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ripple": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "ripple-mcp"
+      ],
+      "env": {}
+    }
+  }
+}

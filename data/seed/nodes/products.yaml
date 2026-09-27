@@ -1,0 +1,46 @@
+# Compute
+- {id: product/ai-servers, type: product, group: compute, label: AI servers, aliases: [GPU servers, AI-optimized servers, AI racks]}
+- {id: product/ai-accelerators, type: product, group: compute, label: AI accelerators, aliases: [data center GPUs, merchant AI accelerators]}
+- {id: product/custom-ai-asics, type: product, group: compute, label: Custom AI ASICs, aliases: [XPUs, TPUs, custom accelerators]}
+- {id: product/server-cpus, type: product, group: compute, label: Server CPUs, aliases: [data center CPUs, EPYC, Xeon]}
+# Memory
+- {id: product/hbm, type: product, group: memory, label: High-bandwidth memory, aliases: [HBM, HBM3E, HBM4]}
+- {id: product/dram, type: product, group: memory, label: Conventional DRAM, aliases: [DRAM, DDR5, server DRAM]}
+- {id: product/enterprise-ssds, type: product, group: memory, label: Enterprise SSDs, aliases: [data center SSDs, eSSD]}
+# Foundry and packaging
+- {id: product/leading-edge-logic, type: product, group: foundry, label: Leading-edge logic wafers, aliases: [advanced nodes, 3nm, 5nm, leading-edge foundry]}
+- {id: product/advanced-packaging, type: product, group: foundry, label: Advanced 2.5D packaging, aliases: [CoWoS, 2.5D packaging]}
+- {id: product/abf-substrates, type: product, group: foundry, label: ABF substrates, aliases: [FC-BGA substrates, IC package substrates]}
+- {id: material/abf-film, type: material, group: materials, label: ABF film, aliases: [Ajinomoto Build-up Film, build-up film]}
+# Semiconductor equipment
+- {id: product/euv-lithography, type: product, group: semicap, label: EUV lithography systems, aliases: [EUV scanners, extreme ultraviolet lithography]}
+- {id: product/duv-lithography, type: product, group: semicap, label: DUV lithography systems, aliases: [DUV scanners, immersion lithography]}
+- {id: product/deposition-equipment, type: product, group: semicap, label: Deposition equipment, aliases: [CVD, ALD, PVD]}
+- {id: product/etch-equipment, type: product, group: semicap, label: Etch equipment, aliases: [dry etch, plasma etch]}
+- {id: product/inspection-metrology, type: product, group: semicap, label: Inspection and metrology, aliases: [process control, wafer inspection]}
+# Datacenter physical
+- {id: product/datacenter-capacity, type: product, group: datacenter, label: Datacenter capacity, aliases: [data center construction, data center build-out]}
+- {id: product/liquid-cooling, type: product, group: datacenter, label: Datacenter liquid cooling, aliases: [direct-to-chip cooling, CDUs, cold plates]}
+- {id: product/air-cooling, type: product, group: datacenter, label: Datacenter air cooling, aliases: [CRAH, CRAC, precision air cooling]}
+- {id: product/ups, type: product, group: datacenter, label: Uninterruptible power supplies, aliases: [UPS, data center UPS]}
+- {id: product/switchgear, type: product, group: datacenter, label: Switchgear, aliases: [low-voltage switchgear, medium-voltage switchgear]}
+# Networking (Stage B)
+- {id: product/datacenter-switches, type: product, group: networking, label: Datacenter switches, aliases: [Ethernet switches, AI fabric switches, InfiniBand switches]}
+- {id: product/optical-transceivers, type: product, group: networking, label: Optical transceivers, aliases: [800G transceivers, pluggable optics]}
+- {id: product/lasers, type: product, group: networking, label: Optical laser chips, aliases: [EML, VCSEL, laser chips]}
+- {id: product/fiber-cable, type: product, group: networking, label: Optical fiber and cable, aliases: [fiber optic cable, optical connectivity]}
+- {id: product/copper-interconnect, type: product, group: networking, label: High-speed copper interconnect, aliases: [copper cables, backplane connectors]}
+# Power (Stage B)
+- {id: product/electricity-demand, type: product, group: power, label: Electricity demand, aliases: [power demand, load growth]}
+- {id: product/gas-turbines, type: product, group: power, label: Gas turbines, aliases: [combined cycle turbines, gas power equipment]}
+- {id: product/nuclear-generation, type: product, group: power, label: Nuclear generation, aliases: [nuclear power]}
+- {id: product/grid-equipment, type: product, group: power, label: Grid equipment, aliases: [transformers, transmission equipment, HVDC, substations]}
+# Coverage pass (2026-09-26)
+- {id: product/backup-generators, type: product, group: datacenter, label: Backup generators, aliases: [standby generators, gensets, diesel generators]}
+- {id: product/datacenter-chillers, type: product, group: datacenter, label: Datacenter chillers, aliases: [chillers, applied HVAC for data centers]}
+- {id: material/silicon-wafers, type: material, group: materials, label: Silicon wafers, aliases: [300mm wafers, prime wafers]}
+- {id: material/photoresist, type: material, group: materials, label: Photoresist, aliases: [EUV resist, ArF resist, KrF resist]}
+- {id: product/coater-developer, type: product, group: semicap, label: Coater/developer tracks, aliases: [lithography tracks, coater developer]}
+# Accepted from 1a's new-product proposals (docs/phase-1.md, D67)
+- {id: product/optical-dsps, type: product, group: networking, label: Optical DSPs, aliases: [electro-optics DSPs, PAM4 DSPs, optical interconnect DSPs]}
+- {id: product/consumer-nand, type: product, group: memory, label: Non-enterprise NAND flash, aliases: [client SSDs, mobile NAND, consumer NAND]}

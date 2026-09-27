@@ -1,0 +1,53 @@
+# Stage A: foundry. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: company/tsmc
+  rel: PRODUCES
+  dst: product/leading-edge-logic
+  weight: 0.74
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-07-01
+  evidence:
+    - url: https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2025-10/90cb476be2e8406ba477c417a552d36d632db5c3/3Q25ManagementReport.pdf
+      note: "3Q25: 7nm and below were 74% of wafer revenue; slightly overstates share of total revenue"
+      accessed: 2026-09-26
+
+- src: company/tsmc
+  rel: PRODUCES
+  dst: product/advanced-packaging
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://investor.tsmc.com/static/annualReports/2025/english/index.html
+      note: "Advanced packaging (CoWoS) is a growing but small share of TSMC revenue next to wafers"
+      accessed: 2026-09-26
+
+- src: company/ibiden
+  rel: PRODUCES
+  dst: product/abf-substrates
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://capitalblueprint.substack.com/p/ibiden-co-ltd-tyo-4062-deep-analysis
+      note: "Electronics segment about 65% of revenue, mainly FC-BGA (ABF) substrates for AI, CPUs and servers"
+      accessed: 2026-09-26
+
+- src: company/ajinomoto
+  rel: PRODUCES
+  dst: material/abf-film
+  weight: 0.055
+  weight_source: manual
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://nikhs.substack.com/p/abf-the-material-beneath-the-model
+      note: "Analyst estimate: ABF film about $570M, five to six percent of group revenue; 0.055 is the midpoint"
+      accessed: 2026-09-26

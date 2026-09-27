@@ -1,0 +1,183 @@
+# Stage A: datacenter. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/liquid-cooling
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.gminsights.com/industry-analysis/data-center-liquid-cooling-market
+      note: "Data center liquid cooling is by definition bought for data centers"
+      accessed: 2026-09-26
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/air-cooling
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.gminsights.com/industry-analysis/data-center-liquid-cooling-market
+      note: "Data center air cooling (CRAH, CRAC) is bought for data centers; node is defined narrowly"
+      accessed: 2026-09-26
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/ups
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.fortunebusinessinsights.com/data-center-ups-market-109842
+      note: "Data center UPS is a multi-billion market and a major share of three-phase UPS demand"
+      accessed: 2026-09-26
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/switchgear
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/data-centers-remain-standout-industry-for-schneider-electric/813362/
+      note: "Switchgear serves utilities, industry and buildings; data centers are a minor but fast-growing share"
+      accessed: 2026-09-26
+
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/air-cooling
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+      note: "Vertiv sells air-cooled and liquid-cooled thermal management; air remains most of its installed thermal base"
+      accessed: 2026-09-26
+
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/liquid-cooling
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+      note: "Liquid cooling (CDUs, cold plate systems) is a growing but still minor share of Vertiv sales"
+      accessed: 2026-09-26
+
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/ups
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+      note: "Vertiv reports leading positions in three-phase UPS and power distribution"
+      accessed: 2026-09-26
+
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/switchgear
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
+      note: "Low and medium voltage switchgear is one of many Vertiv power products"
+      accessed: 2026-09-26
+
+- src: company/schneider-electric
+  rel: PRODUCES
+  dst: product/switchgear
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/data-centers-remain-standout-industry-for-schneider-electric/813362/
+      note: "Energy management dominates Schneider; switchgear and distribution are a major part across all end markets"
+      accessed: 2026-09-26
+
+- src: company/schneider-electric
+  rel: PRODUCES
+  dst: product/ups
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/data-centers-remain-standout-industry-for-schneider-electric/813362/
+      note: "Data centers were about 30% of 2025 orders; UPS is one of several data center product lines"
+      accessed: 2026-09-26
+
+- src: company/schneider-electric
+  rel: PRODUCES
+  dst: product/liquid-cooling
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-02-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/schneider-electric-to-buy-controlling-stake-in-motivair/730423/
+      note: "Schneider bought a controlling stake in liquid cooling maker Motivair in early 2025"
+      accessed: 2026-09-26
+
+- src: company/schneider-electric
+  rel: PRODUCES
+  dst: product/air-cooling
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/data-centers-remain-standout-industry-for-schneider-electric/813362/
+      note: "Schneider sells data center cooling including air-based systems; minor against group revenue"
+      accessed: 2026-09-26
+
+- src: company/eaton
+  rel: PRODUCES
+  dst: product/switchgear
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-fourth-quarter-2025-results.html
+      note: "Electrical segments are most of Eaton; switchgear and distribution are a major line, data center led growth"
+      accessed: 2026-09-26
+
+- src: company/eaton
+  rel: PRODUCES
+  dst: product/ups
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-fourth-quarter-2025-results.html
+      note: "Eaton sells three-phase UPS for data centers; minor against total sales"
+      accessed: 2026-09-26

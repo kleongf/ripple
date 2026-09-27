@@ -1,0 +1,317 @@
+# Seed TODO
+
+## 1. Check every source (blocking)
+
+Claude Code drafted all 125 edges and found their sources on 2026-09-26. When you have read
+a source and agree with the note, set `verified: true` on that evidence item; `ripple validate`
+prints how many are verified. Many notes were
+written from search summaries without reading the full page. Per M8, check each source
+yourself before trusting an edge. Work through them in this order:
+
+1. **The 22 `filing` and `manual` weights.** They are precise numbers, so check each against the
+   page and the arithmetic in its note. List them with
+   `grep -B4 -A2 "weight_source: \(filing\|manual\)" data/seed/edges/*.yaml`. Two were taken from
+   search summaries because the source timed out; check these first:
+   - `product/ai-accelerators REQUIRES product/hbm` 0.72 and `product/custom-ai-asics REQUIRES
+     product/hbm` 0.19 (TrendForce 2024 HBM split; the PDF timed out)
+   - `company/cummins PRODUCES product/backup-generators` 0.11 (10-K segment split)
+2. **Edges that move rankings most** (see the sensitivity output in `docs/phase-0-review.md`):
+   - `theme/ai-compute-demand DRIVES product/datacenter-capacity`, now 0.1 (the midpoint of the
+     IEA's 5-15%, via Carbon Brief). Every cooling, power and fiber company depends on it.
+   - `product/ai-servers REQUIRES product/optical-transceivers` 0.8 and
+     `company/coherent PRODUCES product/optical-transceivers` 0.6. Together they put Coherent third.
+   - `company/lumentum PRODUCES product/lasers` 0.6 and `.../optical-transceivers` 0.25.
+   - `company/vertiv PRODUCES product/air-cooling` 0.25 vs `.../liquid-cooling` 0.05. They
+     decide Vertiv's sign on liquid-cooling adoption.
+3. **The 67 edges at confidence 0.5.** These are inferences. List them with:
+   `uv run python -c "from pathlib import Path; from ripple.load import load_seed; [print(e.value.label) for e in load_seed(Path('data/seed')).edges if e.value.confidence <= 0.5]"`
+4. **Sources that are analyst or blog pages** (futurumgroup, substack, fourweekmba-style pages).
+   Replace them with the company filing or IR page where you can.
+
+Accessed dates are all 2026-09-26. Update `accessed` when you recheck a source.
+
+## 2. Numbers that would most improve the ranking
+
+These buckets drive the remaining instability in AI-compute ranks 3-12:
+
+- Coherent Networking segment: $3.42B of $5.81B in FY2025 per a search summary; read the
+  10-K or the results release
+- `product/ai-servers REQUIRES product/optical-transceivers` 0.8: LightCounting's AI-cluster
+  optics share (the page returned 403)
+- Marvell custom silicon (about a quarter of data center revenue) and electro-optics shares
+- AMD's EPYC vs Instinct split, Broadcom's XPU vs AI networking split (neither disclosed)
+- Vertiv's thermal revenue split between liquid and air (decides its liquid-cooling sign)
+
+## 3. Edges believed to exist but not sourced yet
+
+Candidate nodes and producers for a later seed pass:
+
+- Specialty gases (Linde, Air Liquide) and copper under `product/leading-edge-logic` and
+  `product/dram`: no source gives a share of revenue
+- `product/hbm REQUIRES product/advanced-packaging`: HBM stacking uses TSV and bonding steps
+  (partly in-house at SK hynix)
+- A separate transformers node, if a transformer maker without a grid segment is added
+  (Hitachi Energy, Hyundai Electric)
+- The `SUPPLIES` edges from 10%-customer disclosures, for example Nvidia's largest customers.
+  Watch D4: do not add a `SUPPLIES` edge for a flow the product layer already captures.
+
+## 4. Speculative (0.3) edges to confirm
+
+None loaded yet. Candidates:
+
+- `product/custom-ai-asics REQUIRES product/optical-transceivers`: hyperscaler ASIC clusters are
+  often more optics-heavy than GPU clusters
+- `product/ai-accelerators REQUIRES product/copper-interconnect`: rack-scale NVLink copper spines
+
+<!-- growth:non-sec:start -->
+
+## Named in filings but not SEC filers (M18, for later)
+
+- Samsung Electronics Co., Ltd.: named by company/amd, company/lam-research, company/micron, company/nvidia (competitor, customer, supplier)
+- TSMC: named by company/broadcom, company/intel (competitor, supplier)
+- AMD: named by company/intel, company/super-micro (competitor, supplier)
+- Altera: named by company/amd, company/intel (competitor, customer, partner)
+- Huawei: named by company/arista, company/coherent (competitor, customer)
+- Lenovo: named by company/intel, company/super-micro (competitor, customer)
+- Samsung: named by company/intel, company/nvidia (competitor)
+- Deutz AG: named by company/caterpillar, company/cummins (competitor)
+- Guangxi LiuGong Machinery Co., Ltd.: named by company/caterpillar, company/cummins (competitor, customer)
+- Huawei Technologies Co. Ltd.: named by company/lumentum, company/nvidia (competitor, customer)
+- Hyundai Heavy Industries Group: named by company/caterpillar, company/cummins (competitor, customer)
+- J.C. Bamford Excavators Ltd.: named by company/caterpillar, company/cummins (competitor, customer)
+- Komatsu Ltd.: named by company/caterpillar, company/cummins (competitor, customer)
+- MediaTek: named by company/intel, company/marvell (competitor)
+- Robert Bosch GmbH: named by company/cummins, company/tsmc (competitor, partner)
+- Sany Heavy Industry Co., Ltd.: named by company/caterpillar, company/cummins (competitor, customer)
+- Schneider Electric: named by company/ge-vernova, company/johnson-controls (competitor)
+- Siliconware Precision Industries Ltd.: named by company/amd, company/broadcom (supplier)
+- Weichai Power Co., Ltd.: named by company/caterpillar, company/cummins (competitor)
+- Beijing Foton Cummins Engine Co., Ltd.: named by company/cummins (customer, partner)
+- Dongfeng Cummins Engine Co., Ltd.: named by company/cummins (customer, partner)
+- Mistral AI: named by company/asml (partner)
+- SMIC: named by company/intel (competitor)
+- UMC: named by company/intel (competitor, partner)
+- Apollo: named by company/intel (partner)
+- Brookfield: named by company/intel (partner)
+- Carl Zeiss SMT: named by company/asml (partner, supplier)
+- ChangXin Memory Technologies, Inc.: named by company/micron (competitor)
+- Chongqing Cummins Engine Company, Ltd.: named by company/cummins (partner)
+- Dell/EMC: named by company/arista (competitor)
+- Delta Electronics, Inc.: named by company/vertiv (competitor)
+- Ernst & Young LLP: named by company/intel (supplier)
+- GE: named by company/ge-vernova (partner, supplier)
+- Huawei Investment & Holding Co., Ltd.: named by company/vertiv (competitor)
+- KLA-Tencor Corporation: named by company/asml (competitor)
+- Kioxia Holdings Corporation: named by company/micron (competitor)
+- Legrand SA: named by company/vertiv (competitor)
+- PricewaterhouseCoopers Accountants N.V.: named by company/asml (supplier)
+- Schneider Electric, S.E.: named by company/vertiv (competitor)
+- Socomec Holding SA: named by company/vertiv (competitor)
+- Stulz GmbH: named by company/vertiv (competitor)
+- Tata Cummins Ltd.: named by company/cummins (customer, partner)
+- Tata Motors Ltd.: named by company/cummins (customer, partner)
+- Tongfu Microelectronics Co., Ltd.: named by company/amd (partner)
+- Traton Group: named by company/cummins (competitor, customer)
+- Yangtze Memory Technologies Co., Ltd.: named by company/micron (competitor)
+- AB Volvo: named by company/cummins (customer)
+- AEP Texas: named by company/constellation (partner)
+- AGC Inc.: named by company/corning (competitor)
+- AHI-Carrier FZC: named by company/carrier (partner)
+- AP Grange Holdings, LLC: named by company/intel (partner)
+- ASM International: named by company/lam-research (competitor)
+- Ablecom: named by company/super-micro (supplier)
+- Ablecom Technology, Inc.: named by company/super-micro (supplier)
+- Acer: named by company/intel (customer)
+- Advanced Semiconductor Engineering, Inc.: named by company/broadcom (supplier)
+- Alchip Technologies: named by company/marvell (competitor)
+- AlixPartners LLP: named by company/super-micro (supplier)
+- Amazon Web Services: named by company/carrier (partner)
+- Amazon Web Services (AWS): named by company/intel (customer)
+- America Fujikura Ltd.: named by company/corning (competitor)
+- Amplify Cell Technologies LLC: named by company/cummins (partner)
+- Anhui Jianghuai Automobile Group Co., Ltd.: named by company/cummins (customer)
+- Asus: named by company/amd (customer)
+- Australia and New Zealand Banking Group Limited: named by company/caterpillar (competitor)
+- Ayar Labs, Inc.: named by company/marvell (competitor)
+- BNP Paribas Leasing Solutions Limited: named by company/caterpillar (competitor)
+- Banc of America Leasing & Capital LLC: named by company/caterpillar (competitor)
+- Beiqi Foton Motor Co., Ltd.: named by company/cummins (partner)
+- Brookfield: named by company/intel (partner)
+- CASE: named by company/caterpillar (competitor)
+- CTBC Bank Co., Ltd.: named by company/super-micro (partner)
+- Carrier Enterprise: named by company/carrier (partner)
+- Center for Creative Leadership: named by company/trane (partner)
+- China First Auto Works: named by company/cummins (competitor)
+- China National Heavy Duty Truck Group: named by company/cummins (customer)
+- Chongqing Machinery and Electric Co. Ltd.: named by company/cummins (partner)
+- Citibank N.A.: named by company/intel (supplier)
+- Computershare Trust Company, National Association: named by company/intel (supplier)
+- Compuware: named by company/super-micro (supplier)
+- Compuware Technology, Inc.: named by company/super-micro (supplier)
+- DENSO Corporation: named by company/tsmc (partner)
+- Daimler Truck and US Holding LLC: named by company/cummins (partner)
+- Daimler Trucks AG: named by company/cummins (customer)
+- Darktrace: named by company/arista (competitor)
+- Deere Construction & Forestry: named by company/caterpillar (competitor)
+- Discovery Energy, LLC: named by company/caterpillar (competitor)
+- Dongfeng Automotive Co. Ltd.: named by company/cummins (partner)
+- Dongfeng Motor Corporation: named by company/cummins (competitor)
+- Doosan Bobcat: named by company/caterpillar (competitor)
+- Doosan Group: named by company/caterpillar (competitor)
+- EDB Investment Pte. Ltd.: named by company/tsmc (partner)
+- EVE Energy: named by company/cummins (partner)
+- Eaton Cummins Automated Transmission Technologies: named by company/cummins (partner)
+- Eberspacher Holding GmbH & Co. KG: named by company/cummins (competitor)
+- Elavon Financial Services DAC, UK Branch: named by company/intel (supplier)
+- Envision: named by company/ge-vernova (competitor)
+- Epiroc AB: named by company/caterpillar (competitor)
+- Eppendorf SE: named by company/corning (competitor)
+- Everllence SE: named by company/caterpillar (competitor)
+- ExtraHop: named by company/arista (competitor)
+- FPT Industrial SpA: named by company/caterpillar (competitor)
+- FiberHome Technologies: named by company/lumentum (customer)
+- Finjan: named by company/intel (supplier)
+- Foundry JV Holdco LLC: named by company/intel (partner)
+- Foxconn: named by company/super-micro (competitor)
+- Foxconn Hon Hai: named by company/arista (supplier)
+- Foxconn Interconnect Technology: named by company/amphenol (competitor)
+- Foxconn Technology Group: named by company/broadcom (supplier)
+- Framatome: named by company/ge-vernova (competitor)
+- Fujikura: named by company/corning (competitor)
+- Gigamon: named by company/arista (competitor)
+- Glenair: named by company/amphenol (competitor)
+- Global Unichip Corporation: named by company/marvell (competitor)
+- Goldwind: named by company/ge-vernova (competitor)
+- Google: named by company/intel (competitor)
+- Greiner AG: named by company/corning (competitor)
+- Groq, Inc.: named by company/nvidia (supplier)
+- HPE: named by company/intel (customer)
+- HUBER+SUHNER: named by company/amphenol (competitor)
+- Heraeus: named by company/corning (competitor)
+- Higon Information Technology Co., Ltd.: named by company/amd (partner)
+- Hitachi Construction Machinery Co., Ltd.: named by company/caterpillar (competitor)
+- Hitachi Energy: named by company/ge-vernova (competitor)
+- Hitachi Global Life Solutions, Inc.: named by company/johnson-controls (partner)
+- Hitachi High-Tech Corporation: named by company/kla (competitor)
+- Hon Hai Precision Industry Co., Ltd.: named by company/nvidia (supplier)
+- Hyundai Construction Equipment Co., Ltd.: named by company/caterpillar (competitor)
+- Hyundai Doosan Infracore Co., Ltd.: named by company/caterpillar (competitor)
+- IBM: named by company/intel (customer)
+- ICT Luxshare: named by company/amphenol (competitor)
+- INSEAD: named by company/trane (partner)
+- Ibiden Co., Ltd.: named by company/corning (competitor)
+- Isuzu: named by company/cummins (competitor)
+- Iveco Group: named by company/caterpillar (competitor)
+- JENOPTIK Industrial Metrology Germany GmbH: named by company/corning (competitor)
+- JLG Industries, Inc.: named by company/cummins (customer)
+- John Deere Capital Corporation: named by company/caterpillar (competitor)
+- Jonhon: named by company/amphenol (competitor)
+- Juniper Networks: named by company/arista (competitor)
+- Kawasaki Heavy Industries Ltd.: named by company/caterpillar (competitor)
+- King Yuan Electronics Company: named by company/amd (supplier)
+- Knorr-Bremse AG: named by company/cummins (competitor)
+- Kobe Steel, Ltd: named by company/caterpillar (competitor)
+- Kobelco Construction Machinery: named by company/caterpillar (competitor)
+- Kohler/SDMO (Kohler Group): named by company/cummins (competitor)
+- Komatsu America Corporation: named by company/cummins (partner)
+- Komatsu Cummins Chile, Ltda.: named by company/cummins (partner)
+- Komatsu Financial L.P.: named by company/caterpillar (competitor)
+- Kubota Corporation: named by company/caterpillar (competitor)
+- Kubota Credit Corporation: named by company/caterpillar (competitor)
+- Kubota Farm & Industrial Machinery: named by company/caterpillar (competitor)
+- LENS: named by company/corning (competitor)
+- LG Electronics Inc.: named by company/intel (customer)
+- Lasertec, Inc.: named by company/kla (competitor)
+- Leroy Somer: named by company/cummins (competitor)
+- Liebherr-International AG: named by company/caterpillar (competitor)
+- Lightmatter, Inc.: named by company/marvell (competitor)
+- Longking Holdings Ltd.: named by company/caterpillar (competitor)
+- MTU (Rolls Royce Power Systems Group): named by company/cummins (competitor)
+- Marathon Electric: named by company/cummins (competitor)
+- Meccalte: named by company/cummins (competitor)
+- Microsemi Corporation: named by company/amd (competitor)
+- Midea Group: named by company/carrier (partner)
+- Mitsubishi Electric: named by company/ge-vernova (competitor)
+- Mitsubishi Heavy Industries: named by company/cummins (competitor)
+- Mitsubishi Power: named by company/ge-vernova (competitor)
+- Molex: named by company/amphenol (competitor)
+- Munger, Tolles & Olson LLP: named by company/super-micro (supplier)
+- NEIL: named by company/constellation (supplier)
+- NGK Insulators, Ltd.: named by company/corning (competitor)
+- NXP Semiconductors Germany GmbH: named by company/tsmc (partner)
+- National Association of Manufacturers: named by company/trane (partner)
+- National Society of Black Engineers: named by company/trane (partner)
+- NeuroLeadership Institute: named by company/trane (partner)
+- NextEra Energy Resources LLC: named by company/constellation (partner)
+- Nikon: named by company/asml (competitor)
+- Nippon Electric Glass Co., Ltd.: named by company/corning (competitor)
+- Nordex: named by company/ge-vernova (competitor)
+- OmniVision Technologies Inc.: named by company/tsmc (partner)
+- OpenAI: named by company/nvidia (partner)
+- OpenAI OpCo, LLC: named by company/amd (customer)
+- Opportunity at Work: named by company/trane (partner)
+- PECO: named by company/constellation (partner)
+- PSEG: named by company/constellation (partner)
+- PSEG Nuclear, LLC: named by company/constellation (partner)
+- Phison Electronics Corporation: named by company/marvell (competitor)
+- Positive Technologies: named by company/intel (partner)
+- PricewaterhouseCoopers Accountants N.V. (PwC): named by company/asml (supplier)
+- Quanta Computer: named by company/super-micro (competitor)
+- Ranovus Inc.: named by company/marvell (competitor)
+- Realtek Semiconductor Corporation: named by company/marvell (competitor)
+- Renesas Electronics Corporation: named by company/nvidia (competitor)
+- Rolls-Royce: named by company/ge-vernova (competitor)
+- Rolls-Royce Power Systems AG: named by company/caterpillar (competitor)
+- Rosenberger: named by company/amphenol (competitor)
+- SLP VII Gryphon Aggregator, L.P.: named by company/intel (partner)
+- STPNOC: named by company/constellation (partner)
+- Sandvik AB: named by company/caterpillar (competitor)
+- Sarstedt AG & Co. KG: named by company/corning (competitor)
+- Schott AG: named by company/corning (competitor)
+- Screen Holding Co., Ltd.: named by company/lam-research (competitor)
+- Semes Co., Ltd.: named by company/lam-research (competitor)
+- Shandong Heavy Industry Group Co.: named by company/caterpillar (competitor)
+- Shandong Lingong Construction Machinery Co., Ltd.: named by company/caterpillar (competitor)
+- Shantui Construction Machinery Co., Ltd.: named by company/caterpillar (competitor)
+- Siemens: named by company/ge-vernova (competitor)
+- Siemens Mobility A/S: named by company/caterpillar (competitor)
+- Siemens Smart Infrastructure: named by company/johnson-controls (competitor)
+- Siemens-Gamesa: named by company/ge-vernova (competitor)
+- Silicon Valley Bank: named by company/marvell (supplier)
+- Society for Women Engineers: named by company/trane (partner)
+- Society of Hispanic Professional Engineers: named by company/trane (partner)
+- Socionext Inc.: named by company/marvell (competitor)
+- Société Générale S.A.: named by company/caterpillar (competitor)
+- Sony Semiconductor Solution Corporation: named by company/tsmc (partner)
+- Sumitomo: named by company/corning (competitor)
+- Sustainalytics: named by company/asml (supplier)
+- Tenneco Inc.: named by company/cummins (competitor)
+- Tokyo Electron, Ltd.: named by company/lam-research (competitor)
+- VMware LLC: named by company/dell (supplier)
+- Valve: named by company/amd (customer)
+- Vestas: named by company/ge-vernova (competitor)
+- Voestalpine AG: named by company/caterpillar (competitor)
+- Volkswagen Caminhões e Ônibus: named by company/cummins (customer)
+- Volvo Construction Equipment: named by company/caterpillar (competitor)
+- Volvo Financial Services: named by company/caterpillar (competitor)
+- Volvo Group: named by company/caterpillar (competitor)
+- Volvo Penta AB: named by company/caterpillar (competitor)
+- Volvo Powertrain: named by company/cummins (competitor)
+- Vossloh AG: named by company/caterpillar (competitor)
+- Wabtec Corp: named by company/caterpillar (competitor)
+- Wells Fargo Bank, National Association: named by company/intel (supplier)
+- Wells Fargo Equipment Finance Inc.: named by company/caterpillar (competitor)
+- Westinghouse: named by company/ge-vernova (competitor)
+- Wistron Corporation: named by company/nvidia (supplier)
+- Wiwynn Corporation: named by company/super-micro (competitor)
+- Wonik IPS: named by company/lam-research (competitor)
+- XCMG Construction Machinery Co., Ltd.: named by company/caterpillar (competitor)
+- Xintec, Inc.: named by company/tsmc (supplier)
+- Xuzhou Construction Machinery Group: named by company/cummins (customer)
+- Yazaki: named by company/amphenol (competitor)
+- Yuchai: named by company/cummins (competitor)
+- ZF Friedrichshafen AG: named by company/cummins (competitor)
+- Zoomlion Heavy Industry Science & Technology Co., Ltd: named by company/cummins (customer)
+- imec: named by company/asml (partner)
+
+<!-- growth:non-sec:end -->

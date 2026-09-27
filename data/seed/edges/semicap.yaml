@@ -1,0 +1,287 @@
+# Stage A: semicap. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/euv-lithography
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.asml.com/en/investors/annual-report/2025/financials
+      note: "2025 system sales: logic EUR 16.1B vs memory EUR 8.4B; EUV logic demand is almost all leading edge"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: product/euv-lithography
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.asml.com/en/investors/annual-report/2025/financials
+      note: "Memory is about a third of ASML system sales; DRAM EUV layers are a minor share of EUV demand"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/duv-lithography
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.techpowerup.com/345731/asml-reports-eur-32-7-billion-total-net-sales-and-eur-9-6-billion-net-income-in-2025
+      note: "DUV sales EUR 12.0B in 2025, much of it for mature nodes; leading edge is a minor share"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: product/duv-lithography
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.asml.com/en/investors/annual-report/2025/financials
+      note: "Memory is about a third of system sales; DRAM is a minor share of DUV demand"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/deposition-equipment
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "FY2025 Semiconductor Systems by market: foundry, logic and other 67%, DRAM 26%, flash 7%"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: product/deposition-equipment
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "DRAM was 26% of FY2025 systems sales; HBM is carried by its own edge"
+      accessed: 2026-09-26
+
+- src: product/hbm
+  rel: REQUIRES
+  dst: product/deposition-equipment
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Part of DRAM tool demand is HBM capacity (stacking and TSV steps); inference for the split"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/etch-equipment
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Foundry and logic are about two thirds of WFE at Applied; leading edge is a major share"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: product/etch-equipment
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "DRAM was 26% of FY2025 systems sales; split with HBM"
+      accessed: 2026-09-26
+
+- src: product/hbm
+  rel: REQUIRES
+  dst: product/etch-equipment
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "HBM needs through-silicon-via etch; inference that it is a minor share of etch demand"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/inspection-metrology
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://finance.yahoo.com/news/kla-corps-growing-semiconductor-process-173000450.html
+      note: "Process control intensity is highest at leading-edge logic; inference for a major share"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: product/inspection-metrology
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Memory is about a third of WFE; DRAM is a minor share of inspection demand"
+      accessed: 2026-09-26
+
+- src: company/asml
+  rel: PRODUCES
+  dst: product/euv-lithography
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.techpowerup.com/345731/asml-reports-eur-32-7-billion-total-net-sales-and-eur-9-6-billion-net-income-in-2025
+      note: "2025 EUV system sales reported at about EUR 11.6B of EUR 32.7B total net sales"
+      accessed: 2026-09-26
+
+- src: company/asml
+  rel: PRODUCES
+  dst: product/duv-lithography
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.techpowerup.com/345731/asml-reports-eur-32-7-billion-total-net-sales-and-eur-9-6-billion-net-income-in-2025
+      note: "2025 DUV system sales reported at about EUR 12.0B of EUR 32.7B total net sales"
+      accessed: 2026-09-26
+
+- src: company/applied-materials
+  rel: PRODUCES
+  dst: product/deposition-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Semiconductor Systems were 73% of FY2025 revenue; deposition is Applied's largest tool family"
+      accessed: 2026-09-26
+
+- src: company/applied-materials
+  rel: PRODUCES
+  dst: product/etch-equipment
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Etch is one of several Applied tool lines; inference that it is a minor share of revenue"
+      accessed: 2026-09-26
+
+- src: company/applied-materials
+  rel: PRODUCES
+  dst: product/inspection-metrology
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Applied sells inspection and metrology tools as a smaller line within Semiconductor Systems"
+      accessed: 2026-09-26
+
+- src: company/lam-research
+  rel: PRODUCES
+  dst: product/etch-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-07-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/707549/000070754925000075/lrcx-20250629.htm
+      note: "FY2025 revenue $18.4B from deposition, etch and clean tools plus services; etch is a leading line"
+      accessed: 2026-09-26
+
+- src: company/lam-research
+  rel: PRODUCES
+  dst: product/deposition-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-07-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/707549/000070754925000075/lrcx-20250629.htm
+      note: "Deposition is Lam's other main systems line alongside etch"
+      accessed: 2026-09-26
+
+- src: company/kla
+  rel: PRODUCES
+  dst: product/inspection-metrology
+  weight: 0.9
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2024-07-01
+  evidence:
+    - url: https://ir.kla.com/news-events/press-releases/detail/500/kla-corporation-reports-fiscal-2025-fourth-quarter-and-full
+      note: "FY2025: Semiconductor Process Control $10.95B of $12.16B total revenues = 0.90"
+      accessed: 2026-09-26
+
+- src: company/tokyo-electron
+  rel: PRODUCES
+  dst: product/etch-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://ninescrolls.com/news/tokyo-electron-posts-record-jpy-2-44-trillion-fy2026-guides-first-half-fy2027
+      note: "Etch is TEL's largest business, heading for about JPY 1T against JPY 2.44T FY2026 sales"
+      accessed: 2026-09-26
+
+- src: company/tokyo-electron
+  rel: PRODUCES
+  dst: product/deposition-equipment
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://ninescrolls.com/news/tokyo-electron-posts-record-jpy-2-44-trillion-fy2026-guides-first-half-fy2027
+      note: "TEL holds about a quarter of deposition; deposition is a major line next to etch and coater/developer"
+      accessed: 2026-09-26

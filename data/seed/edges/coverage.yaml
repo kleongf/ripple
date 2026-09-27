@@ -1,0 +1,266 @@
+# Coverage pass (2026-09-26): generators, chillers, wafers, photoresist, tracks, Intel.
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/backup-generators
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.marketsandmarkets.com/ResearchInsight/data-center-generators-companies.asp
+      note: "Data centers are the leading market for large standby generators, led by Cummins and Caterpillar"
+      accessed: 2026-09-26
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/datacenter-chillers
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/data-center-cooling-drives-johnson-controls-growth/804990/
+      note: "Node is data center chillers by definition; chiller makers report data centers as their fastest-growing market"
+      accessed: 2026-09-26
+
+- src: company/cummins
+  rel: PRODUCES
+  dst: product/backup-generators
+  weight: 0.11
+  weight_source: manual
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/26172/000002617226000009/cmi-20251231.htm
+      note: "Power Systems was 18% of 2025 net sales; power generation about 63% of it (9 months) = about 0.11"
+      accessed: 2026-09-26
+    - url: https://www.sec.gov/Archives/edgar/data/26172/000002617225000039/cmi-20250930.htm
+      note: "Nine-month 2025 Power Systems: power generation $3.49B of $5.53B segment sales"
+      accessed: 2026-09-26
+
+- src: company/caterpillar
+  rel: PRODUCES
+  dst: product/backup-generators
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://finance.yahoo.com/sectors/energy/articles/caterpillars-power-energy-segment-next-172100479.html
+      note: "Power & Energy was $28.6B, 42% of 2025 revenue; power generation is one part next to oil, gas and transport"
+      accessed: 2026-09-26
+
+- src: company/trane
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://investors.tranetechnologies.com/news-and-events/news-releases/news-release-details/2026/Trane-Technologies-Reports-Strong-Fourth-Quarter-and-Full-Year-2025-Results-Robust-Bookings-and-Backlog-Provide-Strong-Visibility-Entering-2026/default.aspx
+      note: "Commercial HVAC led 2025 growth with data center applied systems; data center share of revenue not disclosed"
+      accessed: 2026-09-26
+
+- src: company/carrier
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.046
+  weight_source: filing
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://247wallst.com/investing/2026/03/04/carrier-ceo-north-american-data-center-orders-surged-400-in-q4/
+      note: "CEO: data center revenue reached about $1B in 2025, up from near zero at spin"
+      accessed: 2026-09-26
+    - url: https://ir.carrier.com/news/news-details/2026/Carrier-Reports-2025-Results-and-Announces-2026-Outlook/default.aspx
+      note: "2025 sales $21.75B, so data centers are about 0.046 of revenue"
+      accessed: 2026-09-26
+
+- src: company/johnson-controls
+  rel: PRODUCES
+  dst: product/datacenter-chillers
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.facilitiesdive.com/news/data-center-cooling-drives-johnson-controls-growth/804990/
+      note: "Data center cooling (York chillers) drives JCI growth; the share of revenue is not disclosed"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: material/silicon-wafers
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/semi-reports-2025-annual-worldwide-silicon-wafer-shipments-and-revenue-results
+      note: "300mm wafers serve logic, memory and mature nodes; leading-edge logic is a minor share of wafer area"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: material/silicon-wafers
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/semi-reports-2025-annual-worldwide-silicon-wafer-shipments-and-revenue-results
+      note: "DRAM is a minor share of total silicon wafer demand"
+      accessed: 2026-09-26
+
+- src: product/hbm
+  rel: REQUIRES
+  dst: material/silicon-wafers
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/semi-reports-2025-annual-worldwide-silicon-wafer-shipments-and-revenue-results
+      note: "HBM consumes several DRAM dies per stack, so it uses wafer area out of proportion to its bits"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: material/photoresist
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.tok.co.jp/application/files/9517/5447/6258/account_2512_2_en.pdf
+      note: "Advanced (EUV/ArF) resists were about 23% of TOK electronic materials sales; leading-edge logic is part of that"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: material/photoresist
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.tok.co.jp/application/files/9517/5447/6258/account_2512_2_en.pdf
+      note: "Memory uses ArF and some EUV resist; inference for a minor share of photoresist demand"
+      accessed: 2026-09-26
+
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/coater-developer
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "Tracks pair with lithography tools; foundry and logic are about two thirds of WFE"
+      accessed: 2026-09-26
+
+- src: product/dram
+  rel: REQUIRES
+  dst: product/coater-developer
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm
+      note: "DRAM is a minor share of WFE, and so of track demand"
+      accessed: 2026-09-26
+
+- src: company/shin-etsu
+  rel: PRODUCES
+  dst: material/silicon-wafers
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://en.tmt-blog.jp/articles/company-shin-etsu-en
+      note: "Electronics materials about 36% of FY2025 revenue, mostly silicon wafers where Shin-Etsu leads the market"
+      accessed: 2026-09-26
+
+- src: company/shin-etsu
+  rel: PRODUCES
+  dst: material/photoresist
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://en.tmt-blog.jp/articles/company-shin-etsu-en
+      note: "Photoresists are a smaller part of Shin-Etsu's electronics materials"
+      accessed: 2026-09-26
+
+- src: company/sumco
+  rel: PRODUCES
+  dst: material/silicon-wafers
+  weight: 0.9
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://quartr.com/companies/sumco-corporation_15578
+      note: "SUMCO is a pure-play silicon wafer maker; 300mm demand for AI drives its sales"
+      accessed: 2026-09-26
+
+- src: company/tokyo-ohka
+  rel: PRODUCES
+  dst: material/photoresist
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.tok.co.jp/application/files/9517/5447/6258/account_2512_2_en.pdf
+      note: "2025: Electronic Functional Materials (mainly photoresists) about 52.6% of sales, high-purity chemicals 46%"
+      accessed: 2026-09-26
+
+- src: company/tokyo-electron
+  rel: PRODUCES
+  dst: product/coater-developer
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-04-01
+  evidence:
+    - url: https://www.tel.com/ir/library/report/pjuomj00000000tf-att/fy26q4transcript-e.pdf
+      note: "TEL holds about 91% of coater/developers and expects that line to grow over 50% in FY2027"
+      accessed: 2026-09-26
+
+- src: company/intel
+  rel: PRODUCES
+  dst: product/server-cpus
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://futurumgroup.com/insights/intel-q3-fy-2025-revenue-beat-ai-partnerships-and-foundry-progress/
+      note: "Data Center and AI revenue about $4.1B a quarter in 2025 against about $53B annual revenue"
+      accessed: 2026-09-26

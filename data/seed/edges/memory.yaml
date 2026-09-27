@@ -1,0 +1,105 @@
+# Stage A: memory. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: company/sk-hynix
+  rel: PRODUCES
+  dst: product/hbm
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://news.skhynix.com/en/sk-hynix-announces-fy25-financial-results/
+      note: "2025 record results; HBM revenue more than doubled and is a large part of DRAM sales"
+      accessed: 2026-09-26
+
+- src: company/sk-hynix
+  rel: PRODUCES
+  dst: product/dram
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://news.skhynix.com/en/sk-hynix-announces-fy25-financial-results/
+      note: "DRAM is most of SK hynix revenue; conventional DRAM remains the largest line after HBM"
+      accessed: 2026-09-26
+
+- src: company/sk-hynix
+  rel: PRODUCES
+  dst: product/enterprise-ssds
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://news.skhynix.com/en/sk-hynix-announces-fy25-financial-results/
+      note: "NAND, including enterprise SSDs through Solidigm, is a smaller part of revenue"
+      accessed: 2026-09-26
+
+- src: company/micron
+  rel: PRODUCES
+  dst: product/enterprise-ssds
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-09-01
+  evidence:
+    - url: https://futurumgroup.com/insights/micron-q4-fy-2025-earnings-top-estimates-on-dram-and-hbm-strength/
+      note: "NAND is under a quarter of revenue; data center SSDs are a part of it"
+      accessed: 2026-09-26
+
+- src: company/samsung-electronics
+  rel: PRODUCES
+  dst: product/dram
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.blocksandfiles.com/flash/2026/01/29/samsung-electronics-triples-profit-as-hbm-revenues-rocket-up/4090439
+      note: "2025 revenue KRW 333.6T; memory is a large but not majority part, with devices and displays the rest"
+      accessed: 2026-09-26
+
+- src: company/samsung-electronics
+  rel: PRODUCES
+  dst: product/hbm
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.blocksandfiles.com/flash/2026/01/29/samsung-electronics-triples-profit-as-hbm-revenues-rocket-up/4090439
+      note: "HBM revenue rose sharply in late 2025 but is small against Samsung's total revenue"
+      accessed: 2026-09-26
+
+- src: company/samsung-electronics
+  rel: PRODUCES
+  dst: product/enterprise-ssds
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.blocksandfiles.com/flash/2026/01/29/samsung-electronics-triples-profit-as-hbm-revenues-rocket-up/4090439
+      note: "Enterprise SSDs are one part of Samsung's memory business; minor against group revenue"
+      accessed: 2026-09-26
+
+- src: company/samsung-electronics
+  rel: PRODUCES
+  dst: product/leading-edge-logic
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.blocksandfiles.com/flash/2026/01/29/samsung-electronics-triples-profit-as-hbm-revenues-rocket-up/4090439
+      note: "Samsung Foundry makes advanced logic but held only single-digit foundry share in 2025 and lost money"
+      accessed: 2026-09-26

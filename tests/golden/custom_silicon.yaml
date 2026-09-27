@@ -1,0 +1,10 @@
+# Written before any Stage B ranking was run (M9). A test fails when the ranking violates it.
+theme: theme/custom-silicon-adoption
+top_n: 10
+# Custom ASIC designers win share from merchant GPU vendors.
+positive: [company/broadcom, company/marvell]
+negative: [company/nvidia, company/amd]
+# Added before the sourced-numbers pass (2026-09-26): custom ASICs also use HBM, so moving
+# accelerator demand to ASICs should leave memory makers roughly flat. Bucket rounding made them
+# -0.01 (docs/phase-0-review.md, "What looked wrong" 3). They may not fall below -0.005.
+at_least: {company/sk-hynix: -0.005, company/micron: -0.005}

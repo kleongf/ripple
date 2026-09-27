@@ -1,0 +1,8 @@
+# Written before any Stage B ranking was run (M9). A test fails when the ranking violates it.
+theme: theme/datacenter-power-demand
+top_n: 10
+# Power generation and grid equipment makers carry this theme.
+in_top: [company/constellation, company/ge-vernova, company/siemens-energy]
+positive: [company/constellation, company/ge-vernova, company/siemens-energy]
+# Chips do not depend on how data centers are powered.
+zero: [company/nvidia, company/tsmc, company/asml]

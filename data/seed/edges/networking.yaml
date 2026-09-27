@@ -1,0 +1,196 @@
+# Stage B: networking. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: product/ai-servers
+  rel: REQUIRES
+  dst: product/datacenter-switches
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://futurumgroup.com/insights/arista-networks-q4-fy-2025-revenue-beat-on-ai-ethernet-momentum/
+      note: "Arista targets at least $3.5B of AI fabric revenue within $12.6B 2026 guidance; AI is a major share of switching"
+      accessed: 2026-09-26
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/datacenter-switches
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results/default.aspx
+      note: "Front-end and general cloud networking come with new data center capacity; inference for a minor share"
+      accessed: 2026-09-26
+
+- src: product/ai-servers
+  rel: REQUIRES
+  dst: product/optical-transceivers
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.lightcounting.com/newsletter/en/january-2025-optics-for-ai-clusters-319
+      note: "LightCounting: AI clusters drive the wave of optical transceiver demand, doubling that segment from 2024 to 2026"
+      accessed: 2026-09-26
+
+- src: product/optical-transceivers
+  rel: REQUIRES
+  dst: product/lasers
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.semiconductor-today.com/news_items/2025/aug/lumentum-220825.shtml
+      note: "EML laser chips for 800G transceivers drove Lumentum component growth; lasers also serve telecom and industry"
+      accessed: 2026-09-26
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/fiber-cable
+  weight: 0.48
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://convergedigest.com/corning-delivers-record-2025-results-raises-springboard-growth-targets/
+      note: "Corning 2025: enterprise optical (incl. hyperscale data centers) a little over $3B of $6.27B optical = 0.48"
+      accessed: 2026-09-26
+
+- src: product/ai-servers
+  rel: REQUIRES
+  dst: product/copper-interconnect
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://finance.yahoo.com/markets/stocks/articles/amphenol-corporation-q4-2025-earnings-213319977.html
+      note: "Amphenol IT datacom growth in 2025 was led by AI; inference that AI racks are a major share of high-speed copper"
+      accessed: 2026-09-26
+
+- src: company/arista
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.84
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results/default.aspx
+      note: "2025: product revenue $7.58B of $9.01B total = 0.84; products are overwhelmingly switches"
+      accessed: 2026-09-26
+
+- src: company/nvidia
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.145
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-02-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26cfocommentary.htm
+      note: "FY2026 Data Center networking $31.4B of $215.9B total revenue = 0.145"
+      accessed: 2026-09-26
+
+- src: company/broadcom
+  rel: PRODUCES
+  dst: product/datacenter-switches
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2024-11-01
+  evidence:
+    - url: https://futurumgroup.com/insights/broadcom-q4-fy-2025-earnings-ai-and-software-drive-beat/
+      note: "AI networking (switch silicon) is part of Broadcom's $20B FY2025 AI revenue; minor against $64B total"
+      accessed: 2026-09-26
+
+- src: company/coherent
+  rel: PRODUCES
+  dst: product/optical-transceivers
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-07-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/820318/000082031825000014/iivi-20250630.htm
+      note: "FY2025 revenue $5.81B; Datacenter & Communications grew 51% and is most of revenue, led by transceivers"
+      accessed: 2026-09-26
+
+- src: company/lumentum
+  rel: PRODUCES
+  dst: product/lasers
+  weight: 0.6
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-07-01
+  evidence:
+    - url: https://www.semiconductor-today.com/news_items/2025/aug/lumentum-220825.shtml
+      note: "Cloud & Networking was about 86% of FY2025 revenue; laser chips and assemblies drove most component growth"
+      accessed: 2026-09-26
+
+- src: company/lumentum
+  rel: PRODUCES
+  dst: product/optical-transceivers
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2024-07-01
+  evidence:
+    - url: https://www.semiconductor-today.com/news_items/2025/aug/lumentum-220825.shtml
+      note: "Cloud transceiver lines drove Lumentum systems revenue growth in FY2025"
+      accessed: 2026-09-26
+
+- src: company/corning
+  rel: PRODUCES
+  dst: product/fiber-cable
+  weight: 0.38
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://convergedigest.com/corning-delivers-record-2025-results-raises-springboard-growth-targets/
+      note: "2025: Optical Communications $6.27B of $16.41B core sales = 0.38"
+      accessed: 2026-09-26
+
+- src: company/amphenol
+  rel: PRODUCES
+  dst: product/copper-interconnect
+  weight: 0.25
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://finance.yahoo.com/markets/stocks/articles/amphenol-corporation-q4-2025-earnings-213319977.html
+      note: "IT datacom was about 36% of 2025 net sales; high-speed copper is a large part of it alongside fiber"
+      accessed: 2026-09-26
+
+- src: product/optical-transceivers
+  rel: REQUIRES
+  dst: product/optical-dsps
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-02-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1835632/000183563226000011/mrvl-20260131.htm
+      note: "Marvell sells electro-optics DSPs for data center optical modules; nearly all DSP demand comes from transceivers"
+      accessed: 2026-09-27

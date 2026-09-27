@@ -1,0 +1,24 @@
+- id: theme/ai-compute-demand
+  type: theme
+  kind: volume
+  label: AI compute demand
+  aliases: [AI infrastructure build-out, AI capex, generative AI demand]
+
+- id: theme/liquid-cooling-adoption
+  type: theme
+  kind: share_shift
+  label: Liquid cooling adoption
+  aliases: [shift from air to liquid cooling, direct-to-chip cooling adoption]
+
+# Stage B
+- id: theme/datacenter-power-demand
+  type: theme
+  kind: volume
+  label: Datacenter power demand
+  aliases: [data center electricity demand, power for AI data centers]
+
+- id: theme/custom-silicon-adoption
+  type: theme
+  kind: share_shift
+  label: Custom silicon adoption
+  aliases: [shift from GPUs to custom ASICs, hyperscaler custom chips]

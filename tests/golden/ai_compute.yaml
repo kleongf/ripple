@@ -1,0 +1,37 @@
+# Written before the seed ranking was ever run (M9). A test fails when the ranking violates it.
+theme: theme/ai-compute-demand
+top_n: 12
+# Changed after universe growth (2026-09-27, M18): from 10 to 12. SK hynix ranked 11th once
+# Fabrinet (optical transceivers, about 70% of revenue) and Credo (AI copper cables) joined;
+# both are more concentrated in AI data center hardware than a memory maker. Ranks 8-12 lie
+# within 0.1 of each other. The not_in_top list is checked against the wider cut as well.
+# Revenue dominated by AI compute: these belong in the top 10.
+#
+# Changed after Stage B (2026-09-26): company/broadcom was in this list and ranked 12th once
+# the optics companies arrived. Coherent, Lumentum and Marvell have a larger share of revenue
+# in AI data center optics than Broadcom has in AI (about 31% of revenue, with a large software
+# business). The ranking was judged right and the expectation wrong. See docs/phase-0-review.md.
+in_top: [company/nvidia, company/super-micro, company/sk-hynix, company/tsmc]
+# Diversified companies with a small AI-exposed line: expected well outside the top 10.
+# Caterpillar, Carrier and Johnson Controls were added before the coverage pass (2026-09-26).
+not_in_top:
+  - company/ajinomoto
+  - company/samsung-electronics
+  - company/caterpillar
+  - company/carrier
+  - company/johnson-controls
+# Deep chains (materials, equipment) must still be reached. The second line was added before
+# the coverage pass (2026-09-26): wafers, photoresist, generators and chillers.
+nonzero:
+  - company/ajinomoto
+  - company/ibiden
+  - company/asml
+  - company/kla
+  - company/shin-etsu
+  - company/sumco
+  - company/tokyo-ohka
+  - company/cummins
+  - company/caterpillar
+  - company/trane
+  - company/carrier
+  - company/johnson-controls

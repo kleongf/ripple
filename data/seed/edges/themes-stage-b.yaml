@@ -1,0 +1,40 @@
+# Stage B: themes-stage-b. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: theme/datacenter-power-demand
+  rel: DRIVES
+  dst: product/electricity-demand
+  weight: 0.044
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2023-01-01
+  evidence:
+    - url: https://newscenter.lbl.gov/2025/01/15/berkeley-lab-report-evaluates-increase-in-electricity-demand-from-data-centers/
+      note: "LBNL: data centers used about 4.4% of US electricity in 2023, projected 6.7-12% by 2028"
+      accessed: 2026-09-26
+
+- src: theme/custom-silicon-adoption
+  rel: DRIVES
+  dst: product/custom-ai-asics
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.trendforce.com/presscenter/news/20260120-12887.html
+      note: "TrendForce: ASIC-based AI servers expected to reach 27.8% share in 2026, the highest since 2023"
+      accessed: 2026-09-26
+
+- src: theme/custom-silicon-adoption
+  rel: DRIVES
+  dst: product/ai-accelerators
+  weight: 0.1
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.5
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.trendforce.com/presscenter/news/20260120-12887.html
+      note: "Share gained by ASIC-based servers comes from GPU-based servers; GPUs are the larger base, so a smaller fraction"
+      accessed: 2026-09-26

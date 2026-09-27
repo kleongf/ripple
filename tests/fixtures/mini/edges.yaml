@@ -1,0 +1,145 @@
+# Mini graph edges. Every expected number in docs/phase-0.md M2 depends on these.
+- src: theme/ai-compute
+  rel: DRIVES
+  dst: product/accelerators
+  weight: 1.0
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: theme/ai-compute
+  rel: DRIVES
+  dst: product/dc-capacity
+  weight: 0.5
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: product/accelerators
+  rel: REQUIRES
+  dst: product/leading-edge-logic
+  weight: 0.4
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: product/leading-edge-logic
+  rel: REQUIRES
+  dst: product/euv
+  weight: 0.8
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: product/dc-capacity
+  rel: REQUIRES
+  dst: product/liquid-cooling
+  weight: 0.9
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/nvidia
+  rel: PRODUCES
+  dst: product/accelerators
+  weight: 0.9
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/tsmc
+  rel: PRODUCES
+  dst: product/leading-edge-logic
+  weight: 0.6
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/asml
+  rel: PRODUCES
+  dst: product/euv
+  weight: 0.5
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/vertiv
+  rel: PRODUCES
+  dst: product/liquid-cooling
+  weight: 0.3
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/multi
+  rel: PRODUCES
+  dst: product/accelerators
+  weight: 0.1
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/multi
+  rel: PRODUCES
+  dst: product/euv
+  weight: 0.2
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/parts
+  rel: SUPPLIES
+  dst: company/nvidia
+  weight: 0.5
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: theme/cooling-shift
+  rel: DRIVES
+  dst: product/liquid-cooling
+  weight: 0.3
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: theme/cooling-shift
+  rel: DRIVES
+  dst: product/air-cooling
+  weight: 0.3
+  weight_source: manual
+  polarity: -1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/aircool
+  rel: PRODUCES
+  dst: product/air-cooling
+  weight: 0.7
+  weight_source: manual
+  polarity: 1
+  confidence: 1.0
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]
+- src: company/rumor
+  rel: PRODUCES
+  dst: product/accelerators
+  weight: 0.5
+  weight_source: manual
+  polarity: 1
+  confidence: 0.3
+  valid_from: 2020-01-01
+  evidence: [{url: https://example.com/fixture, note: fixture edge, accessed: 2026-01-01}]

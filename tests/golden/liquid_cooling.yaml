@@ -1,0 +1,6 @@
+# Written before the seed ranking was ever run (M9). A test fails when the ranking violates it.
+theme: theme/liquid-cooling-adoption
+top_n: 10
+# Only cooling makers move on a share shift between cooling technologies.
+nonzero: [company/vertiv, company/schneider-electric]
+zero: [company/nvidia, company/tsmc, company/asml]

@@ -1,0 +1,53 @@
+# Stage A: themes. Weights are buckets unless weight_source says filing (docs/phase-0.md).
+
+- src: theme/ai-compute-demand
+  rel: DRIVES
+  dst: product/ai-servers
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.trendforce.com/presscenter/news/20260120-12887.html
+      note: "AI servers exist to run AI training and inference, so nearly all their demand is AI compute demand"
+      accessed: 2026-09-26
+
+- src: theme/ai-compute-demand
+  rel: DRIVES
+  dst: product/datacenter-capacity
+  weight: 0.1
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.carbonbrief.org/ai-five-charts-that-put-data-centre-energy-use-and-emissions-into-context
+      note: "IEA via Carbon Brief: AI was about 5-15% of data centre power in recent years; 0.1 is the midpoint"
+      accessed: 2026-09-26
+
+- src: theme/liquid-cooling-adoption
+  rel: DRIVES
+  dst: product/liquid-cooling
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://iconnect007.com/article/151221/liquid-cooling-to-reach-53-of-highend-ai-infrastructure-in-2026/151218/ein
+      note: "TrendForce: liquid cooling penetration of AI chips about 33% in 2025, about 53% in 2026"
+      accessed: 2026-09-26
+
+- src: theme/liquid-cooling-adoption
+  rel: DRIVES
+  dst: product/air-cooling
+  weight: 0.1
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://iconnect007.com/article/151221/liquid-cooling-to-reach-53-of-highend-ai-infrastructure-in-2026/151218/ein
+      note: "Each point of liquid penetration in AI racks replaces air cooling; air is the larger base, so a smaller fraction moves"
+      accessed: 2026-09-26

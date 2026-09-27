@@ -1,0 +1,39 @@
+- {id: company/nvidia, type: company, label: Nvidia, ticker: NVDA, country: US, aliases: [NVIDIA Corporation]}
+- {id: company/amd, type: company, label: AMD, ticker: AMD, country: US, aliases: [Advanced Micro Devices]}
+- {id: company/broadcom, type: company, label: Broadcom, ticker: AVGO, country: US, aliases: [Broadcom Inc.]}
+- {id: company/marvell, type: company, label: Marvell Technology, ticker: MRVL, country: US, aliases: [Marvell]}
+- {id: company/super-micro, type: company, label: Super Micro Computer, ticker: SMCI, country: US, aliases: [Supermicro]}
+- {id: company/dell, type: company, label: Dell Technologies, ticker: DELL, country: US, aliases: [Dell]}
+- {id: company/sk-hynix, type: company, label: SK hynix, ticker: 000660.KS, country: KR, aliases: [SK Hynix, Hynix]}
+- {id: company/micron, type: company, label: Micron Technology, ticker: MU, country: US, aliases: [Micron]}
+- {id: company/samsung-electronics, type: company, label: Samsung Electronics, ticker: 005930.KS, country: KR, aliases: [Samsung]}
+- {id: company/tsmc, type: company, label: TSMC, ticker: TSM, country: TW, aliases: [Taiwan Semiconductor Manufacturing]}
+- {id: company/ibiden, type: company, label: Ibiden, ticker: 4062.T, country: JP, aliases: [IBIDEN]}
+- {id: company/ajinomoto, type: company, label: Ajinomoto, ticker: 2802.T, country: JP, aliases: [Ajinomoto Co.]}
+- {id: company/asml, type: company, label: ASML Holding, ticker: ASML, country: NL, aliases: [ASML]}
+- {id: company/applied-materials, type: company, label: Applied Materials, ticker: AMAT, country: US, aliases: [AMAT]}
+- {id: company/lam-research, type: company, label: Lam Research, ticker: LRCX, country: US, aliases: [Lam]}
+- {id: company/kla, type: company, label: KLA, ticker: KLAC, country: US, aliases: [KLA Corporation, KLA-Tencor]}
+- {id: company/tokyo-electron, type: company, label: Tokyo Electron, ticker: 8035.T, country: JP, aliases: [TEL]}
+- {id: company/vertiv, type: company, label: Vertiv, ticker: VRT, country: US, aliases: [Vertiv Holdings]}
+- {id: company/schneider-electric, type: company, label: Schneider Electric, ticker: SU.PA, country: FR, aliases: [Schneider]}
+- {id: company/eaton, type: company, label: Eaton, ticker: ETN, country: IE, aliases: [Eaton Corporation]}
+# Stage B
+- {id: company/arista, type: company, label: Arista Networks, ticker: ANET, country: US, aliases: [Arista]}
+- {id: company/coherent, type: company, label: Coherent, ticker: COHR, country: US, aliases: [Coherent Corp., II-VI]}
+- {id: company/lumentum, type: company, label: Lumentum, ticker: LITE, country: US, aliases: [Lumentum Holdings]}
+- {id: company/corning, type: company, label: Corning, ticker: GLW, country: US, aliases: [Corning Incorporated]}
+- {id: company/amphenol, type: company, label: Amphenol, ticker: APH, country: US, aliases: [Amphenol Corporation]}
+- {id: company/ge-vernova, type: company, label: GE Vernova, ticker: GEV, country: US, aliases: [GEV]}
+- {id: company/siemens-energy, type: company, label: Siemens Energy, ticker: ENR.DE, country: DE, aliases: [Siemens Energy AG]}
+- {id: company/constellation, type: company, label: Constellation Energy, ticker: CEG, country: US, aliases: [Constellation]}
+# Coverage pass (2026-09-26)
+- {id: company/cummins, type: company, label: Cummins, ticker: CMI, country: US, aliases: [Cummins Inc.]}
+- {id: company/caterpillar, type: company, label: Caterpillar, ticker: CAT, country: US, aliases: [Caterpillar Inc., Cat]}
+- {id: company/trane, type: company, label: Trane Technologies, ticker: TT, country: IE, aliases: [Trane]}
+- {id: company/carrier, type: company, label: Carrier Global, ticker: CARR, country: US, aliases: [Carrier]}
+- {id: company/johnson-controls, type: company, label: Johnson Controls, ticker: JCI, country: IE, aliases: [JCI, York]}
+- {id: company/shin-etsu, type: company, label: Shin-Etsu Chemical, ticker: 4063.T, country: JP, aliases: [Shin-Etsu]}
+- {id: company/sumco, type: company, label: SUMCO, ticker: 3436.T, country: JP, aliases: [Sumco]}
+- {id: company/tokyo-ohka, type: company, label: Tokyo Ohka Kogyo, ticker: 4186.T, country: JP, aliases: [TOK]}
+- {id: company/intel, type: company, label: Intel, ticker: INTC, country: US, aliases: [Intel Corporation]}

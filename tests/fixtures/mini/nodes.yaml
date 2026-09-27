@@ -1,0 +1,17 @@
+# Mini graph with hand-computed answers (docs/phase-0.md, M2).
+- {id: theme/ai-compute, type: theme, kind: volume, label: AI compute}
+- {id: theme/cooling-shift, type: theme, kind: share_shift, label: Cooling shift}
+- {id: product/accelerators, type: product, label: Accelerators}
+- {id: product/dc-capacity, type: product, label: Datacenter capacity}
+- {id: product/leading-edge-logic, type: product, label: Leading-edge logic}
+- {id: product/euv, type: product, label: EUV}
+- {id: product/liquid-cooling, type: product, label: Liquid cooling}
+- {id: product/air-cooling, type: product, label: Air cooling}
+- {id: company/nvidia, type: company, label: Nvidia, ticker: NVDA, aliases: [NVIDIA Corporation]}
+- {id: company/tsmc, type: company, label: TSMC, ticker: TSM}
+- {id: company/asml, type: company, label: ASML Holding, ticker: ASML}
+- {id: company/vertiv, type: company, label: Vertiv, ticker: VRT}
+- {id: company/multi, type: company, label: Multi}
+- {id: company/parts, type: company, label: Parts}
+- {id: company/aircool, type: company, label: Aircool}
+- {id: company/rumor, type: company, label: Rumor}
