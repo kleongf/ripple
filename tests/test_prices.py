@@ -222,12 +222,12 @@ def test_fetch_takes_every_company_listing_and_its_indices(
     result = runner.invoke(app, args)
     assert result.exit_code == 0, result.output
     # Mini companies with tickers: ASML, NVDA, TSM, VRT; all US listings, so one index.
-    assert asked == ["ASML", "NVDA", "TSM", "VRT", "^GSPC"]
+    assert asked == ["ASML", "NVDA", "TSM", "VRT", "^GSPC", "JPY=X", "KRW=X", "EURUSD=X"]
     assert "1 listings failed" in result.output  # TSM failed; the batch went on
 
     asked.clear()
     again = runner.invoke(app, args)
-    assert "4 listings already held" in again.output
+    assert "7 listings already held" in again.output  # four companies, the index, three FX
     assert asked == ["TSM"]  # only the listing that failed is asked again
 
 

@@ -34,6 +34,19 @@ MIN_INTERVAL = 1.5
 # The secondary benchmark is the listing country's broad index (docs/phase-4.md, D124).
 INDEX_BY_COUNTRY = {"US": "^GSPC", "JP": "^N225", "KR": "^KS11", "DE": "^GDAXI", "FR": "^FCHI"}
 SUFFIX_COUNTRY = {"T": "JP", "KS": "KR", "DE": "DE", "PA": "FR"}
+# How each non-USD currency converts to USD (docs/phase-4.md, D134), checked against the source
+# on 2026-09-28: `JPY=X` and `KRW=X` are quoted in yen and won per dollar (115 and 1,188 in
+# January 2022), so a local price is divided by them; `EURUSD=X` is dollars per euro (1.14), so
+# a euro price is multiplied by it.
+FX_BY_CURRENCY: dict[str, tuple[str, str]] = {
+    "JPY": ("JPY=X", "divide"),
+    "KRW": ("KRW=X", "divide"),
+    "EUR": ("EURUSD=X", "multiply"),
+}
+
+
+def is_fx(listing: str) -> bool:
+    return listing.endswith("=X")
 
 
 class PriceError(Exception):
@@ -58,6 +71,8 @@ class Series:
 
 def listing_country(listing: str) -> str:
     """The market a listing trades on, from its suffix. US listings, ADRs included, have none."""
+    if is_fx(listing):
+        raise PriceError(f"{listing} is an FX rate, not a listing on a market")
     if listing.startswith("^"):
         country = next((c for c, i in INDEX_BY_COUNTRY.items() if i == listing), None)
         if country is None:

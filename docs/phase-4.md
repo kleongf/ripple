@@ -209,32 +209,42 @@ layout and its commands to the CLAUDE.md commands block as it lands.
 Build the return machinery and nothing that looks at results. No real burst is scored in this
 milestone.
 
-- [ ] FX series: add `JPY=X`, `KRW=X` and `EURUSD=X` to `ripple prices fetch`, and add the rule
-      that says which series converts which currency to USD, with the direction of each quote
-      (USD/JPY is yen per dollar, EUR/USD is dollars per euro)
-- [ ] `ripple/evaluate.py`, pure functions over `PriceRow`s and dates:
-      - the master calendar and `window(detection_day, h)`, giving the entry and exit dates
-      - per-listing entry and exit closes with the five-day exclusion rule
-      - USD conversion
-      - buy-and-hold return, and the universe equal-weight benchmark
+- [x] FX series: `JPY=X`, `KRW=X` and `EURUSD=X` join `ripple prices fetch` (1,231 days each).
+      The quote direction was checked against the source, not assumed: yen and won per dollar
+      (divide), dollars per euro (multiply). The rule is `prices.FX_BY_CURRENCY`
+- [x] `ripple/evaluate.py`, pure functions over `PriceRow`s and dates:
+      - the master calendar and `window()`
+      - `leg()`, which takes entry and exit closes under the five-day exclusion rule
+      - `to_usd()`
+      - the buy-and-hold return and the universe equal-weight benchmark in `outcomes()`
       - the market-index benchmark
-      - sign adjustment
-- [ ] `score()` gains `attention_as_of` (graph as of today, attention as of the burst). A test on
-      the mini fixture checks that exposures are unchanged and only attention moves
-- [ ] `ripple evaluate window LISTING --detected DATE --horizon 60`: prints entry, exit, the USD
-      return, the benchmark and the abnormal return, so one real window can be checked by hand
-- [ ] Synthetic tests with hand-computed answers, in the spirit of `tests/fixtures/mini/`:
+      - `sign_adjust()`
+- [x] `score()` gains `attention_as_of`. A mini-fixture test shows exposures unchanged while
+      attention follows the date
+- [x] `ripple evaluate window LISTING --detected DATE --horizon 60 [--theme ID]`
+- [x] 15 tests with hand-computed answers:
       - a flat universe gives zero abnormal return
-      - one stock up 10% against a flat universe gives +10% less its own share of the benchmark
-      - a stock listed mid-window is excluded, not zeroed
-      - a US holiday inside the window leaves the count at h trading days
-      - a Tokyo holiday on the entry day moves entry to the next Tokyo close
-      - a 10% yen weakening turns a flat JPY stock into −9.1% in USD
-      - a losing company that falls scores positive after sign adjustment
-      - entry is strictly after the detection day, never on it
+      - one stock up 10% of four gives +7.5% abnormal
+      - a stock listed mid-window is excluded
+      - entry is strictly after the detection day
+      - a US holiday keeps h trading days
+      - a Tokyo holiday moves entry to the next Tokyo close
+      - a 10% weaker yen gives −9.09% in USD
+      - a stronger euro gives +10% in USD
+      - missing FX excludes the listing
+      - the local index comparison
+      - sign adjustment
+      - attention as of a day
+      - the window command's output
+- [x] One real window checked by hand, the only real return computed before pre-registration,
+      as this milestone required. Nvidia after the GTC 2024 burst (detected 2024-03-20), 60
+      days to 2024-06-17 (Memorial Day skipped), gives +43.26% in USD. Against the S&P 500 that
+      is +38.84%; against the universe benchmark (+9.75% over 59 listings, GE Vernova and
+      SanDisk excluded as not yet listed) it is **+33.51%**. Plain SQL with independently
+      written FX conversion reproduced all three numbers exactly
 
-**Done when** the synthetic cases pass and one real window (Nvidia after the 2024-03-19 GTC
-detection, say) is checked by hand against `ripple evaluate window`.
+**Done when** the synthetic cases pass and one real window is checked by hand against
+`ripple evaluate window`. **Met.**
 
 ### M38. Pre-registration
 

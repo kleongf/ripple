@@ -17,6 +17,7 @@ from ripple import attention as attention_module
 from ripple import brief as brief_module
 from ripple import codex as codex_module
 from ripple import edgar, growth, jobs, mapping, news, queries, sections, signal, xbrl, xbrl_edges
+from ripple import evaluate as evaluate_module
 from ripple import events as events_module
 from ripple import explain as explain_module
 from ripple import extract as extract_module
@@ -2307,10 +2308,16 @@ PRICE_SLACK_DAYS = 5
 
 
 def _listings(nodes: dict[str, Node]) -> list[str]:
-    """Every company listing in the graph, then the index of each market they trade on."""
-    listings = sorted({n.ticker for n in nodes.values() if n.type == "company" and n.ticker})
+    """Every company listing in the graph, the index of each market they trade on, and the FX
+    rates that convert their currencies to USD (D134)."""
+    listings = _company_listings(nodes)
     indices = sorted({prices_module.market_index(listing) for listing in listings})
-    return listings + indices
+    fx = [listing for listing, _ in prices_module.FX_BY_CURRENCY.values()]
+    return listings + indices + fx
+
+
+def _company_listings(nodes: dict[str, Node]) -> list[str]:
+    return sorted({n.ticker for n in nodes.values() if n.type == "company" and n.ticker})
 
 
 @prices_app.command("fetch")
@@ -2396,3 +2403,70 @@ def prices_show(
         table.add_row(str(row.day), f"{row.close:,.2f}", f"{row.adj_close:,.2f}")
     console.print(table)
     console.print(f"{len(rows)} trading days held for {listing}")
+
+
+# --- the backward test (Phase 4, M37 onward) ----------------------------------------------
+
+evaluate_app = typer.Typer(help="Returns and the backward test (Phase 4).")
+app.add_typer(evaluate_app, name="evaluate")
+
+
+def _price_series(store: Store, listings: list[str]) -> dict[str, list[store_module.PriceRow]]:
+    return {listing: store.prices(listing) for listing in listings}
+
+
+@evaluate_app.command("window")
+def evaluate_window(
+    listing: str,
+    detected: Annotated[
+        datetime, typer.Option("--detected", formats=["%Y-%m-%d"], help="Burst detection day.")
+    ],
+    horizon: Annotated[int, typer.Option("--horizon", help="US trading days.")] = 60,
+    theme: Annotated[
+        str | None, typer.Option("--theme", help="Also show the sign-adjusted abnormal return.")
+    ] = None,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """One listing's return over a burst window, against the universe and its market index, so
+    a real window can be checked by hand (M37)."""
+    with Store(db, read_only=True) as store:
+        nodes = store.snapshot(today_utc()).nodes
+        universe = _company_listings(nodes)
+        if listing not in universe:
+            raise _fail(f"{listing} is not a company listing in the graph")
+        indices = sorted({prices_module.market_index(x) for x in universe})
+        fx_listings = [x for x, _ in prices_module.FX_BY_CURRENCY.values()]
+        series = _price_series(store, universe + indices)
+        fx = _price_series(store, fx_listings)
+        days = evaluate_module.calendar(store.prices(evaluate_module.CALENDAR_LISTING))
+        exposure = None
+        if theme:
+            company = next(n for n, v in nodes.items() if v.ticker == listing)
+            ranked = score(store, theme, as_of=today_utc(), limit=None, use_attention=False)
+            exposure = next((r.exposure for r in ranked.results if r.company == company), None)
+    win = evaluate_module.window(days, detected.date(), horizon)
+    if win is None:
+        raise _fail(f"the price history ends before a {horizon}-day window after {detected:%F}")
+    results = evaluate_module.outcomes(series, universe, win, fx)
+    if listing not in results:
+        raise _fail(f"{listing} has no valid entry and exit for this window (not yet listed?)")
+    o = results[listing]
+    bench = evaluate_module.benchmark(results)
+    console.print(
+        f"{listing}: detected {win.detected}, window {win.start} to {win.end} "
+        f"({horizon} US trading days)",
+        markup=False,
+    )
+    console.print(f"  entry close {o.entry_day}, exit close {o.exit_day}")
+    console.print(f"  return in USD {o.usd_return:+.2%}, in local currency {o.local_return:+.2%}")
+    console.print(f"  universe benchmark {bench:+.2%} over {len(results)} listings")
+    console.print(f"  abnormal vs universe {o.abnormal:+.2%}")
+    if o.index_abnormal is not None:
+        index = prices_module.market_index(listing)
+        console.print(f"  abnormal vs {index} (local) {o.index_abnormal:+.2%}")
+    if theme:
+        if exposure is None:
+            console.print(f"  not exposed to {theme}")
+        else:
+            adjusted = evaluate_module.sign_adjust(o.abnormal, exposure)
+            console.print(f"  exposure {exposure:+.4f}; sign-adjusted abnormal {adjusted:+.2%}")

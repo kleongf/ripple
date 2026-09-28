@@ -32,6 +32,7 @@ uv run ripple check-brief docs/briefs/ai-compute-demand.md --theme theme/ai-comp
 uv run ripple brief theme/ai-compute-demand   # Codex writes a brief through the MCP tools only
 uv run ripple prices fetch --from 2022-01-01   # daily adjusted closes, 61 listings + 5 indices (M36)
 uv run ripple prices show NVDA
+uv run ripple evaluate window NVDA --detected 2024-03-20 --horizon 60 --theme theme/ai-compute-demand
 uv run ripple ui --port 8765  # read-only browser UI at http://127.0.0.1:8765 (docs/ui.md)
 uv run ripple-mcp             # MCP server over stdio (registered in .mcp.json; RIPPLE_DB overrides the store path)
 ```
@@ -72,6 +73,7 @@ ripple/
   verify.py           evidence rulings ledger, applied at load; xbrl recompute (M33)
   brief.py            brief citation checker; Codex briefs through the MCP tools (M35)
   prices.py           daily prices from Yahoo's chart endpoint, cache, market index per listing (Phase 4, M36)
+  evaluate.py         backward-test returns: master calendar, windows, USD buy-and-hold, benchmarks (M37)
   ui/                 read-only browser UI: starlette JSON routes, static page (docs/ui.md, off-roadmap)
 tests/
   fixtures/mini/      small graph with hand-computed answers (phase-0.md, M2)

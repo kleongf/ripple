@@ -130,16 +130,22 @@ def score(
     use_attention: bool = True,
     obvious_percentile: float = attention_module.OBVIOUS_PERCENTILE,
     known_at: date | None = None,
+    attention_as_of: date | None = None,
 ) -> ScoreResult:
     """Rank companies by exposure, with attention and novelty where coverage is held.
 
     `use_attention=False` keeps the Phase 0 behaviour, which the golden ranking tests rely on.
+    `attention_as_of` measures attention on another day than the graph's `as_of`: the backward
+    test ranks every past burst with today's graph, because a past snapshot is nearly empty,
+    and takes attention from the 90 days before the burst (docs/phase-4.md, D137).
     """
     graph = build_graph(store.snapshot(as_of), min_confidence=min_confidence)
     attention = None
     if use_attention:
         exposed = list(company_exposures(graph, Shock(theme, 1.0, direction), max_hops))
-        attention = attention_module.company_attention(store, exposed, as_of, known_at=known_at)
+        attention = attention_module.company_attention(
+            store, exposed, attention_as_of or as_of, known_at=known_at
+        )
     return score_graph(
         graph,
         theme,
