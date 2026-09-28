@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ripple</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='none' stroke='%232f5d8a' stroke-width='2'/%3E%3Ccircle cx='8' cy='8' r='2' fill='%232f5d8a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">Ripple <span class="muted">read-only</span></div>
+    <nav id="tabs">
+      <a href="#flow">Flow</a>
+      <a href="#ranking">Ranking</a>
+      <a href="#company">Company</a>
+      <a href="#signals">Signals</a>
+      <a href="#events">Events</a>
+      <a href="#quality">Quality</a>
+    </nav>
+    <div class="controls">
+      <label>as of <input type="date" id="as-of"></label>
+      <label title="Edges below this confidence are stored as evidence but carry no shock">
+        min confidence <input type="number" id="min-conf" min="0" max="1" step="0.05" value="0.5">
+      </label>
+    </div>
+  </header>
+  <div id="banner"></div>
+  <main id="view"></main>
+  <aside id="panel" hidden>
+    <button id="panel-close" aria-label="Close">×</button>
+    <div id="panel-body"></div>
+  </aside>
+  <div id="tip" hidden></div>
+  <footer class="muted">
+    Every number comes from the Ripple library as of the date above. Exposure is revenue impact
+    per unit of shock; never add exposures across themes, and never multiply a burst by an
+    exposure. Dashed edges are bucket guesses, not measured shares.
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
