@@ -152,7 +152,7 @@ Novelty:
 
 - **Attention** A(c, θ): share of theme-θ articles in the last 90 days that mention company c.
 - **Novelty** = exposure × (1 − percentile of A).
-- **Priced-in check**: correlation between the company's recent returns and the theme signal.
+- **Priced-in check**: correlation between the company's recent returns and the theme signal. Needs price history, so it is built in Phase 4, not Phase 3.
 
 Later: knowledge-graph embeddings (PyKEEN) and LLM-proposed inputs to suggest missing edges, accepted only when evidence retrieval finds support.
 
@@ -173,11 +173,11 @@ The core library holds all logic; the MCP server and CLI are thin wrappers. The 
 | Tool | Inputs | Returns |
 |---|---|---|
 | search_entities | query, type | candidate IDs with labels and tickers |
-| find_exposed | theme or product ID, direction, max_hops, hide_obvious, as_of, limit | ranked companies with exposure, attention, novelty, confidence, top 3 paths |
+| find_exposed | theme, product or material ID, direction, max_hops, hide_obvious, as_of, limit | ranked companies with exposure, attention, novelty, confidence, top 3 paths |
 | explain_link | from_id, to_id, k, as_of | strongest paths with source, date and URL per edge |
-| company_profile | company_id, as_of | revenue mix by product, neighbors, top themes |
-| trending_themes | window, min_z | themes with volume, velocity, direction, sample articles |
-| get_evidence | edge_id | documents behind one edge |
+| company_profile | company_id, as_of | revenue mix by product, neighbors, exposure per theme (never summed), attention |
+| trending_themes | window, min_surprise, as_of | bursts with window, surprise, ratio, matched count, tone flag and the theme's kind; no articles and no live GDELT call (phase-3.md, D112) |
+| get_evidence | edge_id, as_of | documents behind one edge, with verification ruling, source layer and losing alternatives |
 
 Return compact JSON with IDs and labels, rounded scores, and `as_of` and confidence on every result. Every query accepts `as_of`.
 
@@ -204,7 +204,7 @@ Designed to run on a laptop; the only heavy step (LLM extraction over filings) g
 | 0 | Hand-built slice | S | every ranked company has a readable path; ranking passes your sanity check |
 | 1 | Structure from filings | L | edge precision ≥ 85% on 200 labeled edges; resolution accuracy measured |
 | 2 | Signals | M | known past events show up as bursts on the right themes with the right direction |
-| 3 | Scoring and full MCP surface | M | a model using only the MCP tools can write a sourced thematic brief |
+| 3 | Scoring and full MCP surface | M | a model using only the MCP tools can write a sourced thematic brief: three Codex briefs, every citation resolved, passed against a rubric fixed in advance (`docs/phase-3.md`) |
 | 4 | Evaluation | L | you know whether novelty-ranked companies beat the baselines, and by how much |
 | 5 | Magnitude (later) | L | predicted revenue impact correlates with later reported segment growth |
 | 6 | Graph completion (later) | M | accepted suggestions match the precision of extracted edges |
