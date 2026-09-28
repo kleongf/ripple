@@ -237,13 +237,16 @@ on the mini fixture, and the four golden files still pass. **Met.**
       nothing. On 2026-09-28: 117 of 123 documents live; one genuine 404 (the networkworld
       server-memory article), two 403s and three timeouts that are probably servers refusing
       automated clients; report in `data/link-check.yaml`
-- [ ] The user rules on every item in the store (432 at the start, across 123 documents), over
-      several sittings
-- [ ] Failures fixed at the source, or recorded with a reason
+- [x] The user rules on every item in the store: 432 of 432, all `verified` (2026-09-28). 318
+      were ruled item by item (`by: user`); the last 114 across 39 documents were approved in bulk
+      after the user had reviewed the rest (`by: user-bulk`), since this pass is for testing (D122)
+- [x] Failures fixed at the source, or recorded with a reason: none were ruled failed. The one
+      dead link the pre-pass found (the networkworld server-memory article, 404) was approved in
+      the bulk batch and is carried as a known issue (D122)
 - [ ] Items added later in Phase 3 are ruled on before exit
 
 **Done when** `ripple verify status` reports 0 left and every failure is fixed or listed in the
-review.
+review. **Met**, with the bulk approval recorded in D122.
 
 ### M34. Signals on the MCP surface
 
@@ -256,8 +259,8 @@ reports no `stopped:`.
       2026-09-28, all themes; three queries corrected first (D121)
 - [ ] Phase 2's pending numbers measured and written into `docs/phase-2-review.md`: M26 query
       precision, M29 event hit rate, M27 novelty read by hand
-- [ ] `MIN_SURPRISE` set from `ripple calibrate` across all 15 themes (D109), after the D115
-      change, which moves every surprise
+- [x] `MIN_SURPRISE` set to **1.75** from the coverage series of 14 of 15 themes, after the D115
+      change, and fixed before any event result was seen (D129)
 - [x] D110 fixed on synthetic series only, and the rule written down (D115) before `ripple events`
       is re-run: a trimmed dispersion estimate, and a split at an interior trough. Six new tests
 - [x] `trending_themes` (`signal.trending`, `signal.trending_themes`) and its tests, including a
@@ -393,6 +396,28 @@ session (2026-09-28).
   its first request. None of the three had produced a series, so no measurement changes. A
   fetch round that met another process's write lock crashed; appends now retry for up to a
   minute (`_append_coverage`).
+
+- **D122.** M33 closed at 432 of 432 rulings, all `verified`. 318 were ruled item by item; the
+  remaining 114 (64 `xbrl`, 50 `seed`, across 39 documents) were approved in bulk by the user
+  after reviewing the rest, recorded as `by: user-bulk` so the ledger does not claim they were
+  read one at a time. The bulk batch includes the networkworld article that returned 404 in the
+  link check, so one verified item points at a dead page. Storing the first 318 showed the D63
+  hazard D113 predicted: four edges (Constellation nuclear generation, Eaton switchgear and UPS,
+  Trane chillers) switched to verified seed buckets over unverified filing numbers. The user
+  chose to keep D63 and rule the filings rather than amend it; the bulk batch did that, and all
+  four went back to the filing numbers on the next load. The golden files pass after both loads.
+
+- **D129.** The burst threshold of record is `MIN_SURPRISE = 1.75` (user decision, 2026-09-28),
+  calibrated blind to the event set at about four bursts per theme-year (D109) on the 14 theme
+  series held; `optical-interconnect-demand` had not been fetched. Its stability was checked
+  before any event result existed: leaving any one theme out gives 1.5 or 1.75, and leaving any
+  three out gives 1.5 (168 of 364 subsets), 1.75 (183) or 2.0 (13), so the missing theme can
+  move it one grid step at most. It is **not** recalibrated when that theme arrives, so the event
+  measurement cannot depend on a threshold chosen after its result. This replaces D109's "all 15
+  themes" condition, whose purpose was not to calibrate on a single series. At 1.75 the synthetic
+  no-burst cases (flat, weekend dip, one-article jump on a thin theme) still do not burst.
+  `ocs-adoption` (275 articles in 4.7 years) produces no burst at this threshold and is too thin
+  to measure.
 
 ## Open questions
 

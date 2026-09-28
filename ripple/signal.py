@@ -41,7 +41,10 @@ EXCLUDE_RECENT = 3
 MIN_BASELINE_DAYS = 30
 
 # Burst rule.
-MIN_SURPRISE = 6.0  # -log10 p, so p <= 1e-6 after the dispersion correction
+# -log10 p after the dispersion correction. Calibrated from the coverage series alone at about
+# four bursts per theme-year (D109), on 14 of 15 themes, and fixed before any event result was
+# seen (phase-3.md, D129). The a priori 6.0 gave no bursts at all on real series (D107).
+MIN_SURPRISE = 1.75
 MIN_ARTICLES = 5  # never call a burst on a handful of articles
 PERSISTENCE = 2  # consecutive days above the threshold
 
