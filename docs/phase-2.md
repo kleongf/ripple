@@ -348,7 +348,7 @@ on. Cut this milestone first if the Codex allowance is tight; nothing else depen
 
 | Criterion | Status |
 |---|---|
-| At least 80% of pre-registered events burst on the expected theme within ±3 days, false positives reported | **pending a completed live pass**; the runner and event set are done (`ripple events`) |
+| At least 80% of pre-registered events burst on the expected theme within ±3 days, false positives reported | **not met**: 60% (9 of 15), 75% on exact dates (9 of 12), 151 unexplained bursts; measured 2026-09-28 at the blind threshold 1.75 (phase-3.md, D129; see the review) |
 | Per-theme query precision of at least 85% on ~20 sampled articles | **pending**; `ripple/queries.py` and its tests are done |
 | Every universe company has an attention row, and `hide_obvious` uses the attention percentile | code done; the 61 company series are **pending** |
 | Signal and exposure reported side by side, never multiplied | met (D88): `ripple trending` and `ripple exposed` are separate commands and no code multiplies them |

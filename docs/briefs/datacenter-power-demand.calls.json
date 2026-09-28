@@ -1,0 +1,265 @@
+{
+  "usage": {
+    "input_tokens": 97553,
+    "cached_input_tokens": 66816,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1680,
+    "reasoning_output_tokens": 0
+  },
+  "calls": [
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "datacenter power",
+        "type": "theme"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "trending_themes",
+      "arguments": {},
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "find_exposed",
+      "arguments": {
+        "node_id": "theme/datacenter-power-demand",
+        "limit": 12
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "find_exposed",
+      "arguments": {
+        "node_id": "theme/datacenter-power-demand",
+        "hide_obvious": true,
+        "limit": 5
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Constellation",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Siemens Energy",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "GE Vernova",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Baker Hughes",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Caterpillar",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Eaton",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/constellation"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/siemens-energy"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/ge-vernova"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/baker-hughes"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/caterpillar"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/eaton"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-eed728c48e"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-6352c61b5f"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-2a18e29ae7"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-86578fecc7"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-c8eb180d65"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-5d8051da91"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-1197ebaf9a"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-f555e1847a"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-09b5917168"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-804989d6fa"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-7f5eb92098"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-9b566fe6e2"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-b9e624b51c"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-44809c6c34"
+      },
+      "ok": true
+    }
+  ]
+}

@@ -226,3 +226,33 @@ def test_two_close_events_merge_into_one_burst_and_the_twin_is_named(
 def test_an_isolated_event_has_no_twin(store: Store, tmp_path: Path) -> None:
     store.add_coverage(flat_then_burst("theme/t", date(2024, 1, 1), 300, date(2024, 6, 1)))
     assert events.check_events(store, event_file(tmp_path)).results[0].shares_burst_with is None
+
+
+def test_an_event_is_scored_against_the_burst_containing_its_day(
+    store: Store, tmp_path: Path
+) -> None:
+    """Two bursts within the tolerance of one event: the one containing the event day is the
+    match, not the first in date order, so the right burst's tone flag is attributed (D130)."""
+    first = (date(2024, 6, 1), date(2024, 6, 3))  # negative tone: flagged
+    second = (date(2024, 6, 6), date(2024, 6, 9))  # ordinary tone: not flagged
+    rows = []
+    for i in range(300):
+        day = date(2024, 1, 1) + timedelta(days=i)
+        in_first = first[0] <= day <= first[1]
+        in_second = second[0] <= day <= second[1]
+        rows.append(
+            CoverageRow(
+                kind="theme",
+                key="theme/t",
+                day=day,
+                matched=600 if in_first or in_second else 60,
+                norm=500_000,
+                tone=-6.0 if in_first else -1.0 - (i % 3) * 0.1,
+                query_hash="h",
+            )
+        )
+    store.add_coverage(rows)
+    [result] = events.check_events(store, event_file(tmp_path, date=second[0])).results
+    assert result.hit
+    assert result.burst is not None and result.burst.start == second[0]
+    assert not result.flagged

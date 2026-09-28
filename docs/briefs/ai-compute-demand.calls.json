@@ -1,0 +1,203 @@
+{
+  "usage": {
+    "input_tokens": 88837,
+    "cached_input_tokens": 63744,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1483,
+    "reasoning_output_tokens": 33
+  },
+  "calls": [
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "AI compute",
+        "type": "theme"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "trending_themes",
+      "arguments": {},
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "find_exposed",
+      "arguments": {
+        "node_id": "theme/ai-compute-demand",
+        "limit": 12
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Nvidia",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Super Micro",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Astera Labs",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Fabrinet",
+        "type": "company",
+        "limit": 1
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "explain_link",
+      "arguments": {
+        "from_id": "theme/ai-compute-demand",
+        "to_id": "company/nvidia",
+        "k": 3
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "explain_link",
+      "arguments": {
+        "from_id": "theme/ai-compute-demand",
+        "to_id": "company/super-micro",
+        "k": 3
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "explain_link",
+      "arguments": {
+        "from_id": "theme/ai-compute-demand",
+        "to_id": "company/astera-labs",
+        "k": 3
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "explain_link",
+      "arguments": {
+        "from_id": "theme/ai-compute-demand",
+        "to_id": "company/fabrinet",
+        "k": 3
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-932732349f"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-15e8a2a588"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-344b857b3a"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-11b0266317"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-9d14ff2cbe"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-59e32a5573"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-f01483199b"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-8f4052c610"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-4895325fab"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-5b938d69c1"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-595a144477"
+      },
+      "ok": true
+    }
+  ]
+}

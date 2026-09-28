@@ -170,6 +170,43 @@ themes and companies together.
 The event set was fixed before any theme series was fetched, so the measurement stays honest
 whenever it is taken (D101).
 
+## Measured: the event hit rate (2026-09-28, during Phase 3's M34)
+
+Run on 14 of 15 re-fetched theme series, with the rebuilt queries (D108), the D115 dispersion and
+split fix, and the threshold fixed blind to the event set at 1.75 and committed before this run
+(`48c04a1`, D129). All 15 events fall on themes that have a series.
+
+| | Result | Bar |
+|---|---|---|
+| Hit rate, all events | **60%** (9 of 15) | 80%: **not met** |
+| Hit rate, exact dates only | **75%** (9 of 12) | reported separately (D101) |
+| Tone flag correct on matched events | 78% (7 of 9) | none set |
+| Bursts matching no event | 151, across 8 themes | reported |
+
+Hits: the 2022 and 2023 export controls, Nvidia's May 2023 guidance, GTC 2024 on both AI compute
+and liquid cooling, the Three Mile Island restart (24.8x normal), Stargate, DeepSeek, and GTC 2025
+on co-packaged optics. Stargate and DeepSeek, six days apart, are now **two** bursts (22 to 24 and
+27 to 31 January 2025), which is the D110 defect fixed.
+
+Misses, and what each one says:
+
+- **CHIPS Act (2022-08-09), 4 days out.** A burst lies just outside the ±3-day tolerance.
+- **ChatGPT (2022-11-30), 81 days out.** Recall again: in 2022 nobody wrote "AI compute" or "AI
+  data center" about a chatbot launch. The theme's vocabulary arrived months later.
+- **Stargate's power angle (2025-01-21), 96 days out.** `datacenter-power-demand` did not move
+  with the announcement; the press covered it as a compute story.
+- **Three approximate-date events** (HBM sold out, the Blackwell slip, the lease cancellations)
+  miss by 24 to 59 days. Their dates were recalled, not checked (D101), so these misses do not
+  separate a wrong date from a detector failure. Two of the three are reversals.
+
+**The tone flag has not yet caught a real reversal.** The one reversal that matched a burst
+(DeepSeek) was not flagged; the flag fired on the Stargate burst, an up event. Its 78% comes
+mostly from correctly leaving up-events alone. The 89% an earlier run printed was a scoring bug:
+DeepSeek was matched to the Stargate burst three days earlier, and inherited its flag (D130).
+
+The numbers were not used to change anything. The threshold, queries and event set are as they
+were before the run.
+
 ## Corrections made during Phase 2
 
 - **Re-mapping silently undid three human rulings (D97).** `ripple map --force` with a larger

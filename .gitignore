@@ -8,3 +8,4 @@ dist/
 data/raw/
 data/news/
 .playwright-mcp/
+data/prices/

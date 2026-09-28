@@ -130,7 +130,11 @@ def check_events(
     results = []
     for event in events:
         found = by_theme[event.theme]
-        match = next((b for b in found if b.covers(event.day, tolerance)), None)
+        # The burst containing the event day, else the nearest one within the tolerance. Taking
+        # the first in date order attributed DeepSeek (2025-01-27) to the Stargate burst three
+        # days earlier, and with it that burst's tone flag, although DeepSeek has its own (D130).
+        covering = [b for b in found if b.covers(event.day, tolerance)]
+        match = min(covering, key=lambda b: (_gap(b, event.day), b.start), default=None)
         gap = None
         nearest = match
         if match is None and found:

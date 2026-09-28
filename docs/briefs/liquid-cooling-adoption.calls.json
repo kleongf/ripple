@@ -1,0 +1,150 @@
+{
+  "usage": {
+    "input_tokens": 81750,
+    "cached_input_tokens": 59264,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1346,
+    "reasoning_output_tokens": 0
+  },
+  "calls": [
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "liquid cooling",
+        "type": "theme"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "trending_themes",
+      "arguments": {},
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "find_exposed",
+      "arguments": {
+        "node_id": "theme/liquid-cooling-adoption",
+        "limit": 20
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Schneider Electric",
+        "type": "company"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Vertiv",
+        "type": "company"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "search_entities",
+      "arguments": {
+        "query": "Johnson Controls",
+        "type": "company"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/schneider-electric"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/vertiv"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "company_profile",
+      "arguments": {
+        "company_id": "company/johnson-controls"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-2071f000b2"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-b87ecc069c"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-770bc7d259"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-43c9c7e910"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-94f718c610"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-c131dc633f"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-8951eb857c"
+      },
+      "ok": true
+    },
+    {
+      "server": "ripple",
+      "tool": "get_evidence",
+      "arguments": {
+        "edge_id": "e-66d909b7ea"
+      },
+      "ok": true
+    }
+  ]
+}

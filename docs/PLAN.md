@@ -160,9 +160,9 @@ Later: knowledge-graph embeddings (PyKEEN) and LLM-proposed inputs to suggest mi
 
 Graph quality: precision on 200 hand-labeled edges per type; recall against held-out 10%-customer disclosures; entity-resolution accuracy on labeled mentions.
 
-Signal quality (event study): for each theme burst at date t, rank companies by novelty using the graph as recorded on t; measure abnormal returns over 20 and 60 trading days against a sector benchmark; compare the top decile with directly co-mentioned companies, same-industry companies, and random picks.
+Signal quality (event study): for each theme burst, rank the exposed companies by novelty and by exposure, and correlate each ranking with sign-adjusted 60-day buy-and-hold abnormal returns in USD against the equal-weighted universe (a market index alongside); the primary number is the mean difference of the two rank correlations across bursts, with a block-bootstrap interval and a verdict rule fixed in advance. The graph only exists as recorded from 2026-09, so the test currently runs **backward** over 2022–2026 bursts with today's graph and universe, stated as biased; a forward test that freezes rankings as bursts fire is designed and deferred (`docs/phase-4.md`, D131, D132).
 
-Traps: lookahead (prevented by the bitemporal store), survivorship (price data must include delisted names), overfitting (fix parameters on one period, test on a later untouched one), costs and illiquid small caps.
+Traps: lookahead (prevented by the bitemporal store going forward, and unavoidable looking back), survivorship and hindsight (the universe was chosen in 2026 from today's value chain), overfitting (no parameter is fit to returns; the analysis is pre-registered), dependent events (overlapping windows, so a block bootstrap), costs and illiquid small caps (out of scope for a research tool).
 
 The realistic value is a research tool that surfaces and explains leads. The backtest checks whether exposure scores carry information.
 
@@ -205,7 +205,7 @@ Designed to run on a laptop; the only heavy step (LLM extraction over filings) g
 | 1 | Structure from filings | L | edge precision ≥ 85% on 200 labeled edges; resolution accuracy measured |
 | 2 | Signals | M | known past events show up as bursts on the right themes with the right direction |
 | 3 | Scoring and full MCP surface | M | a model using only the MCP tools can write a sourced thematic brief: three Codex briefs, every citation resolved, passed against a rubric fixed in advance (`docs/phase-3.md`) |
-| 4 | Evaluation | L | you know whether novelty-ranked companies beat the baselines, and by how much |
+| 4 | Evaluation | L | you know whether novelty-ranked companies beat the baselines, and by how much: the pre-registered rank-correlation statistic over at least 30 scored bursts with its bootstrap interval and verdict, backward for now and stated under its bias, or "inconclusive" (`docs/phase-4.md`) |
 | 5 | Magnitude (later) | L | predicted revenue impact correlates with later reported segment growth |
 | 6 | Graph completion (later) | M | accepted suggestions match the precision of extracted edges |
 

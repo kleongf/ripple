@@ -63,6 +63,15 @@ CREATE TABLE IF NOT EXISTS coverage (
     query_hash VARCHAR NOT NULL,    -- so a query change is visible in the data
     recorded_at TIMESTAMP NOT NULL
 );
+CREATE TABLE IF NOT EXISTS prices (
+    listing VARCHAR NOT NULL,       -- ticker as the source spells it, e.g. 8035.T, ^GSPC
+    day DATE NOT NULL,              -- the exchange's local trading day
+    close DOUBLE NOT NULL,          -- split-adjusted
+    adj_close DOUBLE NOT NULL,      -- split- and dividend-adjusted: total return
+    currency VARCHAR NOT NULL,
+    source VARCHAR NOT NULL,
+    recorded_at TIMESTAMP NOT NULL
+);
 """
 
 EDGE_COLUMNS = (
@@ -103,6 +112,18 @@ class CoverageRow:
     @property
     def share(self) -> float:
         return self.matched / self.norm if self.norm else 0.0
+
+
+@dataclass(frozen=True)
+class PriceRow:
+    """One trading day of one listing (docs/phase-4.md, M36)."""
+
+    listing: str
+    day: date
+    close: float
+    adj_close: float
+    currency: str
+    source: str
 
 
 @dataclass(frozen=True)
@@ -295,9 +316,81 @@ class Store:
         ).fetchall()
         return {(key, digest): last for key, digest, last in rows}
 
+    # --- daily prices (Phase 4, M36, D128) ------------------------------------------------
+
+    def add_prices(self, rows: list["PriceRow"], now: datetime | None = None) -> int:
+        """Append price rows. Never updates: a source can revise a past close (a late dividend
+        adjustment), so a refetch inserts a new version and readers take the latest one."""
+        if not rows:
+            return 0
+        stamp = _naive_utc(now or datetime.now(UTC))
+        self._con.executemany(
+            "INSERT INTO prices (listing, day, close, adj_close, currency, source, recorded_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            [[r.listing, r.day, r.close, r.adj_close, r.currency, r.source, stamp] for r in rows],
+        )
+        return len(rows)
+
+    def prices(
+        self,
+        listing: str,
+        start: date | None = None,
+        end: date | None = None,
+        known_at: date | None = None,
+    ) -> list["PriceRow"]:
+        """One row per trading day for `listing`, the latest recorded version of each day, as
+        the store knew it at the end of `known_at`."""
+        if not self._has_table("prices"):
+            return []
+        clauses = ["listing = $listing"]
+        params: dict[str, Any] = {"listing": listing}
+        if start is not None:
+            clauses.append("day >= $start")
+            params["start"] = start
+        if end is not None:
+            clauses.append("day <= $end")
+            params["end"] = end
+        if known_at is not None:
+            clauses.append("recorded_at < $cutoff")
+            params["cutoff"] = datetime.combine(known_at + timedelta(days=1), time())
+        rows = self._con.execute(
+            f"""
+            SELECT listing, day, close, adj_close, currency, source
+            FROM (
+                SELECT *, row_number() OVER (PARTITION BY listing, day ORDER BY recorded_at DESC)
+                       AS version
+                FROM prices WHERE {" AND ".join(clauses)}
+            )
+            WHERE version = 1
+            ORDER BY day
+            """,
+            params,
+        ).fetchall()
+        return [PriceRow(*row) for row in rows]
+
+    def _has_table(self, name: str) -> bool:
+        """A read-only connection never runs SCHEMA, so a store written before a table existed
+        lacks it until the next write; readers treat a missing table as empty."""
+        row = self._con.execute(
+            "SELECT count(*) FROM information_schema.tables WHERE table_name = ?", [name]
+        ).fetchone()
+        return bool(row and row[0])
+
+    def price_summary(self) -> list[tuple[str, str, int, date, date]]:
+        """(listing, currency, trading days, first day, last day) per listing held."""
+        if not self._has_table("prices"):
+            return []
+        return self._con.execute(
+            "SELECT listing, any_value(currency), count(DISTINCT day), min(day), max(day) "
+            "FROM prices GROUP BY listing ORDER BY listing"
+        ).fetchall()
+
     def row_counts(self) -> dict[str, int]:
         counts = {}
-        for table in ("nodes", "edges", "evidence", "coverage"):
+        for table in ("nodes", "edges", "evidence", "coverage", "prices"):
+            if not self._has_table(table):
+                counts[table] = 0
+                continue
             row = self._con.execute(f"SELECT count(*) FROM {table}").fetchone()
             counts[table] = row[0] if row else 0
         return counts

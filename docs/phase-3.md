@@ -257,8 +257,9 @@ reports no `stopped:`.
 - [ ] All 15 theme series and 61 company series in the store, fetched with the current queries.
       Check the store's query before trusting a run (CLAUDE.md). **10 of 76 held** on
       2026-09-28, all themes; three queries corrected first (D121)
-- [ ] Phase 2's pending numbers measured and written into `docs/phase-2-review.md`: M26 query
-      precision, M29 event hit rate, M27 novelty read by hand
+- [ ] Phase 2's pending numbers measured and written into `docs/phase-2-review.md`: M29 event
+      hit rate **done** (60%, 75% on exact dates; the 80% bar is not met); M26 query precision
+      and M27 novelty read by hand still pending (article lists and company series)
 - [x] `MIN_SURPRISE` set to **1.75** from the coverage series of 14 of 15 themes, after the D115
       change, and fixed before any event result was seen (D129)
 - [x] D110 fixed on synthetic series only, and the rule written down (D115) before `ripple events`
@@ -281,8 +282,13 @@ across all 15 themes, and Phase 2's exit criteria are each met or explained.
       with no citations
 - [x] Spike: `codex exec` with only the ripple MCP server, shell and web off. It works once
       `code_mode_host` stays enabled (D116); `CodexRunner.run_with_mcp` and `ripple brief THEME`
-- [ ] Three briefs generated, checked and graded; kept in `docs/briefs/`. Waits for M34, so the
-      briefs can use `trending_themes`, and for the rubric's approval
+- [x] Three briefs generated (2026-09-28) with Codex and only the ripple MCP server, against a
+      frozen copy of the store so a concurrent fetch could not change what they cite; kept in
+      `docs/briefs/` with each run's tool calls. Mechanical check: **all three pass** (22, 30
+      and 17 tool calls, none failed). Company series were not yet held, so novelty is unknown
+      in all three, as the user chose; none of the three themes burst in the 90-day window
+- [x] The user read all three briefs and passed them (2026-09-28), judged as a whole rather than
+      criterion by criterion against `tests/golden/brief-rubric.md`
 - [ ] `docs/phase-3-review.md`
 
 **Done when** the exit criteria are met, or the review explains why not.
@@ -418,6 +424,15 @@ session (2026-09-28).
   no-burst cases (flat, weekend dip, one-article jump on a thin theme) still do not burst.
   `ocs-adoption` (275 articles in 4.7 years) produces no burst at this threshold and is too thin
   to measure.
+
+- **D130.** `check_events` matched an event to the first burst in date order within the ±3-day
+  tolerance. On the first real run that scored DeepSeek (2025-01-27) against the Stargate burst
+  of 22 to 24 January, although DeepSeek has its own burst from 27 January, and credited the
+  reversal flag to DeepSeek when it had fired on Stargate. The hit rate is unaffected (both are
+  hits either way), but the flag accounting was wrong: 89% before, 78% after. The match is now
+  the burst containing the event day, else the nearest within tolerance, with a test that fails
+  on the old rule. This changes how a result is attributed, not the detector, the threshold or
+  the event set, and both numbers are reported.
 
 ## Open questions
 

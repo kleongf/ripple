@@ -21,6 +21,7 @@ from ripple import events as events_module
 from ripple import explain as explain_module
 from ripple import extract as extract_module
 from ripple import judge as judge_module
+from ripple import prices as prices_module
 from ripple import profile as profile_module
 from ripple import store as store_module
 from ripple import verify as verify_module
@@ -1452,21 +1453,27 @@ LOCK_RETRIES = 6
 LOCK_WAIT = 10.0
 
 
-def _append_coverage(
-    db: Path, rows: list[store_module.CoverageRow], sleep: Callable[[float], None] = time.sleep
-) -> int:
-    """Append one series, retrying while another process holds the store's write lock (a
+def _store_write[T](
+    db: Path, action: Callable[[Store], T], sleep: Callable[[float], None] = time.sleep
+) -> T:
+    """Run one write, retrying while another process holds the store's write lock (a
     `ripple load`, or any command that opens the store for writing), so a long fetch does not
     crash on a moment's contention (D117)."""
     for attempt in range(LOCK_RETRIES):
         try:
             with Store(db) as store:
-                return store.add_coverage(rows)
+                return action(store)
         except duckdb.IOException:
             if attempt == LOCK_RETRIES - 1:
                 raise
             sleep(LOCK_WAIT)
     raise AssertionError("unreachable")
+
+
+def _append_coverage(
+    db: Path, rows: list[store_module.CoverageRow], sleep: Callable[[float], None] = time.sleep
+) -> int:
+    return _store_write(db, lambda store: store.add_coverage(rows), sleep)
 
 
 @signals_app.command("fetch")
@@ -2288,3 +2295,104 @@ def ui_command(
 
     console.print(f"Ripple UI on http://127.0.0.1:{port}  (store {db}, read-only)")
     uvicorn.run(create_app(db, ledger), host="127.0.0.1", port=port, log_level="warning")
+
+
+# --- daily prices (Phase 4, M36, D128) ----------------------------------------------------
+
+prices_app = typer.Typer(help="Daily adjusted prices for the universe (Phase 4, M36).")
+app.add_typer(prices_app, name="prices")
+# A listing held through this many days before --to counts as current: the last trading day
+# can sit several days back over a weekend or an exchange holiday.
+PRICE_SLACK_DAYS = 5
+
+
+def _listings(nodes: dict[str, Node]) -> list[str]:
+    """Every company listing in the graph, then the index of each market they trade on."""
+    listings = sorted({n.ticker for n in nodes.values() if n.type == "company" and n.ticker})
+    indices = sorted({prices_module.market_index(listing) for listing in listings})
+    return listings + indices
+
+
+@prices_app.command("fetch")
+def prices_fetch(
+    listing: Annotated[
+        list[str] | None, typer.Option("--listing", help="Listings; repeatable. Default: all.")
+    ] = None,
+    start: Annotated[
+        datetime, typer.Option("--from", formats=["%Y-%m-%d"], help="First day.")
+    ] = datetime(2022, 1, 1),
+    end: Annotated[
+        datetime | None,
+        typer.Option("--to", formats=["%Y-%m-%d"], help="Last day (default today)."),
+    ] = None,
+    refetch: Annotated[
+        bool, typer.Option("--refetch", help="Fetch listings already held through --to.")
+    ] = False,
+    db: DbOption = DEFAULT_DB,
+    cache: Annotated[
+        Path, typer.Option("--cache", help="Response cache.")
+    ] = prices_module.DEFAULT_CACHE,
+) -> None:
+    """Fetch daily closes for every company listing and its market index, and append them.
+
+    Listings already held through --to are skipped, so a rerun resumes. A listing that fails is
+    reported and the batch continues; it never stores a zero for a missing day.
+    """
+    first, last = start.date(), (end.date() if end else today_utc())
+    if last < first:
+        raise _fail("--to is before --from")
+    with Store(db, read_only=True) as store:
+        targets = listing or _listings(store.snapshot(today_utc()).nodes)
+        held = {row[0]: row[4] for row in store.price_summary()}
+    if not refetch:
+        enough = last - timedelta(days=PRICE_SLACK_DAYS)
+        done = [t for t in targets if held.get(t, date.min) >= enough]
+        targets = [t for t in targets if t not in done]
+        if done:
+            console.print(f"{len(done)} listings already held through {last}; skipped")
+    written = failed = 0
+    with prices_module.PriceClient(cache_dir=cache) as client:
+        for target in targets:
+            try:
+                series = client.fetch(target, first, last)
+            except prices_module.PriceError as exc:
+                console.print(f"{target}: {exc}", style="yellow", markup=False)
+                failed += 1
+                continue
+            rows = [
+                store_module.PriceRow(
+                    target, p.day, p.close, p.adj_close, series.currency, prices_module.SOURCE
+                )
+                for p in series.points
+            ]
+            written += _store_write(db, lambda store, rows=rows: store.add_prices(rows))
+            span = f"{rows[0].day} to {rows[-1].day}" if rows else "no trading days"
+            console.print(f"{target}: {len(rows)} days, {span}, {series.currency}", markup=False)
+    console.print(
+        f"{written} price rows appended; {failed} listings failed; "
+        f"{client.requests} requests, {client.cache_hits} cache hits"
+    )
+
+
+@prices_app.command("show")
+def prices_show(
+    listing: Annotated[str | None, typer.Argument(help="A listing; omit for a summary.")] = None,
+    days: Annotated[int, typer.Option("--days", help="How many recent days to print.")] = 10,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Print a listing's recent closes, or a summary of every listing held."""
+    with Store(db, read_only=True) as store:
+        if listing is None:
+            table = Table("Listing", "Currency", "Days", "First", "Last")
+            for name, currency, count, first, last in store.price_summary():
+                table.add_row(name, currency, str(count), str(first), str(last))
+            console.print(table)
+            return
+        rows = store.prices(listing)
+    if not rows:
+        raise _fail(f"no prices for {listing}; run `ripple prices fetch --listing {listing}`")
+    table = Table("Day", "Close", "Adjusted close", title=f"{listing} ({rows[0].currency})")
+    for row in rows[-days:]:
+        table.add_row(str(row.day), f"{row.close:,.2f}", f"{row.adj_close:,.2f}")
+    console.print(table)
+    console.print(f"{len(rows)} trading days held for {listing}")

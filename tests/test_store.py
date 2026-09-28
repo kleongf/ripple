@@ -119,7 +119,7 @@ def test_invalid_seed_is_refused(store: Store, write_seed: SeedWriter) -> None:
     with pytest.raises(SeedInvalidError) as info:
         store.load(write_seed(base_nodes(), edges), now=T1)
     assert any(p.rule == "E2" for p in info.value.problems)
-    assert store.row_counts() == {"nodes": 0, "edges": 0, "evidence": 0, "coverage": 0}
+    assert store.row_counts() == {"nodes": 0, "edges": 0, "evidence": 0, "coverage": 0, "prices": 0}
 
 
 def test_store_persists_across_connections(tmp_path: Path, write_seed: SeedWriter) -> None:
