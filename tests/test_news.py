@@ -212,3 +212,15 @@ def test_a_network_failure_stops_the_batch_like_a_refusal(tmp_path: Path) -> Non
     )
     with c, pytest.raises(news.RateLimited, match="unreachable"):
         c.volume('("test theme")', START, END)
+
+
+def test_a_plain_text_query_error_is_not_cached(tmp_path: Path) -> None:
+    """GDELT rejects a malformed query with a plain-text 200. Cached, the error would be
+    replayed on every rerun even after the query was fixed elsewhere."""
+    error = ok("The specified phrase is too short.")
+    with client(tmp_path, error, ok((FIXTURES / "volume_thick.json").read_text())) as c:
+        with pytest.raises(news.NewsError, match="too short"):
+            c.volume('("test theme")', START, END)
+        assert not list((tmp_path / "news").glob("*.gz"))
+        assert c.volume('("test theme")', START, END)
+        assert c.requests == 2

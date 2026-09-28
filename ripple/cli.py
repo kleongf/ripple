@@ -1,10 +1,13 @@
 import dataclasses
 import json
 import sys
+import time
+from collections.abc import Callable
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Annotated
 
+import duckdb
 import typer
 import yaml
 from rich.console import Console
@@ -1445,6 +1448,27 @@ def _series_targets(
     return targets
 
 
+LOCK_RETRIES = 6
+LOCK_WAIT = 10.0
+
+
+def _append_coverage(
+    db: Path, rows: list[store_module.CoverageRow], sleep: Callable[[float], None] = time.sleep
+) -> int:
+    """Append one series, retrying while another process holds the store's write lock (a
+    `ripple load`, or any command that opens the store for writing), so a long fetch does not
+    crash on a moment's contention (D117)."""
+    for attempt in range(LOCK_RETRIES):
+        try:
+            with Store(db) as store:
+                return store.add_coverage(rows)
+        except duckdb.IOException:
+            if attempt == LOCK_RETRIES - 1:
+                raise
+            sleep(LOCK_WAIT)
+    raise AssertionError("unreachable")
+
+
 @signals_app.command("fetch")
 def signals_fetch(
     theme: Annotated[
@@ -1524,8 +1548,7 @@ def signals_fetch(
                 )
                 for p in points
             ]
-            with Store(db) as store:
-                written += store.add_coverage(rows)
+            written += _append_coverage(db, rows)
             total = sum(p.matched for p in points)
             console.print(f"{node_id}: {len(rows)} days, {total} matching articles", markup=False)
     console.print(
@@ -2108,6 +2131,46 @@ def verify_walk(
     console.print(f"{done} items ruled; run `ripple load` to store the rulings")
 
 
+@verify_app.command("links")
+def verify_links(
+    out: Annotated[Path, typer.Option("--out", help="Report: URL and status only.")] = Path(
+        "data/link-check.yaml"
+    ),
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Request every evidence URL once and report dead and moved links. A pre-pass for the
+    person ruling: it records no ruling, and a live page may still not support its note."""
+    snapshot, _ = _verify_state(db, verify_module.DEFAULT_LEDGER)
+    urls = {i.url for i in verify_module.items(snapshot)}
+    try:
+        agent = edgar.user_agent_from_env()
+    except edgar.EdgarConfigError as exc:
+        raise _fail(str(exc)) from exc
+    console.print(f"checking {len(urls)} URLs…")
+    with verify_module.link_client(agent) as client:
+        links = verify_module.check_links(urls, client)
+    bad = [link for link in links if not link.ok]
+    moved = [link for link in links if link.moved]
+    for link in bad:
+        console.print(f"DEAD {link.status or link.error}  {link.url}", style="red", markup=False)
+    for link in moved:
+        console.print(f"moved  {link.url} -> {link.final_url}", style="yellow", markup=False)
+    out.write_text(
+        "# Evidence link check (M33): status only, no content, no rulings.\n"
+        + yaml.safe_dump(
+            {
+                "checked": today_utc().isoformat(),
+                "links": [dataclasses.asdict(link) for link in links],
+            },
+            sort_keys=False,
+        )
+    )
+    console.print(
+        f"{len(links)} checked: {len(links) - len(bad)} live ({len(moved)} redirected), "
+        f"{len(bad)} dead or unreachable; report in {out}"
+    )
+
+
 @verify_app.command("recompute")
 def verify_recompute(
     db: DbOption = DEFAULT_DB,
@@ -2207,3 +2270,21 @@ def brief_command(
     console.print("mechanical check: " + ("pass" if check.passed else "FAIL"))
     for problem in check.problems:
         console.print(f"  FAIL {problem}", style="red", markup=False)
+
+
+# --- read-only browser UI (off-roadmap tool, docs/ui.md) ---------------------------------
+
+
+@app.command("ui")
+def ui_command(
+    port: Annotated[int, typer.Option("--port", help="Port on 127.0.0.1.")] = 8765,
+    db: DbOption = DEFAULT_DB,
+    ledger: LedgerOption = verify_module.DEFAULT_LEDGER,
+) -> None:
+    """Serve the read-only UI at http://127.0.0.1:PORT. It never writes to the store."""
+    import uvicorn
+
+    from ripple.ui.app import create_app
+
+    console.print(f"Ripple UI on http://127.0.0.1:{port}  (store {db}, read-only)")
+    uvicorn.run(create_app(db, ledger), host="127.0.0.1", port=port, log_level="warning")

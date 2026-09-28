@@ -242,21 +242,30 @@ class Store:
         end: date | None = None,
         known_at: date | None = None,
     ) -> list["CoverageRow"]:
-        """One row per day for `key`, taking the latest recorded version of each day.
+        """One row per day for `key`, taking the latest recorded version of each day, from the
+        query that produced the most recently recorded row only.
 
+        A changed query changes every series it produced (D87), so days from an older query
+        are never mixed in, even where the new series does not reach them (phase-3.md, D120).
         `known_at` bounds what the store had learned, which is what a backtest needs.
         """
-        clauses = ["key = $key"]
+        known = ""
         params: dict[str, Any] = {"key": key}
+        if known_at is not None:
+            known = " AND recorded_at < $cutoff"
+            params["cutoff"] = datetime.combine(known_at + timedelta(days=1), time())
+        clauses = [
+            "key = $key" + known,
+            "query_hash = (SELECT query_hash FROM coverage WHERE key = $key"
+            + known
+            + " ORDER BY recorded_at DESC LIMIT 1)",
+        ]
         if start is not None:
             clauses.append("day >= $start")
             params["start"] = start
         if end is not None:
             clauses.append("day <= $end")
             params["end"] = end
-        if known_at is not None:
-            clauses.append("recorded_at < $cutoff")
-            params["cutoff"] = datetime.combine(known_at + timedelta(days=1), time())
         rows = self._con.execute(
             f"""
             SELECT kind, key, day, matched, norm, tone, query_hash

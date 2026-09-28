@@ -251,7 +251,17 @@ def bursts(
     persistence: int = PERSISTENCE,
 ) -> list[Burst]:
     """Windows where the surprise stayed above the threshold for `persistence` days."""
-    stats_by_day = day_stats(rows)
+    return bursts_from_stats(key, day_stats(rows), min_surprise, persistence)
+
+
+def bursts_from_stats(
+    key: str,
+    stats_by_day: list[DayStat],
+    min_surprise: float = MIN_SURPRISE,
+    persistence: int = PERSISTENCE,
+) -> list[Burst]:
+    """`bursts` on day statistics already computed, so trying many thresholds on one series
+    costs one pass of `day_stats` rather than one per threshold."""
     flagged = [s for s in stats_by_day if s.surprise >= min_surprise and s.matched >= MIN_ARTICLES]
     if not flagged:
         return []
@@ -433,10 +443,11 @@ def calibrate_threshold(
     theme_years = max(len(usable) * span_days / 365.25, 1e-9)
 
     curve: list[tuple[float, float]] = []
+    stats = {key: day_stats(rows) for key, rows in usable.items()}
     for threshold in grid:
         total = sum(
-            len(bursts(key, rows, min_surprise=threshold, persistence=persistence))
-            for key, rows in usable.items()
+            len(bursts_from_stats(key, days, min_surprise=threshold, persistence=persistence))
+            for key, days in stats.items()
         )
         curve.append((threshold, total / theme_years))
     chosen = next((t for t, rate in curve if rate <= target), grid[-1])

@@ -16,12 +16,15 @@ person confirms one filing rather than re-reading every line.
 
 import dataclasses
 import hashlib
-from collections.abc import Iterable
+import time
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 from typing import Literal
+from urllib.parse import urlsplit
 
+import httpx
 import yaml
 
 from ripple import edgar, mapping, xbrl, xbrl_edges
@@ -309,3 +312,57 @@ def _compare(item: Item, records: list[dict], note_prefix: bool = False) -> Reco
     if not same:
         return Recomputed(item, False, f"note differs: recomputed {note!r}")
     return Recomputed(item, True, "weight and note recomputed from the cached filing")
+
+
+# --- link check: a pre-pass for the person ruling, never a ruling itself -------------------
+
+# One request per distinct URL, paced per host; SEC asks for at most 10 a second and CLAUDE.md
+# keeps EDGAR at 5, so every host gets the stricter pace.
+LINK_INTERVAL = 0.25
+LINK_TIMEOUT = 20.0
+
+
+@dataclass(frozen=True)
+class Link:
+    url: str
+    status: int | None
+    final_url: str | None
+    error: str | None
+
+    @property
+    def ok(self) -> bool:
+        return self.status is not None and 200 <= self.status < 400
+
+    @property
+    def moved(self) -> bool:
+        return self.ok and self.final_url is not None and self.final_url != self.url
+
+
+def check_links(
+    urls: Iterable[str],
+    client: httpx.Client,
+    sleep: Callable[[float], None] = time.sleep,
+) -> list[Link]:
+    """Request each URL once and record the status and where it ended up. Stores no content,
+    and rules on nothing: a live page may still not support its note, which only a person can
+    judge (D113)."""
+    results: list[Link] = []
+    seen: set[str] = set()
+    for url in sorted(set(urls)):
+        # Sorted, so one host's URLs run consecutively and each after the first waits its turn.
+        host = urlsplit(url).netloc
+        if host in seen:
+            sleep(LINK_INTERVAL)
+        seen.add(host)
+        try:
+            response = client.get(url)
+            results.append(Link(url, response.status_code, str(response.url), None))
+        except httpx.HTTPError as exc:
+            results.append(Link(url, None, None, f"{type(exc).__name__}: {exc}"[:200]))
+    return results
+
+
+def link_client(user_agent: str) -> httpx.Client:
+    return httpx.Client(
+        headers={"User-Agent": user_agent}, follow_redirects=True, timeout=LINK_TIMEOUT
+    )

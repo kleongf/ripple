@@ -70,14 +70,14 @@
   kind: volume
   label: Nuclear power for datacenters
   aliases: [nuclear PPA, reactor restart for AI, SMR for data centers]
-  query: '("nuclear power" OR "nuclear plant" OR "nuclear reactor" OR "small modular reactor" OR "nuclear PPA") ("data center" OR datacenter OR hyperscaler OR "AI")'
+  query: '("nuclear power" OR "nuclear plant" OR "nuclear reactor" OR "small modular reactor" OR "nuclear PPA") ("data center" OR datacenter OR hyperscaler OR "artificial intelligence" OR "AI power" OR "AI demand")'
 
 - id: theme/optical-interconnect-demand
   type: theme
   kind: volume
   label: Optical interconnect demand
   aliases: [optical transceiver demand, 800G ramp, 1.6T optics]
-  query: '("optical transceiver" OR "optical module" OR "optical interconnect" OR "800G" OR "1.6T" OR "pluggable optics" OR "optical networking")'
+  query: '("optical transceiver" OR "optical module" OR "optical interconnect" OR "800G" OR "1.6 terabit" OR "pluggable optics" OR "optical networking")'
 
 - id: theme/arm-datacenter-adoption
   type: theme
@@ -105,4 +105,4 @@
   kind: share_shift
   label: AI servers crowding out general-purpose servers
   aliases: [server budget shift to AI, conventional server spending squeeze]
-  query: '("server market" OR "server shipments" OR "server spending" OR "server revenue" OR "server demand" OR "server refresh") (AI OR "general-purpose" OR "general purpose" OR traditional)'
+  query: '("server market" OR "server shipments" OR "server spending" OR "server revenue" OR "server demand" OR "server refresh") ("AI server" OR "AI servers" OR "artificial intelligence" OR "general-purpose" OR "general purpose" OR traditional)'

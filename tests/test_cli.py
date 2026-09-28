@@ -213,3 +213,31 @@ def test_explain_json_matches_the_tool(loaded_db: Path) -> None:
     assert result.exit_code == 0, result.output
     data = json.loads(result.output)
     assert data["paths"][0]["contribution"] == 0.16
+
+
+def test_coverage_append_retries_while_the_store_is_locked(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from datetime import date
+
+    import duckdb
+
+    from ripple import cli
+    from ripple.store import CoverageRow, Store
+
+    db = tmp_path / "locked.duckdb"
+    row = CoverageRow("theme", "theme/t", date(2026, 1, 1), 1, 10, None, "h")
+    attempts = {"n": 0}
+
+    def store_locked_once(path: Path, read_only: bool = False) -> Store:
+        attempts["n"] += 1
+        if attempts["n"] == 1:
+            raise duckdb.IOException("Could not set lock on file")
+        return Store(path, read_only=read_only)
+
+    monkeypatch.setattr(cli, "Store", store_locked_once)
+    waits: list[float] = []
+    assert cli._append_coverage(db, [row], sleep=waits.append) == 1
+    assert waits == [cli.LOCK_WAIT]
+    with Store(db, read_only=True) as store:
+        assert len(store.coverage("theme/t")) == 1

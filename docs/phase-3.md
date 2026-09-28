@@ -218,9 +218,9 @@ on the mini fixture, and the four golden files still pass. **Met.**
 - [x] Tests on the mini fixture: a company with no `PRODUCES` edge (empty mix, not an error), a
       company exposed to two themes (listed, never summed), and a company with no coverage
       (attention null)
-- [ ] The user reads `ripple profile company/vertiv` and agrees it is right
+- [x] The user reads `ripple profile company/vertiv` and agrees it is right (2026-09-28)
 
-**Done when** `ripple profile company/vertiv` reads correctly to the user.
+**Done when** `ripple profile company/vertiv` reads correctly to the user. **Met.**
 
 ### M33. Evidence verification
 
@@ -233,6 +233,10 @@ on the mini fixture, and the four golden files still pass. **Met.**
 - [x] `ripple verify recompute`: redoes every `xbrl` note's arithmetic from the cached filings.
       At the start: **250 of 250 match**, so the `xbrl` layer needs a per-filing human check of
       the fact family, not line-by-line reading
+- [x] `ripple verify links`: a link-check pre-pass that records status only and rules on
+      nothing. On 2026-09-28: 117 of 123 documents live; one genuine 404 (the networkworld
+      server-memory article), two 403s and three timeouts that are probably servers refusing
+      automated clients; report in `data/link-check.yaml`
 - [ ] The user rules on every item in the store (432 at the start, across 123 documents), over
       several sittings
 - [ ] Failures fixed at the source, or recorded with a reason
@@ -248,9 +252,8 @@ appending (D117); run `ripple signals fetch --all --from 2022-01-01 --to 2026-09
 reports no `stopped:`.
 
 - [ ] All 15 theme series and 61 company series in the store, fetched with the current queries.
-      Check the store's query before trusting a run (CLAUDE.md). **4 of 76 held** on 2026-09-28:
-      `ai-compute-demand`, `custom-silicon-adoption`, `datacenter-power-demand`,
-      `liquid-cooling-adoption`
+      Check the store's query before trusting a run (CLAUDE.md). **10 of 76 held** on
+      2026-09-28, all themes; three queries corrected first (D121)
 - [ ] Phase 2's pending numbers measured and written into `docs/phase-2-review.md`: M26 query
       precision, M29 event hit rate, M27 novelty read by hand
 - [ ] `MIN_SURPRISE` set from `ripple calibrate` across all 15 themes (D109), after the D115
@@ -268,8 +271,8 @@ across all 15 themes, and Phase 2's exit criteria are each met or explained.
 ### M35. Brief acceptance and review
 
 - [x] `tests/golden/brief-rubric.md` and `tests/golden/brief-prompts.yaml`, written before any
-      brief was generated. **The user approves them before the first brief runs**, and they are
-      committed then
+      brief was generated, and committed in `1baf049` before any brief ran. **Approved by the
+      user as written, 2026-09-28**
 - [x] `ripple check-brief`, with tests on hand-written briefs: a bad edge ID, a mismatched
       number, a foreign URL, a sign error, an unknown node, precision as written, and a brief
       with no citations
@@ -302,6 +305,7 @@ across all 15 themes, and Phase 2's exit criteria are each met or explained.
 | A brief looks sourced but cites unverified or bucket edges | `check-brief` flags unverified citations; the rubric requires disclosing bucket weights |
 | The writer invents facts the tools never returned | The writer has no web or shell; the checker resolves every ID and number against the store |
 | Tuning D110's fix against the event set | The split rule is designed on synthetic series and written down before `ripple events` runs (D101) |
+| Wire syndication inflates counts: one story republished by many outlets counts many times, a likely source of the overdispersion D103 corrects for | None possible from `TimelineVolRaw` daily counts, which cannot be deduplicated; a known limit, revisited only if M34's event measurement is poor (D119) |
 | Codex cannot be restricted to one MCP server | Spike first in M35; if it fails, run the same prompts in a Claude Code session with only the ripple server, and record that change |
 | Tool output grows too large for a model's context | `limit` on every list, `k` on paths, rounded numbers, IDs rather than prose |
 | A product shock is read as a customer effect | The tool description says a product shock reaches producers and upstream inputs, not customers |
@@ -361,11 +365,44 @@ session (2026-09-28).
   is no reason to refuse them. Companies and regions are outputs and stay refused. A product
   shock reaches producers and upstream inputs, never customers.
 
+- **D119.** Google Trends' pipeline (sampling, filtering, normalization, peak-equals-100 scaling,
+  "rising" and "breakout" terms) was reviewed as a model for spike detection and not adopted
+  (user decision, 2026-09-28). Ripple already divides by total volume (share = matched / norm)
+  and reports a ratio against the theme's own trailing baseline, which is what "rising" is; its
+  article floor and `MIN_EXPECTED` guard against the near-zero "breakout" case (D106). Scaling to
+  a 0-100 index is rejected: it discards the counts the Poisson surprise needs (5 against 1 is
+  weaker evidence than 500 against 100) and makes every value depend on the chart window. The
+  one transferable idea, dropping repeats, maps to wire syndication and cannot be done on daily
+  counts. The detector stays as it is until `ripple events` gives a measured hit rate; any
+  alternative must be compared on the same pre-registered set, never tuned against it (D101).
+
+- **D120.** `Store.coverage` now reads only the query that produced the most recently recorded
+  row (as of `known_at`). It used to take the newest row per day across all query hashes, so a
+  series re-fetched with a new query kept the old query's days wherever the new fetch did not
+  reach them: `ai-compute-demand` ended on a zero from the superseded query, found through the
+  UI. This applies D87 to reading as well as writing. Calibration was also made about 80 times
+  faster by computing day statistics once per series (`signal.bursts_from_stats`), with
+  identical results.
+
+- **D121.** GDELT rejects a query with a term under three characters ("The specified phrase is
+  too short") as a plain-text 200, and the client cached that error as if it were a response, so
+  `nuclear-for-datacenters` and `optical-interconnect-demand` could never be fetched. Only JSON
+  is cached now. The two queries are corrected on face validity (`"AI"` becomes
+  `"artificial intelligence"`, `"AI power"` and `"AI demand"`; `"1.6T"` becomes
+  `"1.6 terabit"`), and `ai-server-budget-shift`'s bare `AI` gets the same treatment before
+  its first request. None of the three had produced a series, so no measurement changes. A
+  fetch round that met another process's write lock crashed; appends now retry for up to a
+  minute (`_append_coverage`).
+
 ## Open questions
 
 - Can `codex exec` run with one MCP server and nothing else? The M35 spike answers it.
 - Should `company_profile` include `COMPETES_WITH` neighbours once any exist? None are stored yet.
 - Does the D110 split rule change the calibrated threshold? If it does, re-run `ripple calibrate`
   after the split and before `ripple events`, and record both numbers.
+- Is Google Trends worth adding as a second signal, measuring search interest rather than press
+  coverage (D119)? Blocked today: the official API is an application-gated alpha and pytrends
+  is archived (PLAN §5), and each request returns a resampled 0-100 index that would need
+  stitching and anchoring.
 - How are 10-Ks refreshed each year (carried from Phase 1 and Phase 2)? Once a year of filings
   rolls over, verification rulings keyed to an old URL will need carrying or re-ruling.

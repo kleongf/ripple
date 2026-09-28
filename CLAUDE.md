@@ -27,9 +27,10 @@ uv run ripple events                          # pre-registered event set vs dete
 uv run ripple exposed product/hbm --top 10    # a product or material shock, not only a theme (D118)
 uv run ripple evidence e-1a2b3c4d5e           # one edge: evidence, source layer, losing rows
 uv run ripple profile company/vertiv          # revenue mix, neighbours, exposure per theme
-uv run ripple verify status                   # evidence rulings; also next, rule, walk, recompute
+uv run ripple verify status                   # evidence rulings; also next, rule, walk, recompute, links
 uv run ripple check-brief docs/briefs/ai-compute-demand.md --theme theme/ai-compute-demand
 uv run ripple brief theme/ai-compute-demand   # Codex writes a brief through the MCP tools only
+uv run ripple ui --port 8765  # read-only browser UI at http://127.0.0.1:8765 (docs/ui.md)
 uv run ripple-mcp             # MCP server over stdio (registered in .mcp.json; RIPPLE_DB overrides the store path)
 ```
 
@@ -68,6 +69,7 @@ ripple/
   profile.py          company_profile: revenue mix, neighbours, exposure per theme (M32)
   verify.py           evidence rulings ledger, applied at load; xbrl recompute (M33)
   brief.py            brief citation checker; Codex briefs through the MCP tools (M35)
+  ui/                 read-only browser UI: starlette JSON routes, static page (docs/ui.md, off-roadmap)
 tests/
   fixtures/mini/      small graph with hand-computed answers (phase-0.md, M2)
   golden/             ranking expectations for the real seed (write before looking at a ranking)

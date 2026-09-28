@@ -251,3 +251,36 @@ def test_recompute_matches_regenerated_xbrl_edges_and_catches_a_tampered_one(
     assert sum(r.match for r in found) == 2
     [bad] = [r for r in found if not r.match]
     assert bad.item.edge.dst == records[0]["dst"] and "recomputed" in bad.detail
+
+
+def test_link_check_records_status_and_redirects_without_ruling() -> None:
+    import httpx
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        path = request.url.path
+        if path == "/old":
+            return httpx.Response(301, headers={"Location": "https://a.example/new"})
+        if path == "/gone":
+            return httpx.Response(404)
+        if request.url.host == "down.example":
+            raise httpx.ConnectError("refused")
+        return httpx.Response(200, text="page")
+
+    client = httpx.Client(transport=httpx.MockTransport(handler), follow_redirects=True)
+    waits: list[float] = []
+    urls = [
+        "https://a.example/ok",
+        "https://a.example/old",
+        "https://a.example/gone",
+        "https://down.example/x",
+        "https://a.example/ok",
+    ]
+    links = {link.url: link for link in verify.check_links(urls, client, sleep=waits.append)}
+    assert len(links) == 4  # each distinct URL once
+    assert links["https://a.example/ok"].ok and not links["https://a.example/ok"].moved
+    assert links["https://a.example/old"].moved
+    assert links["https://a.example/old"].final_url == "https://a.example/new"
+    assert links["https://a.example/gone"].status == 404 and not links["https://a.example/gone"].ok
+    assert links["https://down.example/x"].error.startswith("ConnectError")
+    # Paced per host: three a.example URLs after the first wait; the other host does not.
+    assert waits == [verify.LINK_INTERVAL] * 2

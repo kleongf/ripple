@@ -202,3 +202,27 @@ def test_adding_span_field_keeps_old_content_hashes(tmp_path: Path) -> None:
 
     expected = hashlib.sha256(json.dumps(old_style, sort_keys=True).encode()).hexdigest()
     assert edge_hash(edge) == expected
+
+
+def test_coverage_never_mixes_days_from_an_older_query(tmp_path) -> None:
+    """A re-fetch with a new query that stops a day earlier must not pick up the old query's
+    last day (phase-3.md, D120)."""
+    from datetime import UTC, date, datetime
+
+    from ripple.store import CoverageRow, Store
+
+    def rows(digest: str, days: int, matched: int) -> list[CoverageRow]:
+        return [
+            CoverageRow("theme", "theme/t", date(2026, 9, 1 + i), matched, 1000, None, digest)
+            for i in range(days)
+        ]
+
+    with Store(tmp_path / "c.duckdb") as store:
+        store.add_coverage(rows("old", 28, 5), now=datetime(2026, 9, 20, 8, tzinfo=UTC))
+        store.add_coverage(rows("new", 27, 50), now=datetime(2026, 9, 28, 12, tzinfo=UTC))
+        latest = store.coverage("theme/t")
+        assert [r.query_hash for r in latest] == ["new"] * 27
+        assert latest[-1].day == date(2026, 9, 27)
+        # As known before the new query arrived, the old series is still the whole answer.
+        earlier = store.coverage("theme/t", known_at=date(2026, 9, 25))
+        assert {r.query_hash for r in earlier} == {"old"} and len(earlier) == 28

@@ -259,6 +259,12 @@ class NewsClient:
             self.cache_hits += 1
             return gzip.decompress(path.read_bytes()).decode("utf-8")
         body = self._request(params)
+        # Only a JSON payload is cached. GDELT answers a malformed query with a plain-text 200
+        # ("The specified phrase is too short"); cached, that error would be replayed forever.
+        try:
+            json.loads(body)
+        except json.JSONDecodeError:
+            return body
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         path.write_bytes(gzip.compress(body.encode("utf-8")))
         return body
