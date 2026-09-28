@@ -101,6 +101,10 @@ class Node(BaseModel):
     ids: dict[str, str | None] = {}
     # Required on themes; a plain str so the validator can report bad values as rule E13.
     kind: str | None = None
+    # GDELT DOC query that measures this theme's news coverage (docs/phase-2.md, D87). Part of
+    # the theme's definition, so the bitemporal store versions it: changing the query changes
+    # every series it produced. Themes only; company queries are built from label and aliases.
+    query: str | None = None
 
 
 class Edge(BaseModel):

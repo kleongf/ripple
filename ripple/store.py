@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
@@ -10,7 +11,7 @@ from typing import Any, Self
 
 import duckdb
 
-from ripple.load import load_sources
+from ripple.load import Seed, load_sources
 from ripple.model import Edge, Evidence, Node, Problem, Span, consolidate, node_precedence
 from ripple.validate import validate
 
@@ -52,6 +53,16 @@ ALTER TABLE evidence ADD COLUMN IF NOT EXISTS verified BOOLEAN DEFAULT FALSE;
 ALTER TABLE evidence ADD COLUMN IF NOT EXISTS span VARCHAR;
 ALTER TABLE nodes ADD COLUMN IF NOT EXISTS source VARCHAR DEFAULT 'seed';
 ALTER TABLE edges ADD COLUMN IF NOT EXISTS source VARCHAR DEFAULT 'seed';
+CREATE TABLE IF NOT EXISTS coverage (
+    kind VARCHAR NOT NULL,          -- 'theme' | 'company'
+    key VARCHAR NOT NULL,           -- node ID
+    day DATE NOT NULL,
+    matched BIGINT NOT NULL,        -- articles matching the query
+    norm BIGINT NOT NULL,           -- all articles GDELT monitored that day
+    tone DOUBLE,                    -- mean tone of matching articles, null when unfetched
+    query_hash VARCHAR NOT NULL,    -- so a query change is visible in the data
+    recorded_at TIMESTAMP NOT NULL
+);
 """
 
 EDGE_COLUMNS = (
@@ -75,6 +86,23 @@ class LoadReport:
     inserted: int
     superseded: int
     unchanged: int
+
+
+@dataclass(frozen=True)
+class CoverageRow:
+    """One day of news coverage for a theme or company (docs/phase-2.md, D86)."""
+
+    kind: str
+    key: str
+    day: date
+    matched: int
+    norm: int
+    tone: float | None
+    query_hash: str
+
+    @property
+    def share(self) -> float:
+        return self.matched / self.norm if self.norm else 0.0
 
 
 @dataclass(frozen=True)
@@ -123,11 +151,19 @@ class Store:
         """Validate one source directory and record it as that source's current state."""
         return self.load_sources({source: directory}, now)
 
-    def load_sources(self, sources: dict[str, Path], now: datetime | None = None) -> LoadReport:
+    def load_sources(
+        self,
+        sources: dict[str, Path],
+        now: datetime | None = None,
+        prepare: Callable[[Seed], Seed] | None = None,
+    ) -> LoadReport:
         """Validate source directories together, then record each as that source's current
-        state. Rows of sources not given are left untouched (D40)."""
+        state. Rows of sources not given are left untouched (D40). `prepare` adjusts the parsed
+        records before validation; `ripple load` uses it to apply verification rulings (D113)."""
         now = now or datetime.now(UTC)
         seed = load_sources(sources)
+        if prepare is not None:
+            seed = prepare(seed)
         errors = [p for p in validate(seed, today=now.date()) if p.severity == "error"]
         if errors:
             raise SeedInvalidError(errors)
@@ -184,9 +220,75 @@ class Store:
             alternatives={edge.id: losers[edge.key] for _, edge in winners if edge.key in losers},
         )
 
+    # --- coverage series (Phase 2, M24, D86) ------------------------------------------
+
+    def add_coverage(self, rows: list["CoverageRow"], now: datetime | None = None) -> int:
+        """Append coverage rows. Never updates: GDELT backfills, so a refetch inserts a new
+        version and readers take the latest row at or before `known_at`."""
+        if not rows:
+            return 0
+        stamp = _naive_utc(now or datetime.now(UTC))
+        self._con.executemany(
+            "INSERT INTO coverage (kind, key, day, matched, norm, tone, query_hash, recorded_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            [[r.kind, r.key, r.day, r.matched, r.norm, r.tone, r.query_hash, stamp] for r in rows],
+        )
+        return len(rows)
+
+    def coverage(
+        self,
+        key: str,
+        start: date | None = None,
+        end: date | None = None,
+        known_at: date | None = None,
+    ) -> list["CoverageRow"]:
+        """One row per day for `key`, taking the latest recorded version of each day.
+
+        `known_at` bounds what the store had learned, which is what a backtest needs.
+        """
+        clauses = ["key = $key"]
+        params: dict[str, Any] = {"key": key}
+        if start is not None:
+            clauses.append("day >= $start")
+            params["start"] = start
+        if end is not None:
+            clauses.append("day <= $end")
+            params["end"] = end
+        if known_at is not None:
+            clauses.append("recorded_at < $cutoff")
+            params["cutoff"] = datetime.combine(known_at + timedelta(days=1), time())
+        rows = self._con.execute(
+            f"""
+            SELECT kind, key, day, matched, norm, tone, query_hash
+            FROM (
+                SELECT *, row_number() OVER (PARTITION BY key, day ORDER BY recorded_at DESC)
+                       AS version
+                FROM coverage WHERE {" AND ".join(clauses)}
+            )
+            WHERE version = 1
+            ORDER BY day
+            """,
+            params,
+        ).fetchall()
+        return [CoverageRow(*row) for row in rows]
+
+    def coverage_summary(self) -> list[tuple[str, str, int, date, date]]:
+        """(kind, key, distinct days, first day, last day) per series, for `signals show`."""
+        return self._con.execute(
+            "SELECT kind, key, count(DISTINCT day), min(day), max(day) "
+            "FROM coverage GROUP BY kind, key ORDER BY kind, key"
+        ).fetchall()
+
+    def held_series(self) -> dict[tuple[str, str], date]:
+        """(key, query_hash) to the last day held, so a resumed fetch can skip finished series."""
+        rows = self._con.execute(
+            "SELECT key, query_hash, max(day) FROM coverage GROUP BY key, query_hash"
+        ).fetchall()
+        return {(key, digest): last for key, digest, last in rows}
+
     def row_counts(self) -> dict[str, int]:
         counts = {}
-        for table in ("nodes", "edges", "evidence"):
+        for table in ("nodes", "edges", "evidence", "coverage"):
             row = self._con.execute(f"SELECT count(*) FROM {table}").fetchone()
             counts[table] = row[0] if row else 0
         return counts

@@ -106,15 +106,40 @@ def test_unknown_theme(store: Store) -> None:
         score(store, "theme/nope", as_of=AS_OF)
 
 
-def test_not_a_theme(store: Store) -> None:
-    with pytest.raises(ValueError, match="not a theme"):
+def test_a_company_cannot_be_shocked(store: Store) -> None:
+    with pytest.raises(ValueError, match="shock a theme, product or material"):
         score(store, "company/asml", as_of=AS_OF)
+
+
+def test_product_shock_reaches_producers_and_inputs_not_customers(store: Store) -> None:
+    # A unit demand shock on accelerators, by hand:
+    #   nvidia  0.9 (produces accelerators)
+    #   parts   0.9 x 0.5 = 0.45 (supplies Nvidia)
+    #   tsmc    0.4 x 0.6 = 0.24 (accelerators require leading-edge logic)
+    #   multi   0.1 + 0.4 x 0.8 x 0.2 = 0.164
+    #   asml    0.4 x 0.8 x 0.5 = 0.16
+    # Vertiv sits on the datacenter-capacity branch, which accelerators do not feed, and rumor's
+    # edge is below the confidence threshold.
+    result = score(store, "product/accelerators", as_of=AS_OF)
+    exposure = {r.company: r.exposure for r in result.results}
+    assert exposure == pytest.approx(
+        {
+            "company/nvidia": 0.9,
+            "company/parts": 0.45,
+            "company/tsmc": 0.24,
+            "company/multi": 0.164,
+            "company/asml": 0.16,
+        }
+    )
+    assert result.shock_type == "product"
+    assert result.theme_kind is None
 
 
 def test_to_dict_matches_mcp_shape(store: Store) -> None:
     data = score(store, "theme/ai-compute", as_of=AS_OF).to_dict()
     assert set(data) == {
         "theme",
+        "shock_type",
         "theme_kind",
         "direction",
         "as_of",
@@ -134,8 +159,13 @@ def test_to_dict_matches_mcp_shape(store: Store) -> None:
         "guessed_weights",
         "path_confidence",
         "weakest_confidence",
+        # Phase 2, M27: attention and novelty are null until a coverage series is held.
+        "attention",
+        "attention_percentile",
+        "novelty",
         "paths",
     }
+    assert (asml["attention"], asml["novelty"]) == (None, None)
     path = asml["paths"][0]
     assert set(path) == {"contribution", "confidence", "weakest_confidence", "nodes", "edges"}
     assert path["edges"][0].startswith("e-")

@@ -14,6 +14,18 @@
     accessed: &id002 2026-09-27
 - src: company/cisco
   rel: PRODUCES
+  dst: product/general-purpose-servers
+  weight: 0.0438
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm
+    note: '10-K FY2026 XBRL: Networking 54.7% x0.08 of USD 63.3bn revenue'
+    accessed: *id002
+- src: company/cisco
+  rel: PRODUCES
   dst: product/optical-transceivers
   weight: 0.0274
   weight_source: manual

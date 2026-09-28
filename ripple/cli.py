@@ -1,6 +1,7 @@
 import dataclasses
 import json
-from datetime import date, datetime
+import sys
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Annotated
 
@@ -9,23 +10,41 @@ import yaml
 from rich.console import Console
 from rich.table import Table
 
-from ripple import edgar, growth, jobs, mapping, sections, xbrl, xbrl_edges
+from ripple import attention as attention_module
+from ripple import brief as brief_module
+from ripple import codex as codex_module
+from ripple import edgar, growth, jobs, mapping, news, queries, sections, signal, xbrl, xbrl_edges
+from ripple import events as events_module
+from ripple import explain as explain_module
 from ripple import extract as extract_module
 from ripple import judge as judge_module
+from ripple import profile as profile_module
+from ripple import store as store_module
+from ripple import verify as verify_module
 from ripple.codex import CodexError
 from ripple.graph import Graph, build_graph
 from ripple.load import load_seed, load_sources
-from ripple.model import DEFAULT_MIN_CONFIDENCE, today_utc
+from ripple.model import DEFAULT_MIN_CONFIDENCE, Node, today_utc
 from ripple.paths import Path as ExplainPath
 from ripple.paths import top_paths
-from ripple.propagate import Direction
-from ripple.score import DEFAULT_MAX_HOPS, OBVIOUS_HOPS, JitterMode, score, sensitivity
+from ripple.propagate import Direction, Shock
+from ripple.score import (
+    DEFAULT_MAX_HOPS,
+    OBVIOUS_HOPS,
+    JitterMode,
+    company_exposures,
+    score,
+    sensitivity,
+)
 from ripple.store import SeedInvalidError, Store
 from ripple.validate import product_path
 from ripple.validate import validate as validate_seed
 
 DEFAULT_DB = Path("data/ripple.duckdb")
 DEFAULT_SOURCES = Path("data/sources.yaml")
+LedgerOption = Annotated[
+    Path, typer.Option("--ledger", help="Verification rulings (docs/phase-3.md, M33).")
+]
 REVENUE_RELATIONS = {"PRODUCES", "SUPPLIES", "SUBSIDIARY_OF"}
 
 app = typer.Typer(
@@ -62,10 +81,15 @@ def main() -> None:
 @app.command()
 def validate(
     directory: Annotated[Path, typer.Argument(exists=True, file_okay=False)],
+    source: Annotated[str, typer.Option("--source", help="Source name for DIRECTORY.")] = "seed",
+    ledger: LedgerOption = verify_module.DEFAULT_LEDGER,
 ) -> None:
-    """Check seed YAML against the Phase 0 validation rules."""
-    seed = load_seed(directory)
-    problems = validate_seed(seed, today=today_utc())
+    """Check seed YAML against the validation rules, with verification rulings applied."""
+    rulings = verify_module.load_ledger(ledger)
+    seed = verify_module.apply_rulings(load_seed(directory, source), rulings)
+    problems = validate_seed(
+        seed, today=today_utc(), check_verified=verify_module.started(seed, rulings)
+    )
     for problem in problems:
         style = "red" if problem.severity == "error" else "yellow"
         console.print(str(problem), style=style, markup=False)
@@ -89,28 +113,45 @@ def load(
         Path | None,
         typer.Option("--sources", exists=True, help="YAML map of source name to directory."),
     ] = None,
+    ledger: LedgerOption = verify_module.DEFAULT_LEDGER,
     db: DbOption = DEFAULT_DB,
 ) -> None:
     """Validate source directories together and record each in the store (D40).
 
     Without arguments, loads every source listed in data/sources.yaml (or data/seed alone).
-    Never overwrites; supersedes, and only within the sources loaded.
+    Never overwrites; supersedes, and only within the sources loaded. Verification rulings in
+    the ledger are applied first, so a verified item is stored as verified (D113).
     """
     if directory is not None:
         dirs = {source: directory}
     else:
         dirs = _source_dirs(sources or DEFAULT_SOURCES)
+    rulings = verify_module.load_ledger(ledger)
     with Store(db) as store:
+        before = store.snapshot(today_utc()).sources
         try:
-            report = store.load_sources(dirs)
+            report = store.load_sources(
+                dirs, prepare=lambda seed: verify_module.apply_rulings(seed, rulings)
+            )
         except SeedInvalidError as exc:
             for problem in exc.problems:
                 console.print(str(problem), style="red", markup=False)
             raise _fail(f"not loaded: {len(exc.problems)} errors") from exc
+        after = store.snapshot(today_utc())
     console.print(
         f"{db} ({', '.join(dirs)}): inserted {report.inserted}, superseded {report.superseded}, "
         f"unchanged {report.unchanged}"
     )
+    # A verified row outranks an unverified one (D63), so a ruling can change which layer's row
+    # wins an edge. Every such change is listed (D113).
+    for edge in after.edges:
+        old, new = before.get(edge.id), after.sources.get(edge.id)
+        if old is not None and old != new:
+            console.print(
+                f"winner changed: {edge.id} {edge.label} now from {new} (was {old})",
+                style="yellow",
+                markup=False,
+            )
 
 
 def _source_dirs(path: Path) -> dict[str, Path]:
@@ -127,15 +168,33 @@ def exposed(
     top: Annotated[int, typer.Option("--top")] = 20,
     hide_obvious: Annotated[bool, typer.Option("--hide-obvious")] = False,
     obvious_hops: Annotated[
-        int, typer.Option("--obvious-hops", help="Hide companies this many hops away or fewer.")
+        int,
+        typer.Option(
+            "--obvious-hops",
+            help="Fallback when attention is unknown: hide companies this many hops away or fewer.",
+        ),
     ] = OBVIOUS_HOPS,
+    obvious_percentile: Annotated[
+        float,
+        typer.Option(
+            "--obvious-percentile", help="Hide companies at or above this attention rank."
+        ),
+    ] = attention_module.OBVIOUS_PERCENTILE,
+    by_novelty: Annotated[
+        bool, typer.Option("--by-novelty", help="Sort by novelty instead of exposure.")
+    ] = False,
     as_of: AsOfOption = None,
     min_confidence: MinConfidenceOption = DEFAULT_MIN_CONFIDENCE,
     max_hops: MaxHopsOption = DEFAULT_MAX_HOPS,
     as_json: Annotated[bool, typer.Option("--json")] = False,
     db: DbOption = DEFAULT_DB,
 ) -> None:
-    """Rank companies by exposure to a theme shock."""
+    """Rank companies by exposure to a theme shock, with attention and novelty (M27).
+
+    Novelty is exposure discounted by how much coverage the company already gets, so a high
+    novelty means high exposure that the news has not paired with the theme. Attention is
+    company-wide coverage, not theme-paired, so check a lead before acting on it.
+    """
     if direction not in ("up", "down"):
         raise _fail("--direction must be up or down")
     dir_: Direction = "up" if direction == "up" else "down"
@@ -149,7 +208,8 @@ def exposed(
                 max_hops=max_hops,
                 hide_obvious=hide_obvious,
                 obvious_hops=obvious_hops,
-                limit=top,
+                obvious_percentile=obvious_percentile,
+                limit=None if by_novelty else top,
                 min_confidence=min_confidence,
             )
         except ValueError as exc:
@@ -163,24 +223,36 @@ def exposed(
         return
 
     arrow = "↑" if dir_ == "up" else "↓"
-    table = Table(title=f"{theme} {arrow}  (as of {result.as_of}, {result.theme_kind})")
-    for column in ("#", "Company", "Ticker", "Exposure", "Hops", "Guessed", "Conf"):
-        justify = "right" if column in ("#", "Exposure", "Hops") else "left"
+    rows = result.results
+    if by_novelty:
+        # Companies with no coverage series have unknown novelty and sort last, never first:
+        # missing data must not look like a discovery (D91).
+        rows = sorted(rows, key=lambda r: (r.novelty is None, -abs(r.novelty or 0.0)))[:top]
+    title = f"{theme} {arrow}  (as of {result.as_of}, {result.theme_kind}"
+    title += ", by novelty)" if by_novelty else ")"
+    table = Table(title=title)
+    for column in ("#", "Company", "Ticker", "Exposure", "Novelty", "Attn %ile", "Hops", "Conf"):
+        justify = "left" if column in ("Company", "Ticker") else "right"
         table.add_column(column, justify=justify, no_wrap=True)
     table.add_column("Top path (via)", overflow="fold")
-    for rank, r in enumerate(result.results, start=1):
+    for rank, r in enumerate(rows, start=1):
         top_path = " → ".join(labels.get(n, n) for n in r.paths[0].nodes[1:-1]) if r.paths else ""
         table.add_row(
             str(rank),
             r.label,
             r.ticker or "",
             f"{r.exposure:+.4f}",
+            "-" if r.novelty is None else f"{r.novelty:+.4f}",
+            "-" if r.attention_percentile is None else f"{r.attention_percentile:.2f}",
             str(r.min_hops or ""),
-            str(r.guessed_weights),
             f"{r.path_confidence:.2f}",
             top_path,
         )
     console.print(table)
+    if all(r.attention is None for r in rows):
+        console.print(
+            "no attention data: run `ripple signals fetch --all` to fill it in", style="yellow"
+        )
 
 
 @app.command()
@@ -191,9 +263,22 @@ def explain(
     as_of: AsOfOption = None,
     min_confidence: MinConfidenceOption = DEFAULT_MIN_CONFIDENCE,
     max_hops: MaxHopsOption = DEFAULT_MAX_HOPS,
+    as_json: Annotated[
+        bool, typer.Option("--json", help="Print what explain_link returns.")
+    ] = False,
     db: DbOption = DEFAULT_DB,
 ) -> None:
     """Show the strongest paths from a theme to a company, with the evidence for each edge."""
+    if as_json:
+        with Store(db, read_only=True) as store:
+            try:
+                data = explain_module.explain_link(
+                    store, theme, company, _as_of(as_of), k, max_hops, min_confidence
+                )
+            except ValueError as exc:
+                raise _fail(str(exc)) from exc
+        print(json.dumps(data, indent=2))
+        return
     with Store(db) as store:
         snapshot = store.snapshot(_as_of(as_of))
     graph = build_graph(snapshot, min_confidence=min_confidence)
@@ -221,6 +306,103 @@ def explain(
                     f"confidence {alt.confidence}",
                     markup=False,
                 )
+
+
+@app.command()
+def evidence(
+    edge_id: str,
+    as_of: AsOfOption = None,
+    min_confidence: MinConfidenceOption = DEFAULT_MIN_CONFIDENCE,
+    as_json: Annotated[
+        bool, typer.Option("--json", help="Print what get_evidence returns.")
+    ] = False,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Show one edge with its evidence, the source layer that won and the rows that lost."""
+    with Store(db, read_only=True) as store:
+        try:
+            data = explain_module.get_evidence(store, edge_id, _as_of(as_of), min_confidence)
+        except ValueError as exc:
+            raise _fail(str(exc)) from exc
+    if as_json:
+        print(json.dumps(data, indent=2))
+        return
+    carries = "propagates" if data["propagates"] else "does not propagate"
+    console.print(
+        f"{data['edge']}  {data['src_label']} {data['rel']} {data['dst_label']}\n"
+        f"  weight {data['weight']} ({data['weight_source']}), polarity {data['polarity']}, "
+        f"confidence {data['confidence']}, {carries}, source {data['source']}, "
+        f"valid from {data['valid_from']}",
+        markup=False,
+    )
+    for item in data["evidence"]:
+        mark = "verified" if item["verified"] else "unverified"
+        console.print(f"  [{mark}] {item['accessed']}  {item['url']}", markup=False)
+        console.print(f"      {item['note']}", markup=False)
+    for alt in data["alternatives"]:
+        console.print(
+            f"  lost: {alt['source']} weight {alt['weight']} ({alt['weight_source']}), "
+            f"confidence {alt['confidence']}",
+            markup=False,
+        )
+
+
+@app.command("profile")
+def profile_command(
+    company: str,
+    as_of: AsOfOption = None,
+    min_confidence: MinConfidenceOption = DEFAULT_MIN_CONFIDENCE,
+    as_json: Annotated[
+        bool, typer.Option("--json", help="Print what company_profile returns.")
+    ] = False,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """One company: revenue mix, customers, suppliers, regions and exposure per theme (M32)."""
+    with Store(db, read_only=True) as store:
+        try:
+            data = profile_module.company_profile(store, company, _as_of(as_of), min_confidence)
+        except ValueError as exc:
+            raise _fail(str(exc)) from exc
+    if as_json:
+        print(json.dumps(data, indent=2))
+        return
+    head = data["company"]
+    console.print(
+        f"{head['label']} ({head['ticker'] or 'no ticker'})  as of {data['as_of']}", markup=False
+    )
+    mix = Table("Product", "Share", "Source", "Conf", title="Revenue mix")
+    for r in data["revenue_mix"]:
+        conf = f"{r['confidence']}" + ("" if r["propagates"] else " (held)")
+        mix.add_row(r["label"], f"{r['weight']:.3f}", r["weight_source"], conf)
+    console.print(mix)
+    console.print(f"mapped share of revenue: {data['mapped_share']:.3f}")
+    for field, title in (
+        ("customers", "Customers"),
+        ("suppliers", "Suppliers"),
+        ("parents", "Parent"),
+        ("subsidiaries", "Subsidiaries"),
+    ):
+        if data[field]:
+            names = ", ".join(f"{r['label']} {r['weight']:.2f}" for r in data[field])
+            console.print(f"{title}: {names}", markup=False)
+    if data["regions"]:
+        regions = ", ".join(f"{r['label']} {r['weight']:.2f}" for r in data["regions"][:8])
+        console.print(f"Regions: {regions}", markup=False)
+    themes = Table("Theme", "Kind", "Exposure", "Rank", "Top path", title="Exposure per theme")
+    for t in data["themes"]:
+        path = t["top_path"]
+        via = " → ".join(n["label"] for n in path["nodes"][1:-1]) if path else ""
+        themes.add_row(
+            t["label"], t["kind"] or "", f"{t['exposure']:+.4f}", f"{t['rank']}/{t['of']}", via
+        )
+    console.print(themes)
+    console.print("Exposures are per theme; never add them across themes (D9).")
+    attention = data["attention"]
+    console.print(
+        "attention: unknown (no coverage series)"
+        if attention is None
+        else f"attention: {attention['share']:.2e} of coverage over {attention['days']} days"
+    )
 
 
 def format_path(graph: Graph, path: ExplainPath, arrow: str = "↑") -> str:
@@ -1231,3 +1413,797 @@ def extract_report(
     console.print(f"seed REQUIRES recall: {len(found)} of {len(seed_links)} ({share})")
     for src, dst in sorted(missed):
         console.print(f"  missed {src} REQUIRES {dst}", markup=False)
+
+
+signals_app = typer.Typer(help="News coverage signals from GDELT (M24).", no_args_is_help=True)
+app.add_typer(signals_app, name="signals")
+
+
+def _series_targets(
+    nodes: dict[str, Node],
+    themes: list[str] | None,
+    companies: list[str] | None,
+    everything: bool,
+) -> list[tuple[str, str, str]]:
+    """(kind, node ID, query) for each series to fetch."""
+    targets: list[tuple[str, str, str]] = []
+    by_type = {
+        kind: [n for n, v in nodes.items() if v.type == kind] for kind in ("theme", "company")
+    }
+    wanted_themes = themes or (by_type["theme"] if everything else [])
+    wanted_companies = companies or (by_type["company"] if everything else [])
+    for node_id in wanted_themes:
+        node = nodes.get(node_id)
+        if node is None:
+            raise _fail(f"unknown node {node_id}")
+        targets.append(("theme", node_id, news.theme_query(node)))
+    for node_id in wanted_companies:
+        node = nodes.get(node_id)
+        if node is None:
+            raise _fail(f"unknown node {node_id}")
+        targets.append(("company", node_id, news.company_query(node)))
+    return targets
+
+
+@signals_app.command("fetch")
+def signals_fetch(
+    theme: Annotated[
+        list[str] | None, typer.Option("--theme", help="Theme IDs; repeatable.")
+    ] = None,
+    company: Annotated[
+        list[str] | None, typer.Option("--company", help="Company IDs; repeatable.")
+    ] = None,
+    all_nodes: Annotated[bool, typer.Option("--all", help="Every theme and company.")] = False,
+    start: Annotated[
+        datetime, typer.Option("--from", formats=["%Y-%m-%d"], help="First day (>= 2017-01-01).")
+    ] = datetime(2022, 1, 1),
+    end: Annotated[
+        datetime | None,
+        typer.Option("--to", formats=["%Y-%m-%d"], help="Last day (default today)."),
+    ] = None,
+    tone: Annotated[bool, typer.Option("--tone/--no-tone", help="Also fetch mean tone.")] = True,
+    refetch: Annotated[
+        bool,
+        typer.Option(
+            "--refetch", help="Fetch series the store already holds with the current query."
+        ),
+    ] = False,
+    db: DbOption = DEFAULT_DB,
+    cache: Annotated[Path, typer.Option("--cache", help="Response cache.")] = news.DEFAULT_CACHE,
+) -> None:
+    """Fetch daily coverage series and append them to the store.
+
+    One request covers a whole date range, so a full pass is about one request per series.
+    Responses are cached and series already held with the current query are skipped, so a
+    rerun resumes. Pass a fixed --to when resuming across days: the end date is part of the
+    cache key. The store is opened only to read the targets and to append each series, so a
+    long fetch does not lock out `ripple load` or the MCP server.
+    """
+    first, last = start.date(), (end.date() if end else today_utc())
+    if last < first:
+        raise _fail("--to is before --from")
+    with Store(db, read_only=True) as store:
+        nodes = store.snapshot(today_utc()).nodes
+        held = store.held_series()
+    targets = _series_targets(nodes, theme, company, all_nodes)
+    if not targets:
+        raise _fail("nothing to fetch: pass --theme, --company or --all")
+    if not refetch:
+        # GDELT can lag a day or two behind the end asked for, so near enough counts as held.
+        enough = last - timedelta(days=2)
+        done = [
+            t for t in targets if (held.get((t[1], news.query_hash(t[2]))) or date.min) >= enough
+        ]
+        targets = [t for t in targets if t not in done]
+        if done:
+            console.print(f"{len(done)} series already held through {last}; skipped")
+    written = 0
+    with news.NewsClient(cache_dir=cache) as client:
+        for kind, node_id, query in targets:
+            try:
+                points = client.volume(query, first, last)
+                # Tone only matters for the theme reversal flag (D90); a company series is
+                # only ever summed into attention, so half the requests are unnecessary.
+                want_tone = tone and kind == "theme"
+                tones = client.tone(query, first, last) if want_tone else {}
+            except news.RateLimited as exc:
+                console.print(f"stopped: {exc}", style="red", markup=False)
+                break
+            except news.NewsError as exc:
+                console.print(f"{node_id}: {exc}", style="yellow", markup=False)
+                continue
+            rows = [
+                store_module.CoverageRow(
+                    kind=kind,
+                    key=node_id,
+                    day=p.day,
+                    matched=p.matched,
+                    norm=p.norm,
+                    tone=tones.get(p.day),
+                    query_hash=news.query_hash(query),
+                )
+                for p in points
+            ]
+            with Store(db) as store:
+                written += store.add_coverage(rows)
+            total = sum(p.matched for p in points)
+            console.print(f"{node_id}: {len(rows)} days, {total} matching articles", markup=False)
+    console.print(
+        f"{written} coverage rows appended; "
+        f"{client.requests} requests, {client.cache_hits} cache hits"
+    )
+
+
+@signals_app.command("show")
+def signals_show(
+    node: Annotated[
+        str | None, typer.Argument(help="Theme or company ID; omit for a summary.")
+    ] = None,
+    days: Annotated[int, typer.Option("--days", help="How many recent days to print.")] = 30,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Print a coverage series, or a summary of every series held."""
+    with Store(db, read_only=True) as store:
+        if node is None:
+            table = Table("Kind", "Node", "Days", "First", "Last")
+            for kind, key, count, first, last in store.coverage_summary():
+                table.add_row(kind, key, str(count), str(first), str(last))
+            console.print(table)
+            return
+        rows = store.coverage(node)
+        if not rows:
+            raise _fail(f"no coverage for {node}; run `ripple signals fetch --theme {node}`")
+        table = Table("Day", "Matched", "All articles", "Share per 100k", "Tone")
+        for row in rows[-days:]:
+            table.add_row(
+                str(row.day),
+                str(row.matched),
+                f"{row.norm:,}",
+                f"{row.share * 1e5:.2f}",
+                "-" if row.tone is None else f"{row.tone:+.2f}",
+            )
+        console.print(table)
+        console.print(f"{len(rows)} days held for {node}")
+
+
+@app.command()
+def trending(
+    window: Annotated[int, typer.Option("--window", help="Look back this many days.")] = 90,
+    theme: Annotated[str | None, typer.Option("--theme", help="Only this theme.")] = None,
+    min_surprise: Annotated[
+        float, typer.Option("--min-surprise", help="-log10 p threshold after dispersion.")
+    ] = signal.MIN_SURPRISE,
+    db: DbOption = DEFAULT_DB,
+    as_json: Annotated[bool, typer.Option("--json")] = False,
+) -> None:
+    """Themes whose news coverage burst recently, strongest first.
+
+    A burst means the theme is intensifying; the DRIVES polarity decides who gains and who
+    loses. `ratio` is coverage against the theme's own 90-day normal, `surprise` is -log10 of
+    the Poisson tail probability after the overdispersion correction. Never multiply either by
+    an exposure: they are units of surprise, not of demand (D88).
+    """
+    today = today_utc()
+    with Store(db, read_only=True) as store:
+        if as_json:
+            print(json.dumps(signal.trending_themes(store, today, window, min_surprise), indent=2))
+            return
+        nodes = store.snapshot(today).nodes
+        found, unmeasured = signal.trending(
+            store, today, window, min_surprise, themes=[theme] if theme else None
+        )
+
+    if unmeasured:
+        console.print(f"{len(unmeasured)} themes have no coverage series yet", style="yellow")
+    if not found:
+        console.print(f"no bursts in the last {window} days at surprise >= {min_surprise}")
+        return
+    table = Table("Theme", "Window", "Days", "Ratio", "Surprise", "Articles", "Flag")
+    for b in found:
+        label = nodes[b.key].label if b.key in nodes else b.key
+        table.add_row(
+            label,
+            f"{b.start} to {b.end}",
+            str(b.days),
+            f"{b.peak_ratio:.1f}x",
+            f"{b.peak_surprise:.1f}",
+            str(b.matched),
+            b.tone_flag or "",
+        )
+    console.print(table)
+
+
+@app.command("attention")
+def attention_command(
+    theme: Annotated[
+        str | None, typer.Option("--theme", help="Rank within this theme's exposed companies.")
+    ] = None,
+    top: Annotated[int, typer.Option("--top")] = 25,
+    as_of: AsOfOption = None,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """How much news coverage each company gets, most covered first.
+
+    Attention is the company's share of all coverage over the last 90 days (M27, D91). It is not
+    paired with a theme, so a company famous for something unrelated looks crowded here.
+    """
+    day = _as_of(as_of)
+    with Store(db, read_only=True) as store:
+        snapshot = store.snapshot(day)
+        if theme:
+            graph = build_graph(snapshot)
+            try:
+                companies = list(company_exposures(graph, Shock(theme), DEFAULT_MAX_HOPS))
+            except ValueError as exc:
+                raise _fail(str(exc)) from exc
+        else:
+            companies = [n for n, v in snapshot.nodes.items() if v.type == "company"]
+        found = attention_module.company_attention(store, companies, day)
+    if not found:
+        raise _fail("no attention data; run `ripple signals fetch --all` first")
+    pcts = attention_module.percentiles({c: a.share for c, a in found.items()})
+    ordered = sorted(found.values(), key=lambda a: -a.share)
+    table = Table("#", "Company", "Share per 100k", "%ile", "Articles", "Days")
+    for rank, item in enumerate(ordered[:top], start=1):
+        label = (
+            snapshot.nodes[item.company].label if item.company in snapshot.nodes else item.company
+        )
+        table.add_row(
+            str(rank),
+            label,
+            f"{item.share * 1e5:.2f}",
+            f"{pcts[item.company]:.2f}",
+            f"{item.matched:,}",
+            str(item.days),
+        )
+    console.print(table)
+    missing = [c for c in companies if c not in found]
+    if missing:
+        console.print(
+            f"{len(missing)} of {len(companies)} companies have no series; "
+            "their attention is unknown, not zero",
+            style="yellow",
+        )
+
+
+@app.command("events")
+def events_command(
+    path: Annotated[
+        Path, typer.Option("--events", help="Pre-registered event set.")
+    ] = events_module.DEFAULT_EVENTS,
+    min_surprise: Annotated[float, typer.Option("--min-surprise")] = signal.MIN_SURPRISE,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Check the pre-registered event set against detected bursts (M29).
+
+    The event set was fixed before any coverage was fetched. Nothing here may be tuned in
+    response to a miss: that would make the measurement lookahead (D101).
+    """
+    with Store(db, read_only=True) as store:
+        report = events_module.check_events(store, path, min_surprise=min_surprise)
+        themes = sorted({r.event.theme for r in report.results})
+        extra = events_module.false_positives(store, themes, path, min_surprise=min_surprise)
+
+    table = Table("Event", "Date", "Theme", "Dir", "Hit", "Burst window", "Ratio", "Flag")
+    for r in report.results:
+        e = r.event
+        window = f"{r.burst.start} to {r.burst.end}" if r.burst else ""
+        if not r.hit and r.nearest_gap is not None:
+            window = f"nearest burst {r.nearest_gap}d away"
+            if r.shares_burst_with:
+                window += f" (same burst as {r.shares_burst_with})"
+        table.add_row(
+            e.id + ("*" if e.approximate else ""),
+            str(e.day),
+            e.theme.removeprefix("theme/"),
+            e.direction,
+            "yes" if r.hit else "no",
+            window,
+            f"{r.burst.peak_ratio:.1f}x" if r.burst else "",
+            (r.burst.tone_flag or "") if r.burst else "",
+        )
+    console.print(table)
+    console.print("* date recalled rather than checked; reported separately")
+    console.print(
+        f"hit rate {report.hit_rate:.0%} of {len(report.results)} events "
+        f"(exact dates only: {report.exact_hit_rate:.0%} of {len(report.exact)}); "
+        f"bar {report.min_hit_rate:.0%} -> {'met' if report.met else 'NOT met'}"
+    )
+    if report.flag_precision is not None:
+        console.print(
+            f"tone reversal flag correct on {report.flag_precision:.0%} of matched events "
+            f"({len(report.reversals)} are reversals)"
+        )
+    total_extra = sum(len(v) for v in extra.values())
+    console.print(f"{total_extra} bursts matched no event across {len(themes)} themes")
+
+
+@app.command("verify-attention")
+def verify_attention_command(
+    theme: str,
+    top: Annotated[int, typer.Option("--top", help="How many ranked companies to check.")] = (
+        attention_module.VERIFY_TOP
+    ),
+    as_of: AsOfOption = None,
+    db: DbOption = DEFAULT_DB,
+    cache: Annotated[Path, typer.Option("--cache")] = news.DEFAULT_CACHE,
+) -> None:
+    """Check the top of a ranking with theme-paired queries (M27, D91).
+
+    Company-wide attention cannot tell "famous" from "famous for this theme". This runs one extra
+    GDELT request per company to show what share of the theme's own articles named it, so a lead
+    can be checked before it is acted on. Costs top+1 requests, so keep `top` small.
+    """
+    day = _as_of(as_of)
+    with Store(db, read_only=True) as store:
+        snapshot = store.snapshot(day)
+        node = snapshot.nodes.get(theme)
+        if node is None or node.type != "theme":
+            raise _fail(f"{theme} is not a theme in the graph")
+        try:
+            result = score(store, theme, as_of=day, limit=top)
+        except ValueError as exc:
+            raise _fail(str(exc)) from exc
+        pairs = [
+            (r.company, news.company_query(snapshot.nodes[r.company]))
+            for r in result.results
+            if r.company in snapshot.nodes
+        ]
+        shares = {r.company: r.attention for r in result.results if r.attention is not None}
+
+    with news.NewsClient(cache_dir=cache) as client:
+        try:
+            checks = attention_module.verify_attention(
+                client, news.theme_query(node), pairs, day, company_shares=shares
+            )
+        except news.RateLimited as exc:
+            raise _fail(f"stopped: {exc}") from exc
+
+    table = Table("Company", "Paired share", "Joint articles", "Company-wide", "Enough data")
+    for check in checks:
+        label = snapshot.nodes[check.company].label
+        table.add_row(
+            label,
+            f"{check.paired_share:.3%}",
+            str(check.both_articles),
+            "-" if check.company_share is None else f"{check.company_share * 1e5:.2f}/100k",
+            "yes" if check.enough_data else "no",
+        )
+    console.print(table)
+    console.print(
+        f"of {checks[0].theme_articles if checks else 0} articles about this theme in the window. "
+        "A company high on company-wide attention but low here is famous for something else.",
+        style="dim",
+    )
+
+
+@app.command("calibrate")
+def calibrate_command(
+    target: Annotated[
+        float, typer.Option("--target", help="Bursts per theme per year to aim for.")
+    ] = signal.TARGET_BURSTS_PER_YEAR,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Choose the burst threshold from how often bursts should fire (M25, D107).
+
+    This reads only the coverage series, never the event dates, so the pre-registered event set
+    stays a genuine out-of-sample test. The judgement it encodes is "how rare should a burst be",
+    which does not depend on which events happened.
+    """
+    with Store(db, read_only=True) as store:
+        nodes = store.snapshot(today_utc()).nodes
+        series = {}
+        for node_id, node in nodes.items():
+            if node.type != "theme" or not node.query:
+                continue
+            rows = store.coverage(node_id)
+            if rows:
+                series[node_id] = rows
+    if not series:
+        raise _fail("no coverage held; run `ripple signals fetch --all` first")
+    result = signal.calibrate_threshold(series, target=target)
+    console.print(
+        f"{result.series} series over {result.years:.1f} years; "
+        f"target {result.target:.1f} bursts per theme-year"
+    )
+    table = Table("Threshold", "Bursts/theme-year")
+    shown = [row for row in result.curve if row[0] * 2 % 1 == 0][:24]
+    for threshold, rate in shown:
+        mark = "  <- chosen" if threshold == result.threshold else ""
+        table.add_row(f"{threshold:.2f}{mark}", f"{rate:.2f}")
+    console.print(table)
+    console.print(
+        f"chosen threshold {result.threshold:.2f} gives {result.rate:.2f} bursts per theme-year; "
+        f"MIN_SURPRISE in ripple/signal.py is {signal.MIN_SURPRISE}"
+    )
+
+
+@app.command("query-precision")
+def query_precision_command(
+    theme: Annotated[
+        list[str] | None, typer.Option("--theme", help="Only these themes; default all.")
+    ] = None,
+    size: Annotated[int, typer.Option("--size", help="Articles sampled per theme.")] = (
+        queries.SAMPLE_SIZE
+    ),
+    jobs_db: Annotated[Path, typer.Option("--jobs")] = jobs.DEFAULT_JOBS,
+    report: Annotated[Path, typer.Option("--report")] = Path("data/query-precision.yaml"),
+    db: DbOption = DEFAULT_DB,
+    cache: Annotated[Path, typer.Option("--cache")] = news.DEFAULT_CACHE,
+    as_of: AsOfOption = None,
+) -> None:
+    """Measure how precise each theme's GDELT query is (M26).
+
+    Costs one GDELT request per theme plus one Codex batch per 20 articles. Judged on relevance
+    only, never on whether a burst lines up with the event set, which would make M29 lookahead
+    (D104). The report stores URLs, verdicts and reasons, never headlines (D72).
+    """
+    day = _as_of(as_of)
+    with Store(db, read_only=True) as store:
+        nodes = store.snapshot(day).nodes
+        wanted = theme or [n for n, v in nodes.items() if v.type == "theme" and v.query]
+        themes = {}
+        for node_id in wanted:
+            node = nodes.get(node_id)
+            if node is None or node.type != "theme":
+                raise _fail(f"{node_id} is not a theme")
+            themes[node_id] = node
+
+    with news.NewsClient(cache_dir=cache) as client:
+        try:
+            samples = queries.sample_articles(client, list(themes.values()), day, size=size)
+        except news.RateLimited as exc:
+            raise _fail(f"stopped: {exc}. Rerun; cached responses are kept.") from exc
+        except news.NewsError as exc:
+            raise _fail(str(exc)) from exc
+
+    empty = [t for t, arts in samples.items() if not arts]
+    results = queries.measure(themes, samples, jobs.make_codex_job_runner(jobs_db))
+
+    table = Table("Theme", "Sampled", "Relevant", "Precision", "Bar")
+    for theme_id in wanted:
+        r = results.get(theme_id)
+        if r is None:
+            continue
+        table.add_row(
+            theme_id.removeprefix("theme/"),
+            str(r.sampled),
+            str(r.relevant),
+            "-" if not r.measurable else f"{r.rate:.0%}",
+            "too thin" if not r.measurable else ("met" if r.met else "MISSED"),
+        )
+    console.print(table)
+
+    measurable = [r for r in results.values() if r.measurable]
+    if measurable:
+        pooled = sum(r.relevant for r in measurable) / sum(r.sampled for r in measurable)
+        console.print(
+            f"pooled precision {pooled:.0%} over {len(measurable)} measurable themes; "
+            f"bar {queries.PRECISION_BAR:.0%}; "
+            f"{sum(1 for r in measurable if not r.met)} below it"
+        )
+    if empty:
+        console.print(f"no recent articles at all for: {', '.join(empty)}", style="yellow")
+
+    report.parent.mkdir(parents=True, exist_ok=True)
+    report.write_text(
+        yaml.safe_dump(
+            {
+                "measured": day,
+                "bar": queries.PRECISION_BAR,
+                "themes": {
+                    t: {
+                        "sampled": r.sampled,
+                        "relevant": r.relevant,
+                        "rate": round(r.rate, 3),
+                        "measurable": r.measurable,
+                        "verdicts": [
+                            {"url": u, "relevant": c, "reason": why} for u, c, why in r.verdicts
+                        ],
+                    }
+                    for t, r in results.items()
+                },
+            },
+            sort_keys=False,
+        )
+    )
+    console.print(f"written to {report}")
+
+
+# --- evidence verification (Phase 3, M33, D113) ----------------------------------------
+
+verify_app = typer.Typer(help="Rule on evidence items: the ledger behind `verified` (M33).")
+app.add_typer(verify_app, name="verify")
+QueueOption = Annotated[Path, typer.Option("--queue", help="Mapping review queue.")]
+RULING_KEYS = {"v": "verified", "w": "wrong-note", "d": "dead-link", "u": "unsupported"}
+
+
+def _verify_state(db: Path, ledger: Path) -> tuple[store_module.Snapshot, dict]:
+    with Store(db, read_only=True) as store:
+        snapshot = store.snapshot(today_utc())
+    return snapshot, verify_module.load_ledger(ledger)
+
+
+@verify_app.command("status")
+def verify_status(
+    db: DbOption = DEFAULT_DB, ledger: LedgerOption = verify_module.DEFAULT_LEDGER
+) -> None:
+    """How many evidence items are ruled on, by source layer."""
+    snapshot, rulings = _verify_state(db, ledger)
+    status = verify_module.status(snapshot, rulings)
+    table = Table("Source", "Items", "Ruled", "Left")
+    for source, (count, ruled) in sorted(status.by_source.items()):
+        table.add_row(source, str(count), str(ruled), str(count - ruled))
+    console.print(table)
+    console.print(
+        f"{status.ruled} of {status.total} ruled: {status.verified} verified, {status.failed} "
+        f"failed; {status.total - status.ruled} left across {status.documents_left} documents"
+    )
+    held = {i.key for i in verify_module.items(snapshot)}
+    stale = sum(key not in held for key in rulings)
+    if stale:
+        console.print(
+            f"{stale} rulings match no current item: their note or URL changed, so the item "
+            "needs a new ruling",
+            style="yellow",
+        )
+    rows = [*snapshot.edges, *(e for alts in snapshot.alternatives.values() for _, e in alts)]
+    stored = sum(item.verified for e in rows for item in e.evidence)
+    if stored < status.verified:
+        console.print(
+            f"the store holds {stored} verified items: run `ripple load` to store the rest",
+            style="yellow",
+        )
+
+
+def _print_document(
+    url: str,
+    group: list[verify_module.Item],
+    checks: dict[tuple[str, str, str], verify_module.Recomputed],
+    labels: dict[str, str],
+) -> None:
+    console.print(f"\n{url}", style="bold", markup=False)
+    for n, item in enumerate(group, start=1):
+        e = item.edge
+        role = "" if item.winner else "  (lost precedence)"
+        console.print(
+            f"  {n}. {e.id}  {labels.get(e.src, e.src)} {e.rel} {labels.get(e.dst, e.dst)}  "
+            f"weight {e.weight} ({e.weight_source}), {item.source}{role}",
+            markup=False,
+        )
+        console.print(f"     note: {item.note}", markup=False)
+        check = checks.get(item.key)
+        if check is not None:
+            mark = "recompute ok" if check.match else "RECOMPUTE MISMATCH"
+            console.print(f"     {mark}: {check.detail}", markup=False)
+
+
+def _checks(
+    group: list[verify_module.Item],
+    snapshot: store_module.Snapshot,
+    universe_path: Path,
+    cache: Path,
+    queue: Path,
+) -> dict[tuple[str, str, str], verify_module.Recomputed]:
+    if not any(i.source == "xbrl" for i in group):
+        return {}
+    companies = [n for n in snapshot.nodes.values() if n.type == "company"]
+    universe = edgar.load_universe(universe_path) if universe_path.exists() else []
+    found = verify_module.recompute(group, universe, cache, queue, companies)
+    return {r.item.key: r for r in found}
+
+
+@verify_app.command("next")
+def verify_next(
+    source: Annotated[str | None, typer.Option("--source", help="seed, xbrl or llm.")] = None,
+    count: Annotated[int, typer.Option("--count", help="How many documents to show.")] = 1,
+    db: DbOption = DEFAULT_DB,
+    ledger: LedgerOption = verify_module.DEFAULT_LEDGER,
+    universe_path: UniverseOption = edgar.DEFAULT_UNIVERSE,
+    cache: CacheOption = edgar.DEFAULT_CACHE,
+    queue: QueueOption = mapping.DEFAULT_QUEUE,
+) -> None:
+    """Show the next documents to check, with every unruled item that cites them.
+
+    `xbrl` items show whether their arithmetic recomputes from the cached filing.
+    """
+    snapshot, rulings = _verify_state(db, ledger)
+    groups = verify_module.unruled_by_document(snapshot, rulings, source)
+    if not groups:
+        console.print("nothing left to rule on")
+        return
+    labels = {n: v.label for n, v in snapshot.nodes.items()}
+    for url, group in list(groups.items())[:count]:
+        _print_document(url, group, _checks(group, snapshot, universe_path, cache, queue), labels)
+    console.print(f"\n{len(groups)} documents left")
+
+
+@verify_app.command("rule")
+def verify_rule(
+    ruling: Annotated[str, typer.Argument(help="verified, wrong-note, dead-link or unsupported.")],
+    document: Annotated[
+        str | None, typer.Option("--document", help="Rule every unruled item citing this URL.")
+    ] = None,
+    edge_id: Annotated[str | None, typer.Option("--edge", help="Only this edge.")] = None,
+    source: Annotated[str | None, typer.Option("--source", help="Only this layer.")] = None,
+    reason: Annotated[str, typer.Option("--reason", help="Why, for a failed ruling.")] = "",
+    by: Annotated[str, typer.Option("--by", help="Who read the source.")] = "user",
+    db: DbOption = DEFAULT_DB,
+    ledger: LedgerOption = verify_module.DEFAULT_LEDGER,
+) -> None:
+    """Record a ruling for the unruled items citing a document, or for one edge's items."""
+    if ruling not in verify_module.RULINGS:
+        raise _fail(f"ruling must be one of {', '.join(verify_module.RULINGS)}")
+    if document is None and edge_id is None:
+        raise _fail("pass --document URL, --edge ID, or both")
+    if ruling != "verified" and not reason:
+        raise _fail("a failed ruling needs --reason")
+    snapshot, rulings = _verify_state(db, ledger)
+    chosen = [
+        i
+        for i in verify_module.items(snapshot)
+        if i.key not in rulings
+        and (document is None or i.url == document)
+        and (edge_id is None or i.edge.id == edge_id)
+        and (source is None or i.source == source)
+    ]
+    if not chosen:
+        raise _fail("no unruled item matches")
+    written = verify_module.append_rulings(
+        {i.key: _entry(i, ruling, by, reason) for i in chosen}.values(), ledger
+    )
+    console.print(f"{written} items ruled {ruling}; run `ripple load` to store the rulings")
+
+
+def _entry(item: verify_module.Item, ruling: str, by: str, reason: str) -> verify_module.Entry:
+    return verify_module.Entry(
+        edge=item.edge.id,
+        url=item.url,
+        note_hash=verify_module.note_hash(item.note),
+        ruling=ruling,  # type: ignore[arg-type]
+        date=today_utc(),
+        by=by,
+        reason=reason,
+    )
+
+
+@verify_app.command("walk")
+def verify_walk(
+    source: Annotated[str | None, typer.Option("--source", help="seed, xbrl or llm.")] = None,
+    by: Annotated[str, typer.Option("--by", help="Who is reading.")] = "user",
+    db: DbOption = DEFAULT_DB,
+    ledger: LedgerOption = verify_module.DEFAULT_LEDGER,
+    universe_path: UniverseOption = edgar.DEFAULT_UNIVERSE,
+    cache: CacheOption = edgar.DEFAULT_CACHE,
+    queue: QueueOption = mapping.DEFAULT_QUEUE,
+) -> None:
+    """Walk the unruled documents one at a time and rule on them interactively.
+
+    Open each URL, read it against the notes, then rule. Rulings are saved after every
+    document, so quitting loses nothing.
+    """
+    snapshot, rulings = _verify_state(db, ledger)
+    groups = verify_module.unruled_by_document(snapshot, rulings, source)
+    labels = {n: v.label for n, v in snapshot.nodes.items()}
+    done = 0
+    for number, (url, group) in enumerate(groups.items(), start=1):
+        console.print(f"\n[{number}/{len(groups)}]", markup=False)
+        _print_document(url, group, _checks(group, snapshot, universe_path, cache, queue), labels)
+        choice = typer.prompt("  [a] all verified, [e] each item, [s] skip, [q] quit", default="e")
+        if choice == "q":
+            break
+        if choice == "s":
+            continue
+        entries = []
+        for n, item in enumerate(group, start=1):
+            if choice == "a":
+                entries.append(_entry(item, "verified", by, ""))
+                continue
+            key = typer.prompt(f"  {n}: [v]erified [w]rong-note [d]ead-link [u]nsupported [s]kip")
+            if key not in RULING_KEYS:
+                continue
+            why = "" if key == "v" else typer.prompt("     reason")
+            entries.append(_entry(item, RULING_KEYS[key], by, why))
+        done += verify_module.append_rulings(entries, ledger)
+    console.print(f"{done} items ruled; run `ripple load` to store the rulings")
+
+
+@verify_app.command("recompute")
+def verify_recompute(
+    db: DbOption = DEFAULT_DB,
+    universe_path: UniverseOption = edgar.DEFAULT_UNIVERSE,
+    cache: CacheOption = edgar.DEFAULT_CACHE,
+    queue: QueueOption = mapping.DEFAULT_QUEUE,
+) -> None:
+    """Redo the arithmetic behind every `xbrl` evidence item from the cached filings."""
+    snapshot, _ = _verify_state(db, verify_module.DEFAULT_LEDGER)
+    groups = verify_module.unruled_by_document(snapshot, {}, "xbrl")
+    table = Table("Filing", "Items", "Match", title="xbrl evidence recomputed")
+    mismatches: list[verify_module.Recomputed] = []
+    for url, group in groups.items():
+        checks = _checks(group, snapshot, universe_path, cache, queue)
+        ok = sum(c.match for c in checks.values())
+        mismatches += [c for c in checks.values() if not c.match]
+        table.add_row(url.rsplit("/", 1)[-1], str(len(group)), f"{ok}/{len(checks)}")
+    console.print(table)
+    for check in mismatches:
+        console.print(f"{check.item.edge.label}: {check.detail}", style="yellow", markup=False)
+    console.print(f"{len(mismatches)} mismatches")
+
+
+# --- thematic briefs (Phase 3, M35, D114) ------------------------------------------------
+
+
+@app.command("check-brief")
+def check_brief(
+    path: Annotated[Path, typer.Argument(exists=True, dir_okay=False, help="The brief.")],
+    theme: Annotated[str, typer.Option("--theme", help="The theme the brief is about.")],
+    as_of: AsOfOption = None,
+    as_json: Annotated[bool, typer.Option("--json")] = False,
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Resolve every node ID, edge ID, URL and exposure a brief cites (the rubric's mechanical
+    half). Exits 1 unless every citation resolves."""
+    with Store(db, read_only=True) as store:
+        result = brief_module.check(path.read_text(), store, theme, _as_of(as_of))
+    if as_json:
+        print(json.dumps(result.to_dict(), indent=2))
+    else:
+        console.print(
+            f"{path}: {len(result.edges)} edges, {len(result.nodes)} nodes, {len(result.urls)} "
+            f"URLs, {len(result.exposures)} exposures cited, as of {result.as_of}",
+            markup=False,
+        )
+        for problem in result.problems:
+            console.print(f"  FAIL {problem}", style="red", markup=False)
+        console.print(
+            f"  {len(result.unverified_edges)} cited edges have only unverified evidence; "
+            f"{len(result.bucket_edges)} carry bucket weights; the rubric asks the brief to say so",
+            markup=False,
+        )
+        console.print("mechanical check: " + ("pass" if result.passed else "FAIL"))
+    if not result.passed:
+        raise typer.Exit(code=1)
+
+
+@app.command("brief")
+def brief_command(
+    theme: str,
+    out: Annotated[Path, typer.Option("--out", help="Directory for briefs.")] = (
+        brief_module.DEFAULT_OUT
+    ),
+    prompts: Annotated[Path, typer.Option("--prompts", help="Pre-registered prompts.")] = (
+        brief_module.DEFAULT_PROMPTS
+    ),
+    effort: Annotated[str, typer.Option("--effort", help="Codex reasoning effort.")] = "medium",
+    db: DbOption = DEFAULT_DB,
+) -> None:
+    """Have Codex write the brief on THEME with the ripple MCP server as its only tool, then
+    run the citation check. Writes the brief and the list of tool calls it made."""
+    server = codex_module.McpServer(
+        command=str(Path(sys.executable).with_name("ripple-mcp")),
+        env={"RIPPLE_DB": str(db.resolve())},
+    )
+    runner = codex_module.CodexRunner(codex_module.default_config(effort=effort))
+    try:
+        result = brief_module.write(runner, theme, server, prompts)
+    except (ValueError, CodexError) as exc:
+        raise _fail(str(exc)) from exc
+    slug = theme.split("/", 1)[-1]
+    out.mkdir(parents=True, exist_ok=True)
+    (out / f"{slug}.md").write_text(result.text)
+    calls = [dataclasses.asdict(c) for c in result.calls]
+    (out / f"{slug}.calls.json").write_text(
+        json.dumps({"usage": result.usage, "calls": calls}, indent=2)
+    )
+    failed = sum(not c.ok for c in result.calls)
+    console.print(
+        f"{out / (slug + '.md')}: {len(result.calls)} tool calls ({failed} failed), "
+        f"{result.usage.get('input_tokens', 0):,} input tokens",
+        markup=False,
+    )
+    with Store(db, read_only=True) as store:
+        check = brief_module.check(result.text, store, theme, today_utc())
+    console.print("mechanical check: " + ("pass" if check.passed else "FAIL"))
+    for problem in check.problems:
+        console.print(f"  FAIL {problem}", style="red", markup=False)

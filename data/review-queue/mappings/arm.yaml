@@ -15,25 +15,29 @@ lines:
 - member: us-gaap:RoyaltyMember
   label: Royalty
   share: 0.531098
-  assignments: []
-  new_product: Processor architecture and semiconductor IP
-  note: "Royalties monetize Arm IP used in customers\u2019 chips, not sales of CPUs\
-    \ or other listed products."
+  assignments:
+  - product: product/processor-ip
+    fraction: 1.0
+  new_product: null
+  note: "Royalties monetize Arm processor architectures and semiconductor IP used\
+    \ in customers\u2019 chips."
 - member: arm:LicenseAndOtherRevenueMember
   label: License And Other Revenue
   share: 0.468902
-  assignments: []
-  new_product: Processor architecture and semiconductor IP
-  note: This line primarily licenses processor IP absent from the taxonomy; related
-    services remain unassigned.
+  assignments:
+  - product: product/processor-ip
+    fraction: 0.95
+  new_product: null
+  note: Estimated processor IP licensing share, leaving a small remainder unassigned
+    for support, services and other revenue.
 status: accepted
-reviewer: judge
+reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6575
+  input_tokens: 6922
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 141
-  reasoning_output_tokens: 35
+  output_tokens: 185
+  reasoning_output_tokens: 63
 created: 2026-09-27

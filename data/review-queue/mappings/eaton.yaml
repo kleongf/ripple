@@ -17,55 +17,52 @@ lines:
   share: 0.483678
   assignments:
   - product: product/switchgear
-    fraction: 0.3
+    fraction: 0.35
   - product: product/grid-equipment
     fraction: 0.2
   - product: product/ups
     fraction: 0.1
   new_product: null
-  note: Estimated shares cover switchgear, utility transformers and distribution equipment,
-    and UPS; other products and services remain unassigned.
+  note: Estimated shares cover switchgear, utility distribution equipment and UPS;
+    other electrical products and services remain unassigned.
 - member: etn:ElectricalGlobalSegmentMember
   label: Electrical Global Segment
   share: 0.248288
   assignments:
   - product: product/switchgear
-    fraction: 0.25
+    fraction: 0.3
   - product: product/ups
     fraction: 0.2
-  - product: product/grid-equipment
-    fraction: 0.05
   new_product: null
-  note: Estimated shares cover switchgear, UPS and utility equipment, excluding other
-    electrical products and services.
+  note: Estimated shares cover switchgear and UPS; industrial controls, other electrical
+    products and services remain unassigned.
 - member: etn:AerospaceSegmentMember
   label: Aerospace Segment
   share: 0.154802
   assignments: []
   new_product: null
-  note: Aircraft fuel, hydraulic, electrical and motion-control systems fall outside
-    the taxonomy.
+  note: Aircraft fuel, hydraulic and other aerospace systems fall outside the taxonomy.
 - member: etn:VehicleSegmentMember
   label: Vehicle Segment
   share: 0.091263
   assignments: []
   new_product: null
-  note: Vehicle drivetrain and engine components fall outside the taxonomy.
+  note: Vehicle drivetrain and propulsion components fall outside the taxonomy.
 - member: etn:EMobilitySegmentMember
   label: eMobility Segment
   share: 0.022005
   assignments: []
   new_product: null
-  note: Electric-vehicle power electronics and electrical components fall outside
+  note: Automotive power electronics and electrical protection components fall outside
     the taxonomy.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6585
-  cached_input_tokens: 0
+  input_tokens: 7001
+  cached_input_tokens: 6784
   cache_write_input_tokens: 0
-  output_tokens: 441
-  reasoning_output_tokens: 156
+  output_tokens: 370
+  reasoning_output_tokens: 100
 created: 2026-09-27

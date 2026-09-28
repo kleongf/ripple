@@ -276,3 +276,24 @@ def test_w9_quiet_when_no_product_path(write_seed: SeedWriter) -> None:
 def test_w9_quiet_when_already_below_min_confidence(write_seed: SeedWriter) -> None:
     edges = [*base_edges(), edge("company/y", "SUPPLIES", "company/x", 0.25, confidence=0.3)]
     assert "W9" not in rules(check(write_seed, base_nodes(), edges))
+
+
+# Theme queries (Phase 2, M23)
+
+
+def test_w10_theme_without_a_query(write_seed: SeedWriter) -> None:
+    nodes = [n for n in base_nodes() if n["id"] != "theme/vol"]
+    nodes.append(node("theme/vol", query=None))
+    problems = check(write_seed, nodes, base_edges())
+    assert [p.record for p in problems if p.rule == "W10"] == ["theme/vol"]
+    assert errors(problems) == set()
+
+
+def test_w10_ignores_a_blank_query(write_seed: SeedWriter) -> None:
+    nodes = [n for n in base_nodes() if n["id"] != "theme/vol"]
+    nodes.append(node("theme/vol", query="   "))
+    assert "W10" in rules(check(write_seed, nodes, base_edges()))
+
+
+def test_w10_silent_when_every_theme_has_a_query(write_seed: SeedWriter) -> None:
+    assert "W10" not in rules(check(write_seed, base_nodes(), base_edges()))

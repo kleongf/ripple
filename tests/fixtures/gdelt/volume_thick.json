@@ -1,0 +1,37 @@
+{
+ "query_details": {
+  "query": "(\"test theme\")"
+ },
+ "timeline": [
+  {
+   "series": "Article Count",
+   "data": [
+    {
+     "date": "20250101T000000Z",
+     "value": 40,
+     "norm": 500000
+    },
+    {
+     "date": "20250102T000000Z",
+     "value": 44,
+     "norm": 500000
+    },
+    {
+     "date": "20250103T000000Z",
+     "value": 38,
+     "norm": 500000
+    },
+    {
+     "date": "20250104T000000Z",
+     "value": 41,
+     "norm": 500000
+    },
+    {
+     "date": "20250105T000000Z",
+     "value": 39,
+     "norm": 500000
+    }
+   ]
+  }
+ ]
+}

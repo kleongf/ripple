@@ -19,25 +19,30 @@ lines:
   - product: product/custom-ai-asics
     fraction: 0.3
   - product: product/datacenter-switches
-    fraction: 0.12
+    fraction: 0.15
+  - product: product/optical-dsps
+    fraction: 0.04
+  - product: product/pcie-cxl-connectivity
+    fraction: 0.02
+  - product: product/lasers
+    fraction: 0.01
   new_product: null
-  note: Estimated shares cover custom AI accelerators and datacenter switch silicon;
-    software licenses and other chips remain unassigned.
+  note: Estimated product-line shares cover accelerator and connectivity chips, including
+    switch silicon; software licenses and other unmatched products remain unassigned.
 - member: avgo:SubscriptionsandServicesMember
   label: Subscriptions and Services
   share: 0.298026
   assignments: []
   new_product: null
-  note: Software subscriptions, support and services are outside the mapped product
-    demand.
+  note: Software subscriptions, support and services are left unassigned.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6507
+  input_tokens: 6925
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 267
-  reasoning_output_tokens: 143
+  output_tokens: 337
+  reasoning_output_tokens: 153
 created: 2026-09-27

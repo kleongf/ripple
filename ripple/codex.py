@@ -51,8 +51,36 @@ TOOL_FEATURES = {
 }
 
 
+# Features an MCP-only run keeps on because codex routes MCP tool calls through them (D116).
+MCP_ROUTING = {"code_mode_host"}
+
+
 class CodexError(Exception):
     """A Codex call failed or returned something unusable."""
+
+
+@dataclass(frozen=True)
+class McpServer:
+    """A stdio MCP server handed to `codex exec` (M35)."""
+
+    command: str
+    args: list[str] = field(default_factory=list)
+    env: dict[str, str] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
+class ToolCall:
+    server: str
+    tool: str
+    arguments: dict[str, Any]
+    ok: bool
+
+
+@dataclass(frozen=True)
+class McpResult:
+    text: str
+    usage: dict[str, int] = field(default_factory=dict)
+    calls: list[ToolCall] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -137,6 +165,62 @@ class CodexRunner:
                 raise CodexError(f"Codex did not return valid JSON: {exc}") from exc
         return CodexResult(data=data, usage=_usage(completed.stdout))
 
+    def run_with_mcp(
+        self, prompt: str, instructions: str, servers: dict[str, McpServer]
+    ) -> McpResult:
+        """A free-text answer where the model's only tools are the given MCP servers (M35).
+
+        Shell, exec, web search and every other tool feature stay off, as in `run`. The one
+        exception is `code_mode_host`: codex 0.155 routes MCP tool calls through it, and with it
+        disabled the model reports no tools at all (the M35 spike, D116).
+        """
+        with tempfile.TemporaryDirectory(prefix="ripple-codex-") as tmp:
+            work = Path(tmp)
+            (work / "instructions.md").write_text(instructions)
+            out = work / "out.md"
+            server_args: list[str] = []
+            for name, server in servers.items():
+                env = ", ".join(f"{k}={json.dumps(v)}" for k, v in server.env.items())
+                server_args += ["-c", f"mcp_servers.{name}.command={json.dumps(server.command)}"]
+                server_args += ["-c", f"mcp_servers.{name}.args={json.dumps(server.args)}"]
+                server_args += ["-c", f"mcp_servers.{name}.env={{{env}}}"]
+            disable = [f for f in self.features_to_disable() if f not in MCP_ROUTING]
+            args = [
+                "exec",
+                "-m",
+                self.config.model,
+                "-c",
+                f'model_reasoning_effort="{self.config.effort}"',
+                "--sandbox",
+                "read-only",
+                "-c",
+                'approval_policy="never"',
+                "-c",
+                'web_search="disabled"',
+                "-c",
+                f"model_instructions_file={work / 'instructions.md'}",
+                *[arg for feature in disable for arg in ("--disable", feature)],
+                *server_args,
+                "--skip-git-repo-check",
+                "--ephemeral",
+                "--ignore-user-config",
+                "--ignore-rules",
+                "-C",
+                str(work),
+                "-o",
+                str(out),
+                "--json",
+                "-",
+            ]
+            completed = self._call(args, stdin=prompt, timeout=self.config.timeout)
+            try:
+                text = out.read_text()
+            except OSError as exc:
+                raise CodexError(f"Codex wrote no final message: {exc}") from exc
+        return McpResult(
+            text=text, usage=_usage(completed.stdout), calls=_tool_calls(completed.stdout)
+        )
+
     def _call(self, args: list[str], stdin: str, timeout: float) -> subprocess.CompletedProcess:
         try:
             completed = subprocess.run(
@@ -155,6 +239,29 @@ class CodexRunner:
             detail = (completed.stderr or completed.stdout).strip()[-500:]
             raise CodexError(f"codex exited with {completed.returncode}: {detail}")
         return completed
+
+
+def _tool_calls(events: str) -> list[ToolCall]:
+    """Completed MCP tool calls from the `--json` event stream, arguments only."""
+    calls: list[ToolCall] = []
+    for line in events.splitlines():
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        item = event.get("item") if isinstance(event, dict) else None
+        if event.get("type") != "item.completed" or not isinstance(item, dict):
+            continue
+        if item.get("type") == "mcp_tool_call":
+            calls.append(
+                ToolCall(
+                    server=str(item.get("server")),
+                    tool=str(item.get("tool")),
+                    arguments=item.get("arguments") or {},
+                    ok=item.get("error") is None and item.get("status") != "failed",
+                )
+            )
+    return calls
 
 
 def _usage(events: str) -> dict[str, int]:

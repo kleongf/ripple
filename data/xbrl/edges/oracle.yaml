@@ -1,3 +1,26 @@
 # Generated from the 10-K XBRL revenue lines of company/oracle by `ripple review accept` (claude-code).
 # Do not edit: edit the queue file instead.
-[]
+- src: company/oracle
+  rel: PRODUCES
+  dst: product/general-purpose-servers
+  weight: 0.0137
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2025-06-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+    note: '10-K FY2026 XBRL: Hardware Business 4.6% x0.30 of USD 67.4bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/oracle
+  rel: PRODUCES
+  dst: product/enterprise-storage
+  weight: 0.0046
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm
+    note: '10-K FY2026 XBRL: Hardware Business 4.6% x0.10 of USD 67.4bn revenue'
+    accessed: *id002

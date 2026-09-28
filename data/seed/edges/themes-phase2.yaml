@@ -1,0 +1,300 @@
+# DRIVES edges for the Phase 2 themes (docs/phase-2.md, M23, D100).
+# Volume theme: weight = share of the product's demand the theme drives. It may only drive nodes
+# at the top of the chain (E10). Share_shift theme: weight = fraction of the node's demand that
+# moves per unit shock (D8), and it needs one positive and one negative edge (E11).
+# Demand buckets: minor 0.1, major 0.4, dominant 0.8.
+
+# --- AI memory demand --------------------------------------------------------------------
+
+- src: theme/ai-memory-demand
+  rel: DRIVES
+  dst: product/hbm
+  weight: 0.55
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://intuitionlabs.ai/articles/hbm-dram-ai-memory-demand
+      note: "Puts AI training and inference at 55%+ of HBM demand in 2026, with HBM itself climbing toward 41% of DRAM revenue. The rest is non-AI HPC and networking."
+      accessed: 2026-09-27
+
+# --- Wafer fab equipment spending --------------------------------------------------------
+
+- src: theme/semicap-spending
+  rel: DRIVES
+  dst: product/euv-lithography
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/global-total-semiconductor-equipment-sales-forecast-to-reach-a-record-of-dollar-139-billion-in-2026-semi-reports
+      note: "SEMI puts wafer fab equipment at $143.9B in 2026, up 23.1%, with foundry and logic at $78.0B. Lithography demand is fab capex almost by definition; the rest is refurbished and research tools."
+      accessed: 2026-09-27
+
+- src: theme/semicap-spending
+  rel: DRIVES
+  dst: product/duv-lithography
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/global-total-semiconductor-equipment-sales-forecast-to-reach-a-record-of-dollar-139-billion-in-2026-semi-reports
+      note: "Same SEMI forecast. DUV tracks the broad fab investment cycle rather than leading-edge alone, so the dominant share of its demand is fab capex."
+      accessed: 2026-09-27
+
+- src: theme/semicap-spending
+  rel: DRIVES
+  dst: product/deposition-equipment
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/global-total-semiconductor-equipment-sales-forecast-to-reach-a-record-of-dollar-139-billion-in-2026-semi-reports
+      note: "SEMI's 2026 WFE forecast; memory 300mm equipment investment passes $50B for the first time, and deposition is a core part of that spend."
+      accessed: 2026-09-27
+
+- src: theme/semicap-spending
+  rel: DRIVES
+  dst: product/etch-equipment
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/global-total-semiconductor-equipment-sales-forecast-to-reach-a-record-of-dollar-139-billion-in-2026-semi-reports
+      note: "SEMI's 2026 WFE forecast. Etch demand is fab capex; high-aspect-ratio etch is called out with the memory build-out."
+      accessed: 2026-09-27
+
+- src: theme/semicap-spending
+  rel: DRIVES
+  dst: product/inspection-metrology
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/global-total-semiconductor-equipment-sales-forecast-to-reach-a-record-of-dollar-139-billion-in-2026-semi-reports
+      note: "SEMI's 2026 WFE forecast. Process control ships with new capacity, so its demand follows the same capex cycle."
+      accessed: 2026-09-27
+
+- src: theme/semicap-spending
+  rel: DRIVES
+  dst: product/coater-developer
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.semi.org/en/semi-press-release/global-total-semiconductor-equipment-sales-forecast-to-reach-a-record-of-dollar-139-billion-in-2026-semi-reports
+      note: "SEMI's 2026 WFE forecast. Coater/developer tracks are sold alongside lithography tools, so they move with fab capex."
+      accessed: 2026-09-27
+
+# --- China export controls: a volume theme that removes demand ---------------------------
+
+- src: theme/china-export-controls
+  rel: DRIVES
+  dst: product/duv-lithography
+  weight: 0.4
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.7
+  valid_from: 2025-01-15
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm
+      note: "ASML's own FY2025 geography tagging puts China at 29.1% of EUR 32.7bn revenue, and China cannot buy EUV, so those sales are DUV. Tightening controls remove a major share of DUV demand."
+      accessed: 2026-09-27
+
+- src: theme/china-export-controls
+  rel: DRIVES
+  dst: product/inspection-metrology
+  weight: 0.1
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.5
+  valid_from: 2025-01-15
+  evidence:
+    - url: https://www.asml.com/en/news/press-releases/2024/asml-expects-impact-of-updated-export-restrictions-to-fall-within-outlook-for-2025
+      note: "The Dutch rules effective 2025-01-15 extended licensing to further measurement and inspection systems, a minor share of that market's demand."
+      accessed: 2026-09-27
+
+# --- Grid build-out ---------------------------------------------------------------------
+
+- src: theme/grid-buildout
+  rel: DRIVES
+  dst: product/grid-equipment
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.datacenterknowledge.com/build-design/ai-data-center-boom-rewires-us-power-supply-chain
+      note: "Transmission and distribution investment is what grid equipment demand is. Substation transformer lead times went from about 140 weeks in 2023 to over 160 in 2026 on this build-out."
+      accessed: 2026-09-27
+
+- src: theme/grid-buildout
+  rel: DRIVES
+  dst: product/switchgear
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.datacenterknowledge.com/build-design/ai-data-center-boom-rewires-us-power-supply-chain
+      note: "Utilities and datacenters compete for the same switchgear and breaker capacity, which is largely sold out through 2028. Datacenters take the rest of the demand."
+      accessed: 2026-09-27
+
+# --- Energy storage deployment ----------------------------------------------------------
+
+- src: theme/energy-storage-deployment
+  rel: DRIVES
+  dst: product/battery-storage
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.energy-storage.news/us-renewables-and-battery-storage-are-poised-for-sustained-growth-as-data-centre-demand-accelerates/
+      note: "Grid-scale deployment is what battery storage demand is: the EIA expects 24GW of US utility-scale additions in 2026 after 15GW in 2025. Behind-the-meter storage is the remainder."
+      accessed: 2026-09-27
+
+# --- Nuclear for datacenters ------------------------------------------------------------
+
+- src: theme/nuclear-for-datacenters
+  rel: DRIVES
+  dst: product/nuclear-generation
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.eia.gov/todayinenergy/detail.php?id=63304
+      note: "EIA on datacenter owners turning to nuclear. Announced hyperscaler deals are roughly a tenth of the 97GW US fleet and most are not yet operating, so a minor share of output today."
+      accessed: 2026-09-27
+
+# --- Optical interconnect demand --------------------------------------------------------
+
+- src: theme/optical-interconnect-demand
+  rel: DRIVES
+  dst: product/optical-transceivers
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.lightcounting.com/newsletter/en/january-2025-optics-for-ai-clusters-319
+      note: "LightCounting has AI clusters driving the transceiver wave, doubling the segment from 2024 to 2026. Telecom and access optics are the remaining demand."
+      accessed: 2026-09-27
+
+# --- Arm adoption in the datacenter -----------------------------------------------------
+
+- src: theme/arm-datacenter-adoption
+  rel: DRIVES
+  dst: product/processor-ip
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-04-01
+  evidence:
+    - url: https://newsroom.arm.com/news/arm-q4-fye26-results
+      note: "Arm's FY2026 results have data-center royalties more than doubling and about 50% CPU-compute share at top hyperscalers, but datacenter is still a minor share of $2.61bn total royalties."
+      accessed: 2026-09-27
+
+# --- Co-packaged optics adoption (share_shift) ------------------------------------------
+
+- src: theme/cpo-adoption
+  rel: DRIVES
+  dst: product/co-packaged-optics
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/
+      note: "A shift to CPO moves nearly all of the gain onto the CPO node, which is small today: LightCounting sees CPO ports near 30% of 800G and 1.6T by 2027."
+      accessed: 2026-09-27
+
+- src: theme/cpo-adoption
+  rel: DRIVES
+  dst: product/optical-transceivers
+  weight: 0.1
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/
+      note: "LightCounting expects pluggable modules to stay the majority of datacenter optical links through the decade, so each point of CPO adoption moves only a small fraction of the far larger pluggable base."
+      accessed: 2026-09-27
+
+# --- Optical circuit switching adoption (share_shift) -----------------------------------
+
+- src: theme/ocs-adoption
+  rel: DRIVES
+  dst: product/optical-circuit-switches
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.opencompute.org/documents/ocp-ocs-white-paper-april-2026-final-pdf
+      note: "OCP describes OCS replacing packet-switched spine layers in AI fabrics, so adoption lands almost entirely on the OCS node. Lumentum's OCS backlog is above $400M from a near-zero base."
+      accessed: 2026-09-27
+
+- src: theme/ocs-adoption
+  rel: DRIVES
+  dst: product/datacenter-switches
+  weight: 0.1
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.5
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.opencompute.org/documents/ocp-ocs-white-paper-april-2026-final-pdf
+      note: "Google reports about 30% lower capex and 41% lower network power with OCS spines, which displaces some electrical switching. The electrical base is far larger, so a minor fraction moves."
+      accessed: 2026-09-27
+
+# --- AI servers crowding out general-purpose servers (share_shift) ----------------------
+
+- src: theme/ai-server-budget-shift
+  rel: DRIVES
+  dst: product/ai-servers
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://iconnect007.com/article/149234/global-server-market-hits-record-444b-in-2025-driven-by-ai-demand/149231/smt
+      note: "IDC has the server market at a record $444B in 2025, up 80%, with GPU systems over half of revenue. A budget shift toward AI moves a major fraction of the AI node."
+      accessed: 2026-09-27
+
+- src: theme/ai-server-budget-shift
+  rel: DRIVES
+  dst: product/general-purpose-servers
+  weight: 0.4
+  weight_source: bucket
+  polarity: -1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://iconnect007.com/article/149234/global-server-market-hits-record-444b-in-2025-driven-by-ai-demand/149231/smt
+      note: "The other side of the same IDC split: conventional server budgets are what AI spending competes with, and the two halves are now comparable in size."
+      accessed: 2026-09-27

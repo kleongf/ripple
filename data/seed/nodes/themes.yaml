@@ -3,12 +3,14 @@
   kind: volume
   label: AI compute demand
   aliases: [AI infrastructure build-out, AI capex, generative AI demand]
+  query: '("AI chip" OR "AI chips" OR "AI compute" OR "AI accelerator" OR "AI accelerators" OR "AI data center" OR "AI datacenter" OR "AI infrastructure" OR "AI capex" OR "AI buildout" OR "AI build-out")'
 
 - id: theme/liquid-cooling-adoption
   type: theme
   kind: share_shift
   label: Liquid cooling adoption
   aliases: [shift from air to liquid cooling, direct-to-chip cooling adoption]
+  query: '("liquid cooling" OR "liquid-cooled" OR "direct-to-chip" OR "immersion cooling" OR "cold plate") ("data center" OR datacenter OR server OR servers OR rack OR GPU OR chip)'
 
 # Stage B
 - id: theme/datacenter-power-demand
@@ -16,9 +18,91 @@
   kind: volume
   label: Datacenter power demand
   aliases: [data center electricity demand, power for AI data centers]
+  query: '("data center power" OR "datacenter power" OR "data center electricity" OR "data center energy" OR "data center load" OR "power for data centers" OR "data centre power")'
 
 - id: theme/custom-silicon-adoption
   type: theme
   kind: share_shift
   label: Custom silicon adoption
   aliases: [shift from GPUs to custom ASICs, hyperscaler custom chips]
+  query: '("custom AI chip" OR "custom silicon" OR "custom accelerator" OR "AI ASIC" OR "in-house chip" OR "in-house AI chip" OR "Google TPU" OR Trainium OR Maia OR Inferentia)'
+
+# Phase 2 M23 (docs/phase-2.md, D100). Every theme carries the GDELT DOC query that measures it.
+# GDELT ANDs terms implicitly, so grouped OR clauses sit next to each other.
+
+- id: theme/ai-memory-demand
+  type: theme
+  kind: volume
+  label: AI memory demand
+  aliases: [HBM demand, high-bandwidth memory demand, AI memory supercycle]
+  query: '("high bandwidth memory" OR "high-bandwidth memory" OR HBM OR HBM3 OR HBM3E OR HBM4 OR "memory for AI" OR "AI memory")'
+
+- id: theme/semicap-spending
+  type: theme
+  kind: volume
+  label: Wafer fab equipment spending
+  aliases: [WFE spending, chip equipment capex, fab investment cycle]
+  query: '("wafer fab equipment" OR "semiconductor equipment" OR "chipmaking equipment" OR "chip equipment" OR "fab equipment" OR "fab investment" OR "fab spending" OR "chip tools")'
+
+- id: theme/china-export-controls
+  type: theme
+  kind: volume
+  label: China chip export controls
+  aliases: [semiconductor export restrictions, entity list additions, chip curbs]
+  query: '("export controls" OR "export restrictions" OR "export curbs" OR "chip curbs" OR "entity list") (chip OR chips OR semiconductor OR semiconductors OR lithography OR wafer)'
+
+- id: theme/grid-buildout
+  type: theme
+  kind: volume
+  label: Grid build-out
+  aliases: [transmission investment, transformer demand, grid equipment shortage]
+  query: '("power transformer" OR "grid transformer" OR switchgear OR "transmission equipment" OR "grid equipment" OR "grid upgrade" OR "grid upgrades" OR "grid capacity" OR "interconnection queue")'
+
+- id: theme/energy-storage-deployment
+  type: theme
+  kind: volume
+  label: Energy storage deployment
+  aliases: [battery storage build-out, BESS deployment, grid-scale batteries]
+  query: '("battery energy storage" OR "energy storage system" OR "grid-scale battery" OR "grid scale battery" OR "battery storage" OR BESS)'
+
+- id: theme/nuclear-for-datacenters
+  type: theme
+  kind: volume
+  label: Nuclear power for datacenters
+  aliases: [nuclear PPA, reactor restart for AI, SMR for data centers]
+  query: '("nuclear power" OR "nuclear plant" OR "nuclear reactor" OR "small modular reactor" OR "nuclear PPA") ("data center" OR datacenter OR hyperscaler OR "AI")'
+
+- id: theme/optical-interconnect-demand
+  type: theme
+  kind: volume
+  label: Optical interconnect demand
+  aliases: [optical transceiver demand, 800G ramp, 1.6T optics]
+  query: '("optical transceiver" OR "optical module" OR "optical interconnect" OR "800G" OR "1.6T" OR "pluggable optics" OR "optical networking")'
+
+- id: theme/arm-datacenter-adoption
+  type: theme
+  kind: volume
+  label: Arm adoption in the datacenter
+  aliases: [Arm server CPUs, Graviton, Arm-based data center chips]
+  query: '("Arm server" OR "Arm data center" OR Graviton OR "Arm CPU" OR "Arm chip" OR "Arm architecture" OR "Arm Neoverse")'
+
+- id: theme/cpo-adoption
+  type: theme
+  kind: share_shift
+  label: Co-packaged optics adoption
+  aliases: [CPO adoption, shift from pluggables to co-packaged optics, near-packaged optics]
+  query: '("co-packaged optics" OR "co-packaged optical" OR "copackaged optics" OR "near-packaged optics" OR "optical I/O" OR "silicon photonics switch")'
+
+- id: theme/ocs-adoption
+  type: theme
+  kind: share_shift
+  label: Optical circuit switching adoption
+  aliases: [OCS adoption, optical switching fabrics, MEMS optical switching]
+  query: '("optical circuit switch" OR "optical circuit switching" OR "optical switching fabric" OR "photonic fabric")'
+
+- id: theme/ai-server-budget-shift
+  type: theme
+  kind: share_shift
+  label: AI servers crowding out general-purpose servers
+  aliases: [server budget shift to AI, conventional server spending squeeze]
+  query: '("server market" OR "server shipments" OR "server spending" OR "server revenue" OR "server demand" OR "server refresh") (AI OR "general-purpose" OR "general purpose" OR traditional)'

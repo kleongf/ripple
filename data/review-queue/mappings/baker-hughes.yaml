@@ -19,22 +19,22 @@ lines:
   - product: product/gas-turbines
     fraction: 0.15
   new_product: null
-  note: Estimated gas-turbine share excludes compressors, oilfield equipment, spare
-    parts and other products outside the taxonomy.
+  note: Gas turbines are an estimated 15% of product revenue; oilfield equipment,
+    compressors and other products remain unassigned.
 - member: us-gaap:ServiceMember
   label: Service
   share: 0.343165
   assignments: []
   new_product: null
-  note: Services and installed-base support are left unassigned.
+  note: Services, maintenance and support are excluded from new-product demand.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6586
+  input_tokens: 6929
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 226
-  reasoning_output_tokens: 119
+  output_tokens: 174
+  reasoning_output_tokens: 63
 created: 2026-09-27

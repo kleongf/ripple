@@ -21,28 +21,29 @@ lines:
   - product: product/ai-accelerators
     fraction: 0.38
   new_product: null
-  note: Estimated EPYC CPU and Instinct accelerator mix, leaving networking and other
-    products unassigned.
+  note: Estimated EPYC CPU and Instinct accelerator mix; other datacenter products
+    remain unassigned.
 - member: amd:ClientAndGamingMember
   label: Client and Gaming
   share: 0.420047
   assignments: []
   new_product: null
-  note: PC processors, gaming GPUs and console chips fall outside this taxonomy.
+  note: PC processors, gaming GPUs and console chips fall outside the taxonomy.
 - member: amd:EmbeddedMember
   label: Embedded
   share: 0.099714
   assignments: []
-  new_product: null
-  note: Embedded processors, FPGAs and adaptive SoCs fall outside the listed products.
+  new_product: FPGAs and adaptive SoCs
+  note: Embedded processors and adaptive computing devices lack a taxonomy match,
+    though FPGAs also serve datacenter applications.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6509
+  input_tokens: 6931
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 230
-  reasoning_output_tokens: 77
+  output_tokens: 281
+  reasoning_output_tokens: 117
 created: 2026-09-27

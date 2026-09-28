@@ -17,30 +17,33 @@ lines:
   share: 0.868952
   assignments: []
   new_product: null
-  note: Cloud services buy datacenter capacity rather than sell it; the taxonomy's
-    datacenter-capacity is build-out (Claude Code review, consistent with AWS and
-    Azure).
+  note: Cloud services, software licenses and software support do not represent sales
+    of taxonomy hardware or datacenter construction.
 - member: orcl:ServicesBusinessMember
   label: Services Business
   share: 0.085262
   assignments: []
   new_product: null
-  note: Consulting and other services are excluded from product demand.
+  note: Consulting and other services are excluded from new-product demand.
 - member: orcl:HardwareBusinessMember
   label: Hardware Business
   share: 0.045786
-  assignments: []
-  new_product: Enterprise servers and storage systems
-  note: Enterprise hardware lacks a matching taxonomy category, while hardware support
-    remains unassigned.
+  assignments:
+  - product: product/general-purpose-servers
+    fraction: 0.3
+  - product: product/enterprise-storage
+    fraction: 0.1
+  new_product: null
+  note: Estimated server and storage product shares exclude hardware support and other
+    unclassified revenue.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6624
+  input_tokens: 6973
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 249
-  reasoning_output_tokens: 105
+  output_tokens: 304
+  reasoning_output_tokens: 147
 created: 2026-09-27

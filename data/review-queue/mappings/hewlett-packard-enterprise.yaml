@@ -16,11 +16,13 @@ lines:
   label: Server Segment
   share: 0.517407
   assignments:
+  - product: product/general-purpose-servers
+    fraction: 0.65
   - product: product/ai-servers
     fraction: 0.23
-  new_product: General-purpose servers
-  note: Estimated AI-server share is 23%; general-purpose servers and related services
-    remain unassigned.
+  new_product: null
+  note: Estimated traditional and AI server hardware shares exclude support and services
+    and do not separately count embedded components.
 - member: hpe:NetworkingMember
   label: Networking
   share: 0.199732
@@ -28,37 +30,39 @@ lines:
   - product: product/datacenter-switches
     fraction: 0.2
   new_product: null
-  note: Estimated datacenter-switch share is 20%, excluding campus networking, routing,
-    software and support.
+  note: Estimated data-center switching share excludes campus networking, wireless,
+    routing, software and services.
 - member: hpe:HybridCloudSegmentMember
   label: Hybrid Cloud Segment
   share: 0.167775
-  assignments: []
-  new_product: Enterprise storage systems
-  note: Storage systems are outside the taxonomy, while cloud software and services
-    remain unassigned.
+  assignments:
+  - product: product/enterprise-storage
+    fraction: 0.55
+  new_product: null
+  note: Estimated storage-system hardware share leaves cloud software, services and
+    support unassigned.
 - member: hpe:FinancialServicesMember
   label: Financial Services
   share: 0.102169
   assignments: []
   new_product: null
-  note: Financing, leasing and asset-management revenue does not represent new product
+  note: Financing, leasing and asset-lifecycle activities do not represent new product
     demand.
 - member: us-gaap:CorporateAndOtherMember
   label: Corporate Segment and Other Operating Segment
   share: 0.022627
   assignments: []
   new_product: null
-  note: No meaningful taxonomy product share is identifiable in these miscellaneous
-    operations.
+  note: Services and miscellaneous operations lack a confidently identifiable taxonomy
+    product share.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6658
+  input_tokens: 7005
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 384
-  reasoning_output_tokens: 146
+  output_tokens: 358
+  reasoning_output_tokens: 97
 created: 2026-09-27

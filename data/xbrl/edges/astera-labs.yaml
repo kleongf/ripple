@@ -1,3 +1,14 @@
-# Generated from the 10-K XBRL revenue lines of company/astera-labs by `ripple review accept` (judge).
+# Generated from the 10-K XBRL revenue lines of company/astera-labs by `ripple review accept` (claude-code).
 # Do not edit: edit the queue file instead.
-[]
+- src: company/astera-labs
+  rel: PRODUCES
+  dst: product/pcie-cxl-connectivity
+  weight: 1.0
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-01-01
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+    note: '10-K FY2025 XBRL: Product 100.0% of USD 0.9bn revenue'
+    accessed: 2026-09-27

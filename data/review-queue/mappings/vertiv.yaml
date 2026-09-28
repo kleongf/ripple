@@ -19,16 +19,16 @@ lines:
   - product: product/ups
     fraction: 0.4
   - product: product/air-cooling
-    fraction: 0.22
+    fraction: 0.25
   - product: product/liquid-cooling
     fraction: 0.08
-  - product: product/switchgear
-    fraction: 0.08
   - product: product/datacenter-chillers
-    fraction: 0.04
+    fraction: 0.05
+  - product: product/switchgear
+    fraction: 0.07
   new_product: null
-  note: Estimated product mix, not a disclosed split; racks, power distribution and
-    other untaxed products remain unassigned.
+  note: Estimated product mix covers power protection and cooling equipment, leaving
+    racks, power distribution and other products unassigned.
 - member: vrt:ServicesAndSparesMember
   label: Services And Spares
   share: 0.197744
@@ -41,9 +41,9 @@ reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6524
+  input_tokens: 6946
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 279
-  reasoning_output_tokens: 113
+  output_tokens: 253
+  reasoning_output_tokens: 88
 created: 2026-09-27

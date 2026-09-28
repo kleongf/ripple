@@ -17,18 +17,18 @@ lines:
   share: 1.0
   assignments:
   - product: product/optical-transceivers
-    fraction: 0.7
+    fraction: 0.75
   new_product: null
-  note: Estimated transceiver manufacturing share; other optical assemblies, industrial
-    lasers and non-optical products remain unassigned.
+  note: Estimated transceiver manufacturing share is 75%; other optical assemblies,
+    industrial lasers and automotive products remain unassigned.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6537
+  input_tokens: 6890
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 211
-  reasoning_output_tokens: 135
+  output_tokens: 171
+  reasoning_output_tokens: 94
 created: 2026-09-27

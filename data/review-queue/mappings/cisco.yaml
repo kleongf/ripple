@@ -18,44 +18,45 @@ lines:
   assignments:
   - product: product/datacenter-switches
     fraction: 0.2
+  - product: product/general-purpose-servers
+    fraction: 0.08
   - product: product/optical-transceivers
     fraction: 0.05
   new_product: null
-  note: Estimated shares cover datacenter switches and pluggable optics, leaving campus
-    networking, routing and other products unassigned.
+  note: Estimated shares cover datacenter switching, UCS servers and pluggable optics;
+    campus networking, routing and other products remain unassigned.
 - member: us-gaap:ServiceMember
   label: Service
   share: 0.237347
   assignments: []
   new_product: null
-  note: Support and professional services are excluded from new product demand.
+  note: Support and professional services are excluded from new-product demand.
 - member: csco:SecurityMember
   label: Security
   share: 0.129996
   assignments: []
   new_product: null
-  note: Security software and appliances fall outside the taxonomy.
+  note: Cybersecurity software and appliances fall outside the taxonomy.
 - member: csco:CollaborationMember
   label: Collaboration
   share: 0.067904
   assignments: []
   new_product: null
-  note: Conferencing, communications software and collaboration devices fall outside
-    the taxonomy.
+  note: Conferencing, calling and collaboration devices fall outside the taxonomy.
 - member: csco:ObservabilityMember
   label: Observability
   share: 0.017292
   assignments: []
   new_product: null
-  note: Application and infrastructure monitoring software falls outside the taxonomy.
+  note: Application monitoring and observability software fall outside the taxonomy.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6664
+  input_tokens: 7009
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 306
-  reasoning_output_tokens: 89
+  output_tokens: 382
+  reasoning_output_tokens: 147
 created: 2026-09-27

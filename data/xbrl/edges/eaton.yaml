@@ -3,29 +3,16 @@
 - src: company/eaton
   rel: PRODUCES
   dst: product/switchgear
-  weight: 0.2072
+  weight: 0.2438
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: &id001 2025-01-01
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
-    note: '10-K FY2025 XBRL: Electrical Americas Segment 48.4% x0.30 + Electrical
-      Global Segment 24.8% x0.25 of USD 27.4bn revenue'
+    note: '10-K FY2025 XBRL: Electrical Americas Segment 48.4% x0.35 + Electrical
+      Global Segment 24.8% x0.30 of USD 27.4bn revenue'
     accessed: &id002 2026-09-27
-- src: company/eaton
-  rel: PRODUCES
-  dst: product/grid-equipment
-  weight: 0.1092
-  weight_source: manual
-  polarity: 1
-  confidence: 0.7
-  valid_from: *id001
-  evidence:
-  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
-    note: '10-K FY2025 XBRL: Electrical Americas Segment 48.4% x0.20 + Electrical
-      Global Segment 24.8% x0.05 of USD 27.4bn revenue'
-    accessed: *id002
 - src: company/eaton
   rel: PRODUCES
   dst: product/ups
@@ -38,4 +25,17 @@
   - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
     note: '10-K FY2025 XBRL: Electrical Americas Segment 48.4% x0.10 + Electrical
       Global Segment 24.8% x0.20 of USD 27.4bn revenue'
+    accessed: *id002
+- src: company/eaton
+  rel: PRODUCES
+  dst: product/grid-equipment
+  weight: 0.0967
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1551182/000155118226000007/etn-20251231.htm
+    note: '10-K FY2025 XBRL: Electrical Americas Segment 48.4% x0.20 of USD 27.4bn
+      revenue'
     accessed: *id002

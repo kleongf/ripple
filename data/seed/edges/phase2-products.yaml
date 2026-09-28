@@ -1,0 +1,277 @@
+# Chain placement for the products accepted in Phase 2 M22 (docs/phase-2.md, D96).
+# REQUIRES weight = share of the input's demand that comes from this product. Demand-share
+# buckets are minor 0.1, major 0.4, dominant 0.8 (docs/phase-0.md).
+
+# --- Optics: co-packaged optics, photonic ICs, optical circuit switches -----------------
+
+- src: product/datacenter-switches
+  rel: REQUIRES
+  dst: product/co-packaged-optics
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/
+      note: "CPO puts the optical engine on the switch ASIC package; LightCounting sees CPO at nearly 30% of 800G and 1.6T ports by 2027. Switch platforms are almost the only buyer today."
+      accessed: 2026-09-27
+
+- src: product/co-packaged-optics
+  rel: REQUIRES
+  dst: product/photonic-ics
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.edn.com/where-co-packaged-optics-cpo-technology-stands-in-2026/
+      note: "CPO engines are built on silicon-photonics PICs, but CPO was about $122M of revenue in 2025 against a far larger pluggable market, so it is a minor share of PIC demand."
+      accessed: 2026-09-27
+
+- src: product/optical-transceivers
+  rel: REQUIRES
+  dst: product/photonic-ics
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.idtechex.com/en/research-report/silicon-photonics-and-photonic-integrated-circuits/1151
+      note: "IDTechEx: datacenter and HPC are about 40% of silicon-photonics demand, and PIC-based transceivers carry most of the market's value. Telecom and sensing take the rest."
+      accessed: 2026-09-27
+
+- src: product/ai-servers
+  rel: REQUIRES
+  dst: product/optical-circuit-switches
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.opencompute.org/documents/ocp-ocs-white-paper-april-2026-final-pdf
+      note: "OCP: optical circuit switching is the reconfigurable layer between AI training pods, Google's TPU fabrics the volume case. Outside AI clusters there is no market."
+      accessed: 2026-09-27
+
+- src: product/optical-circuit-switches
+  rel: REQUIRES
+  dst: product/fiber-cable
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.opencompute.org/documents/ocp-ocs-white-paper-april-2026-final-pdf
+      note: "An OCS fabric is all-optical and needs its own fiber plant between pods, a minor share of total datacenter fiber demand next to structured cabling."
+      accessed: 2026-09-27
+
+# --- RF and high-speed analog ----------------------------------------------------------
+
+- src: product/optical-transceivers
+  rel: REQUIRES
+  dst: product/rf-analog
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.macom.com/updates/news/2025/macom-reports-fiscal-fourth-quarter-and-fiscal-year-2025-financi
+      note: "MACOM supplies the modulator drivers and TIAs inside 800G and 1.6T transceivers. Datacenter was about 30% of its revenue by FQ2 2026, so optics is a minor share of RF and analog demand."
+      accessed: 2026-09-27
+
+# --- Processor IP ----------------------------------------------------------------------
+
+- src: product/server-cpus
+  rel: REQUIRES
+  dst: product/processor-ip
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2026-04-01
+  evidence:
+    - url: https://newsroom.arm.com/news/arm-q4-fye26-results
+      note: "Arm reports $2.61B of FY2026 royalties, data-center royalties more than doubling, about 50% of CPU compute at top hyperscalers. Datacenter is still a minority; mobile leads."
+      accessed: 2026-09-27
+
+- src: product/custom-ai-asics
+  rel: REQUIRES
+  dst: product/processor-ip
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2026-04-01
+  evidence:
+    - url: https://newsroom.arm.com/news/arm-q4-fye26-results
+      note: "Hyperscaler custom silicon licenses Arm cores for its control and host CPUs; Arm names this as the driver of data-center royalties doubling in FY2026. Still a minor share of total royalties."
+      accessed: 2026-09-27
+
+# --- PCIe and CXL connectivity ---------------------------------------------------------
+
+- src: product/ai-servers
+  rel: REQUIRES
+  dst: product/pcie-cxl-connectivity
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1736297/000173629726000010/alab-20251231.htm
+      note: "Astera's 10-K puts its retimers, cable modules and fabric switches inside major AI platforms built on merchant GPUs and proprietary accelerators. AI racks dominate this demand."
+      accessed: 2026-09-27
+
+# --- Flip-chip and SiP packaging -------------------------------------------------------
+
+- src: product/server-cpus
+  rel: REQUIRES
+  dst: product/flip-chip-packaging
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+      note: "Amkor's 10-K puts Advanced Products, its flip-chip and wafer-level lines, at 82.8% of 2025 sales across smartphones, datacenter, AI, auto and wearables. Smartphones lead; CPUs are minor."
+      accessed: 2026-09-27
+
+- src: product/datacenter-switches
+  rel: REQUIRES
+  dst: product/flip-chip-packaging
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+      note: "Switch ASICs ship in large flip-chip BGA packages from the same OSAT capacity Amkor describes as Advanced Products; networking is a minor slice of that demand next to smartphones."
+      accessed: 2026-09-27
+
+- src: product/optical-dsps
+  rel: REQUIRES
+  dst: product/flip-chip-packaging
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1047127/000104712726000014/amkr-20251231.htm
+      note: "Optical DSPs are packaged flip-chip and increasingly co-packaged with optics, part of the same Advanced Products capacity. A minor share of it."
+      accessed: 2026-09-27
+
+# --- General-purpose servers and enterprise storage ------------------------------------
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/general-purpose-servers
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://iconnect007.com/article/149234/global-server-market-hits-record-444b-in-2025-driven-by-ai-demand/149231/smt
+      note: "IDC puts the 2025 server market at $444B with GPU-equipped systems over half of revenue; the remainder is general-purpose, and it goes into the same datacenter build-out."
+      accessed: 2026-09-27
+
+- src: product/general-purpose-servers
+  rel: REQUIRES
+  dst: product/server-cpus
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.networkworld.com/article/4093752/server-memory-prices-could-double-by-2026-as-ai-demand-strains-supply
+      note: "The two-socket general-purpose server is the traditional home of server CPUs; AI racks add GPUs around a smaller host-CPU count. A major share of CPU demand, not all of it."
+      accessed: 2026-09-27
+
+- src: product/general-purpose-servers
+  rel: REQUIRES
+  dst: product/dram
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.networkworld.com/article/4093752/server-memory-prices-could-double-by-2026-as-ai-demand-strains-supply
+      note: "A two-socket general-purpose server carries around 1TB of DDR5, historically 10-15% of hardware cost and rising sharply. Conventional servers are a major share of server DRAM demand."
+      accessed: 2026-09-27
+
+- src: product/general-purpose-servers
+  rel: REQUIRES
+  dst: product/enterprise-ssds
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.trendforce.com/presscenter/news/20251205-12819.html
+      note: "TrendForce reports North American cloud providers scaling out AI infrastructure and general-purpose servers together as the driver of record enterprise SSD revenue in 3Q25."
+      accessed: 2026-09-27
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/enterprise-storage
+  weight: 0.8
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.precedenceresearch.com/enterprise-flash-storage-market
+      note: "Enterprise flash storage is sized at about $23.7B in 2025 and is deployed almost entirely inside datacenters, with all-flash arrays the fastest-growing part."
+      accessed: 2026-09-27
+
+- src: product/enterprise-storage
+  rel: REQUIRES
+  dst: product/enterprise-ssds
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.trendforce.com/presscenter/news/20251205-12819.html
+      note: "All-flash arrays consume enterprise SSDs directly; TrendForce puts top-five enterprise SSD revenue at about $6.54B in 3Q25, split between arrays and servers."
+      accessed: 2026-09-27
+
+# --- Battery energy storage ------------------------------------------------------------
+
+- src: product/electricity-demand
+  rel: REQUIRES
+  dst: product/battery-storage
+  weight: 0.4
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.7
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.energy-storage.news/us-renewables-and-battery-storage-are-poised-for-sustained-growth-as-data-centre-demand-accelerates/
+      note: "Grid-scale storage is built to firm renewables and smooth load; the EIA expects 24GW of US utility-scale battery additions in 2026 after 15GW in 2025, with datacenter load growth cited as a driver."
+      accessed: 2026-09-27
+
+- src: product/datacenter-capacity
+  rel: REQUIRES
+  dst: product/battery-storage
+  weight: 0.1
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://davisgraham.com/news-events/battery-storage-for-data-centers-in-2026-feoc-compliance-ferc-co-location-and-the-deals-getting-done-now/
+      note: "Datacenters are co-locating batteries for peak shaving and bridging power, a minor share of battery demand next to grid-scale projects."
+      accessed: 2026-09-27

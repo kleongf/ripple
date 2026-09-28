@@ -15,14 +15,14 @@
 - src: company/vertiv
   rel: PRODUCES
   dst: product/air-cooling
-  weight: 0.1765
+  weight: 0.2006
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: *id001
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
-    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.22 of USD 10.2bn revenue'
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.25 of USD 10.2bn revenue'
     accessed: *id002
 - src: company/vertiv
   rel: PRODUCES
@@ -39,24 +39,24 @@
 - src: company/vertiv
   rel: PRODUCES
   dst: product/switchgear
-  weight: 0.0642
+  weight: 0.0562
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: *id001
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
-    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.08 of USD 10.2bn revenue'
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.07 of USD 10.2bn revenue'
     accessed: *id002
 - src: company/vertiv
   rel: PRODUCES
   dst: product/datacenter-chillers
-  weight: 0.0321
+  weight: 0.0401
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: *id001
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1674101/000167410126000008/vrt-20251231.htm
-    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.04 of USD 10.2bn revenue'
+    note: '10-K FY2025 XBRL: Product Excluding Spares 80.2% x0.05 of USD 10.2bn revenue'
     accessed: *id002

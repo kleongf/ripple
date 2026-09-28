@@ -1,0 +1,150 @@
+# Pre-registered event set for Phase 2 (docs/phase-2.md, M23, D101).
+#
+# WRITTEN 2026-09-27, BEFORE ANY GDELT COVERAGE WAS FETCHED. Nothing in this file was chosen by
+# looking at a series. That is the whole point: M29 measures whether the burst detector finds
+# these events, and tuning the detector or the queries against them afterwards would be
+# lookahead. Query tuning in M26 is allowed because it scores article relevance, never burst
+# alignment with this file.
+#
+# Each event names the theme that should burst and the direction the theme is actually moving.
+# Direction is a property of the theme, not of the day (D90), so a `down` event is one where
+# coverage spikes while the theme is WEAKENING. Those are the cases the standardized tone
+# reversal flag exists to catch, and they are listed as `reversal: true`.
+#
+# `date_confidence: approximate` means the date comes from memory rather than a checked source;
+# M29 reports those separately so a wrong date is not counted as a detector failure.
+
+tolerance_days: 3
+min_hit_rate: 0.8
+
+events:
+  - id: chips-act-signed
+    label: CHIPS and Science Act signed into law
+    date: 2022-08-09
+    theme: theme/semicap-spending
+    direction: up
+    date_confidence: exact
+    why: A $52bn fab subsidy programme; coverage of fab investment should spike.
+
+  - id: bis-october-2022-controls
+    label: First broad US export controls on China advanced chips
+    date: 2022-10-07
+    theme: theme/china-export-controls
+    direction: up
+    date_confidence: exact
+    why: The rule that started the current control regime.
+
+  - id: chatgpt-launch
+    label: ChatGPT released to the public
+    date: 2022-11-30
+    theme: theme/ai-compute-demand
+    direction: up
+    date_confidence: exact
+    why: The origin of the AI compute cycle. A burst here is the weakest possible test, since
+      AI datacenter language was not yet standard press vocabulary; if the query misses it, that
+      is a finding about the query, not the detector.
+
+  - id: nvidia-may-2023-guidance
+    label: Nvidia guides to a step change in datacenter revenue
+    date: 2023-05-24
+    theme: theme/ai-compute-demand
+    direction: up
+    date_confidence: exact
+    why: The quarter that repriced AI infrastructure across the market.
+
+  - id: bis-october-2023-controls
+    label: US export controls updated and widened
+    date: 2023-10-17
+    theme: theme/china-export-controls
+    direction: up
+    date_confidence: exact
+    why: Closed the workarounds left by the 2022 rule.
+
+  - id: gtc-2024-blackwell
+    label: Blackwell and GB200 NVL72 announced at GTC
+    date: 2024-03-18
+    theme: theme/ai-compute-demand
+    direction: up
+    date_confidence: exact
+    why: The keynote that made rack-scale AI the default unit of compute.
+
+  - id: gtc-2024-blackwell-cooling
+    label: Blackwell announcement, liquid cooling angle
+    date: 2024-03-18
+    theme: theme/liquid-cooling-adoption
+    direction: up
+    date_confidence: exact
+    why: GB200 NVL72 ships liquid-cooled, which is what moved liquid cooling from option to
+      requirement. Tests that one event can burst two themes.
+
+  - id: hbm-sold-out
+    label: SK hynix says its HBM capacity is sold out into the following year
+    date: 2024-05-02
+    theme: theme/ai-memory-demand
+    direction: up
+    date_confidence: approximate
+    why: The clearest single moment of HBM scarcity entering the news cycle.
+
+  - id: blackwell-delay-reports
+    label: Reports of a Blackwell schedule slip
+    date: 2024-08-03
+    theme: theme/ai-compute-demand
+    direction: down
+    reversal: true
+    date_confidence: approximate
+    why: Heavy coverage with negative content. A burst whose tone is far below the theme's own
+      baseline should raise the reversal flag rather than read as demand strength.
+
+  - id: three-mile-island-ppa
+    label: Microsoft and Constellation agree to restart a reactor for datacenters
+    date: 2024-09-20
+    theme: theme/nuclear-for-datacenters
+    direction: up
+    date_confidence: exact
+    why: The deal that created this theme as a press category.
+
+  - id: stargate-announced
+    label: Stargate datacenter programme announced
+    date: 2025-01-21
+    theme: theme/ai-compute-demand
+    direction: up
+    date_confidence: exact
+    why: A headline capex number large enough to move general coverage.
+
+  - id: stargate-power
+    label: Stargate announcement, power angle
+    date: 2025-01-21
+    theme: theme/datacenter-power-demand
+    direction: up
+    date_confidence: exact
+    why: The programme was discussed in gigawatts as much as in dollars.
+
+  - id: deepseek-selloff
+    label: DeepSeek R1 triggers a selloff in AI infrastructure
+    date: 2025-01-27
+    theme: theme/ai-compute-demand
+    direction: down
+    reversal: true
+    date_confidence: exact
+    why: >-
+      The sharpest reversal in the period, with enormous coverage arguing AI compute needs were
+      overestimated. The single most important test of the tone reversal flag.
+
+  - id: datacenter-lease-cancellations
+    label: Analyst reports of hyperscaler datacenter lease cancellations
+    date: 2025-02-24
+    theme: theme/ai-compute-demand
+    direction: down
+    reversal: true
+    date_confidence: approximate
+    why: A demand-down burst driven by supply-chain reporting rather than a product event.
+
+  - id: gtc-2025-silicon-photonics
+    label: Nvidia announces co-packaged optics switches at GTC
+    date: 2025-03-18
+    theme: theme/cpo-adoption
+    direction: up
+    date_confidence: exact
+    why: The moment co-packaged optics became a mainstream datacenter topic. Tests a theme whose
+      own coverage base is thin, where the Poisson surprise should work and a Gaussian z on
+      counts would not.

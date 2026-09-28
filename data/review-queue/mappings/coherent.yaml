@@ -21,24 +21,23 @@ lines:
   - product: product/lasers
     fraction: 0.1
   new_product: null
-  note: Estimated mix covers transceivers and externally sold laser chips, leaving
+  note: Estimated mix covers transceivers and separately sold laser chips, leaving
     other communications components unassigned.
 - member: iivi:IndustrialSegmentMember
   label: Industrial Segment
   share: 0.258992
   assignments: []
   new_product: null
-  note: 'Estimated laser-chip sales exclude industrial laser systems, optics, materials
-    and services outside the taxonomy. Edited: industrial lasers are not datacom laser
-    chips.'
+  note: "Industrial laser systems, optics and engineered materials fall outside the\
+    \ taxonomy\u2019s narrow laser-chip category."
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6501
+  input_tokens: 6921
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 247
-  reasoning_output_tokens: 103
+  output_tokens: 301
+  reasoning_output_tokens: 171
 created: 2026-09-27

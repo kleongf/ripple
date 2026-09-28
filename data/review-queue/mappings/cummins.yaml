@@ -17,7 +17,7 @@ lines:
   share: 0.208524
   assignments: []
   new_product: null
-  note: On-highway vehicle engines are outside the taxonomy.
+  note: On-highway engines are outside the taxonomy.
 - member: cmi:DBUPowerGenerationDomain
   label: DBU - Power Generation
   share: 0.146362
@@ -25,19 +25,19 @@ lines:
   - product: product/backup-generators
     fraction: 0.9
   new_product: null
-  note: Estimated genset share is 90%, leaving ancillary power equipment unassigned.
+  note: An estimated 90% represents generator sets, leaving ancillary equipment unassigned.
 - member: cmi:PartsMember
   label: Parts
   share: 0.120968
   assignments: []
   new_product: null
-  note: Spare parts are excluded because they serve the installed base.
+  note: Spare parts are excluded because they support the installed base.
 - member: cmi:DrivetrainAndBrakingSystemsMember
   label: Drivetrain and braking systems
   share: 0.118295
   assignments: []
   new_product: null
-  note: Vehicle drivetrain and braking systems are outside the taxonomy.
+  note: Vehicle drivetrain and braking products are outside the taxonomy.
 - member: cmi:EmissionsolutionsMember
   label: Emission solutions
   share: 0.09011
@@ -63,7 +63,8 @@ lines:
   - product: product/backup-generators
     fraction: 0.9
   new_product: null
-  note: Estimated genset share is 90%, leaving other power-generation equipment unassigned.
+  note: An estimated 90% represents generator sets, with standalone engines and ancillary
+    equipment unassigned.
 - member: cmi:LightdutyautomotiveMember
   label: Light-duty automotive
   share: 0.057321
@@ -75,14 +76,14 @@ lines:
   share: 0.053401
   assignments: []
   new_product: null
-  note: Service revenue is excluded because it follows the installed base.
+  note: Service revenue is excluded because it supports the installed base.
 - member: cmi:EngineProductLineMember
   label: Engine Product Line
   share: 0.047134
   assignments: []
   new_product: null
-  note: Standalone engine sales do not establish a meaningful share of complete generator
-    sets.
+  note: Distributed standalone engines are not complete generator sets or other listed
+    products.
 - member: cmi:IndustrialMember
   label: Industrial
   share: 0.036769
@@ -95,7 +96,7 @@ lines:
   share: 0.035729
   assignments: []
   new_product: null
-  note: Engine components and associated software are outside the taxonomy.
+  note: Engine components and related software are outside the taxonomy.
 - member: cmi:OffhighwayMember
   label: Off-highway
   share: 0.032165
@@ -107,7 +108,8 @@ lines:
   share: 0.019216
   assignments: []
   new_product: Generator alternators
-  note: Alternators are components of data-center backup gensets, not complete generators.
+  note: Alternators are components of data-center generator sets rather than complete
+    backup generators.
 - member: cmi:EatonAutomatedTransmissionTechnologiesMember
   label: Eaton Automated Transmission Technologies
   share: 0.012563
@@ -122,14 +124,14 @@ lines:
   note: Filtration products are outside the taxonomy, and this line reports no revenue.
 status: rejected
 reviewer: claude-code
-reject_reason: 'Product lines overlap (partial breakdown): DBU and PSBU power-generation
-  lines likely count the same gensets twice. Keep the seed edge (0.11 from the segment
-  split).'
+reject_reason: 'Product lines overlap: ''Generator technologies'' sits inside the
+  two power-generation lines, so mapping both double counts. Unchanged from the M13
+  rejection (D60). Its generator-alternator proposal was rejected by the user (D67).'
 model: gpt-6-astra
 usage:
-  input_tokens: 7000
+  input_tokens: 7424
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 733
-  reasoning_output_tokens: 95
+  output_tokens: 764
+  reasoning_output_tokens: 126
 created: 2026-09-27

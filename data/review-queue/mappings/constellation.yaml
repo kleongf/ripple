@@ -17,33 +17,34 @@ lines:
   share: 0.28509
   assignments:
   - product: product/nuclear-generation
-    fraction: 0.6
+    fraction: 0.7
   new_product: null
-  note: 'Estimated nuclear power share plus other electricity sales, excluding gas
-    and services. Edited: electricity-demand is a demand node, not something a company
-    produces.'
+  note: Estimated nuclear-heavy power sales, with other electricity sales assigned
+    separately.
 - member: ceg:ConstellationMidwestMember
   label: Constellation Midwest
   share: 0.233332
   assignments:
   - product: product/nuclear-generation
-    fraction: 0.8
+    fraction: 0.85
   new_product: null
-  note: Estimated nuclear-heavy sales mix, with other electricity sales mapped separately.
+  note: Estimated predominantly nuclear generation, with remaining power sales mapped
+    to electricity demand.
 - member: ceg:ConstellationOtherRegionsMember
   label: Constellation Other Regions
   share: 0.214667
   assignments: []
   new_product: null
-  note: Estimated electricity sales share; natural gas and services remain unassigned.
+  note: Regional retail/wholesale electricity sales; no taxonomy product (D60).
 - member: ceg:ConstellationNewYorkMember
   label: Constellation New York
   share: 0.105414
   assignments:
   - product: product/nuclear-generation
-    fraction: 0.8
+    fraction: 0.85
   new_product: null
-  note: Estimated nuclear-heavy sales mix, with other electricity sales mapped separately.
+  note: Estimated nuclear-heavy regional sales, with other electricity sales assigned
+    separately.
 - member: ceg:ConstellationERCOTMember
   label: Constellation ERCOT
   share: 0.057186
@@ -51,16 +52,16 @@ lines:
   - product: product/nuclear-generation
     fraction: 0.3
   new_product: null
-  note: Estimated South Texas Project nuclear share plus other electricity sales,
-    without double counting.
+  note: Estimated split reflects South Texas Project nuclear output alongside nonnuclear
+    power sales.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6598
+  input_tokens: 7020
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 666
-  reasoning_output_tokens: 339
+  output_tokens: 590
+  reasoning_output_tokens: 262
 created: 2026-09-27

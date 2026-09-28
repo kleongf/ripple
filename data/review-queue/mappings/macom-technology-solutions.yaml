@@ -15,18 +15,22 @@ lines:
 - member: mtsi:ReportableSegmentMember
   label: Reportable Segment
   share: 1.0
-  assignments: []
-  new_product: RF, microwave and high-speed analog semiconductors
-  note: MACOM primarily sells analog chips, including optical drivers and amplifiers;
-    the filing context does not establish a meaningful laser revenue share.
+  assignments:
+  - product: product/rf-analog
+    fraction: 0.95
+  - product: product/lasers
+    fraction: 0.05
+  new_product: null
+  note: "Estimated mix reflects MACOM\u2019s predominantly RF, microwave and high-speed\
+    \ analog chips, plus a small optical laser-chip business."
 status: accepted
-reviewer: judge
+reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6543
+  input_tokens: 6898
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 229
-  reasoning_output_tokens: 155
+  output_tokens: 300
+  reasoning_output_tokens: 209
 created: 2026-09-27

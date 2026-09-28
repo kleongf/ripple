@@ -15,7 +15,13 @@ from ripple.store import Store
 ROOT = Path(__file__).parent.parent
 SEED = ROOT / "data" / "seed"
 SOURCES = ROOT / "data" / "sources.yaml"
-GOLDEN = sorted((Path(__file__).parent / "golden").glob("*.yaml"))
+# Ranking expectations only. events.yaml in the same directory is the pre-registered signal
+# event set (Phase 2, M23) and brief-prompts.yaml the pre-registered brief prompts (Phase 3,
+# M35); each has its own test, since neither holds rankings.
+NOT_RANKINGS = {"events.yaml", "brief-prompts.yaml"}
+GOLDEN = sorted(
+    p for p in (Path(__file__).parent / "golden").glob("*.yaml") if p.name not in NOT_RANKINGS
+)
 
 pytestmark = pytest.mark.skipif(not SEED.exists(), reason="no seed data yet")
 

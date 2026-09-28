@@ -17,26 +17,27 @@ lines:
   share: 0.549911
   assignments:
   - product: product/gas-turbines
-    fraction: 0.25
+    fraction: 0.28
   - product: product/grid-equipment
-    fraction: 0.35
+    fraction: 0.32
   new_product: null
-  note: Estimated shares cover gas power and grid equipment; wind turbines and other
-    equipment remain unassigned.
+  note: Estimated shares reflect gas power and grid equipment; wind turbines and other
+    unmatched equipment remain unassigned.
 - member: us-gaap:ServiceMember
   label: Service
   share: 0.449144
   assignments: []
   new_product: null
-  note: Services, maintenance and support follow the installed base and remain unassigned.
+  note: Maintenance, spare parts and installed-base support are excluded from new-product
+    demand.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6490
+  input_tokens: 6908
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 265
-  reasoning_output_tokens: 145
+  output_tokens: 234
+  reasoning_output_tokens: 112
 created: 2026-09-27

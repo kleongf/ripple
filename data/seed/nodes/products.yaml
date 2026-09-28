@@ -44,3 +44,14 @@
 # Accepted from 1a's new-product proposals (docs/phase-1.md, D67)
 - {id: product/optical-dsps, type: product, group: networking, label: Optical DSPs, aliases: [electro-optics DSPs, PAM4 DSPs, optical interconnect DSPs]}
 - {id: product/consumer-nand, type: product, group: memory, label: Non-enterprise NAND flash, aliases: [client SSDs, mobile NAND, consumer NAND]}
+# Accepted from 1b's new-product proposals (docs/phase-2.md, M22, D96)
+- {id: product/processor-ip, type: product, group: compute, label: Processor IP, aliases: [processor architecture licences, semiconductor IP, CPU cores, Arm architecture]}
+- {id: product/general-purpose-servers, type: product, group: compute, label: General-purpose servers, aliases: [traditional servers, non-AI servers, x86 servers, enterprise servers]}
+- {id: product/enterprise-storage, type: product, group: compute, label: Enterprise storage systems, aliases: [storage arrays, SAN, NAS, enterprise storage]}
+- {id: product/pcie-cxl-connectivity, type: product, group: networking, label: PCIe and CXL connectivity, aliases: [PCIe retimers, CXL controllers, smart cable modules, PCIe switches]}
+- {id: product/co-packaged-optics, type: product, group: networking, label: Co-packaged optics, aliases: [CPO, co-packaged optical engines, optical I/O]}
+- {id: product/photonic-ics, type: product, group: networking, label: Photonic integrated circuits, aliases: [PIC, silicon photonics, indium phosphide PICs]}
+- {id: product/optical-circuit-switches, type: product, group: networking, label: Optical circuit switches, aliases: [OCS, optical switching, MEMS optical switches]}
+- {id: product/rf-analog, type: product, group: networking, label: RF and high-speed analog chips, aliases: [RF semiconductors, laser drivers, transimpedance amplifiers, microwave chips]}
+- {id: product/flip-chip-packaging, type: product, group: foundry, label: Flip-chip and SiP packaging, aliases: [flip-chip BGA, wafer-level packaging, system-in-package, OSAT packaging]}
+- {id: product/battery-storage, type: product, group: power, label: Battery energy storage, aliases: [BESS, grid-scale batteries, energy storage systems]}

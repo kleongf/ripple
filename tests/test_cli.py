@@ -122,3 +122,94 @@ def test_sensitivity_command(loaded_db: Path) -> None:
 def test_validate_counts_unverified_evidence(write_seed: SeedWriter) -> None:
     result = runner.invoke(app, ["validate", str(write_seed(base_nodes(), base_edges()))])
     assert f"0 of {len(base_edges())} evidence items verified" in result.output
+
+
+def test_signals_fetch_skips_series_held_with_the_current_query(
+    loaded_db: Path, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from datetime import date
+
+    from ripple import news
+    from ripple.model import today_utc
+    from ripple.store import CoverageRow, Store
+
+    calls: list[str] = []
+
+    def fake_volume(self: news.NewsClient, query: str, start: date, end: date) -> list:
+        calls.append(query)
+        return [news.VolumePoint(day=end, matched=3, norm=1000)]
+
+    monkeypatch.setattr(news.NewsClient, "volume", fake_volume)
+    monkeypatch.setattr(news.NewsClient, "tone", lambda self, q, s, e: {})
+    with Store(loaded_db) as store:
+        nodes = store.snapshot(today_utc()).nodes
+        held = news.company_query(nodes["company/asml"])
+        store.add_coverage(
+            [
+                CoverageRow(
+                    "company", "company/asml", date(2026, 9, 1), 1, 10, None, news.query_hash(held)
+                )
+            ]
+        )
+    args = [
+        "signals",
+        "fetch",
+        "--company",
+        "company/asml",
+        "--company",
+        "company/tsmc",
+        "--to",
+        "2026-09-01",
+        "--db",
+        str(loaded_db),
+        "--cache",
+        str(tmp_path / "c"),
+    ]
+    result = runner.invoke(app, args)
+    assert result.exit_code == 0, result.output
+    assert "1 series already held" in result.output
+    assert len(calls) == 1 and held not in calls
+    with Store(loaded_db, read_only=True) as store:
+        assert [r.matched for r in store.coverage("company/tsmc")] == [3]
+
+
+def test_evidence_prints_the_edge_and_its_sources(loaded_db: Path) -> None:
+    from ripple.model import Edge
+
+    edge_id = Edge(
+        src="company/asml",
+        rel="PRODUCES",
+        dst="product/euv",
+        weight=0.5,
+        weight_source="manual",
+        polarity=1,
+        confidence=1.0,
+        valid_from="2020-01-01",
+    ).id
+    result = runner.invoke(app, ["evidence", edge_id, "--db", str(loaded_db)])
+    assert result.exit_code == 0, result.output
+    assert "ASML Holding PRODUCES EUV" in result.output
+    assert "unverified" in result.output
+    as_json = runner.invoke(app, ["evidence", edge_id, "--json", "--db", str(loaded_db)])
+    assert json.loads(as_json.output)["edge"] == edge_id
+
+
+def test_evidence_unknown_edge_fails(loaded_db: Path) -> None:
+    result = runner.invoke(app, ["evidence", "e-0000000000", "--db", str(loaded_db)])
+    assert result.exit_code == 1
+
+
+def test_profile_lists_themes_and_warns_against_summing(loaded_db: Path) -> None:
+    result = runner.invoke(app, ["profile", "company/vertiv", "--db", str(loaded_db)])
+    assert result.exit_code == 0, result.output
+    assert "AI compute" in result.output and "Cooling shift" in result.output
+    assert "never add them across themes" in result.output
+    assert "attention: unknown" in result.output
+
+
+def test_explain_json_matches_the_tool(loaded_db: Path) -> None:
+    args = ["explain", "theme/ai-compute", "company/asml", "--json", "--db", str(loaded_db)]
+    result = runner.invoke(app, args)
+    assert result.exit_code == 0, result.output
+    data = json.loads(result.output)
+    assert data["paths"][0]["contribution"] == 0.16

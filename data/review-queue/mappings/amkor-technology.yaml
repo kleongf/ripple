@@ -15,25 +15,27 @@ lines:
 - member: amkr:AdvancedProductsMember
   label: Advanced Products
   share: 0.828201
-  assignments: []
-  new_product: Flip-chip, wafer-level and system-in-package semiconductor packaging
-  note: "This broader packaging category does not establish a meaningful revenue share\
-    \ for the taxonomy\u2019s narrower 2.5D packaging product."
+  assignments:
+  - product: product/flip-chip-packaging
+    fraction: 1.0
+  new_product: null
+  note: Advanced products comprise flip-chip, wafer-level and SiP packaging; no separate
+    2.5D share is identifiable.
 - member: amkr:MainstreamProductsMember
   label: Mainstream Products
   share: 0.171799
   assignments: []
   new_product: null
-  note: Conventional wire-bond packaging and related testing fall outside the listed
-    products.
+  note: Mainstream products primarily comprise conventional wire-bond packaging outside
+    the listed taxonomy.
 status: accepted
-reviewer: judge
+reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6576
+  input_tokens: 6925
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 251
-  reasoning_output_tokens: 142
+  output_tokens: 225
+  reasoning_output_tokens: 112
 created: 2026-09-27

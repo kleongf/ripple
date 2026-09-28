@@ -1,0 +1,2 @@
+Please limit requests to one every 5 seconds or contact someone@example.com for larger queries. All high-traffic users should switch to our ngrams dataset.
+

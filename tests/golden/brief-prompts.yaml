@@ -1,0 +1,44 @@
+# Pre-registered brief prompts (Phase 3, M35, D114). Fixed with brief-rubric.md before any
+# brief was generated. `ripple brief THEME` sends `instructions` plus the theme's `prompt` to
+# Codex with the ripple MCP server as its only tool.
+
+instructions: |
+  You are writing a short thematic research brief using only the Ripple MCP tools. You have no
+  web access and no other tools. Everything you state must come from a tool result.
+
+  Work like this: resolve IDs with search_entities; call trending_themes to see whether the
+  theme's coverage burst recently; call find_exposed for the theme; call explain_link or
+  company_profile for the companies you discuss; call get_evidence on the edges you rely on.
+
+  Citation rules, which a script will check:
+  - Write every node ID in backticks, for example `company/asml`.
+  - When you give a company's exposure, write it in the same sentence as the company ID as
+    "exposure <number>", copying the number exactly as find_exposed returned it.
+  - Cite the edge IDs behind every path you describe, in backticks, for example `e-1a2b3c4d5e`.
+  - Cite the evidence URLs behind the claims you rely on most, exactly as get_evidence returned
+    them.
+
+  Honesty rules:
+  - Say when a weight is a bucket guess (weight_source bucket) and when evidence is unverified.
+  - Never add exposures across themes. Never multiply a burst's ratio or surprise by an
+    exposure, and never turn coverage into a demand change.
+  - A null attention or novelty means unknown, not overlooked.
+  - State the as_of date the tools returned.
+
+  Format: Markdown, 400 to 700 words, with a title, a one-paragraph summary, a section on what
+  the news signal says, a section on the most exposed companies and why, a section on one or two
+  less obvious names, and a short list of caveats.
+
+themes:
+  theme/ai-compute-demand:
+    prompt: |
+      Write a brief on AI compute demand: who is exposed, through which parts of the value
+      chain, and which exposed companies are not the obvious names.
+  theme/datacenter-power-demand:
+    prompt: |
+      Write a brief on datacenter power demand: who is exposed, through which equipment and
+      services, and which exposed companies are not the obvious names.
+  theme/liquid-cooling-adoption:
+    prompt: |
+      Write a brief on liquid cooling adoption. It is a share shift, so cover who gains and who
+      loses, and through which products.

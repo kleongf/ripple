@@ -3,14 +3,14 @@
 - src: company/constellation
   rel: PRODUCES
   dst: product/nuclear-generation
-  weight: 0.4592
+  weight: 0.5047
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: 2025-01-01
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm
-    note: '10-K FY2025 XBRL: Constellation Mid Atlantic 28.5% x0.60 + Constellation
-      Midwest 23.3% x0.80 + Constellation New York 10.5% x0.80 + Constellation ERCOT
+    note: '10-K FY2025 XBRL: Constellation Mid Atlantic 28.5% x0.70 + Constellation
+      Midwest 23.3% x0.85 + Constellation New York 10.5% x0.85 + Constellation ERCOT
       5.7% x0.30 of USD 22.7bn revenue'
     accessed: 2026-09-27

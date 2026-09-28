@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from ripple.codex import CodexConfig, CodexError, CodexRunner, default_config
+from ripple.codex import CodexConfig, CodexError, CodexRunner, McpServer, default_config
 
 SCHEMA = {
     "type": "object",
@@ -26,6 +26,7 @@ if args == ["--version"]:
 if args[:2] == ["features", "list"]:
     print("shell_tool                  stable   true")
     print("apps                        stable   true")
+    print("code_mode_host              stable   true")
     print("enable_request_compression  stable   true")
     print("sqlite                      removed  false")
     sys.exit(0)
@@ -36,6 +37,15 @@ if mode == "fail":
     print("error: usage limit reached", file=sys.stderr)
     sys.exit(1)
 out = Path(args[args.index("-o") + 1])
+if "--output-schema" not in args:  # an MCP-only brief run (M35)
+    out.write_text("# Brief\\n\\n`company/x` has exposure 0.4800.\\n")
+    call = {"id": "i1", "type": "mcp_tool_call", "server": "ripple", "tool": "find_exposed",
+            "arguments": {"node_id": "theme/vol"}, "result": {"content": []}, "error": None,
+            "status": "completed"}
+    print(json.dumps({"type": "item.started", "item": {**call, "status": "in_progress"}}))
+    print(json.dumps({"type": "item.completed", "item": call}))
+    print(json.dumps({"type": "turn.completed", "usage": {"input_tokens": 9000}}))
+    sys.exit(0)
 schema = json.loads(Path(args[args.index("--output-schema") + 1]).read_text())
 assert schema["required"] == ["answer"]
 out.write_text("not json" if mode == "bad_json" else json.dumps({"answer": "42"}))
@@ -84,7 +94,7 @@ def test_only_known_tool_features_are_disabled(stub: Path, tmp_path: Path) -> No
     disabled = [args[i + 1] for i, a in enumerate(args) if a == "--disable"]
     # shell_tool and apps are tools; request compression is not; names the stub does not list
     # (for example browser_use) are never passed, so a renamed feature cannot break a call.
-    assert disabled == ["apps", "shell_tool"]
+    assert disabled == ["apps", "code_mode_host", "shell_tool"]
 
 
 def test_instructions_are_passed_as_a_file(stub: Path, tmp_path: Path) -> None:
@@ -124,3 +134,21 @@ def test_missing_executable_raises(monkeypatch: pytest.MonkeyPatch, tmp_path: Pa
 
 def test_version(stub: Path) -> None:
     assert CodexRunner(CodexConfig(executable=stub)).version() == "codex-cli 0.155.0-alpha.16.4"
+
+
+def test_mcp_run_gives_the_server_and_keeps_only_mcp_routing_on(stub: Path, tmp_path: Path) -> None:
+    server = McpServer(command="/bin/ripple-mcp", env={"RIPPLE_DB": "/tmp/r.duckdb"})
+    result = CodexRunner(CodexConfig(executable=stub)).run_with_mcp(
+        "write", "rules", {"ripple": server}
+    )
+    assert result.text.startswith("# Brief")
+    assert [(c.tool, c.arguments, c.ok) for c in result.calls] == [
+        ("find_exposed", {"node_id": "theme/vol"}, True)
+    ]
+    args = last_call(tmp_path)["args"]
+    disabled = [args[i + 1] for i, a in enumerate(args) if a == "--disable"]
+    # codex routes MCP calls through the code-mode host (D116); the shell stays off.
+    assert disabled == ["apps", "shell_tool"]
+    assert 'mcp_servers.ripple.command="/bin/ripple-mcp"' in args
+    assert 'mcp_servers.ripple.env={RIPPLE_DB="/tmp/r.duckdb"}' in args
+    assert 'web_search="disabled"' in args and "--output-schema" not in args

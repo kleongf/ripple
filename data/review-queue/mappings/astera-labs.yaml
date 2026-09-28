@@ -15,24 +15,26 @@ lines:
 - member: us-gaap:ProductMember
   label: Product
   share: 1.0
-  assignments: []
-  new_product: PCIe/CXL connectivity chips and modules
-  note: Revenue primarily comes from retimers, PCIe fabric switches and memory connectivity
-    chips, which lack a direct taxonomy match.
+  assignments:
+  - product: product/pcie-cxl-connectivity
+    fraction: 1.0
+  new_product: null
+  note: Astera sells connectivity products including PCIe retimers and switches, CXL
+    controllers, and smart cable modules.
 - member: us-gaap:TechnologyServiceMember
   label: Technology Service
   share: 0.0
   assignments: []
   new_product: null
-  note: Technology services are excluded from product demand mapping.
+  note: Technology services are excluded from product-demand mapping.
 status: accepted
-reviewer: judge
+reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6574
+  input_tokens: 6925
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 192
-  reasoning_output_tokens: 93
+  output_tokens: 135
+  reasoning_output_tokens: 26
 created: 2026-09-27

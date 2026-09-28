@@ -1,5 +1,5 @@
 """Validation rules for seed data. Rule codes match docs/phase-0.md and docs/phase-1.md
-(E1-E13, W1-W9)."""
+(E1-E13, W1-W10), and docs/phase-3.md (W11)."""
 
 import re
 from collections import defaultdict, deque
@@ -48,9 +48,15 @@ LocatedEdge = Located[Edge]
 
 
 def validate(
-    seed: Seed, today: date, min_confidence: float = DEFAULT_MIN_CONFIDENCE
+    seed: Seed,
+    today: date,
+    min_confidence: float = DEFAULT_MIN_CONFIDENCE,
+    check_verified: bool = False,
 ) -> list[Problem]:
-    """Return every error and warning, errors first."""
+    """Return every error and warning, errors first.
+
+    `check_verified` adds W11 once verification has started (a ledger exists, D113): until
+    then every edge would carry it and it would say nothing."""
     nodes = _first_by_id(seed.nodes)
     problems = [
         *seed.problems,
@@ -61,6 +67,8 @@ def validate(
         *_check_structure_warnings(seed.edges, nodes, min_confidence),
         *_check_evidence_warnings(seed.edges, today),
         *_check_supplies_overlap(seed.edges, min_confidence),
+        *_check_theme_queries(seed.nodes),
+        *(_check_verified(seed.edges, min_confidence) if check_verified else []),
     ]
     unique = list(dict.fromkeys(problems))
     return [p for p in unique if p.severity == "error"] + [
@@ -388,6 +396,16 @@ def _check_supplies_overlap(edges: list[LocatedEdge], min_confidence: float) -> 
             yield _warning("W9", located.file, edge.label, message)
 
 
+def _check_theme_queries(nodes: list[Located[Node]]) -> Iterator[Problem]:
+    """W10: a theme with no GDELT query cannot be measured (docs/phase-2.md, D87)."""
+    for located in nodes:
+        node = located.value
+        if node.type != "theme" or (node.query or "").strip():
+            continue
+        message = "theme has no `query`, so no news coverage series can be fetched for it (D87)"
+        yield _warning("W10", located.file, node.id, message)
+
+
 def _reachable_from(starts: list[str], edges: Iterable[Edge]) -> set[str]:
     adjacency: dict[str, list[str]] = defaultdict(list)
     for edge in edges:
@@ -414,3 +432,25 @@ def _check_evidence_warnings(edges: list[LocatedEdge], today: date) -> Iterator[
             if len(item.note) > MAX_NOTE_LENGTH:
                 message = f"evidence note is {len(item.note)} characters; was it copied?"
                 yield _warning("W7", file, edge.label, message)
+
+
+def _check_verified(edges: list[LocatedEdge], min_confidence: float) -> Iterator[Problem]:
+    """W11: propagating edges whose evidence no person has verified, as one summary line.
+
+    Counted per edge key, so a key counts as verified when any source's row for it is."""
+    propagating: dict[tuple[str, str, str], bool] = {}
+    for located in edges:
+        edge = located.value
+        if demand_flow(edge) is None or edge.confidence < min_confidence:
+            continue
+        verified = any(item.verified for item in edge.evidence)
+        propagating[edge.key] = propagating.get(edge.key, False) or verified
+    unverified = sum(not v for v in propagating.values())
+    if unverified:
+        yield _warning(
+            "W11",
+            None,
+            "(graph)",
+            f"{unverified} of {len(propagating)} propagating edges have no verified evidence; "
+            "run `ripple verify status`",
+        )

@@ -17,8 +17,8 @@ lines:
   share: 0.538568
   assignments: []
   new_product: null
-  note: Home standby generators, storage and energy controls; home backup is not the
-    data center backup-generator market (Claude Code review).
+  note: Residential standby generators and PWRcell storage are home backup, not datacenter
+    or grid-scale demand (D79).
 - member: gnrc:CommercialAndIndustrialPowerProductsMember
   label: Commercial and Industrial Power Products
   share: 0.346242
@@ -26,22 +26,22 @@ lines:
   - product: product/backup-generators
     fraction: 0.6
   new_product: null
-  note: Stationary generators about 60% of the line (bucket-level estimate); mobile
-    equipment, light towers and other C&I products unassigned (Claude Code review).
+  note: 'C&I stationary generators cut to 0.6: the line also holds mobile products
+    and light towers (D79).'
 - member: gnrc:OtherProductsAndServicesMember
   label: Other Products and Services
   share: 0.11519
   assignments: []
   new_product: null
-  note: Parts, services and other installed-base revenue remain unassigned.
+  note: Parts, maintenance, warranties, and other services are left unassigned.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6617
+  input_tokens: 6966
   cached_input_tokens: 0
   cache_write_input_tokens: 0
   output_tokens: 299
-  reasoning_output_tokens: 135
+  reasoning_output_tokens: 121
 created: 2026-09-27

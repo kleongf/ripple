@@ -19,8 +19,8 @@ lines:
   - product: product/datacenter-chillers
     fraction: 0.1
   new_product: null
-  note: Estimated 10% for datacenter chillers; other commercial HVAC, residential
-    systems and transport refrigeration remain unassigned.
+  note: Estimated data-center chiller share; other HVAC and transport refrigeration
+    products remain unassigned.
 - member: us-gaap:ServiceMember
   label: Service
   share: 0.344228
@@ -32,9 +32,9 @@ reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6486
+  input_tokens: 6910
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 199
-  reasoning_output_tokens: 89
+  output_tokens: 157
+  reasoning_output_tokens: 53
 created: 2026-09-27

@@ -1,0 +1,80 @@
+# PRODUCES edges for the M22 products that no XBRL revenue line separates (docs/phase-2.md, D97).
+# Three of these sit at confidence 0.3: the revenue is real but is reported inside a line that is
+# already mapped to another product, so a propagating weight would count the same dollars twice
+# (the D4 principle). They are stored as evidence and show up in `ripple explain`.
+
+# --- Optical circuit switches: disclosed separately, so this one propagates ---------------
+
+- src: company/lumentum
+  rel: PRODUCES
+  dst: product/optical-circuit-switches
+  weight: 0.015
+  weight_source: filing
+  polarity: 1
+  confidence: 0.9
+  valid_from: 2025-12-27
+  evidence:
+    - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026005129/lite-20251227.htm
+      note: "Lumentum's 10-Q puts initial OCS shipments above $10.0M in the quarter ended 2025-12-27; total net revenue that quarter was $665.5M, so 10.0/665.5 = 0.015."
+      accessed: 2026-09-27
+    - url: https://www.sec.gov/Archives/edgar/data/1633978/000162828026005005/lite_ex991xq2fy26.htm
+      note: "Same quarter's results give the $665.5M denominator, and management puts OCS backlog well beyond $400M, so this share should rise fast."
+      accessed: 2026-09-27
+
+# --- Battery energy storage --------------------------------------------------------------
+
+- src: company/ge-vernova
+  rel: PRODUCES
+  dst: product/battery-storage
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.5
+  valid_from: 2025-01-01
+  evidence:
+    - url: https://www.gevernova.com/news/press-releases/ge-vernova-reports-fourth-quarter-full-year-2025-financial-results
+      note: "GE Vernova's Electrification segment was $9.64B of about $36.5B 2025 revenue. Its FLEXINVERTER utility-scale storage line sits inside that segment and is not broken out, so a minor bucket."
+      accessed: 2026-09-27
+
+# --- Co-packaged optics: real revenue, but inside lines already mapped (confidence 0.3) ---
+
+- src: company/broadcom
+  rel: PRODUCES
+  dst: product/co-packaged-optics
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.3
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://investors.broadcom.com/news-releases/news-release-details/broadcom-announces-tomahawkr-6-davisson-industrys-first-1024
+      note: "Tomahawk 5-Bailly was the first volume-production CPO switch; Tomahawk 6-Davisson now ships at 102.4Tbps. The revenue sits inside the switch line already mapped at 0.105, so it is held below threshold."
+      accessed: 2026-09-27
+
+- src: company/coherent
+  rel: PRODUCES
+  dst: product/co-packaged-optics
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.3
+  valid_from: 2026-01-01
+  evidence:
+    - url: https://www.globenewswire.com/news-release/2026/09/21/3365854/11543/en/coherent-launches-photonlink-integrated-optics-platform-for-ai-infrastructure.html
+      note: "Coherent's PhotonLink platform targets CPO and NPO with more than ten CPO engagements, but revenue is only expected to start ramping in Q4 2026. Pre-revenue today."
+      accessed: 2026-09-27
+
+# --- Photonic ICs: distinct from laser chips, but not separately reported -----------------
+
+- src: company/coherent
+  rel: PRODUCES
+  dst: product/photonic-ics
+  weight: 0.05
+  weight_source: bucket
+  polarity: 1
+  confidence: 0.3
+  valid_from: 2025-08-01
+  evidence:
+    - url: https://www.eenewseurope.com/en/coherent-unveils-broad-inp-technology-lineup-for-next-gen-photonics/
+      note: "Coherent runs InP lasers, modulators, photodiodes and silicon photonics, with 6-inch InP production from August 2025. Reported inside the components segment, already mapped to transceivers and lasers."
+      accessed: 2026-09-27

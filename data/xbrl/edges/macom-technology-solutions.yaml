@@ -1,3 +1,26 @@
-# Generated from the 10-K XBRL revenue lines of company/macom-technology-solutions by `ripple review accept` (judge).
+# Generated from the 10-K XBRL revenue lines of company/macom-technology-solutions by `ripple review accept` (claude-code).
 # Do not edit: edit the queue file instead.
-[]
+- src: company/macom-technology-solutions
+  rel: PRODUCES
+  dst: product/rf-analog
+  weight: 0.95
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: &id001 2024-09-28
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1493594/000149359425000054/mtsi-20251003.htm
+    note: '10-K FY2025 XBRL: Reportable Segment 100.0% x0.95 of USD 1.0bn revenue'
+    accessed: &id002 2026-09-27
+- src: company/macom-technology-solutions
+  rel: PRODUCES
+  dst: product/lasers
+  weight: 0.05
+  weight_source: manual
+  polarity: 1
+  confidence: 0.7
+  valid_from: *id001
+  evidence:
+  - url: https://www.sec.gov/Archives/edgar/data/1493594/000149359425000054/mtsi-20251003.htm
+    note: '10-K FY2025 XBRL: Reportable Segment 100.0% x0.05 of USD 1.0bn revenue'
+    accessed: *id002

@@ -1,0 +1,18 @@
+{
+ "articles": [
+  {
+   "url": "https://example.com/a",
+   "title": "Example one",
+   "domain": "example.com",
+   "seendate": "20250104T101500Z",
+   "language": "English"
+  },
+  {
+   "url": "https://example.com/b",
+   "title": "Example two",
+   "domain": "example.com",
+   "seendate": "20250104T112000Z",
+   "language": "English"
+  }
+ ]
+}

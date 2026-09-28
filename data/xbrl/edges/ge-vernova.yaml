@@ -3,24 +3,24 @@
 - src: company/ge-vernova
   rel: PRODUCES
   dst: product/grid-equipment
-  weight: 0.1925
+  weight: 0.176
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: &id001 2025-01-01
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
-    note: '10-K FY2025 XBRL: Product 55.0% x0.35 of USD 38.1bn revenue'
+    note: '10-K FY2025 XBRL: Product 55.0% x0.32 of USD 38.1bn revenue'
     accessed: &id002 2026-09-27
 - src: company/ge-vernova
   rel: PRODUCES
   dst: product/gas-turbines
-  weight: 0.1375
+  weight: 0.154
   weight_source: manual
   polarity: 1
   confidence: 0.7
   valid_from: *id001
   evidence:
   - url: https://www.sec.gov/Archives/edgar/data/1996810/000199681026000015/gev-20251231.htm
-    note: '10-K FY2025 XBRL: Product 55.0% x0.25 of USD 38.1bn revenue'
+    note: '10-K FY2025 XBRL: Product 55.0% x0.28 of USD 38.1bn revenue'
     accessed: *id002

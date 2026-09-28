@@ -18,6 +18,8 @@ def node(id_: str, **extra: Any) -> Record:
     record: Record = {"id": id_, "type": type_, "label": id_.split("/")[1]}
     if type_ == "theme":
         record["kind"] = "volume"
+        # A well-formed theme carries a GDELT query from Phase 2 on, or W10 fires (D87).
+        record["query"] = '("test theme")'
     record.update(extra)
     return record
 

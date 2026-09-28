@@ -18,25 +18,29 @@ lines:
   assignments:
   - product: product/ai-servers
     fraction: 0.28
+  - product: product/general-purpose-servers
+    fraction: 0.15
+  - product: product/enterprise-storage
+    fraction: 0.1
   - product: product/datacenter-switches
     fraction: 0.01
   new_product: null
-  note: Estimated shares cover AI servers and datacenter switches; PCs, conventional
-    servers and storage systems remain unassigned.
+  note: Estimated product mix covers servers, storage systems and switches; PCs and
+    peripherals remain unassigned, without separately counting embedded components.
 - member: us-gaap:ServiceMember
   label: Service
   share: 0.203747
   assignments: []
   new_product: null
-  note: Services and support are excluded because they follow the installed base.
+  note: Support, maintenance and other services are excluded from new-product demand.
 status: accepted
 reviewer: claude-code
 reject_reason: null
 model: gpt-6-astra
 usage:
-  input_tokens: 6498
+  input_tokens: 6924
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 268
-  reasoning_output_tokens: 147
+  output_tokens: 286
+  reasoning_output_tokens: 134
 created: 2026-09-27

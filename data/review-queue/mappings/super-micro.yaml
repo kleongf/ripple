@@ -17,23 +17,23 @@ lines:
   share: 0.01378
   assignments: []
   new_product: null
-  note: Service and software revenue is left unassigned because it does not represent
-    new hardware demand in the taxonomy.
+  note: Services are excluded, and software is outside the listed taxonomy.
 - member: us-gaap:ServiceMember
   label: Service
   share: 0.01076
   assignments: []
   new_product: null
-  note: Service revenue follows the installed base and is left unassigned.
+  note: Service revenue follows the installed base rather than new product demand.
 status: rejected
 reviewer: claude-code
-reject_reason: The chosen product breakdown holds only service lines; the server line
-  was not tagged on its own. Keep the seed edge.
+reject_reason: The tagged product breakdown holds only service lines, so no revenue
+  line maps to a product. Unchanged from the M13 rejection (D60); the seed's AI-server
+  bucket still carries Super Micro.
 model: gpt-6-astra
 usage:
-  input_tokens: 6496
+  input_tokens: 6914
   cached_input_tokens: 0
   cache_write_input_tokens: 0
-  output_tokens: 90
+  output_tokens: 82
   reasoning_output_tokens: 0
 created: 2026-09-27
