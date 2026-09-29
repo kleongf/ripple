@@ -1,0 +1,116 @@
+# Pre-registered analysis plan for Phase 4's backward test (docs/phase-4.md, M38).
+#
+# Written before any burst was scored against returns. The only real return computed before
+# this file is the single hand-check window M37 required (NVDA after GTC 2024). Once approved,
+# this file is committed, and then the study runs exactly as written. Changing any rule after
+# a result has been seen voids that result, and the review must say so (D126).
+#
+# tests/test_evaluation_plan.py checks that every value the code also defines matches the code.
+
+version: 1
+written: 2026-09-28
+status: approved
+approved: {by: user, on: 2026-09-29}
+
+test: backward           # D131: the forward test is deferred
+bias_statement: >-
+  Backward test: every burst is ranked with today's graph and a universe chosen in 2026, so
+  exposures were written knowing which companies became AI names. The comparison of novelty
+  against exposure on the same graph and companies is the primary result; neither ranking's
+  absolute performance is evidence.
+
+bursts:
+  min_surprise: 1.75     # D129, calibrated blind to returns and to the event set
+  persistence: 2         # consecutive days over the threshold
+  detection_day: start_plus_persistence_minus_one   # a UTC date
+  themes: every_theme_with_a_coverage_series
+  window_incomplete: skip          # the 60-day window must end on or before the last price
+  overlap:                         # D136
+    rule: skip
+    detail: >-
+      Within one theme, a burst whose detection day falls on or before the end of an earlier
+      scored burst's 60-day window is recorded but not scored. Bursts are taken in order of
+      detection day.
+  reversal_flagged: include_and_report_subset      # D136
+
+graph:                   # D137
+  as_of: run_date
+  known_at: run_date
+  min_confidence: 0.5
+  max_hops: 5
+
+attention:               # D137
+  as_of: detection_day
+  window_days: 90
+  min_days: 30           # fewer days of coverage in the window means unknown attention
+  coverage_known_at: run_date
+  percentile_within: burst_exposed_set
+
+eligibility:             # D132
+  min_companies: 5
+  company_requires:
+    - nonzero_exposure_to_the_theme
+    - known_novelty
+    - valid_entry_exit_and_fx_for_the_primary_horizon
+
+returns:                 # D133 to D135, D138
+  calendar_listing: "^GSPC"
+  entry: first_close_strictly_after_detection_day
+  exit: last_close_on_or_before_master_start_plus_horizon
+  slack_days: 5          # no close within this many calendar days of an end excludes the listing
+  price: adj_close       # split- and dividend-adjusted: total return
+  currency: USD
+  fx:
+    JPY: {listing: "JPY=X", operation: divide}
+    KRW: {listing: "KRW=X", operation: divide}
+    EUR: {listing: "EURUSD=X", operation: multiply}
+  compounding: buy_and_hold
+  benchmark: >-
+    Equal-weighted USD buy-and-hold return of every universe listing with a valid entry, exit
+    and FX for the window, the stock included.
+  sign_adjust: exposure_sign
+  missing_price: exclude  # never a zero return
+
+primary:                 # D132
+  horizon: 60
+  statistic: mean_ic_novelty_minus_ic_exposure
+  definition: >-
+    For each scored burst, IC(x) is the Spearman rank correlation, over the burst's eligible
+    companies, between x and the sign-adjusted 60-day abnormal return against the universe.
+    The primary number is the mean over scored bursts of IC(novelty magnitude) minus
+    IC(|exposure|).
+  ties: average_ranks
+  degenerate_burst: exclude_and_count   # IC undefined when every return or every score is tied
+  expected_sign: positive               # novelty improves on exposure
+  interval:
+    level: 0.95
+    sides: two
+    method: block_bootstrap
+    block: calendar_month_of_detection_day
+    draws: 10000
+    seed: 20260928
+  verdict:
+    beats: interval_entirely_above_zero
+    worse: interval_entirely_below_zero
+    inconclusive: otherwise
+  min_scored_bursts: 30                 # fewer means "inconclusive", whatever the interval says
+
+secondary:               # reported, never decisive
+  - {name: primary_at_20_days, horizon: 20}
+  - {name: ic_novelty_alone, horizon: 60}
+  - {name: ic_exposure_alone, horizon: 60}
+  - {name: reversal_flagged_subset, horizon: 60}
+  - {name: market_index_benchmark, horizon: 60, benchmark: market_index_local_currency}
+  - name: five_name_portfolios
+    horizon: 60
+    min_eligible_companies: 10
+    k: 5
+    portfolios: [novelty_top_k, exposure_top_k, most_covered_top_k, all_eligible, random_k]
+    random_draws: 10000
+    ranking_ties: company_id     # a stable order when two scores are equal
+  - {name: priced_in_check, horizon: 60, detail: M41}
+
+report:
+  counts: [bursts_found, scored, ineligible, overlapping, window_incomplete, degenerate]
+  by: theme
+  every_table_carries: bias_statement

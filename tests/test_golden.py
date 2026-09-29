@@ -17,8 +17,9 @@ SEED = ROOT / "data" / "seed"
 SOURCES = ROOT / "data" / "sources.yaml"
 # Ranking expectations only. events.yaml in the same directory is the pre-registered signal
 # event set (Phase 2, M23) and brief-prompts.yaml the pre-registered brief prompts (Phase 3,
-# M35); each has its own test, since neither holds rankings.
-NOT_RANKINGS = {"events.yaml", "brief-prompts.yaml"}
+# M35) and evaluation.yaml the pre-registered analysis plan (Phase 4, M38); each has its own
+# test, since none holds rankings.
+NOT_RANKINGS = {"events.yaml", "brief-prompts.yaml", "evaluation.yaml"}
 GOLDEN = sorted(
     p for p in (Path(__file__).parent / "golden").glob("*.yaml") if p.name not in NOT_RANKINGS
 )

@@ -29,7 +29,7 @@ import yaml
 
 from ripple import edgar, mapping, xbrl, xbrl_edges
 from ripple.load import Seed
-from ripple.model import Edge, Located, Node
+from ripple.model import Edge, Located, Node, today_utc
 from ripple.store import Snapshot
 
 DEFAULT_LEDGER = Path("data/verified.yaml")
@@ -258,7 +258,7 @@ def recompute(
             case "PRODUCES":
                 out.append(_recompute_produces(item, facts, queue))
             case "EXPOSED_TO":
-                _, records = xbrl_edges.region_edges(node, facts, cached.filing, date.today())
+                _, records = xbrl_edges.region_edges(node, facts, cached.filing, today_utc())
                 out.append(_compare(item, records))
             case "SUPPLIES":
                 records, _ = xbrl_edges.customer_edges(
@@ -267,7 +267,7 @@ def recompute(
                     cached.filing,
                     companies or [],
                     has_product_path=lambda *_: False,
-                    accessed=date.today(),
+                    accessed=today_utc(),
                 )
                 # The product-path check only lowers confidence and adds a clause to the note;
                 # compare the weight and the fact behind it.
@@ -296,7 +296,7 @@ def _recompute_produces(item: Item, facts: xbrl.RevenueFacts, queue: Path) -> Re
                 f"{line.label}: mapping says {line.share:.4f}, filing says "
                 f"{shares[line.member]:.4f}",
             )
-    return _compare(item, mapping.edges_from_mapping(proposal, date.today()))
+    return _compare(item, mapping.edges_from_mapping(proposal, today_utc()))
 
 
 def _compare(item: Item, records: list[dict], note_prefix: bool = False) -> Recomputed:

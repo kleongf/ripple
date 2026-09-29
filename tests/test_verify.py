@@ -11,7 +11,7 @@ from ripple import verify
 from ripple.cli import app
 from ripple.edgar import UniverseEntry, save_universe
 from ripple.load import load_seed
-from ripple.model import Edge
+from ripple.model import Edge, today_utc
 from ripple.store import Store
 from tests.conftest import SeedWriter, base_edges, base_nodes, edge
 from tests.test_sources import write_dir
@@ -113,7 +113,7 @@ def test_load_stores_the_ruling_and_reports_a_change_of_winner(
     assert f"winner changed: {seed_row.id}" in result.output
     assert "now from seed (was xbrl)" in result.output
     with Store(db, read_only=True) as store:
-        snap = store.snapshot(date.today())
+        snap = store.snapshot(today_utc())
     [won] = [e for e in snap.edges if e.key == filing_key()]
     assert won.evidence[0].verified and won.weight_source == "bucket"
 
@@ -244,7 +244,7 @@ def test_recompute_matches_regenerated_xbrl_edges_and_catches_a_tampered_one(
 
     with Store(tmp_path / "r.duckdb") as store:
         store.load_sources({"seed": seed, "xbrl": out}, now=T1)
-        snap = store.snapshot(date.today())
+        snap = store.snapshot(today_utc())
     group = [i for i in verify.items(snap) if i.source == "xbrl"]
     found = verify.recompute(group, entries, tmp_path / "raw", tmp_path / "queue")
     assert len(found) == 3

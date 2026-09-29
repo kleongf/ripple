@@ -248,21 +248,25 @@ milestone.
 
 ### M38. Pre-registration
 
-- [ ] `tests/golden/evaluation.yaml`, fixing:
-      - the threshold of record (1.75) and the eligibility floor (5)
-      - the horizons (primary 60, secondary 20) and the calendar and entry rules
-      - the benchmark, the currency and sign adjustment
-      - the primary statistic and its sign
-      - the verdict rule and the minimum N (30)
-      - the bootstrap (10,000 draws, calendar-month blocks, and a fixed seed)
-      - the overlap rule, the reversal rule, and the secondary results
-- [ ] A test that the file loads, names only rules and statistics the code implements, and
-      matches the constants the code uses (for example `MIN_SURPRISE`)
-- [ ] **The user approves it; then it is committed before any real return is computed**, the
-      same discipline as `events.yaml` (D101)
+- [x] `tests/golden/evaluation.yaml` fixes:
+      - the threshold of record (1.75), the persistence rule and the detection day
+      - the overlap, window and reversal rules
+      - the graph and attention settings, and the eligibility floor (5)
+      - the calendar, entry, exit and slack rules, and USD conversion with the three FX rules
+      - buy-and-hold returns, the universe benchmark and sign adjustment
+      - the primary statistic, its expected sign, ties (average ranks) and degenerate bursts
+        (excluded and counted)
+      - the bootstrap (95% two-sided, calendar-month blocks, 10,000 draws, seed 20260928), the
+        verdict rule and the minimum N (30)
+      - every secondary result
+- [x] `tests/test_evaluation_plan.py`: the file loads, and every value the code also defines
+      matches it (threshold, persistence, attention window and minimum days, confidence, hops,
+      calendar listing, slack, FX rules, horizons)
+- [x] **Approved by the user on 2026-09-29 and committed before any burst was scored.** The
+      only real return computed before it is M37's single hand-check window
 
 **Done when** the file is approved and committed, and `git log` shows it predating any real
-return computation.
+return computation. **Met.**
 
 ### M39. Forward ledger: deferred (D131)
 
