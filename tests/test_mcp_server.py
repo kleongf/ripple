@@ -229,3 +229,17 @@ async def test_trending_themes_without_coverage_lists_every_theme_as_unmeasured(
     data = await call(client, "trending_themes", {})
     assert data["bursts"] == []
     assert data["unmeasured"] == ["theme/ai-compute", "theme/cooling-shift"]
+
+
+async def test_find_exposed_can_add_priced_in(client: Client) -> None:
+    data = await call(client, "find_exposed", {"node_id": "theme/ai-compute", "priced_in": True})
+    assert all("priced_in" in r for r in data["results"])
+    # The mini fixture holds no prices, so every value is unknown rather than zero.
+    assert {r["priced_in"] for r in data["results"]} == {None}
+    assert any("priced_in" in note for note in data["notes"])
+    plain = await call(client, "find_exposed", {"node_id": "theme/ai-compute"})
+    assert not any("priced_in" in r for r in plain["results"])
+    product = await call(
+        client, "find_exposed", {"node_id": "product/accelerators", "priced_in": True}
+    )
+    assert not any("priced_in" in r for r in product["results"])

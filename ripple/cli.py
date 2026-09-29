@@ -191,6 +191,13 @@ def exposed(
     as_of: AsOfOption = None,
     min_confidence: MinConfidenceOption = DEFAULT_MIN_CONFIDENCE,
     max_hops: MaxHopsOption = DEFAULT_MAX_HOPS,
+    with_priced_in: Annotated[
+        bool,
+        typer.Option(
+            "--priced-in",
+            help="Add how far each price already moves with the theme's news (M41).",
+        ),
+    ] = False,
     as_json: Annotated[bool, typer.Option("--json")] = False,
     db: DbOption = DEFAULT_DB,
 ) -> None:
@@ -219,12 +226,16 @@ def exposed(
             )
         except ValueError as exc:
             raise _fail(str(exc)) from exc
-        labels = {
-            node_id: node.label for node_id, node in store.snapshot(result.as_of).nodes.items()
-        }
+        nodes = store.snapshot(result.as_of).nodes
+        labels = {node_id: node.label for node_id, node in nodes.items()}
+        data = result.to_dict()
+        priced: dict[str, float | None] = {}
+        if with_priced_in and result.shock_type == "theme":
+            data = evaluate_module.with_priced_in(store, data, nodes, result.as_of)
+            priced = {r["company"]: r["priced_in"] for r in data["results"]}
 
     if as_json:
-        print(json.dumps(result.to_dict(), indent=2))
+        print(json.dumps(data, indent=2))
         return
 
     arrow = "↑" if dir_ == "up" else "↓"
@@ -236,23 +247,26 @@ def exposed(
     title = f"{theme} {arrow}  (as of {result.as_of}, {result.theme_kind}"
     title += ", by novelty)" if by_novelty else ")"
     table = Table(title=title)
-    for column in ("#", "Company", "Ticker", "Exposure", "Novelty", "Attn %ile", "Hops", "Conf"):
+    columns = ["#", "Company", "Ticker", "Exposure", "Novelty", "Attn %ile"]
+    columns += ["Priced-in"] if with_priced_in else []
+    for column in [*columns, "Hops", "Conf"]:
         justify = "left" if column in ("Company", "Ticker") else "right"
         table.add_column(column, justify=justify, no_wrap=True)
     table.add_column("Top path (via)", overflow="fold")
     for rank, r in enumerate(rows, start=1):
         top_path = " → ".join(labels.get(n, n) for n in r.paths[0].nodes[1:-1]) if r.paths else ""
-        table.add_row(
+        cells = [
             str(rank),
             r.label,
             r.ticker or "",
             f"{r.exposure:+.4f}",
             "-" if r.novelty is None else f"{r.novelty:+.4f}",
             "-" if r.attention_percentile is None else f"{r.attention_percentile:.2f}",
-            str(r.min_hops or ""),
-            f"{r.path_confidence:.2f}",
-            top_path,
-        )
+        ]
+        if with_priced_in:
+            value = priced.get(r.company)
+            cells.append("-" if value is None else f"{value:+.2f}")
+        table.add_row(*cells, str(r.min_hops or ""), f"{r.path_confidence:.2f}", top_path)
     console.print(table)
     if all(r.attention is None for r in rows):
         console.print(

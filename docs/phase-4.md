@@ -291,14 +291,35 @@ says how they are biased.
 
 ### M41. Priced-in check
 
-- [ ] The pre-burst correlation in `ripple/evaluate.py`, reported per company and burst in the
-      study's output
-- [ ] A column on `ripple exposed` and an optional `priced_in` field on `find_exposed`, computed
-      as of today
-- [ ] A secondary question in the review: do low-priced-in names score higher? It is reported
-      and not tuned
+- [x] `evaluate.priced_in_for()`: for each exposed company, the Spearman correlation between its
+      daily USD abnormal return and the theme's daily coverage share over the 60 US trading days
+      ending on or before the day asked. Two details the design left open:
+      - **Own trading days.** Daily returns use each listing's own trading days, so a Tokyo
+        holiday is a missing day, not a stale zero. The benchmark for a date is the mean of the
+        universe listings that traded that date.
+      - **A floor of 40 paired days.** Fewer, or a constant side, means unknown (null), never a
+        number.
+- [x] `ripple exposed --priced-in` (a column, and a field in `--json`) and `find_exposed`'s
+      optional `priced_in`, computed as of the day asked. Themes only, and opt-in, so default
+      output and speed are unchanged
+- [x] 10 tests with hand-computed answers:
+      - returns rising with coverage give +1, and falling give −1
+      - too few days, or a constant side, is unknown
+      - a move the whole universe shares is not priced into one name
+      - the daily benchmark is the mean of the listings that traded
+      - a Tokyo holiday is a missing day
+      - the window ends on or before the detection day
+      - end to end through the store
+      - unknown without prices
+      - the CLI column
+      - the MCP field
+- [ ] Per burst in the study's output: M40 calls `priced_in_for` with the detection day and
+      today's `known_at`
+- [ ] The review's secondary question (M42): do low-priced-in names score higher? It is
+      reported and not tuned
 
-**Done when** the check is computed for every scored burst and reported.
+**Done when** the check is computed for every scored burst and reported. The machinery is
+done; the per-burst numbers come with M40.
 
 ### M42. Review
 

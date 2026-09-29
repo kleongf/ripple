@@ -249,3 +249,136 @@ def test_the_window_command_prints_the_hand_checkable_numbers(tmp_path: Path) ->
     assert "abnormal vs universe +15.00%" in result.output
     assert "abnormal vs ^GSPC (local) +10.00%" in result.output
     assert "sign-adjusted abnormal +15.00%" in result.output
+
+
+# --- priced-in check (M41) ------------------------------------------------------------------
+
+
+def test_priced_in_is_plus_one_when_returns_rise_with_coverage() -> None:
+    days = weekdays(JAN, 45)
+    share = {d: (i + 1) / 1000 for i, d in enumerate(days)}
+    up = {d: (i + 1) / 100 for i, d in enumerate(days)}
+    down = {d: -(i + 1) / 100 for i, d in enumerate(days)}
+    assert evaluate.priced_in(up, share) == pytest.approx(1.0)
+    assert evaluate.priced_in(down, share) == pytest.approx(-1.0)
+
+
+def test_priced_in_is_unknown_on_too_few_days_or_a_constant_side() -> None:
+    days = weekdays(JAN, 45)
+    share = {d: (i + 1) / 1000 for i, d in enumerate(days)}
+    few = {d: float(i) for i, d in enumerate(days[: evaluate.PRICED_IN_MIN_DAYS - 1])}
+    assert evaluate.priced_in(few, share) is None
+    assert evaluate.priced_in(dict.fromkeys(days, 0.01), share) is None
+
+
+def test_a_move_the_whole_universe_shares_is_not_priced_into_one_name() -> None:
+    """Both stocks rise and fall together with the theme's coverage: against the universe the
+    abnormal return is zero every day, so neither is priced in (unknown, not +1)."""
+    days = weekdays(JAN, 45)
+    prices = [100.0 * (1 + 0.01 * (i % 5)) for i in range(len(days))]
+    series = {"A": rows("A", days, prices), "B": rows("B", days, prices)}
+    abnormal = evaluate.daily_abnormal(series, ["A", "B"], days[1], days[-1], {})
+    assert set(abnormal["A"].values()) == {0.0}
+    share = {d: (i % 5) / 1000 for i, d in enumerate(days)}
+    assert evaluate.priced_in(abnormal["A"], share) is None
+
+
+def test_the_daily_benchmark_is_the_mean_of_listings_that_traded() -> None:
+    """A rises 10% on day 2 and B is flat: the benchmark is +5%, so A is +5% and B -5%."""
+    days = weekdays(JAN, 3)
+    series = {"A": rows("A", days, [100.0, 110.0, 110.0]), "B": rows("B", days, 50.0)}
+    abnormal = evaluate.daily_abnormal(series, ["A", "B"], days[1], days[-1], {})
+    assert abnormal["A"][days[1]] == pytest.approx(0.05)
+    assert abnormal["B"][days[1]] == pytest.approx(-0.05)
+
+
+def test_a_tokyo_holiday_is_a_missing_day_not_a_stale_zero() -> None:
+    days = weekdays(JAN, 5)
+    tokyo = [d for d in days if d != days[2]]
+    fx = {"JPY=X": rows("JPY=X", days, 150.0, "JPY")}
+    returns = evaluate.daily_usd_returns(
+        rows("8035.T", tokyo, [1000.0, 1010.0, 1030.0, 1030.0], "JPY"), days[1], days[-1], fx
+    )
+    assert days[2] not in returns
+    # The day after the holiday carries the return from the last Tokyo close before it.
+    assert returns[days[3]] == pytest.approx(1030 / 1010 - 1)
+
+
+def test_the_priced_in_window_ends_on_or_before_the_detection_day() -> None:
+    days = weekdays(JAN, 80)
+    first, last = evaluate.priced_in_window(days, days[70])
+    assert last == days[70] and first == days[70 - evaluate.PRICED_IN_DAYS + 1]
+    assert evaluate.priced_in_window(days, days[10]) is None
+
+
+def priced_in_store(tmp_path: Path) -> tuple[Path, list[date]]:
+    """Mini graph, 80 US days of prices, and an AI compute coverage series. NVDA's daily return
+    is highest on the days coverage is highest; the three others are flat."""
+    db = tmp_path / "priced.duckdb"
+    # After the graph's load date (2026-09-01), so a snapshot as of the last day holds the graph.
+    days = weekdays(date(2026, 6, 1), 80)
+    wave = [(i * 7) % 11 for i in range(len(days))]  # a scrambled but fixed daily pattern
+    nvda, price = [], 100.0
+    for w in wave:
+        price *= 1 + w / 1000
+        nvda.append(price)
+    with Store(db) as store:
+        store.load(MINI, now=datetime(2026, 9, 1, tzinfo=UTC))
+        store.add_prices(
+            rows("NVDA", days, nvda)
+            + [r for name in ("ASML", "TSM", "VRT") for r in rows(name, days, 50.0)]
+            + rows("^GSPC", days, 4000.0)
+        )
+        store.add_coverage(
+            [
+                CoverageRow("theme", "theme/ai-compute", d, 10 + w, 100_000, None, "q")
+                for d, w in zip(days, wave, strict=True)
+            ]
+        )
+    return db, days
+
+
+def test_priced_in_for_ranks_the_stock_that_moves_with_the_news(tmp_path: Path) -> None:
+    db, days = priced_in_store(tmp_path)
+    with Store(db, read_only=True) as store:
+        values = evaluate.priced_in_for(
+            store,
+            "theme/ai-compute",
+            {"company/nvidia": "NVDA", "company/asml": "ASML"},
+            ["ASML", "NVDA", "TSM", "VRT"],
+            as_of=days[-1],
+        )
+    # NVDA's abnormal return is 3/4 of its own return, a monotone function of coverage; ASML's
+    # is -1/4 of NVDA's, so it moves against the news.
+    assert values["company/nvidia"] == pytest.approx(1.0)
+    assert values["company/asml"] == pytest.approx(-1.0)
+
+
+def test_priced_in_is_unknown_without_prices(tmp_path: Path) -> None:
+    store = Store(tmp_path / "empty.duckdb")
+    store.load(MINI, now=datetime(2026, 9, 1, tzinfo=UTC))
+    values = evaluate.priced_in_for(
+        store, "theme/ai-compute", {"company/nvidia": "NVDA"}, ["NVDA"], as_of=date(2026, 9, 26)
+    )
+    assert values == {"company/nvidia": None}
+
+
+def test_exposed_shows_a_priced_in_column_on_request(tmp_path: Path) -> None:
+    from typer.testing import CliRunner
+
+    from ripple.cli import app
+
+    db, days = priced_in_store(tmp_path)
+    base = ["exposed", "theme/ai-compute", "--as-of", days[-1].isoformat(), "--db", str(db)]
+    runner = CliRunner()
+    plain = runner.invoke(app, base)
+    assert plain.exit_code == 0 and "Priced-in" not in plain.output
+    table = runner.invoke(app, [*base, "--priced-in"], env={"COLUMNS": "220"})
+    assert table.exit_code == 0, table.output
+    assert "Priced-in" in table.output and "+1.00" in table.output
+    import json
+
+    data = json.loads(runner.invoke(app, [*base, "--priced-in", "--json"]).output)
+    by = {r["company"]: r["priced_in"] for r in data["results"]}
+    assert by["company/nvidia"] == pytest.approx(1.0)
+    assert any("priced_in" in note for note in data["notes"])

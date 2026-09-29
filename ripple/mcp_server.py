@@ -16,7 +16,7 @@ from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 from pydantic import Field
 
-from ripple import explain, profile, signal
+from ripple import evaluate, explain, profile, signal
 from ripple.attention import OBVIOUS_PERCENTILE
 from ripple.explain import envelope
 from ripple.model import DEFAULT_MIN_CONFIDENCE, today_utc
@@ -127,6 +127,15 @@ def create_server(db: Path) -> MCPServer:
         as_of: AsOf = None,
         limit: Annotated[int, Field(ge=1, le=100)] = 20,
         min_confidence: MinConfidence = DEFAULT_MIN_CONFIDENCE,
+        priced_in: Annotated[
+            bool,
+            Field(
+                description=(
+                    "Also report how far each company's price already moves with the theme's "
+                    "news over the last 60 trading days (themes only)."
+                )
+            ),
+        ] = False,
     ) -> dict[str, Any]:
         """Rank companies by exposure to a demand shock on a theme or product, with the paths
         that explain each one.
@@ -146,12 +155,18 @@ def create_server(db: Path) -> MCPServer:
         are null when no coverage series is held, which means unknown attention, not none, so
         do not read a null as novel. Attention is company-wide rather than theme-paired, so a
         company famous for something unrelated can look crowded.
+
+        With priced_in true (themes only), each company also carries priced_in: the correlation
+        between its daily abnormal return and the theme's coverage over the last 60 trading
+        days. High means its price already moves with the theme's news. Null means unknown.
         """
-        return run(
-            lambda store: score(
+        day = as_of or today_utc()
+
+        def query_store(store: Store) -> dict[str, Any]:
+            result = score(
                 store,
                 node_id,
-                as_of=as_of or today_utc(),
+                as_of=day,
                 direction=direction,
                 max_hops=max_hops,
                 hide_obvious=hide_obvious,
@@ -159,7 +174,14 @@ def create_server(db: Path) -> MCPServer:
                 obvious_percentile=obvious_percentile,
                 limit=limit,
                 min_confidence=min_confidence,
-            ).to_dict(),
+            ).to_dict()
+            if priced_in and result["shock_type"] == "theme":
+                nodes = store.snapshot(day).nodes
+                result = evaluate.with_priced_in(store, result, nodes, day)
+            return result
+
+        return run(
+            query_store,
             "Use search_entities with type='theme' or type='product' to find IDs.",
         )
 

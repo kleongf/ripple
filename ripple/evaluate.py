@@ -17,13 +17,16 @@ them, as pure functions over stored price rows:
 A missing price is never a zero return: the listing is left out of that window.
 """
 
+import math
 from bisect import bisect_right
 from dataclasses import dataclass
 from datetime import date, timedelta
 from statistics import fmean
 
+from scipy import stats
+
 from ripple import prices
-from ripple.store import PriceRow
+from ripple.store import PriceRow, Store
 
 CALENDAR_LISTING = "^GSPC"
 SLACK_DAYS = 5
@@ -185,3 +188,140 @@ def sign_adjust(value: float, exposure: float) -> float:
     if exposure < 0:
         return -value
     raise ValueError("a company with zero exposure is not exposed")
+
+
+# --- priced-in check (Phase 4, M41) ---------------------------------------------------------
+#
+# PLAN §8: a company whose price already moves with the theme's news has less left to move. For
+# each exposed company, the Spearman correlation between its daily abnormal return and the
+# theme's daily coverage share over the `PRICED_IN_DAYS` US trading days up to the detection
+# day. High means the stock already outperforms on the days the theme is in the news. It is
+# reported next to novelty and never multiplied into it (D88).
+#
+# Daily returns use each listing's own trading days, so a Tokyo holiday is a missing day, not a
+# stale zero return; the benchmark for a date is the mean USD return of the universe listings
+# that traded on it.
+
+PRICED_IN_DAYS = 60
+PRICED_IN_MIN_DAYS = 40
+
+
+def daily_usd_returns(
+    rows: list[PriceRow], first: date, last: date, fx: dict[str, list[PriceRow]]
+) -> dict[date, float]:
+    """Close-to-close USD returns for each of the listing's trading days in [first, last]. The
+    first day needs the listing's previous close, which may fall before `first`."""
+    out: dict[date, float] = {}
+    for previous, current in zip(rows, rows[1:], strict=False):
+        if not first <= current.day <= last:
+            continue
+        start = to_usd(previous.adj_close, previous.currency, previous.day, fx)
+        end = to_usd(current.adj_close, current.currency, current.day, fx)
+        if start and end:
+            out[current.day] = end / start - 1
+    return out
+
+
+def daily_abnormal(
+    series: dict[str, list[PriceRow]],
+    universe: list[str],
+    first: date,
+    last: date,
+    fx: dict[str, list[PriceRow]],
+) -> dict[str, dict[date, float]]:
+    """Per listing, its daily USD return minus the mean of the universe listings that traded
+    that day."""
+    returns = {
+        listing: daily_usd_returns(series.get(listing, []), first, last, fx) for listing in universe
+    }
+    by_day: dict[date, list[float]] = {}
+    for daily in returns.values():
+        for day, r in daily.items():
+            by_day.setdefault(day, []).append(r)
+    mean = {day: fmean(values) for day, values in by_day.items()}
+    return {
+        listing: {day: r - mean[day] for day, r in daily.items()}
+        for listing, daily in returns.items()
+    }
+
+
+def priced_in(abnormal: dict[date, float], share: dict[date, float]) -> float | None:
+    """Spearman correlation of daily abnormal return with the theme's coverage share on the same
+    dates; None with fewer than `PRICED_IN_MIN_DAYS` paired days or when either side is
+    constant."""
+    days = sorted(set(abnormal) & set(share))
+    if len(days) < PRICED_IN_MIN_DAYS:
+        return None
+    returns = [abnormal[d] for d in days]
+    shares = [share[d] for d in days]
+    if len(set(returns)) < 2 or len(set(shares)) < 2:
+        return None
+    rho = stats.spearmanr(returns, shares).statistic
+    return None if math.isnan(rho) else float(rho)
+
+
+def priced_in_window(days: list[date], detected: date) -> tuple[date, date] | None:
+    """The `PRICED_IN_DAYS` master trading days ending on or before the detection day."""
+    last = bisect_right(days, detected)
+    if last < PRICED_IN_DAYS:
+        return None
+    return days[last - PRICED_IN_DAYS], days[last - 1]
+
+
+def priced_in_for(
+    store: Store,
+    theme: str,
+    listings: dict[str, str],
+    universe: list[str],
+    as_of: date,
+    known_at: date | None = None,
+) -> dict[str, float | None]:
+    """The priced-in correlation for each company in `listings` (company ID to listing), as of
+    `as_of`, against the universe's daily benchmark. Unknown (None) without prices or
+    coverage."""
+    days = calendar(store.prices(CALENDAR_LISTING, end=as_of, known_at=known_at))
+    span = priced_in_window(days, as_of)
+    if span is None:
+        return dict.fromkeys(listings)
+    first, last = span
+    lookback = first - timedelta(days=14)  # room for the previous close before `first`
+    wanted = sorted(set(universe) | set(listings.values()))
+    series = {x: store.prices(x, start=lookback, end=last, known_at=known_at) for x in wanted}
+    fx = {
+        x: store.prices(x, start=lookback, end=last, known_at=known_at)
+        for x, _ in prices.FX_BY_CURRENCY.values()
+    }
+    abnormal = daily_abnormal(series, wanted, first, last, fx)
+    coverage = store.coverage(theme, start=first, end=last, known_at=known_at)
+    share = {row.day: row.share for row in coverage if row.norm}
+    return {
+        company: priced_in(abnormal.get(listing, {}), share)
+        for company, listing in listings.items()
+    }
+
+
+PRICED_IN_NOTE = (
+    "priced_in is the Spearman correlation between the company's daily abnormal return (USD, "
+    "against the universe) and the theme's daily coverage share over the last 60 US trading "
+    "days: high means the stock already outperforms when the theme is in the news. Null means "
+    "unknown (no prices or coverage, or under 40 paired days). Read it next to novelty; never "
+    "combine the two into one score."
+)
+
+
+def with_priced_in(
+    store: Store, result: dict, nodes: dict, as_of: date, known_at: date | None = None
+) -> dict:
+    """A `ScoreResult.to_dict()` with `priced_in` added to each company and the note appended."""
+    universe = sorted({n.ticker for n in nodes.values() if n.type == "company" and n.ticker})
+    listings = {
+        r["company"]: nodes[r["company"]].ticker
+        for r in result["results"]
+        if nodes.get(r["company"]) is not None and nodes[r["company"]].ticker
+    }
+    values = priced_in_for(store, result["theme"], listings, universe, as_of, known_at)
+    for r in result["results"]:
+        value = values.get(r["company"])
+        r["priced_in"] = None if value is None else round(value, 3)
+    result["notes"] = [*result["notes"], PRICED_IN_NOTE]
+    return result
