@@ -10,7 +10,7 @@
 version: 1
 written: 2026-09-28
 status: approved
-approved: {by: user, on: 2026-09-29}
+approved: {by: user, date: 2026-09-29}  # "on" would parse as a YAML boolean
 
 test: backward           # D131: the forward test is deferred
 bias_statement: >-

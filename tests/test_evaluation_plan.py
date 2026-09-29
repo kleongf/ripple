@@ -25,7 +25,7 @@ def test_the_plan_loads_and_says_what_it_is() -> None:
     assert p["test"] == "backward"
     assert p["status"] in {"draft", "approved"}
     if p["status"] == "approved":
-        assert p["approved"]["by"] and p["approved"]["on"]
+        assert p["approved"]["by"] and p["approved"]["date"]
     assert "today's graph" in p["bias_statement"]
 
 
